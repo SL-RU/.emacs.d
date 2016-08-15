@@ -1,0 +1,15 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("stmtest"
+ (filename . "~/b/stmtest/stmtest/Src/main.c")
+ (front-context-string . "\n\n  /* USER CODE")
+ (rear-context-string . "GPIO_Init();\n\n  ")
+ (position . 3036))
+("emacs init"
+ (filename . "~/.emacs.d/init.el")
+ (front-context-string . "(global-set-key ")
+ (rear-context-string . "x\") #'helm-M-x)\n")
+ (position . 1819))
+)

@@ -1,0 +1,29 @@
+;; Object monokai-theme-20160515.1404/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "monokai-theme-20160515.1404/"
+  :tables
+  (list
+    (semanticdb-table "monokai-theme.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("unless" code nil nil [1792 1886])
+            ("deftheme" code nil nil [1888 1933])
+            ("monokai" customgroup (:user-visible-flag t) nil [1935 2068])
+            ("monokai-distinct-fringe-background" variable nil nil [2070 2268])
+            ("monokai-use-variable-pitch" variable (:default-value t) nil [2270 2403])
+            ("monokai-height-minus-1" variable (:default-value 0.8) nil [2405 2495])
+            ("monokai-height-plus-1" variable (:default-value 1.1) nil [2497 2586])
+            ("monokai-height-plus-2" variable (:default-value 1.15) nil [2588 2678])
+            ("monokai-height-plus-3" variable (:default-value 1.2) nil [2680 2769])
+            ("monokai-height-plus-4" variable (:default-value 1.3) nil [2771 2860])
+            ("let*" code nil nil [2862 221736])
+            ("when" code nil nil [221753 221930])
+            ("provide-theme" code nil nil [221932 221956]))          
+      :file "monokai-theme.el"
+      :pointmax 222059
+      :fsize 222059
+      :lastmodtime '(22373 1273 7360 572000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!elpa!monokai-theme-20160515.1404!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

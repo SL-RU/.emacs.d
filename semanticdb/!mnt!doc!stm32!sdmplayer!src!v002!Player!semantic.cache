@@ -1,0 +1,194 @@
+;; Object Player/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Player/"
+  :tables
+  (list
+    (semanticdb-table "vs1053.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("vs1053.h" include nil nil [1 20])
+            ("parametric" variable (:type ("VS1053_parametric" type (:type "class") nil nil)) nil [22 51])
+            ("VS1053_curFile" variable
+               (:pointer 1
+                :default-value "0"
+                :type ("FIL" type (:type "class") nil nil))
+                nil [53 77])
+            ("VS1053_filechanged" variable
+               (:default-value "0"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [78 109])
+            ("VS1053_curFilPath" variable
+               (:pointer 1
+                :default-value "0"
+                :type "char")
+                nil [110 138])
+            ("VS1053_curState" variable
+               (:default-value "PLAYER_STOP"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [139 177])
+            ("VS1053_curPlayer" variable
+               (:pointer 1
+                :default-value "0"
+                :type ("PlayerInfo" type (:type "class") nil nil))
+                nil [180 213])
+            ("VS1053_set_player" function
+               (:arguments 
+                  ( ("player" variable
+                       (:pointer 1
+                        :type ("PlayerInfo" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [242 261]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [216 500])
+            ("VS1053_get_player" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [531 536]))                  
+                :type ("PlayerInfo" type (:type "class") nil nil))
+                nil [501 566])
+            ("VS1053_getState" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [592 597]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [568 598])
+            ("vs1053_spiSpeed" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("speed" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [633 647]))                  
+                :type "void")
+                nil [605 987])
+            ("VSvolume" variable
+               (:default-value "60"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [989 1029])
+            ("VScurvolume" variable
+               (:default-value "60"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [989 1029])
+            ("vs1053_trans" function
+               (:arguments 
+                  ( ("data" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1050 1063]))                  
+                :type "void")
+                nil [1032 1124])
+            ("vs1053_txrx" function
+               (:arguments 
+                  ( ("data" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1145 1158]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [1125 1259])
+            ("vs1053_write_reg" function
+               (:arguments 
+                  ( ("addressbyte" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1505 1525])
+                    ("highbyte" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1526 1543])
+                    ("lowbyte" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1544 1560]))                  
+                :type "void")
+                nil [1483 2183])
+            ("vs1053_read_reg" function
+               (:arguments 
+                  ( ("addressbyte" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2256 2276]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [2230 3168])
+            ("vs1053_write_reg_16" function
+               (:arguments 
+                  ( ("addressbyte" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3195 3216])
+                    ("val" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3217 3230]))                  
+                :type "void")
+                nil [3169 3281])
+            ("vs1053_read_wram_16" function
+               (:arguments 
+                  ( ("addressbyte" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3312 3333]))                  
+                :type ("uint16_t" type (:type "class") nil nil))
+                nil [3282 3438])
+            ("vs1053_write_wram_16" function
+               (:arguments 
+                  ( ("addressbyte" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3466 3487])
+                    ("val" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3488 3501]))                  
+                :type "void")
+                nil [3439 3591])
+            ("vs1053_read_wram_32" function
+               (:arguments 
+                  ( ("addressbyte" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3622 3643]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [3592 4083])
+            ("vs1053_write_wram_32" function
+               (:arguments 
+                  ( ("addressbyte" variable (:type ("uint16_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4111 4132])
+                    ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4133 4146]))                  
+                :type "void")
+                nil [4084 4243])
+            ("sine_test" function (:type "void") nil [4244 5052])
+            ("set_vol" function
+               (:arguments 
+                  ( ("vol" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5067 5079]))                  
+                :type "void")
+                nil [5054 5121])
+            ("vs1053_read_parametric" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5150 5155]))                  
+                :type "void")
+                nil [5122 5419])
+            ("VS1053_Init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5437 5442]))                  
+                :type "void")
+                nil [5420 6462])
+            ("_vs1053_par_start" variable
+               (:default-value "0"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [6464 6494])
+            ("vs1053_update_parametric" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6525 6530]))                  
+                :type "void")
+                nil [6495 6948])
+            ("VS1053_play_file" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("FIL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6972 6982]))                  
+                :type "void")
+                nil [6950 7067])
+            ("VS1053_getState" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7093 7098]))                  
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [7069 7127])
+            ("VS1053_pause" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7146 7151]))                  
+                :type "void")
+                nil [7128 7225])
+            ("VS1053_unpause" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7246 7251]))                  
+                :type "void")
+                nil [7226 7325])
+            ("_VS1053_curState" variable
+               (:default-value "PLAYER_STOP"
+                :type ("uint8_t" type (:type "class") nil nil))
+                nil [7327 7366])
+            ("_VS1053_curFile" variable
+               (:pointer 1
+                :default-value "0"
+                :type ("FIL" type (:type "class") nil nil))
+                nil [7367 7392])
+            ("VS1053_thread" function
+               (:arguments 
+                  ( ("argument" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7412 7429]))                  
+                :type "void")
+                nil [7393 10609]))          
+      :file "vs1053.c"
+      :pointmax 10862
+      :fsize 11259
+      :lastmodtime '(22356 9694 838759 900000)
+      :unmatched-syntax nil)
+    (semanticdb-table "vs1053.h"
+      :file "vs1053.h"
+      :fsize 2789
+      :lastmodtime '(22345 23400 11512 200000)))
+  :file "!mnt!doc!stm32!sdmplayer!src!v002!Player!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

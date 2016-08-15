@@ -1,0 +1,507 @@
+;; Object Inc/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Inc/"
+  :tables
+  (list
+    (semanticdb-table "dma.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__dma_H" variable (:constant-flag t) nil [2095 2102])
+            ("MX_DMA_Init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2524 2529]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2507 2530])
+            ("Error_Handler" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2361 2366]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2335 2367])
+            ("stm32f1xx_hal.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [2226 2252]))          
+      :file "dma.h"
+      :pointmax 2747
+      :fsize 2818
+      :lastmodtime '(22437 61407 57295 445000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__dma_H")
+          )
+)
+    (semanticdb-table "i2s.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__i2s_H" variable (:constant-flag t) nil [2097 2104])
+            ("MX_I2S2_Init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2478 2483]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2460 2484])
+            ("Error_Handler" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2452 2457]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2426 2458])
+            ("hi2s2" variable
+               (:type ("I2S_HandleTypeDef" type (:type "class") nil nil)
+                :typemodifiers ("extern" "\"C\"" "extern"))
+                (reparse-symbol extern-c-contents) [2317 2348])
+            ("stm32f1xx_hal.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [2227 2253]))          
+      :file "i2s.h"
+      :pointmax 2717
+      :fsize 2791
+      :lastmodtime '(22437 61407 353295 455000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__i2s_H")
+          )
+)
+    (semanticdb-table "tim.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__tim_H" variable (:constant-flag t) nil [2097 2104])
+            ("HAL_TIM_MspPostInit" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("htim" variable
+                       (:pointer 1
+                        :type ("TIM_HandleTypeDef" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2531 2555]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2506 2556])
+            ("MX_TIM2_Init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2478 2483]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2460 2484])
+            ("Error_Handler" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2452 2457]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2426 2458])
+            ("htim2" variable
+               (:type ("TIM_HandleTypeDef" type (:type "class") nil nil)
+                :typemodifiers ("extern" "\"C\"" "extern"))
+                (reparse-symbol extern-c-contents) [2317 2348])
+            ("stm32f1xx_hal.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [2227 2253]))          
+      :file "tim.h"
+      :pointmax 2806
+      :fsize 2883
+      :lastmodtime '(22437 61407 529295 461000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__tim_H")
+          )
+)
+    (semanticdb-table "usart.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__usart_H" variable (:constant-flag t) nil [2103 2112])
+            ("MX_USART1_UART_Init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2495 2500]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2470 2501])
+            ("Error_Handler" function
+               (:type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2462 2467]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2436 2468])
+            ("huart1" variable
+               (:type ("UART_HandleTypeDef" type (:type "class") nil nil)
+                :typemodifiers ("extern" "\"C\"" "extern"))
+                (reparse-symbol extern-c-contents) [2325 2358])
+            ("stm32f1xx_hal.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [2235 2261]))          
+      :file "usart.h"
+      :pointmax 2736
+      :fsize 2810
+      :lastmodtime '(22437 61407 629295 465000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__usart_H")
+          )
+)
+    (semanticdb-table "gpio.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__gpio_H" variable (:constant-flag t) nil [2096 2104])
+            ("MX_GPIO_Init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2411 2416]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [2393 2417])
+            ("stm32f1xx_hal.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [2227 2253]))          
+      :file "gpio.h"
+      :pointmax 2659
+      :fsize 2730
+      :lastmodtime '(22437 61406 905295 440000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__gpio_H")
+          )
+)
+    (semanticdb-table "stm32f1xx_hal_conf.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__STM32F1xx_HAL_CONF_H" variable (:constant-flag t) nil [2084 2106])
+            ("assert_param" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [14181 14193])
+            ("stm32f1xx_hal_uart.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [12791 12823])
+            ("stm32f1xx_hal_tim.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [12691 12722])
+            ("stm32f1xx_hal_pwr.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [12080 12111])
+            ("stm32f1xx_hal_i2s.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [11879 11910])
+            ("stm32f1xx_hal_flash.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [11476 11509])
+            ("stm32f1xx_hal_cortex.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [11072 11106])
+            ("stm32f1xx_hal_dma.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [10663 10695])
+            ("stm32f1xx_hal_gpio.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [10559 10591])
+            ("stm32f1xx_hal_rcc.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [10459 10490])
+            ("PHY_LINK_INTERRUPT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [10188 10206])
+            ("PHY_MISR_LINK_INT_EN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [10072 10092])
+            ("PHY_MICR_INT_OE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9955 9970])
+            ("PHY_MICR_INT_EN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9839 9854])
+            ("PHY_DUPLEX_STATUS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9722 9739])
+            ("PHY_SPEED_STATUS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9606 9622])
+            ("PHY_LINK_STATUS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9490 9505])
+            ("PHY_MISR" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9372 9380])
+            ("PHY_MICR" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9256 9264])
+            ("PHY_SR" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [9140 9146])
+            ("PHY_JABBER_DETECTION" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8991 9011])
+            ("PHY_LINKED_STATUS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8886 8903])
+            ("PHY_AUTONEGO_COMPLETE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8781 8802])
+            ("PHY_ISOLATE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8675 8686])
+            ("PHY_POWERDOWN" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8570 8583])
+            ("PHY_RESTART_AUTONEGOTIATION" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8465 8492])
+            ("PHY_AUTONEGOTIATION" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8360 8379])
+            ("PHY_HALFDUPLEX_10M" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8255 8273])
+            ("PHY_FULLDUPLEX_10M" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8150 8168])
+            ("PHY_HALFDUPLEX_100M" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8045 8064])
+            ("PHY_FULLDUPLEX_100M" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7940 7959])
+            ("PHY_LOOPBACK" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7850 7862])
+            ("PHY_RESET" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7772 7781])
+            ("PHY_BSR" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7665 7672])
+            ("PHY_BCR" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7560 7567])
+            ("PHY_WRITE_TO" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7457 7469])
+            ("PHY_READ_TO" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7394 7405])
+            ("PHY_CONFIG_DELAY" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7330 7346])
+            ("PHY_RESET_DELAY" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7237 7252])
+            ("DP83848_PHY_ADDRESS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [7120 7139])
+            ("ETH_TXBUFNB" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6938 6949])
+            ("ETH_RXBUFNB" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6835 6846])
+            ("ETH_TX_BUF_SIZE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6732 6747])
+            ("ETH_RX_BUF_SIZE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6629 6644])
+            ("MAC_ADDR5" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6540 6549])
+            ("MAC_ADDR4" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6518 6527])
+            ("MAC_ADDR3" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6496 6505])
+            ("MAC_ADDR2" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6474 6483])
+            ("MAC_ADDR1" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6452 6461])
+            ("MAC_ADDR0" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [6430 6439])
+            ("PREFETCH_ENABLE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5942 5957])
+            ("USE_RTOS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5902 5910])
+            ("TICK_INT_PRIORITY" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5782 5799])
+            ("VDD_VALUE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5689 5698])
+            ("LSE_STARTUP_TIMEOUT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5252 5271])
+            ("LSE_VALUE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [5105 5114])
+            ("HSI_VALUE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4813 4822])
+            ("HSE_STARTUP_TIMEOUT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4429 4448])
+            ("HSE_VALUE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [4279 4288])
+            ("HAL_RCC_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3864 3886])
+            ("HAL_PWR_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3833 3855])
+            ("HAL_GPIO_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3801 3824])
+            ("HAL_FLASH_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3768 3792])
+            ("HAL_DMA_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3737 3759])
+            ("HAL_CORTEX_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3703 3728])
+            ("HAL_UART_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3591 3614])
+            ("HAL_TIM_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3560 3582])
+            ("HAL_I2S_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2945 2967])
+            ("HAL_GPIO_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2875 2898])
+            ("HAL_DMA_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2766 2788])
+            ("HAL_MODULE_ENABLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2506 2524])
+            ("mxconstants.h" include (:typemodifiers ("extern" "\"C\"")) (reparse-symbol extern-c-contents) [2149 2173]))          
+      :file "stm32f1xx_hal_conf.h"
+      :pointmax 14387
+      :fsize 14747
+      :lastmodtime '(22437 61407 809295 471000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PHY_BSR" . ((semantic-list "((uint16_t)0x01)" 7697 . 7713)))
+          ("HAL_RCC_MODULE_ENABLED")
+          ("PREFETCH_ENABLE" . ((number "1" 5971 . 5972)))
+          ("ETH_RX_BUF_SIZE" . ((symbol "ETH_MAX_PACKET_SIZE" 6660 . 6679)))
+          ("DP83848_PHY_ADDRESS" . ((symbol "0x01U" 7150 . 7155)))
+          ("PHY_READ_TO" . ((semantic-list "((uint32_t)0x0000FFFF)" 7426 . 7448)))
+          ("PHY_FULLDUPLEX_100M" . ((semantic-list "((uint16_t)0x2100)" 7972 . 7990)))
+          ("PHY_SR" . ((semantic-list "((uint16_t)0x10)" 9172 . 9188)))
+          ("PHY_SPEED_STATUS" . ((semantic-list "((uint16_t)0x0002)" 9638 . 9656)))
+          ("HAL_PWR_MODULE_ENABLED")
+          ("LSE_STARTUP_TIMEOUT" . ((semantic-list "((uint32_t)5000)" 5275 . 5291)))
+          ("MAC_ADDR0" . ((number "2" 6442 . 6443)))
+          ("PHY_JABBER_DETECTION" . ((semantic-list "((uint16_t)0x0002)" 9023 . 9041)))
+          ("__STM32F1xx_HAL_CONF_H")
+          ("HAL_UART_MODULE_ENABLED")
+          ("LSE_VALUE" . ((semantic-list "((uint32_t)32768)" 5118 . 5135)))
+          ("MAC_ADDR1" . ((number "0" 6464 . 6465)))
+          ("PHY_MISR_LINK_INT_EN" . ((semantic-list "((uint16_t)0x0020)" 10104 . 10122)))
+          ("MAC_ADDR2" . ((number "0" 6486 . 6487)))
+          ("PHY_BCR" . ((semantic-list "((uint16_t)0x00)" 7592 . 7608)))
+          ("PHY_AUTONEGO_COMPLETE" . ((semantic-list "((uint16_t)0x0020)" 8813 . 8831)))
+          ("PHY_MICR_INT_EN" . ((semantic-list "((uint16_t)0x0002)" 9871 . 9889)))
+          ("HSE_STARTUP_TIMEOUT" . ((semantic-list "((uint32_t)100)" 4452 . 4467)))
+          ("MAC_ADDR3" . ((number "0" 6508 . 6509)))
+          ("PHY_FULLDUPLEX_10M" . ((semantic-list "((uint16_t)0x0100)" 8182 . 8200)))
+          ("PHY_ISOLATE" . ((semantic-list "((uint16_t)0x0400)" 8707 . 8725)))
+          ("PHY_LINK_STATUS" . ((semantic-list "((uint16_t)0x0001)" 9522 . 9540)))
+          ("PHY_DUPLEX_STATUS" . ((semantic-list "((uint16_t)0x0004)" 9754 . 9772)))
+          ("PHY_LINK_INTERRUPT" . ((semantic-list "((uint16_t)0x2000)" 10220 . 10238)))
+          ("HAL_DMA_MODULE_ENABLED")
+          ("HAL_CORTEX_MODULE_ENABLED")
+          ("HAL_FLASH_MODULE_ENABLED")
+          ("HSE_VALUE" . ((semantic-list "((uint32_t)8000000)" 4292 . 4311)))
+          ("MAC_ADDR4" . ((number "0" 6530 . 6531)))
+          ("PHY_WRITE_TO" . ((semantic-list "((uint32_t)0x0000FFFF)" 7489 . 7511)))
+          ("PHY_MISR" . ((semantic-list "((uint16_t)0x12)" 9404 . 9420)))
+          ("assert_param" (spp-arg-list ("expr") 14193 . 14199) . ((semantic-list "((void)0)" 14200 . 14209)))
+          ("MAC_ADDR5" . ((number "0" 6552 . 6553)))
+          ("ETH_TX_BUF_SIZE" . ((symbol "ETH_MAX_PACKET_SIZE" 6763 . 6782)))
+          ("PHY_LINKED_STATUS" . ((semantic-list "((uint16_t)0x0004)" 8918 . 8936)))
+          ("HAL_TIM_MODULE_ENABLED")
+          ("VDD_VALUE" . ((semantic-list "((uint32_t)3300)" 5718 . 5734)))
+          ("HAL_MODULE_ENABLED")
+          ("ETH_RXBUFNB" . ((semantic-list "((uint32_t)8)" 6866 . 6879)))
+          ("PHY_CONFIG_DELAY" . ((semantic-list "((uint32_t)0x00000FFF)" 7362 . 7384)))
+          ("PHY_RESET" . ((semantic-list "((uint16_t)0x8000)" 7804 . 7822)))
+          ("PHY_LOOPBACK" . ((semantic-list "((uint16_t)0x4000)" 7882 . 7900)))
+          ("PHY_HALFDUPLEX_100M" . ((semantic-list "((uint16_t)0x2000)" 8077 . 8095)))
+          ("PHY_RESTART_AUTONEGOTIATION" . ((semantic-list "((uint16_t)0x0200)" 8497 . 8515)))
+          ("HAL_I2S_MODULE_ENABLED")
+          ("HSI_VALUE" . ((semantic-list "((uint32_t)8000000)" 4826 . 4845)))
+          ("USE_RTOS" . ((number "0" 5931 . 5932)))
+          ("PHY_MICR" . ((semantic-list "((uint16_t)0x11)" 9288 . 9304)))
+          ("TICK_INT_PRIORITY" . ((semantic-list "((uint32_t)0)" 5811 . 5824)))
+          ("ETH_TXBUFNB" . ((semantic-list "((uint32_t)4)" 6969 . 6982)))
+          ("PHY_POWERDOWN" . ((semantic-list "((uint16_t)0x0800)" 8602 . 8620)))
+          ("HAL_GPIO_MODULE_ENABLED")
+          ("PHY_RESET_DELAY" . ((semantic-list "((uint32_t)0x000000FF)" 7269 . 7291)))
+          ("PHY_HALFDUPLEX_10M" . ((semantic-list "((uint16_t)0x0000)" 8287 . 8305)))
+          ("PHY_AUTONEGOTIATION" . ((semantic-list "((uint16_t)0x1000)" 8392 . 8410)))
+          ("PHY_MICR_INT_OE" . ((semantic-list "((uint16_t)0x0001)" 9987 . 10005)))
+          )
+)
+    (semanticdb-table "mxconstants.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__MXCONSTANT_H" variable (:constant-flag t) nil [2076 2090]))          
+      :file "mxconstants.h"
+      :pointmax 2538
+      :fsize 2594
+      :lastmodtime '(22437 61407 881295 473000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__MXCONSTANT_H")
+          )
+))
+  :file "!home!lyra!b!stm32!dac!Inc!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

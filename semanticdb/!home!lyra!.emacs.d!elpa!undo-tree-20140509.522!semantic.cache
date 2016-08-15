@@ -1,0 +1,313 @@
+;; Object undo-tree-20140509.522/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "undo-tree-20140509.522/"
+  :tables
+  (list
+    (semanticdb-table "undo-tree.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [30522 30535])
+            ("diff" include nil nil [30537 30552])
+            ("unless" code nil nil [30740 30809])
+            ("unless" code nil nil [30869 30971])
+            ("unless" code nil nil [31036 31123])
+            ("unless" code nil nil [31125 31199])
+            ("unless" code nil nil [31325 33532])
+            ("unless" code nil nil [33534 33844])
+            ("unless" code nil nil [33893 34223])
+            ("buffer-undo-tree" variable nil nil [34365 34438])
+            ("put" code nil nil [34439 34481])
+            ("make-variable-buffer-local" code nil nil [34482 34528])
+            ("undo-tree" customgroup (:user-visible-flag t) nil [34531 34590])
+            ("undo-tree-mode-lighter" variable (:default-value " Undo-Tree") nil [34592 34744])
+            ("undo-tree-incompatible-major-modes" variable (:default-value (quote (term-mode))) nil [34747 34958])
+            ("undo-tree-enable-undo-in-region" variable (:default-value t) nil [34961 35293])
+            ("undo-tree-auto-save-history" variable nil nil [35296 36273])
+            ("undo-tree-history-directory-alist" variable nil nil [36276 37345])
+            ("undo-tree-visualizer-relative-timestamps" variable (:default-value t) nil [37349 37576])
+            ("undo-tree-visualizer-timestamps" variable nil nil [37579 37912])
+            ("undo-tree-visualizer-diff" variable nil nil [37915 38223])
+            ("undo-tree-visualizer-lazy-drawing" variable (:default-value 100) nil [38226 39210])
+            ("undo-tree-visualizer-default-face" variable
+               (:default-value (quote ((((class color)) :foreground "gray")))
+                :type "face")
+                nil [39213 39365])
+            ("undo-tree-visualizer-current-face" variable
+               (:default-value (quote ((((class color)) :foreground "red")))
+                :type "face")
+                nil [39367 39536])
+            ("undo-tree-visualizer-active-branch-face" variable
+               (:default-value (quote ((((class color) (background dark)) (:foreground "white" :weight bold)) (((class color) (background light)) (:foreground "black" :weight bold))))
+                :type "face")
+                nil [39538 39835])
+            ("undo-tree-visualizer-register-face" variable
+               (:default-value (quote ((((class color)) :foreground "yellow")))
+                :type "face")
+                nil [39837 40023])
+            ("undo-tree-visualizer-unmodified-face" variable
+               (:default-value (quote ((((class color)) :foreground "cyan")))
+                :type "face")
+                nil [40025 40217])
+            ("undo-tree-visualizer-parent-buffer" variable nil nil [40220 40300])
+            ("put" code nil nil [40301 40361])
+            ("make-variable-buffer-local" code nil nil [40362 40426])
+            ("undo-tree-visualizer-parent-mtime" variable nil nil [40488 40534])
+            ("put" code nil nil [40535 40594])
+            ("make-variable-buffer-local" code nil nil [40595 40658])
+            ("undo-tree-visualizer-spacing" variable nil nil [40726 40767])
+            ("put" code nil nil [40768 40822])
+            ("make-variable-buffer-local" code nil nil [40823 40881])
+            ("undo-tree-visualizer-calculate-spacing" function nil nil [40966 41120])
+            ("undo-tree-visualizer-initial-node" variable nil nil [41181 41227])
+            ("put" code nil nil [41228 41287])
+            ("make-variable-buffer-local" code nil nil [41288 41351])
+            ("undo-tree-visualizer-selected-node" variable nil nil [41415 41462])
+            ("put" code nil nil [41463 41523])
+            ("make-variable-buffer-local" code nil nil [41524 41583])
+            ("undo-tree-visualizer-needs-extending-down" variable nil nil [41651 41705])
+            ("put" code nil nil [41706 41773])
+            ("make-variable-buffer-local" code nil nil [41774 41845])
+            ("undo-tree-visualizer-needs-extending-up" variable nil nil [41846 41898])
+            ("put" code nil nil [41899 41964])
+            ("make-variable-buffer-local" code nil nil [41965 42034])
+            ("undo-tree-inhibit-kill-visualizer" variable nil nil [42165 42211])
+            ("undo-tree-insert-face" variable nil nil [42275 42309])
+            ("undo-tree-visualizer-buffer-name" variable
+               (:constant-flag t
+                :default-value " *undo-tree*")
+                nil [42338 42396])
+            ("undo-tree-diff-buffer-name" variable
+               (:constant-flag t
+                :default-value "*undo-tree Diff*")
+                nil [42397 42453])
+            ("add-hook" code nil nil [42490 42551])
+            ("add-hook" code nil nil [42552 42607])
+            ("undo-tree-map" variable nil nil [42729 42790])
+            ("unless" code nil nil [42792 43776])
+            ("undo-tree-visualizer-mode-map" variable nil nil [43779 43862])
+            ("unless" code nil nil [43864 46582])
+            ("undo-tree-visualizer-selection-mode-map" variable nil nil [46585 46693])
+            ("unless" code nil nil [46695 49015])
+            ("undo-tree-old-undo-menu-item" variable nil nil [49018 49059])
+            ("undo-tree-update-menu-bar" function nil nil [49061 50277])
+            ("add-hook" code nil nil [50279 50338])
+            ("undo-tree" type
+               (:members ("root" "current" "size" "count" "object-pool")
+                :type "struct")
+                nil [50469 50836])
+            ("undo-tree-node" type
+               (:members ("previous" "next" "undo" "redo" "timestamp" "branch" "meta-data")
+                :type "struct")
+                nil [50840 51433])
+            ("undo-tree-node-p" function (:arguments ("n")) nil [51436 51567])
+            ("undo-tree-region-data" type
+               (:members ("undo-beginning" "undo-end" "redo-beginning" "redo-end")
+                :type "struct")
+                nil [51571 52015])
+            ("undo-tree-region-data-p" function (:arguments ("r")) nil [52018 52155])
+            ("undo-tree-node-clear-region-data" function (:arguments ("node")) nil [52157 52354])
+            ("undo-tree-node-undo-beginning" function (:arguments ("node")) nil [52357 52560])
+            ("undo-tree-node-undo-end" function (:arguments ("node")) nil [52562 52753])
+            ("undo-tree-node-redo-beginning" function (:arguments ("node")) nil [52755 52958])
+            ("undo-tree-node-redo-end" function (:arguments ("node")) nil [52960 53151])
+            ("defsetf" code nil nil [53154 53521])
+            ("defsetf" code nil nil [53523 53878])
+            ("defsetf" code nil nil [53880 54247])
+            ("defsetf" code nil nil [54249 54604])
+            ("undo-tree-visualizer-data" type
+               (:members ("lwidth" "cwidth" "rwidth" "marker")
+                :type "struct")
+                nil [54608 54854])
+            ("undo-tree-visualizer-data-p" function (:arguments ("v")) nil [54857 55002])
+            ("undo-tree-node-clear-visualizer-data" function (:arguments ("node")) nil [55004 55337])
+            ("undo-tree-node-lwidth" function (:arguments ("node")) nil [55339 55538])
+            ("undo-tree-node-cwidth" function (:arguments ("node")) nil [55540 55739])
+            ("undo-tree-node-rwidth" function (:arguments ("node")) nil [55741 55940])
+            ("undo-tree-node-marker" function (:arguments ("node")) nil [55942 56141])
+            ("defsetf" code nil nil [56144 56515])
+            ("defsetf" code nil nil [56517 56888])
+            ("defsetf" code nil nil [56890 57261])
+            ("defsetf" code nil nil [57263 57634])
+            ("undo-tree-register-data" type
+               (:members ("buffer" "node")
+                :type "struct")
+                nil [57638 57792])
+            ("undo-tree-register-data-p" function (:arguments ("data")) nil [57794 57946])
+            ("undo-tree-register-data-print-func" function (:arguments ("data")) nil [57948 58092])
+            ("undo-tree-node-register" function (:arguments ("node")) nil [58094 58193])
+            ("defsetf" code nil nil [58195 58346])
+            ("undo-tree-grow" function (:arguments ("undo")) nil [58485 58781])
+            ("undo-tree-grow-backwards" function (:arguments ("node" "undo" "redo")) nil [58784 59181])
+            ("undo-tree-splice-node" function (:arguments ("node" "splice")) nil [59184 59778])
+            ("undo-tree-snip-node" function (:arguments ("node")) nil [59781 61250])
+            ("undo-tree-mapc" function (:arguments ("--undo-tree-mapc-function--" "node")) nil [61253 61547])
+            ("undo-tree-num-branches" function nil nil [61550 61714])
+            ("undo-tree-position" function (:arguments ("node" "list")) nil [61717 62081])
+            ("*undo-tree-id-counter*" variable nil nil [62084 62117])
+            ("make-variable-buffer-local" code nil nil [62118 62170])
+            ("undo-tree-generate-id" function nil nil [62172 62489])
+            ("undo-tree-decircle" function (:arguments ("undo-tree")) nil [62492 62789])
+            ("undo-tree-recircle" function (:arguments ("undo-tree")) nil [62792 63090])
+            ("undo-list-marker-elt-p" function (:arguments ("elt")) nil [63234 63302])
+            ("undo-list-GCd-marker-elt-p" function (:arguments ("elt")) nil [63304 63984])
+            ("undo-tree-move-GC-elts-to-pool" function (:arguments ("elt")) nil [63987 64413])
+            ("undo-tree-restore-GC-elts-from-pool" function (:arguments ("elt")) nil [64416 64803])
+            ("undo-list-clean-GCd-elts" function (:arguments ("undo-list")) nil [64806 65408])
+            ("undo-list-pop-changeset" function (:arguments ("discard-pos")) nil [65411 66483])
+            ("undo-tree-copy-list" function (:arguments ("undo-list")) nil [66486 67323])
+            ("undo-list-transfer-to-tree" function nil nil [67327 69743])
+            ("undo-list-byte-size" function (:arguments ("undo-list")) nil [69746 70052])
+            ("undo-list-rebuild-from-tree" function nil nil [70056 71304])
+            ("undo-tree-oldest-leaf" function (:arguments ("node")) nil [71441 71814])
+            ("undo-tree-discard-node" function (:arguments ("node")) nil [71817 74934])
+            ("undo-tree-discard-history" function nil nil [74938 78500])
+            ("undo-tree-compute-widths" function (:arguments ("node")) nil [78632 79363])
+            ("undo-tree-node-compute-widths" function (:arguments ("node")) nil [79366 82254])
+            ("undo-tree-clear-visualizer-data" function (:arguments ("tree")) nil [82257 82443])
+            ("undo-tree-node-unmodified-p" function (:arguments ("node" "mtime")) nil [82446 83298])
+            ("undo-adjusted-markers" variable nil nil [83500 83534])
+            ("undo-tree-pull-undo-in-region-branch" function (:arguments ("start" "end")) nil [83537 93454])
+            ("undo-tree-pull-redo-in-region-branch" function (:arguments ("start" "end")) nil [93458 100206])
+            ("undo-tree-adjust-elements-to-elt" function (:arguments ("node" "undo-elt" "below")) nil [100210 101219])
+            ("undo-tree-apply-deltas" function (:arguments ("undo-elt" "deltas" "sgn")) nil [101223 102399])
+            ("undo-tree-repeated-undo-in-region-p" function (:arguments ("start" "end")) nil [102403 102790])
+            ("undo-tree-repeated-redo-in-region-p" function (:arguments ("start" "end")) nil [102793 103096])
+            ("defalias" code nil nil [103204 103291])
+            ("defalias" code nil nil [103399 103486])
+            ("define-minor-mode" code nil nil [103628 104475])
+            ("turn-on-undo-tree-mode" function
+               (:user-visible-flag t
+                :arguments ("print-message"))
+                nil [104478 105549])
+            ("undo-tree-overridden-undo-bindings-p" function nil nil [105552 106330])
+            ("define-globalized-minor-mode" code nil nil [106348 106440])
+            ("undo-tree-undo" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [106444 107100])
+            ("undo-tree-undo-1" function (:arguments ("arg" "preserve-redo" "preserve-timestamps")) nil [107103 111262])
+            ("undo-tree-redo" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [111266 111880])
+            ("undo-tree-redo-1" function (:arguments ("arg" "preserve-undo" "preserve-timestamps")) nil [111883 116013])
+            ("undo-tree-switch-branch" function
+               (:user-visible-flag t
+                :arguments ("branch"))
+                nil [116017 117356])
+            ("undo-tree-set" function (:arguments ("node" "preserve-timestamps")) nil [117359 118999])
+            ("undo-tree-save-state-to-register" function
+               (:user-visible-flag t
+                :arguments ("register"))
+                nil [119031 119914])
+            ("undo-tree-restore-state-from-register" function
+               (:user-visible-flag t
+                :arguments ("register"))
+                nil [119918 120931])
+            ("undo-tree-make-history-save-file-name" function (:arguments ("file")) nil [121063 121637])
+            ("undo-tree-save-history" function
+               (:user-visible-flag t
+                :arguments ("filename" "overwrite"))
+                nil [121640 123662])
+            ("undo-tree-load-history" function
+               (:user-visible-flag t
+                :arguments ("filename" "noerror"))
+                nil [123666 125647])
+            ("undo-tree-save-history-hook" function nil nil [125703 125874])
+            ("undo-tree-load-history-hook" function nil nil [125876 126083])
+            ("undo-tree-visualize" function (:user-visible-flag t) nil [126216 127995])
+            ("undo-tree-kill-visualizer" function (:arguments ("_dummy")) nil [127998 128363])
+            ("undo-tree-draw-tree" function (:arguments ("undo-tree")) nil [128367 130502])
+            ("undo-tree-extend-down" function (:arguments ("node" "bottom")) nil [130505 132206])
+            ("undo-tree-extend-up" function (:arguments ("node" "top")) nil [132209 134436])
+            ("undo-tree-expand-down" function (:arguments ("from" "to")) nil [134439 135480])
+            ("undo-tree-expand-up" function (:arguments ("from" "to")) nil [135483 137073])
+            ("undo-tree-highlight-active-branch" function (:arguments ("node" "end")) nil [137077 137575])
+            ("undo-tree-draw-node" function (:arguments ("node" "current")) nil [137578 139680])
+            ("undo-tree-draw-subtree" function (:arguments ("node" "active-branch")) nil [139683 145145])
+            ("undo-tree-node-char-lwidth" function (:arguments ("node")) nil [145148 145471])
+            ("undo-tree-node-char-rwidth" function (:arguments ("node")) nil [145474 145798])
+            ("undo-tree-insert" function (:arguments ("str" "arg")) nil [145801 146461])
+            ("undo-tree-move-down" function (:arguments ("arg")) nil [146464 147017])
+            ("undo-tree-move-up" function (:arguments ("arg")) nil [147020 147166])
+            ("undo-tree-move-forward" function (:arguments ("arg")) nil [147169 147949])
+            ("undo-tree-move-backward" function (:arguments ("arg")) nil [147952 148113])
+            ("undo-tree-move-to-parent" function (:arguments ("node")) nil [148116 149764])
+            ("undo-tree-timestamp-to-string" function (:arguments ("timestamp" "relative" "current" "register")) nil [149767 151029])
+            ("define-derived-mode" code nil nil [151157 151805])
+            ("undo-tree-visualize-undo" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [151809 152879])
+            ("undo-tree-visualize-redo" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [152882 153989])
+            ("undo-tree-visualize-switch-branch-right" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [153992 155297])
+            ("undo-tree-visualize-switch-branch-left" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [155300 155591])
+            ("undo-tree-visualizer-quit" function (:user-visible-flag t) nil [155594 156332])
+            ("undo-tree-visualizer-abort" function (:user-visible-flag t) nil [156335 156567])
+            ("undo-tree-visualizer-set" function
+               (:user-visible-flag t
+                :arguments ("pos"))
+                nil [156570 157287])
+            ("undo-tree-visualizer-mouse-set" function
+               (:user-visible-flag t
+                :arguments ("pos"))
+                nil [157290 157486])
+            ("undo-tree-visualize-undo-to-x" function
+               (:user-visible-flag t
+                :arguments ("x"))
+                nil [157489 159393])
+            ("undo-tree-visualize-redo-to-x" function
+               (:user-visible-flag t
+                :arguments ("x"))
+                nil [159396 161292])
+            ("undo-tree-visualizer-toggle-timestamps" function (:user-visible-flag t) nil [161295 161641])
+            ("undo-tree-visualizer-scroll-left" function (:arguments ("arg")) nil [161644 161749])
+            ("undo-tree-visualizer-scroll-right" function (:arguments ("arg")) nil [161752 161859])
+            ("undo-tree-visualizer-scroll-up" function (:arguments ("arg")) nil [161862 162427])
+            ("undo-tree-visualizer-scroll-down" function (:arguments ("arg")) nil [162430 163337])
+            ("define-minor-mode" code nil nil [163467 164382])
+            ("undo-tree-visualizer-select-previous" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [164385 165177])
+            ("undo-tree-visualizer-select-next" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [165180 166046])
+            ("undo-tree-visualizer-select-right" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [166049 166860])
+            ("undo-tree-visualizer-select-left" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [166863 167688])
+            ("undo-tree-visualizer-select" function (:arguments ("pos")) nil [167691 168392])
+            ("undo-tree-visualizer-mouse-select" function
+               (:user-visible-flag t
+                :arguments ("pos"))
+                nil [168395 168567])
+            ("undo-tree-visualizer-toggle-diff" function (:user-visible-flag t) nil [168697 168914])
+            ("undo-tree-visualizer-selection-toggle-diff" function (:user-visible-flag t) nil [168917 169241])
+            ("undo-tree-visualizer-show-diff" function (:arguments ("node")) nil [169244 169621])
+            ("undo-tree-visualizer-hide-diff" function nil nil [169624 169868])
+            ("undo-tree-diff" function (:arguments ("node")) nil [169871 170884])
+            ("undo-tree-visualizer-update-diff" function (:arguments ("node")) nil [170887 171301])
+            ("undo-tree" package nil nil [171305 171325]))          
+      :file "undo-tree.el"
+      :pointmax 171354
+      :fsize 171353
+      :lastmodtime '(22386 44895 560532 432000)
+      :unmatched-syntax '((close-paren 30535 . 30536) (symbol 30504 . 30521) (open-paren 30503 . 30504))))
+  :file "!home!lyra!.emacs.d!elpa!undo-tree-20140509.522!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

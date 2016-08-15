@@ -1,0 +1,84 @@
+;; Object contrib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "contrib/"
+  :tables
+  (list
+    (semanticdb-table "semantic-tag-folding.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("semantic/decorate/mode" include nil nil [3120 3153])
+            ("cl" include nil nil [3173 3186])
+            ("when" code nil nil [3319 3949])
+            ("when" code nil nil [4067 4509])
+            ("global-semantic-tag-folding-mode" variable (:user-visible-flag t) nil [4526 4986])
+            ("define-minor-mode" code nil nil [5003 5344])
+            ("semantic-tag-folding-mode-hook" variable (:user-visible-flag t) nil [5346 5491])
+            ("semantic-tag-folding-mode-map" variable (:default-value (let ((km (make-sparse-keymap))) (define-key km [left-fringe mouse-1] (quote semantic-tag-folding-click)) km)) nil [5495 5681])
+            ("semantic-tag-folding-mode" variable nil nil [5683 5836])
+            ("make-variable-buffer-local" code nil nil [5838 5893])
+            ("semantic-tag-folding-decoration-mode-hook-enabled" variable (:default-value t) nil [5895 6099])
+            ("semantic-tag-folding-saved-decoration-styles" variable nil nil [6102 6210])
+            ("make-variable-buffer-local" code nil nil [6211 6285])
+            ("semantic-tag-folding-decoration-style" variable (:default-value (quote (("semantic-tag-folding" . t)))) nil [6287 6469])
+            ("semantic-tag-folding-mode-setup" function nil nil [6471 8637])
+            ("add-hook" code nil nil [8639 8723])
+            ("semantic-tag-folding-decoration-mode-hook" function nil nil [8725 10382])
+            ("define-minor-mode" code nil nil [10399 11279])
+            ("semantic-add-minor-mode" code nil nil [11281 11340])
+            ("define-semantic-decoration-style" code nil nil [11343 11425])
+            ("make-variable-buffer-local" code nil nil [11637 11693])
+            ("semantic-tag-folding-allow-folding-of" variable (:default-value (quote ((type) (function) (variable) (include) (comment) (package)))) nil [11696 13341])
+            ("make-variable-buffer-local" code nil nil [13342 13409])
+            ("semantic-tag-folding-tag-higlight-time" variable (:default-value 1) nil [13411 13668])
+            ("semantic-tag-folding-highlight-tags-shown-by-reveal-mode" variable nil nil [13670 13853])
+            ("semantic-tag-folding-show-tooltips" variable nil nil [13855 14315])
+            ("semantic-tag-folding-function" variable (:default-value (quote semantic-tag-folding-function-default)) nil [14317 14535])
+            ("semantic-tag-folding-set-fringe-image-style" function (:arguments ("symbol" "value")) nil [14537 17081])
+            ("semantic-tag-folding-fringe-image-style" variable (:default-value (quote triangles)) nil [17083 17418])
+            ("semantic-tag-folding-allow-folding-of" function (:arguments ("class")) nil [17420 17661])
+            ("semantic-tag-folding-hidden-by-default" function (:arguments ("class")) nil [17663 17831])
+            ("semantic-tag-folding-function-default" function (:arguments ("tag" "comment")) nil [17833 18588])
+            ("semantic-tag-folding-p-default" function (:arguments ("tag")) nil [18590 19342])
+            ("semantic-tag-folding-highlight-default" function (:arguments ("tag")) nil [19344 21858])
+            ("semantic-tag-folding-get-attribute-overlay" function (:arguments ("tag" "create-if-null")) nil [21861 22445])
+            ("semantic-tag-folding-get-folding-attribute" function (:arguments ("comment")) nil [22447 22742])
+            ("semantic-tag-folding-get-fold-state" function (:arguments ("tag" "comment")) nil [22744 23093])
+            ("semantic-tag-folding-set-fold-state" function (:arguments ("tag" "comment" "state")) nil [23095 23448])
+            ("semantic-tag-folding-create-folding-overlays" function (:arguments ("tag" "start" "end" "point" "comment")) nil [23451 26526])
+            ("semantic-tag-folding-fold-block" function (:user-visible-flag t) nil [26528 26718])
+            ("semantic-tag-folding-show-block" function
+               (:user-visible-flag t
+                :arguments ("ov"))
+                nil [26720 26951])
+            ("semantic-tag-folding-show-all" function (:user-visible-flag t) nil [26953 27135])
+            ("semantic-tag-folding-fold-all" function (:user-visible-flag t) nil [27137 27315])
+            ("semantic-tag-folding-show-children" function (:user-visible-flag t) nil [27317 27552])
+            ("semantic-tag-folding-fold-children" function (:user-visible-flag t) nil [27554 27787])
+            ("semantic-tag-folding-fold-or-show-tags" function (:arguments ("tags" "fold")) nil [27789 28103])
+            ("semantic-tag-folding-get-overlay" function nil nil [28105 28583])
+            ("semantic-tag-folding-set-overlay-visibility" function (:arguments ("ov" "fold" "called-by-reveal-mode")) nil [28585 29981])
+            ("put" code nil nil [30069 30180])
+            ("semantic-tag-folding-set-overlay-visibility-for-reveal-mode" function (:arguments ("ov" "fold")) nil [30182 30636])
+            ("semantic-tag-folding-highlight-overlay" function (:arguments ("ov")) nil [30638 31760])
+            ("semantic-tag-folding-click" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [31762 32472])
+            ("semantic-tag-folding" package nil nil [32474 32505]))          
+      :file "semantic-tag-folding.el"
+      :pointmax 32544
+      :fsize 32543
+      :lastmodtime '(22436 31432 234422 178000)
+      :unmatched-syntax '((close-paren 3186 . 3187) (symbol 3155 . 3172) (open-paren 3154 . 3155)))
+    (semanticdb-table "Project.ede"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede-proj-project" code nil nil [72 1677]))          
+      :file "Project.ede"
+      :pointmax 1678
+      :fsize 1677
+      :lastmodtime '(22436 31432 230422 178000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!cedet!contrib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

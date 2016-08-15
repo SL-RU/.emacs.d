@@ -1,0 +1,31 @@
+;; Object company-irony-20160613.1120/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "company-irony-20160613.1120/"
+  :tables
+  (list
+    (semanticdb-table "company-irony.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("irony-completion" include nil nil [1194 1221])
+            ("company" include nil nil [1223 1241])
+            ("cl-lib" include nil nil [1243 1260])
+            ("company-irony" customgroup (:user-visible-flag t) nil [1262 1372])
+            ("company-irony-ignore-case" variable nil nil [1374 1498])
+            ("company-irony--irony-candidate" function (:arguments ("candidate")) nil [1500 1602])
+            ("company-irony-prefix" function nil nil [1604 1984])
+            ("company-irony--filter-candidates" function (:arguments ("prefix" "candidates")) nil [1986 2275])
+            ("company-irony--candidates-async" function (:arguments ("prefix" "callback")) nil [2277 2483])
+            ("company-irony--candidates" function (:arguments ("prefix")) nil [2485 2868])
+            ("company-irony--annotation" function (:arguments ("candidate")) nil [2870 3089])
+            ("company-irony--post-completion" function (:arguments ("candidate")) nil [3091 4360])
+            ("company-irony" function (:arguments ("command" "arg" "ignored")) nil [4377 5007])
+            ("company-irony-setup-begin-commands" function nil nil [5024 5677])
+            ("company-irony" package nil nil [5679 5703]))          
+      :file "company-irony.el"
+      :pointmax 5735
+      :fsize 5734
+      :lastmodtime '(22433 51550 783016 669000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!elpa!company-irony-20160613.1120!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

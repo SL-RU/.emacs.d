@@ -1,0 +1,1654 @@
+;; Object bongo-20160623.1058/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "bongo-20160623.1058/"
+  :tables
+  (list
+    (semanticdb-table "bongo.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("rx" include nil nil [1385 1398])
+            ("dired" include nil nil [1401 1417])
+            ("volume" include nil nil [1474 1505])
+            ("cl-lib" include nil nil [1547 1564])
+            ("lastfm-submit" include nil nil [1677 1715])
+            ("declare-function" code nil nil [1717 1772])
+            ("bongo" customgroup (:user-visible-flag t) nil [1774 1891])
+            ("with-bongo-buffer" function (:arguments ("body")) nil [1919 2328])
+            ("with-temp-bongo-playlist-buffer" function (:arguments ("body")) nil [2330 2605])
+            ("with-temp-bongo-library-buffer" function (:arguments ("body")) nil [2607 2879])
+            ("with-bongo-library-buffer" function (:arguments ("body")) nil [2881 3332])
+            ("with-bongo-playlist-buffer" function (:arguments ("body")) nil [3334 3791])
+            ("with-point-at-bongo-track" function (:arguments ("point" "body")) nil [3793 4394])
+            ("bongo-player-start-imminent" variable nil nil [4396 4599])
+            ("bongo-deferred-status-indicator-updates" variable nil nil [4601 4869])
+            ("with-imminent-bongo-player-start" function (:arguments ("body")) nil [4871 5491])
+            ("bongo-ignore-movement-errors" function (:arguments ("body")) nil [5493 5774])
+            ("bongo-until" function (:arguments ("test" "body")) nil [5776 6225])
+            ("bongo-title" variable nil nil [6253 6336])
+            ("bongo-year" variable nil nil [6338 6419])
+            ("bongo-album" variable nil nil [6421 6506])
+            ("bongo-infoset" variable nil nil [6508 6585])
+            ("bongo-target" variable nil nil [6587 6661])
+            ("bongo-line" variable nil nil [6663 6740])
+            ("bongo-index" variable nil nil [6742 6834])
+            ("bongo-length" variable nil nil [6836 6930])
+            ("bongo-track" variable nil nil [6932 7025])
+            ("bongo-sprinkle-mode" variable nil nil [7027 7197])
+            ("bongo-backends" variable (:default-value (quote nil)) nil [7231 7420])
+            ("bongo-backend-matchers" variable (:default-value (quote nil)) nil [7422 7558])
+            ("bongo-player" variable nil nil [7560 7692])
+            ("make-variable-buffer-local" code nil nil [7693 7735])
+            ("bongo-seek-buffer" variable nil nil [7737 7822])
+            ("bongo-library-buffer" variable nil nil [7824 8120])
+            ("bongo-playlist-buffer" variable nil nil [8122 8424])
+            ("bongo-enabled-backends" variable nil nil [8459 8536])
+            ("bongo-custom-backend-matchers" variable nil nil [8538 8622])
+            ("bongo-evaluate-backend-defcustoms" function nil nil [8624 12312])
+            ("bongo-evaluate-backend-defcustoms" code nil nil [12314 12349])
+            ("bongo-default-directory" variable nil nil [12351 12638])
+            ("bongo-prefer-library-buffers" variable (:default-value t) nil [12640 13316])
+            ("bongo-display-playlist-after-enqueue" variable (:default-value t) nil [13318 13462])
+            ("bongo-mark-played-tracks" variable nil nil [13464 13949])
+            ("bongo-confirm-flush-playlist" variable (:default-value t) nil [13951 14298])
+            ("bongo-default-playlist-buffer-name" variable (:default-value "*Bongo Playlist*") nil [14300 14448])
+            ("bongo-default-library-buffer-name" variable (:default-value "*Bongo Library*") nil [14450 14595])
+            ("bongo-next-action" variable (:default-value (quote bongo-play-next-or-stop)) nil [14597 15256])
+            ("make-variable-buffer-local" code nil nil [15257 15304])
+            ("bongo-stored-next-action" variable nil nil [15306 15431])
+            ("bongo-file-names" customgroup (:user-visible-flag t) nil [15433 15713])
+            ("bongo-file-name-field-separator" variable (:default-value " - ") nil [15715 16322])
+            ("bongo-file-name-album-year-regexp" variable (:default-value "\\`\\([0-9]\\{4\\}\\|'?[0-9]\\{2\\}\\)\\'") nil [16324 16547])
+            ("bongo-file-name-track-index-regexp" variable (:default-value "\\`[0-9]+\\'") nil [16549 16744])
+            ("bongo-album-cover-file-names" variable (:default-value (quote ("cover.jpg" "cover.jpeg" "cover.png" "front.jpg" "front.jpeg" "front.png" "album.jpg" "album.jpeg" "album.png"))) nil [16746 17065])
+            ("bongo-update-references-to-renamed-files" variable (:default-value (quote ask)) nil [17067 17564])
+            ("bongo-format-string" function (:arguments ("format")) nil [17566 17695])
+            ("bongo-display" customgroup (:user-visible-flag t) nil [17697 17792])
+            ("bongo-field-separator" variable (:default-value (if (and (fboundp (quote char-displayable-p)) (char-displayable-p 8212)) " —— " " -- ")) nil [17794 18215])
+            ("bongo-insert-album-covers" variable nil nil [18217 18444])
+            ("bongo-join-inserted-tracks" variable (:default-value t) nil [18446 18633])
+            ("bongo-insert-intermediate-headers" variable nil nil [18635 19853])
+            ("bongo-album-function" variable (:default-value (quote bongo-default-album)) nil [19855 20549])
+            ("bongo-default-album" function nil nil [20551 20663])
+            ("bongo-display-track-lengths" variable (:default-value t) nil [20665 20849])
+            ("bongo-track-length-column" variable (:default-value 60) nil [20851 21042])
+            ("bongo-track-function" variable (:default-value (quote bongo-default-track)) nil [21044 21787])
+            ("bongo-indentation-string" variable (:default-value "  ") nil [21789 21935])
+            ("bongo-default-track" function nil nil [21937 22615])
+            ("bongo-track-length-function" variable (:default-value (quote bongo-default-track-length)) nil [22617 23220])
+            ("bongo-default-track-length" function nil nil [23222 23314])
+            ("bongo-action-format" variable (:default-value (quote ("Action: " bongo-action-description))) nil [23316 23904])
+            ("bongo-stream-format" variable (:default-value (quote ((or bongo-uri-title bongo-stream-name bongo-uri) (when bongo-stream-genre (concat " (" bongo-stream-genre ")")) (when bongo-stream-part-title (concat ": " bongo-stream-part-title))))) nil [23906 24818])
+            ("bongo-track-line-format" variable (:default-value (quote ((bongo-format-infoset bongo-internal-infoset)))) nil [24820 25402])
+            ("bongo-display-header-icons" variable (:default-value t) nil [25404 25549])
+            ("bongo-expanded-header-icon" variable (:default-value "expanded-header-icon.png") nil [25551 25784])
+            ("bongo-collapsed-header-icon" variable (:default-value "collapsed-header-icon.png") nil [25786 26022])
+            ("bongo-expanded-header-format" variable (:default-value "[%s]") nil [26024 26270])
+            ("bongo-collapsed-header-format" variable (:default-value "[%s ...]") nil [26272 26524])
+            ("bongo-section-header-line-format" variable (:default-value (quote ((if (and bongo-display-header-icons (display-images-p)) (bongo-format-infoset bongo-internal-infoset) (format (if bongo-collapsed bongo-collapsed-header-format bongo-expanded-header-format) (bongo-format-infoset bongo-internal-infoset)))))) nil [26526 27481])
+            ("bongo-track-icons" customgroup (:user-visible-flag t) nil [27483 27584])
+            ("bongo-display-track-icons" variable (:default-value t) nil [27586 27757])
+            ("bongo-unknown-local-file-track-icon" variable (:default-value "unknown-local-file-track-icon.png") nil [27759 27979])
+            ("bongo-local-audio-file-track-icon" variable (:default-value "local-audio-file-track-icon.png") nil [27981 28290])
+            ("bongo-local-video-file-track-icon" variable (:default-value "local-video-file-track-icon.png") nil [28292 28589])
+            ("bongo-audio-cd-track-icon" variable (:default-value "audio-cd-track-icon.png") nil [28591 28870])
+            ("bongo-uri-track-icon" variable (:default-value "uri-track-icon.png") nil [28872 29081])
+            ("bongo-action-track-icon" variable (:default-value "action-track-icon.png") nil [29083 29301])
+            ("bongo-currently-playing-track-icon" variable nil nil [29303 29554])
+            ("bongo-played-track-icon" variable nil nil [29556 29793])
+            ("bongo-images-directory" variable
+               (:constant-flag t
+                :default-value (or (expand-file-name "images" (file-name-directory load-file-name)) (error "Please use `load-file' to load bongo.el")))
+                nil [29795 29956])
+            ("bongo-find-image" function (:arguments ("file-name" "face")) nil [29958 30546])
+            ("bongo-make-image-string" function (:arguments ("image")) nil [30548 30679])
+            ("bongo-make-image-placeholder-string" function (:arguments ("image")) nil [30681 30955])
+            ("bongo-line-icon-string" function nil nil [30957 32577])
+            ("bongo-header-line" customgroup (:user-visible-flag t) nil [32579 32706])
+            ("bongo-header-line-mode" variable (:default-value t) nil [32708 32923])
+            ("bongo-header-line-playing-string" variable (:default-value "Playing:") nil [32925 33090])
+            ("bongo-header-line-paused-string" variable (:default-value "Paused: ") nil [33092 33255])
+            ("bongo-header-line-playback-status" function nil nil [33257 33495])
+            ("bongo-header-line-function" variable (:default-value (quote bongo-default-header-line-function)) nil [33497 33714])
+            ("bongo-default-header-line-function" function nil nil [33716 33901])
+            ("bongo-header-line-string" variable nil nil [33903 34083])
+            ("make-variable-buffer-local" code nil nil [34084 34138])
+            ("put" code nil nil [34139 34194])
+            ("bongo-update-header-line-string" function (:arguments ("dummy")) nil [34196 35768])
+            ("bongo-header-line-mode" function
+               (:user-visible-flag t
+                :arguments ("argument" "called-interactively-p"))
+                nil [35770 36802])
+            ("bongo-mode-line" customgroup (:user-visible-flag t) nil [36804 36917])
+            ("bongo-display-playback-mode-indicator" variable (:default-value t) nil [36919 37287])
+            ("bongo-mode-line-indicator-mode" variable (:default-value t) nil [37289 37558])
+            ("bongo-player-times-last-updated" variable nil nil [37560 37692])
+            ("bongo-hyphen-padded-mode-line-p" function nil nil [37694 38021])
+            ("bongo-mode-line-pad-string" function nil nil [38023 38280])
+            ("bongo-mode-line-indicator-function" variable (:default-value (quote bongo-default-mode-line-indicator-function)) nil [38282 38523])
+            ("bongo-default-mode-line-indicator-function" function nil nil [38525 39342])
+            ("bongo-mode-line-indicator-parent" variable (:default-value (quote global-mode-string)) nil [39344 39669])
+            ("bongo-mode-line-icon-color" variable (:default-value (face-foreground (quote mode-line) nil (quote default))) nil [39671 39831])
+            ("bongo-mode-line-playing-string" variable (:default-value "Playing") nil [39833 39982])
+            ("bongo-mode-line-paused-string" variable (:default-value "Paused") nil [39984 40132])
+            ("bongo-mode-line-pause-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *pause_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 18     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"..................\",
+\"..................\",
+\"..................\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"...####....####...\",
+\"..................\",
+\"..................\",
+\"..................\"
+};")))))) nil [40134 40939])
+            ("bongo-mode-line-pause-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *pause_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 10     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"..........\",
+\"..........\",
+\"..##..##..\",
+\"..##..##..\",
+\"..##..##..\",
+\"..##..##..\",
+\"..##..##..\",
+\"..##..##..\",
+\"..##..##..\",
+\"..........\",
+\"..........\"};")))))) nil [40941 41489])
+            ("bongo-mode-line-resume-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *resume_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 18     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"..................\",
+\"..................\",
+\"......##..........\",
+\"......###.........\",
+\"......####........\",
+\"......#####.......\",
+\"......######......\",
+\"......#######.....\",
+\"......########....\",
+\"......########....\",
+\"......#######.....\",
+\"......######......\",
+\"......#####.......\",
+\"......####........\",
+\"......###.........\",
+\"......##..........\",
+\"..................\",
+\"..................\"
+};")))))) nil [41491 42299])
+            ("bongo-mode-line-resume-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *resume_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 10     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"..........\",
+\"...#......\",
+\"...##.....\",
+\"...###....\",
+\"...####...\",
+\"...#####..\",
+\"...####...\",
+\"...###....\",
+\"...##.....\",
+\"...#......\",
+\"..........\"
+};")))))) nil [42301 42853])
+            ("bongo-mode-line-stop-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *stop_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 18     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"..................\",
+\"..................\",
+\"..................\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"...############...\",
+\"..................\",
+\"..................\",
+\"..................\"
+};")))))) nil [42855 43657])
+            ("bongo-mode-line-stop-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *stop_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 10     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"..........\",
+\"..........\",
+\"..######..\",
+\"..######..\",
+\"..######..\",
+\"..######..\",
+\"..######..\",
+\"..######..\",
+\"..######..\",
+\"..........\",
+\"..........\"};")))))) nil [43659 44204])
+            ("bongo-mode-line-previous-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *previous_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 20     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....###.......##....\",
+\"....###......###....\",
+\"....###.....####....\",
+\"....###....#####....\",
+\"....###...######....\",
+\"....###...######....\",
+\"....###....#####....\",
+\"....###.....####....\",
+\"....###......###....\",
+\"....###.......##....\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\"
+};")))))) nil [44206 45055])
+            ("bongo-mode-line-previous-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *previous_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 11     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"...........\",
+\"...........\",
+\"..##....#..\",
+\"..##...##..\",
+\"..##..###..\",
+\"..##.####..\",
+\"..##..###..\",
+\"..##...##..\",
+\"..##....#..\",
+\"...........\",
+\"...........\"
+};")))))) nil [45057 45626])
+            ("bongo-mode-line-next-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *next_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 20     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....##.......###....\",
+\"....###......###....\",
+\"....####.....###....\",
+\"....#####....###....\",
+\"....######...###....\",
+\"....######...###....\",
+\"....#####....###....\",
+\"....####.....###....\",
+\"....###......###....\",
+\"....##.......###....\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\"
+};")))))) nil [45628 46465])
+            ("bongo-mode-line-next-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *next_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 11     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"...........\",
+\"...........\",
+\"..#....##..\",
+\"..##...##..\",
+\"..###..##..\",
+\"..####.##..\",
+\"..###..##..\",
+\"..##...##..\",
+\"..#....##..\",
+\"...........\",
+\"...........\"
+};")))))) nil [46467 47024])
+            ("bongo-mode-line-backward-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *backward_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 20     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"......##......##....\",
+\".....###.....###....\",
+\"....####....####....\",
+\"...#####...#####....\",
+\"...#####...#####....\",
+\"....####....####....\",
+\".....###.....###....\",
+\"......##......##....\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\"
+};")))))) nil [47026 47874])
+            ("bongo-mode-line-backward-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *backward_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 11     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"...........\",
+\"...........\",
+\"...........\",
+\"....#...#..\",
+\"...##..##..\",
+\"..###.###..\",
+\"...##..##..\",
+\"....#...#..\",
+\"...........\",
+\"...........\",
+\"...........\"
+};")))))) nil [47876 48443])
+            ("bongo-mode-line-forward-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *forward_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 20     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....##......##......\",
+\"....###.....###.....\",
+\"....####....####....\",
+\"....#####...#####...\",
+\"....#####...#####...\",
+\"....####....####....\",
+\"....###.....###.....\",
+\"....##......##......\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\",
+\"....................\"
+};")))))) nil [48445 49297])
+            ("bongo-mode-line-forward-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *forward_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 11     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"...........\",
+\"...........\",
+\"...........\",
+\"..#...#....\",
+\"..##..##...\",
+\"..###.###..\",
+\"..##..##...\",
+\"..#...#....\",
+\"...........\",
+\"...........\",
+\"...........\"
+};")))))) nil [49299 49870])
+            ("bongo-mode-line-volume-icon-18" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *volume_18[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 20     18      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"....................\",
+\"....................\",
+\"........#...........\",
+\".......##....##.....\",
+\"......###.....##....\",
+\".....####...#..##...\",
+\"..#######...##.##...\",
+\"..#######.#..##.##..\",
+\"..#######..#.##.##..\",
+\"..#######..#.##.##..\",
+\"..#######.#..##.##..\",
+\"..#######...##.##...\",
+\".....####...#..##...\",
+\"......###.....##....\",
+\".......##....##.....\",
+\"........#...........\",
+\"....................\",
+\"....................\"
+};")))))) nil [49872 50716])
+            ("bongo-mode-line-volume-icon-11" variable (:default-value (quote (\` (image :type xpm :ascent center :data (\, (concat "/* XPM */
+static char *volume_11[] = {
+/* width  height  number of colors  number of characters per pixel */
+\" 11     11      2                 1\",
+/* colors */
+\"# c " bongo-mode-line-icon-color "\",
+\". c None\",
+/* pixels */
+\"...........\",
+\"...........\",
+\".....#.....\",
+\"....##.#...\",
+\"..####..#..\",
+\"..#####.#..\",
+\"..####..#..\",
+\"....##.#...\",
+\".....#.....\",
+\"...........\",
+\"...........\"
+};")))))) nil [50718 51281])
+            ("bongo-mode-line-start-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-start))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (if (bongo-buffer-p) (bongo-switch-buffers) (bongo))))))) nil [51283 51667])
+            ("bongo-mode-line-pause/resume-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-pause/resume))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (if (bongo-buffer-p) (bongo-switch-buffers) (bongo))))))) nil [51669 52067])
+            ("bongo-mode-line-stop-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-stop))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (if (bongo-buffer-p) (bongo-switch-buffers) (bongo))))))) nil [52069 52451])
+            ("bongo-mode-line-previous-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-play-previous))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (bongo-play-previous)))))) nil [52453 52791])
+            ("bongo-mode-line-next-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-play-next))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (bongo-play-next)))))) nil [52793 53119])
+            ("bongo-mode-line-backward-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-seek-backward-10))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (if (bongo-buffer-p) (bongo-switch-buffers) (bongo))))))) nil [53121 53519])
+            ("bongo-mode-line-forward-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-seek-forward-10))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (if (bongo-buffer-p) (bongo-switch-buffers) (bongo))))))) nil [53521 53917])
+            ("bongo-mode-line-backward/previous-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-seek-backward-10))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (bongo-previous)))))) nil [53919 54264])
+            ("bongo-mode-line-forward/next-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (bongo-seek-forward-10))) (define-key map [mode-line mouse-3] (lambda (e) (interactive "e") (bongo-next)))))) nil [54266 54601])
+            ("bongo-mode-line-volume-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map [mode-line mouse-1] (lambda (e) (interactive "e") (if volume-buffer (volume-quit) (volume)))) (define-key map [mode-line mouse-4] (lambda (e) (interactive "e") (volume-raise))) (define-key map [mode-line mouse-5] (lambda (e) (interactive "e") (volume-lower)))))) nil [54603 55095])
+            ("bongo-face-height" function (:arguments ("face-name")) nil [55097 55407])
+            ("bongo-face-width" function (:arguments ("face-name")) nil [55409 55717])
+            ("bongo-mode-line-icon-size" function nil nil [55719 55862])
+            ("bongo-mode-line-start-button" function nil nil [55864 57230])
+            ("bongo-mode-line-stop-button" function nil nil [57232 58076])
+            ("bongo-mode-line-start/stop-button" function nil nil [58078 58254])
+            ("bongo-mode-line-pause/resume-button" function nil nil [58256 59765])
+            ("bongo-mode-line-previous-button" function nil nil [59767 61011])
+            ("bongo-mode-line-next-button" function nil nil [61013 62229])
+            ("bongo-mode-line-backward-button" function nil nil [62231 63118])
+            ("bongo-mode-line-forward-button" function nil nil [63120 64008])
+            ("bongo-mode-line-backward/previous-button" function nil nil [64010 66262])
+            ("bongo-mode-line-forward/next-button" function nil nil [66264 68492])
+            ("bongo-mode-line-volume-button" function nil nil [68494 69483])
+            ("bongo-mode-line-indicator-string" variable nil nil [69485 69696])
+            ("put" code nil nil [69697 69760])
+            ("bongo-update-mode-line-indicator-string" function (:arguments ("dummy")) nil [69762 70371])
+            ("bongo-mode-line-indicator-mode" function
+               (:user-visible-flag t
+                :arguments ("argument" "called-interactively-p"))
+                nil [70373 71943])
+            ("bongo-infosets" customgroup (:user-visible-flag t) nil [71945 72033])
+            ("bongo-potential-external-fields" variable (:default-value (quote (artist album))) nil [72035 72337])
+            ("bongo-infoset-from-file-name-function" variable (:default-value (quote bongo-default-infoset-from-file-name)) nil [72339 73052])
+            ("bongo-file-name-from-infoset-function" variable (:default-value (quote bongo-default-file-name-from-infoset)) nil [73054 74035])
+            ("bongo-file-name-part-from-field-function" variable (:default-value (quote bongo-default-file-name-part-from-field)) nil [74037 74327])
+            ("bongo-infoset-formatting-function" variable (:default-value (quote bongo-default-format-infoset)) nil [74329 74542])
+            ("bongo-field-formatting-function" variable (:default-value (quote bongo-default-format-field)) nil [74544 74804])
+            ("bongo-faces" customgroup (:user-visible-flag t) nil [74806 74873])
+            ("bongo-comment" variable
+               (:default-value (quote ((t (:inherit font-lock-comment-face))))
+                :type "face")
+                nil [74875 75008])
+            ("bongo-warning" variable
+               (:default-value (quote ((t (:inherit font-lock-warning-face))))
+                :type "face")
+                nil [75010 75143])
+            ("bongo-artist" variable
+               (:default-value (quote ((t (:inherit font-lock-keyword-face))))
+                :type "face")
+                nil [75145 75270])
+            ("bongo-album" variable
+               (:default-value (quote ((t nil)))
+                :type "face")
+                nil [75272 75389])
+            ("bongo-album-title" variable
+               (:default-value (quote ((t (:inherit (font-lock-type-face bongo-album)))))
+                :type "face")
+                nil [75391 75532])
+            ("bongo-album-year" variable
+               (:default-value (quote ((t (:inherit bongo-album))))
+                :type "face")
+                nil [75534 75651])
+            ("bongo-track" variable
+               (:default-value (quote ((t nil)))
+                :type "face")
+                nil [75653 75779])
+            ("bongo-track-title" variable
+               (:default-value (quote ((t (:inherit (font-lock-function-name-face bongo-track)))))
+                :type "face")
+                nil [75781 75931])
+            ("bongo-track-index" variable
+               (:default-value (quote ((t (:inherit bongo-track))))
+                :type "face")
+                nil [75933 76053])
+            ("bongo-track-length" variable
+               (:default-value (quote ((t (:inherit bongo-track))))
+                :type "face")
+                nil [76055 76176])
+            ("bongo-played-track" variable
+               (:default-value (quote ((t (:strike-through "#808080" :inherit bongo-track))))
+                :type "face")
+                nil [76178 76333])
+            ("bongo-elapsed-track-part" variable
+               (:default-value (quote ((t (:strike-through "#808080"))))
+                :type "face")
+                nil [76335 76501])
+            ("bongo-currently-playing-track" variable
+               (:default-value (quote ((t (:weight bold :inherit bongo-track))))
+                :type "face")
+                nil [76503 76662])
+            ("bongo-action-track" variable
+               (:default-value (quote ((t nil)))
+                :type "face")
+                nil [76664 76764])
+            ("bongo-action-track-description" variable
+               (:default-value (quote ((t (:weight bold :inherit (font-lock-builtin-face bongo-action-track)))))
+                :type "face")
+                nil [76766 76987])
+            ("bongo-action-track-expression" variable
+               (:default-value (quote ((t (:inherit bongo-action-track))))
+                :type "face")
+                nil [76989 77139])
+            ("bongo-format-infoset" function (:arguments ("infoset")) nil [77186 77389])
+            ("bongo-infoset-formatting-target" variable (:default-value (quote unspecified)) nil [77391 77724])
+            ("bongo-infoset-formatting-target-line" variable nil nil [77726 78165])
+            ("bongo-default-format-infoset" function (:arguments ("infoset")) nil [78167 79283])
+            ("bongo-file-name-from-infoset" function (:arguments ("infoset")) nil [79285 79634])
+            ("bongo-default-file-name-from-infoset" function (:arguments ("infoset")) nil [79636 80049])
+            ("bongo-join-fields" function (:arguments ("values")) nil [80051 80138])
+            ("bongo-join-file-name-fields" function (:arguments ("values")) nil [80140 80247])
+            ("bongo-format-field" function (:arguments ("field")) nil [80249 80333])
+            ("bongo-default-format-field" function (:arguments ("field")) nil [80335 84377])
+            ("bongo-file-name-part-from-field" function (:arguments ("field")) nil [84379 84585])
+            ("bongo-default-file-name-part-from-field" function (:arguments ("field")) nil [84587 85150])
+            ("bongo-infoset-from-file-name" function (:arguments ("file-name")) nil [85152 85260])
+            ("bongo-uri-scheme" function (:arguments ("file-name")) nil [85262 85970])
+            ("bongo-uri-p" function (:arguments ("file-name")) nil [85972 86156])
+            ("bongo-unescape-uri" function (:arguments ("uri")) nil [86158 86591])
+            ("bongo-default-infoset-from-file-name" function (:arguments ("file-name")) nil [86593 89946])
+            ("bongo-simple-infoset-from-file-name" function (:arguments ("file-name")) nil [89948 90246])
+            ("bongo-double-alist-get" function (:arguments ("alist-1" "key-1" "key-2")) nil [90248 90417])
+            ("bongo-infoset-artist-name" function (:arguments ("infoset")) nil [90419 90511])
+            ("bongo-infoset-album-year" function (:arguments ("infoset")) nil [90512 90602])
+            ("bongo-infoset-album-title" function (:arguments ("infoset")) nil [90603 90695])
+            ("bongo-infoset-track-index" function (:arguments ("infoset")) nil [90696 90788])
+            ("bongo-infoset-track-title" function (:arguments ("infoset")) nil [90789 90881])
+            ("bongo-goto-point" function (:arguments ("point")) nil [90925 91075])
+            ("bongo-before-invisible-text-p" function (:arguments ("point")) nil [91077 91605])
+            ("bongo-after-invisible-text-p" function (:arguments ("point")) nil [91607 91934])
+            ("bongo-skip-invisible" function nil nil [91936 92181])
+            ("bongo-point-at-bol" function (:arguments ("point")) nil [92183 92817])
+            ("bongo-point-at-eol" function (:arguments ("point")) nil [92819 93441])
+            ("bongo-beginning-of-line" function (:arguments ("point")) nil [93443 93607])
+            ("bongo-end-of-line" function (:arguments ("point")) nil [93609 93761])
+            ("bongo-first-line-p" function (:arguments ("point")) nil [93763 93902])
+            ("bongo-last-line-p" function (:arguments ("point")) nil [93904 94101])
+            ("bongo-first-object-line-p" function (:arguments ("point")) nil [94103 94312])
+            ("bongo-last-object-line-p" function (:arguments ("point")) nil [94314 94513])
+            ("defalias" code nil nil [94515 94572])
+            ("bongo-point-after-line" function (:arguments ("point")) nil [94574 94896])
+            ("bongo-point-at-bol-forward" function (:arguments ("point")) nil [94898 95277])
+            ("bongo-point-before-previous-line" function (:arguments ("point")) nil [95279 95551])
+            ("bongo-point-before-next-line" function (:arguments ("point")) nil [95553 95797])
+            ("defalias" code nil nil [95799 95875])
+            ("defalias" code nil nil [95877 95945])
+            ("bongo-point-before-previous-line-satisfying" function (:arguments ("predicate" "point")) nil [95947 96536])
+            ("defalias" code nil nil [96538 96636])
+            ("bongo-point-before-next-line-satisfying" function (:arguments ("predicate" "point")) nil [96638 97215])
+            ("defalias" code nil nil [97217 97307])
+            ("bongo-point-after-next-line-satisfying" function (:arguments ("predicate" "point")) nil [97309 97738])
+            ("bongo-point-at-first-line-satisfying" function (:arguments ("predicate" "point")) nil [97740 98182])
+            ("bongo-random-number-generator-seeded" variable nil nil [98184 98294])
+            ("bongo-point-at-random-line-satisfying" function (:arguments ("predicate")) nil [98296 98850])
+            ("bongo-point-at-random-track-line" function nil nil [98852 99048])
+            ("bongo-point-before-previous-object-line" function (:arguments ("point")) nil [99050 99407])
+            ("defalias" code nil nil [99409 99499])
+            ("bongo-point-before-next-object-line" function (:arguments ("point")) nil [99501 99843])
+            ("defalias" code nil nil [99845 99927])
+            ("bongo-point-after-next-object-line" function (:arguments ("point")) nil [99929 100240])
+            ("put" code nil nil [100242 100356])
+            ("put" code nil nil [100357 100444])
+            ("bongo-previous-object-line" function
+               (:user-visible-flag t
+                :arguments ("no-error"))
+                nil [100446 100963])
+            ("put" code nil nil [100965 101071])
+            ("put" code nil nil [101072 101151])
+            ("bongo-next-object-line" function
+               (:user-visible-flag t
+                :arguments ("no-error"))
+                nil [101153 101646])
+            ("bongo-snap-to-object-line" function
+               (:user-visible-flag t
+                :arguments ("no-error"))
+                nil [101648 102139])
+            ("put" code nil nil [102141 102265])
+            ("put" code nil nil [102266 102353])
+            ("bongo-previous-header-line" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [102355 102792])
+            ("put" code nil nil [102794 102910])
+            ("put" code nil nil [102911 102990])
+            ("bongo-next-header-line" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [102992 103421])
+            ("bongo-backward-expression" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [103423 104187])
+            ("bongo-forward-expression" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [104189 104877])
+            ("bongo-previous-object" function
+               (:user-visible-flag t
+                :arguments ("no-error" "n"))
+                nil [104879 105682])
+            ("bongo-next-object" function
+               (:user-visible-flag t
+                :arguments ("no-error" "n"))
+                nil [105684 106507])
+            ("bongo-point-before-next-track-line" function (:arguments ("point")) nil [106509 106847])
+            ("defalias" code nil nil [106849 106929])
+            ("bongo-point-before-previous-track-line" function (:arguments ("point")) nil [106931 107284])
+            ("defalias" code nil nil [107286 107374])
+            ("bongo-point-after-object" function (:arguments ("point")) nil [107376 108100])
+            ("bongo-point-at-next-object" function (:arguments ("point")) nil [108102 108801])
+            ("bongo-point-before-previous-object" function (:arguments ("point")) nil [108803 109555])
+            ("defalias" code nil nil [109557 109637])
+            ("bongo-point-at-first-track-line" function nil nil [109639 109893])
+            ("bongo-point-at-last-track-line" function nil nil [109895 110151])
+            ("bongo-uri-track-infoset" function (:arguments ("point")) nil [110153 111577])
+            ("bongo-file-track-infoset" function (:arguments ("point")) nil [111579 111891])
+            ("bongo-action-track-infoset" function (:arguments ("point")) nil [111893 112096])
+            ("bongo-track-infoset" function (:arguments ("point")) nil [112098 112658])
+            ("bongo-header-infoset" function (:arguments ("point")) nil [112660 113538])
+            ("bongo-line-infoset" function (:arguments ("point")) nil [113540 114325])
+            ("bongo-line-internal-infoset" function (:arguments ("point")) nil [114327 114608])
+            ("bongo-line-field-value" function (:arguments ("field" "point")) nil [114610 114766])
+            ("bongo-line-field-values" function (:arguments ("fields" "point")) nil [114768 114950])
+            ("bongo-line-fields" function (:arguments ("point")) nil [114952 115193])
+            ("bongo-line-external-fields" function (:arguments ("point")) nil [115195 115370])
+            ("bongo-line-set-external-fields" function (:arguments ("fields" "point")) nil [115372 115729])
+            ("bongo-line-internal-fields" function (:arguments ("point")) nil [115731 115959])
+            ("bongo-line-indentation" function (:arguments ("point")) nil [115961 116118])
+            ("bongo-line-indented-p" function (:arguments ("point")) nil [116120 116206])
+            ("bongo-line-external-fields-proposal" function (:arguments ("point")) nil [116208 116810])
+            ("bongo-line-indentation-proposal" function (:arguments ("point")) nil [116812 117213])
+            ("bongo-line-proposed-external-fields" function (:arguments ("point")) nil [117215 117609])
+            ("bongo-line-proposed-indentation" function (:arguments ("point")) nil [117611 117920])
+            ("bongo-line-file-name" function (:arguments ("point")) nil [118041 118207])
+            ("bongo-line-action" function (:arguments ("point")) nil [118209 118366])
+            ("bongo-file-track-line-p" function (:arguments ("point")) nil [118368 118510])
+            ("bongo-uri-track-line-p" function (:arguments ("point")) nil [118512 118711])
+            ("bongo-audio-cd-uri-p" function (:arguments ("file-name")) nil [118713 118858])
+            ("bongo-audio-cd-track-line-p" function (:arguments ("point")) nil [118860 119079])
+            ("bongo-local-file-track-line-p" function (:arguments ("point")) nil [119081 119288])
+            ("bongo-audio-file-name-extensions" variable (:default-value (\` ("669" "aac" (\, "amf") "apun" "au" "dsm" "far" "flac" "g18" "g36" "gdm" "imf" "it" "mdz" "med" "mid" "midi" "mka" "mod" "mp2" "mp3" "mtm" "ogg" "okt" "r36" "ra" "rcp" "rmi" "s3m" "spx" "stm" "stx" "ult" "umx" "uni" "vqf" "wav" "wma" "xm"))) nil [119290 119826])
+            ("bongo-audio-file-name-p" function (:arguments ("file-name")) nil [119828 120023])
+            ("bongo-local-audio-file-track-line-p" function (:arguments ("point")) nil [120025 120263])
+            ("bongo-video-file-name-extensions" variable (:default-value (\` ("ogm" "avi" "mpg" "mpeg" "mp4" "vob" "mkv" "flv" "mov" "asf" "wmv" "rm" "rmvb" "qt" "ts"))) nil [120265 120508])
+            ("bongo-video-file-name-p" function (:arguments ("file-name")) nil [120510 120704])
+            ("bongo-local-video-file-track-line-p" function (:arguments ("point")) nil [120706 120944])
+            ("bongo-action-track-line-p" function (:arguments ("point")) nil [120946 121090])
+            ("bongo-track-line-p" function (:arguments ("point")) nil [121092 121503])
+            ("bongo-currently-playing-track-line-p" function (:arguments ("point")) nil [121505 121697])
+            ("bongo-played-track-line-p" function (:arguments ("point")) nil [121699 121902])
+            ("bongo-unplayed-track-line-p" function (:arguments ("point")) nil [121904 122119])
+            ("bongo-mark-line-as-played" function (:arguments ("point")) nil [122121 122363])
+            ("bongo-mark-current-track-line-as-played" function nil nil [122365 122679])
+            ("bongo-track-lines-exist-p" function nil nil [122681 123150])
+            ("bongo-header-line-p" function (:arguments ("point")) nil [123152 123303])
+            ("bongo-object-line-p" function (:arguments ("point")) nil [123305 123524])
+            ("bongo-empty-header-line-p" function (:arguments ("point")) nil [123526 123848])
+            ("bongo-collapsed-header-line-p" function (:arguments ("point")) nil [123850 124135])
+            ("bongo-empty-section-p" function (:arguments ("point")) nil [124137 124616])
+            ("bongo-xor" function (:arguments ("a" "b")) nil [124655 124753])
+            ("bongo-shortest" function (:arguments ("a" "b")) nil [124755 124866])
+            ("bongo-longest" function (:arguments ("a" "b")) nil [124868 124977])
+            ("bongo-equally-long-p" function (:arguments ("a" "b")) nil [124979 125100])
+            ("bongo-set-union" function (:arguments ("sets")) nil [125102 125396])
+            ("bongo-set-intersection" function (:arguments ("a" "b")) nil [125398 125647])
+            ("bongo-set-exclusive-or" function (:arguments ("a" "b")) nil [125649 125976])
+            ("bongo-set-difference" function (:arguments ("a" "b")) nil [125978 126231])
+            ("bongo-set-equal-p" function (:arguments ("a" "b")) nil [126233 126420])
+            ("bongo-subset-p" function (:arguments ("a" "b")) nil [126422 126618])
+            ("bongo-alist-get" function (:arguments ("alist" "key")) nil [126620 126785])
+            ("bongo-alist-put" function (:arguments ("alist" "key" "value")) nil [126787 127346])
+            ("bongo-plist-get-all" function (:arguments ("plist" "property")) nil [127418 127699])
+            ("bongo-filter-alist" function (:arguments ("keys" "alist")) nil [127702 127991])
+            ("bongo-filter-plist" function (:arguments ("keys" "plist")) nil [127993 128355])
+            ("bongo-region-active-p" function nil nil [128357 128473])
+            ("bongo-ensure-final-newline" function nil nil [128518 128821])
+            ("bongo-delete-line" function (:arguments ("point")) nil [128823 129030])
+            ("bongo-line-string" function (:arguments ("point")) nil [129032 129274])
+            ("bongo-extract-line" function (:arguments ("point")) nil [129276 129487])
+            ("bongo-clear-line" function (:arguments ("point")) nil [129489 130006])
+            ("bongo-region-line-count" function (:arguments ("beg" "end")) nil [130008 130355])
+            ("bongo-count-lines-satisfying" function (:arguments ("predicate" "beg" "end")) nil [130357 130815])
+            ("bongo-line-get-property" function (:arguments ("name" "point")) nil [130841 131065])
+            ("bongo-line-semantic-properties" variable (:default-value (list (quote bongo-file-name) (quote bongo-action) (quote bongo-backend) (quote bongo-infoset) (quote bongo-uri-title) (quote bongo-track-length) (quote bongo-stream-name) (quote bongo-stream-genre) (quote bongo-fields) (quote bongo-external-fields) (quote bongo-header) (quote bongo-collapsed) (quote bongo-marked) (quote bongo-reference-counted-marker) (quote bongo-player) (quote bongo-played))) nil [131067 131722])
+            ("bongo-line-get-semantic-properties" function (:arguments ("point")) nil [131724 132151])
+            ("bongo-line-set-property" function (:arguments ("name" "value" "point")) nil [132153 132508])
+            ("put" code nil nil [132509 132563])
+            ("bongo-line-set-properties" function (:arguments ("properties" "point")) nil [132565 132925])
+            ("bongo-line-remove-property" function (:arguments ("name" "point")) nil [132927 133292])
+            ("bongo-keep-text-properties" function (:arguments ("beg" "end" "keys")) nil [133294 133866])
+            ("bongo-bind-field-values" variable nil nil [133887 134065])
+            ("bongo-joinable-field-values-p" function (:arguments ("a" "b")) nil [134067 134717])
+            ("bongo-region-joinable-on-field-p" function (:arguments ("beg" "end" "field")) nil [134719 135777])
+            ("bongo-potential-external-fields-in-region" function (:arguments ("beg" "end")) nil [135891 136527])
+            ("bongo-potential-external-fields-at-point" function (:arguments ("point")) nil [136529 137951])
+            ("bongo-line-potential-external-fields" function (:arguments ("point")) nil [138776 139288])
+            ("bongo-line-externalizable-fields" function (:arguments ("point")) nil [139290 141331])
+            ("bongo-down-section" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [141333 141913])
+            ("bongo-backward-up-section" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [141915 142358])
+            ("bongo-maybe-insert-intermediate-header" function nil nil [142360 143310])
+            ("bongo-externalize-fields" function nil nil [143312 143820])
+            ("bongo-track-marks" customgroup (:user-visible-flag t) nil [145267 145341])
+            ("bongo-track-mark-icon-file-name" variable (:default-value "track-mark-icon.png") nil [145343 145562])
+            ("bongo-track-mark-icon-string" variable (:default-value "*") nil [145564 145720])
+            ("bongo-track-mark-icon-string" function nil nil [145722 146333])
+            ("bongo-track-mark-function" variable (:default-value (quote bongo-default-track-mark)) nil [146335 146659])
+            ("bongo-default-track-mark" function nil nil [146661 146742])
+            ("bongo-marked-track" variable
+               (:default-value (quote ((t nil)))
+                :type "face")
+                nil [146744 146872])
+            ("bongo-marked-track-line" variable
+               (:default-value (quote ((t (:inherit fringe))))
+                :type "face")
+                nil [146874 147032])
+            ("bongo-marking" variable nil nil [147034 147194])
+            ("make-variable-buffer-local" code nil nil [147195 147238])
+            ("bongo-marked-track-line-p" function (:arguments ("point")) nil [147240 147403])
+            ("bongo-unmarked-track-line-p" function (:arguments ("point")) nil [147405 147607])
+            ("bongo-reference-marker" function (:arguments ("reference-counted-marker")) nil [147609 147883])
+            ("bongo-unreference-marker" function (:arguments ("reference-counted-marker")) nil [147885 148335])
+            ("bongo-line-reference-counted-marker" function (:arguments ("point")) nil [148337 148602])
+            ("bongo-line-marker" function (:arguments ("point")) nil [148604 148752])
+            ("bongo-reference-line-marker" function (:arguments ("point")) nil [148754 149510])
+            ("bongo-unreference-line-marker" function (:arguments ("point")) nil [149512 150177])
+            ("bongo-mark-line" function (:arguments ("point")) nil [150179 151251])
+            ("bongo-mark-line-forward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [151253 151661])
+            ("bongo-mark-line-backward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [151663 152024])
+            ("bongo-mark-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end"))
+                nil [152026 152316])
+            ("bongo-mark-forward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [152318 152750])
+            ("bongo-mark-backward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [152752 153021])
+            ("bongo-unmark-line" function (:arguments ("point")) nil [153023 153818])
+            ("bongo-unmark-line-forward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [153820 154229])
+            ("bongo-unmark-line-backward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [154231 154599])
+            ("bongo-unmark-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end"))
+                nil [154601 154897])
+            ("bongo-unmark-forward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [154899 155405])
+            ("bongo-unmark-backward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [155407 155927])
+            ("bongo-killed-marking" variable nil nil [155929 156029])
+            ("make-variable-buffer-local" code nil nil [156030 156080])
+            ("bongo-yank-marking" function (:user-visible-flag t) nil [156082 156411])
+            ("bongo-kill-marking" function (:user-visible-flag t) nil [156413 156958])
+            ("bongo-toggle-marking" function (:user-visible-flag t) nil [156960 157196])
+            ("bongo-mark-all" function (:user-visible-flag t) nil [157198 157328])
+            ("bongo-unmark-all" function (:user-visible-flag t) nil [157330 157532])
+            ("bongo-mark-track-lines-satisfying" function (:arguments ("predicate")) nil [157534 158085])
+            ("bongo-unmark-track-lines-satisfying" function (:arguments ("predicate")) nil [158087 158606])
+            ("bongo-mark-by-regexp" function (:arguments ("regexp" "key-function")) nil [158608 159435])
+            ("bongo-unmark-by-regexp" function (:arguments ("regexp" "key-function")) nil [159437 160104])
+            ("bongo-regexp-history" variable nil nil [160106 160181])
+            ("bongo-read-regexp" function (:arguments ("prompt" "default-value")) nil [160183 160425])
+            ("bongo-mark-by-formatted-infoset-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [160427 160800])
+            ("bongo-mark-by-artist-name-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [160802 161185])
+            ("bongo-mark-by-album-title-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [161187 161570])
+            ("bongo-mark-by-album-year-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [161572 161951])
+            ("bongo-mark-by-track-index-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [161953 162336])
+            ("bongo-mark-by-track-title-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [162338 162721])
+            ("bongo-unmark-by-formatted-infoset-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [162723 163110])
+            ("bongo-unmark-by-artist-name-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [163112 163509])
+            ("bongo-unmark-by-album-title-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [163511 163908])
+            ("bongo-unmark-by-album-year-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [163910 164303])
+            ("bongo-unmark-by-track-index-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [164305 164702])
+            ("bongo-unmark-by-track-title-regexp" function
+               (:user-visible-flag t
+                :arguments ("regexp"))
+                nil [164704 165106])
+            ("bongo-universal-prefix/region/marking-object-command" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [165153 168600])
+            ("bongo-universal-prefix/region/marking-track-command" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [168602 172470])
+            ("bongo-backend" function (:arguments ("backend-name")) nil [172489 172705])
+            ("bongo-backend-name" function (:arguments ("backend")) nil [172707 172807])
+            ("bongo-backend-pretty-name" function (:arguments ("backend")) nil [172809 172983])
+            ("bongo-backend-get" function (:arguments ("backend" "property")) nil [172985 173132])
+            ("bongo-backend-put" function (:arguments ("backend" "property" "value")) nil [173134 173356])
+            ("put" code nil nil [173357 173405])
+            ("bongo-backend-push" function (:arguments ("backend" "property" "element")) nil [173407 173614])
+            ("put" code nil nil [173615 173664])
+            ("bongo-backend-constructor" function (:arguments ("backend")) nil [173666 173786])
+            ("bongo-backend-program-name" function (:arguments ("backend")) nil [173788 174021])
+            ("bongo-backend-program-arguments" function (:arguments ("backend")) nil [174023 174165])
+            ("bongo-backend-file-name-transformers" function (:arguments ("backend")) nil [174167 174320])
+            ("bongo-transform-file-name" function (:arguments ("file-name" "transformer")) nil [174322 175370])
+            ("bongo-file-name-matches-p" function (:arguments ("file-name" "matcher")) nil [175372 177258])
+            ("bongo-backend-matchers" function nil nil [177260 177638])
+            ("bongo-backend-for-file" function (:arguments ("file-name")) nil [177640 178142])
+            ("bongo-completing-read" function (:arguments ("args")) nil [178144 178387])
+            ("bongo-set-backend-for-track" function
+               (:user-visible-flag t
+                :arguments ("backend" "point"))
+                nil [178389 179789])
+            ("define-minor-mode" code nil nil [179807 180705])
+            ("bongo-turn-on-lastfm-mode-if-applicable" function nil nil [180707 180818])
+            ("define-global-minor-mode" code nil nil [180820 181165])
+            ("bongo-lastfm-submit" function (:arguments ("infoset" "length")) nil [181167 182131])
+            ("bongo-lastfm-submit-player" function (:arguments ("player")) nil [182133 182859])
+            ("bongo-lastfm-submit-current" function (:user-visible-flag t) nil [182861 183107])
+            ("bongo-cancel-lastfm-timer" function (:arguments ("player")) nil [183109 183307])
+            ("bongo-lastfm-tick" function (:arguments ("player")) nil [183309 183891])
+            ("bongo-start-lastfm-timer" function (:arguments ("player")) nil [183893 184404])
+            ("bongo-restart-lastfm-timer" function (:arguments ("player")) nil [184406 184522])
+            ("bongo-sprinkle-amount" variable (:default-value 5) nil [184543 184673])
+            ("bongo-sprinkle-until-saturated" function (:user-visible-flag t) nil [184675 185125])
+            ("bongo-sprinkle" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [185127 186514])
+            ("bongo-player-started-hook" variable (:default-value (quote (bongo-show))) nil [186532 186750])
+            ("bongo-player-started-functions" variable nil nil [186752 186843])
+            ("bongo-fringe-icon-size" function nil nil [186845 187132])
+            ("bongo-playing-track-marker" variable nil nil [187134 187361])
+            ("make-variable-buffer-local" code nil nil [187362 187418])
+            ("put" code nil nil [187419 187581])
+            ("bongo-paused-track-marker" variable nil nil [187583 187810])
+            ("make-variable-buffer-local" code nil nil [187811 187866])
+            ("put" code nil nil [187867 188026])
+            ("bongo-stopped-track-marker" variable nil nil [188028 188203])
+            ("make-variable-buffer-local" code nil nil [188204 188260])
+            ("put" code nil nil [188261 188417])
+            ("bongo-player-process-priority" variable nil nil [188419 188905])
+            ("bongo-renice-command" variable (:default-value "sudo renice") nil [188907 189112])
+            ("bongo-renice" function (:arguments ("pid" "priority")) nil [189114 189430])
+            ("bongo-play-file" function (:arguments ("file-name" "backend")) nil [189432 191049])
+            ("bongo-player-finished-hook" variable nil nil [191051 191298])
+            ("bongo-player-succeeded-functions" variable nil nil [191300 191397])
+            ("bongo-player-failed-functions" variable nil nil [191398 191494])
+            ("bongo-player-killed-functions" variable nil nil [191495 191598])
+            ("bongo-player-finished-functions" variable nil nil [191599 191706])
+            ("bongo-player-succeeded" function (:arguments ("player")) nil [191708 192037])
+            ("bongo-player-failed" function (:arguments ("player")) nil [192039 192359])
+            ("bongo-player-killed" function (:arguments ("player")) nil [192361 192851])
+            ("bongo-perform-next-action" function (:user-visible-flag t) nil [192853 193095])
+            ("bongo-player-finished" function (:arguments ("player")) nil [193097 193753])
+            ("bongo-player-explicitly-stopped-hook" variable nil nil [193755 193961])
+            ("bongo-player-explicitly-stopped-functions" variable nil nil [193963 194083])
+            ("bongo-player-explicitly-stopped" function (:arguments ("player")) nil [194085 194524])
+            ("bongo-player-stopped-functions" variable nil nil [194526 194626])
+            ("bongo-player-stopped-hook" variable nil nil [194628 194821])
+            ("bongo-player-stopped" function (:arguments ("player")) nil [194823 195685])
+            ("bongo-player-paused/resumed-hook" variable nil nil [195687 195888])
+            ("bongo-player-paused/resumed-functions" variable nil nil [195890 196005])
+            ("bongo-player-paused/resumed" function (:arguments ("player")) nil [196007 196767])
+            ("bongo-player-sought-hook" variable nil nil [196769 196947])
+            ("bongo-player-sought-functions" variable nil nil [196949 197041])
+            ("bongo-player-sought" function (:arguments ("player" "new-elapsed-time")) nil [197043 197847])
+            ("bongo-player-times-changed-functions" variable nil nil [197849 198031])
+            ("bongo-player-times-changed" function (:arguments ("player")) nil [198033 199373])
+            ("bongo-player-metadata-changed-hook" variable (:default-value (quote (bongo-show))) nil [199375 199553])
+            ("bongo-player-metadata-changed-functions" variable nil nil [199555 199672])
+            ("bongo-player-metadata-changed" function (:arguments ("player")) nil [199674 201064])
+            ("bongo-player-backend-name" function (:arguments ("player")) nil [201066 201164])
+            ("bongo-player-backend" function (:arguments ("player")) nil [201166 201292])
+            ("bongo-player-get" function (:arguments ("player" "property")) nil [201294 201421])
+            ("bongo-player-put" function (:arguments ("player" "property" "value")) nil [201423 201571])
+            ("put" code nil nil [201572 201619])
+            ("bongo-player-push" function (:arguments ("player" "property" "element")) nil [201621 201821])
+            ("put" code nil nil [201822 201870])
+            ("bongo-player-pop" function (:arguments ("player" "property")) nil [201872 202112])
+            ("bongo-player-shift" function (:arguments ("player" "property")) nil [202114 202486])
+            ("bongo-player-call" function (:arguments ("player" "method" "arguments")) nil [202488 202653])
+            ("bongo-player-call-with-default" function (:arguments ("player" "method" "default" "arguments")) nil [202655 202916])
+            ("bongo-player-process" function (:arguments ("player")) nil [202918 203039])
+            ("bongo-player-buffer" function (:arguments ("player")) nil [203041 203159])
+            ("bongo-player-file-name" function (:arguments ("player")) nil [203161 203289])
+            ("bongo-player-infoset" function (:arguments ("player")) nil [203291 203493])
+            ("bongo-player-show-infoset" function (:arguments ("player")) nil [203495 203656])
+            ("bongo-player-running-p" function (:arguments ("player")) nil [203658 203846])
+            ("bongo-player-explicitly-stopped-p" function (:arguments ("player")) nil [203848 203999])
+            ("bongo-player-stop" function (:arguments ("player")) nil [204001 204269])
+            ("bongo-player-interactive-p" function (:arguments ("player")) nil [204271 204520])
+            ("bongo-player-pausing-supported-p" function (:arguments ("player")) nil [204522 204726])
+            ("bongo-player-paused-p" function (:arguments ("player")) nil [204728 204892])
+            ("bongo-player-pause-signal" function (:arguments ("player")) nil [204894 205070])
+            ("bongo-player-pause/resume" function (:arguments ("player")) nil [205072 205305])
+            ("bongo-player-seeking-supported-p" function (:arguments ("player")) nil [205307 205511])
+            ("bongo-player-seek-by" function (:arguments ("player" "n")) nil [205513 205739])
+            ("bongo-player-seek-to" function (:arguments ("player" "n")) nil [205741 205985])
+            ("bongo-player-elapsed-time" function (:arguments ("player")) nil [205987 206391])
+            ("bongo-player-total-time" function (:arguments ("player")) nil [206393 206844])
+            ("bongo-player-update-elapsed-time" function (:arguments ("player" "elapsed-time")) nil [206846 207507])
+            ("bongo-player-update-total-time" function (:arguments ("player" "total-time")) nil [207509 207672])
+            ("bongo-default-player-stop" function (:arguments ("player")) nil [207725 208010])
+            ("bongo-default-player-running-p" function (:arguments ("player")) nil [208012 208236])
+            ("bongo-default-player-interactive-p" function (:arguments ("player")) nil [208238 208387])
+            ("bongo-default-player-pausing-supported-p" function (:arguments ("player")) nil [208389 208556])
+            ("bongo-default-player-paused-p" function (:arguments ("player")) nil [208558 208859])
+            ("bongo-default-player-pause/resume" function (:arguments ("player")) nil [208861 209912])
+            ("bongo-default-player-seeking-supported-p" function (:arguments ("player")) nil [209914 210081])
+            ("bongo-default-player-seek-by" function (:arguments ("player" "n")) nil [210083 210334])
+            ("bongo-default-player-seek-to" function (:arguments ("player" "n")) nil [210336 210589])
+            ("bongo-default-player-get-elapsed-time" function (:arguments ("player")) nil [210591 210745])
+            ("bongo-default-player-get-total-time" function (:arguments ("player")) nil [210747 210895])
+            ("bongo-default-player-process-sentinel" function (:arguments ("process" "string")) nil [210897 211754])
+            ("bongo-evaluate-program-argument" function (:arguments ("argument")) nil [211773 212330])
+            ("bongo-evaluate-program-arguments" function (:arguments ("arguments")) nil [212332 212453])
+            ("bongo-start-simple-player" function (:arguments ("backend" "file-name" "extra-arguments")) nil [212455 213547])
+            ("bongo-action-player-run" function (:arguments ("player")) nil [213549 213831])
+            ("bongo-action-player-stop" function (:arguments ("player")) nil [213833 213958])
+            ("bongo-action-player-running-p" function (:arguments ("player")) nil [213960 214043])
+            ("bongo-start-action-player" function (:arguments ("expression")) nil [214045 214443])
+            ("define-bongo-backend" function (:arguments ("name" "options")) nil [214445 218855])
+            ("define-bongo-backend" code nil nil [218884 219150])
+            ("bongo-mpg123-audio-driver" variable nil nil [219152 219882])
+            ("bongo-mpg123-audio-device" variable nil nil [219884 220119])
+            ("bongo-mpg123-interactive" variable (:default-value t) nil [220121 220321])
+            ("bongo-mpg123-is-mpg321-p" function nil nil [220323 220591])
+            ("bongo-mpg123-update-granularity" variable (:default-value (and (bongo-mpg123-is-mpg321-p) 30)) nil [220593 220960])
+            ("bongo-mpg123-seek-increment" variable (:default-value 150) nil [220962 221133])
+            ("bongo-mpg123-time-update-delay-after-seek" variable (:default-value 1) nil [221135 221364])
+            ("bongo-mpg123-extra-arguments" variable nil nil [221366 221601])
+            ("bongo-mpg123-player-pause/resume" function (:arguments ("player")) nil [221603 221941])
+            ("bongo-seconds-to-mp3-frames" function (:arguments ("seconds")) nil [221943 222015])
+            ("bongo-mpg123-player-seek-to" function (:arguments ("player" "seconds")) nil [222017 222413])
+            ("bongo-mpg123-parse-output" function (:arguments ("string")) nil [222508 223381])
+            ("bongo-mpg123-process-filter" function (:arguments ("process" "string")) nil [223383 224113])
+            ("bongo-start-mpg123-player" function (:arguments ("file-name" "extra-arguments")) nil [224115 226152])
+            ("define-bongo-backend" code nil nil [226178 228607])
+            ("bongo-vlc-interactive" variable (:default-value t) nil [228609 228801])
+            ("bongo-vlc-initialization-period" variable (:default-value 0.2) nil [228803 229128])
+            ("bongo-vlc-time-update-delay-after-seek" variable (:default-value 1) nil [229130 229350])
+            ("bongo-vlc-extra-arguments" variable nil nil [229352 229578])
+            ("bongo-vlc-player-pause/resume" function (:arguments ("player")) nil [229580 229784])
+            ("bongo-vlc-player-seek-to" function (:arguments ("player" "seconds")) nil [229786 230152])
+            ("bongo-vlc-player-stop-timer" function (:arguments ("player")) nil [230154 230336])
+            ("bongo-vlc-player-tick" function (:arguments ("player")) nil [230338 230952])
+            ("bongo-vlc-player-start-timer" function (:arguments ("player")) nil [230954 231211])
+            ("bongo-vlc-process-filter" function (:arguments ("process" "string")) nil [231306 236714])
+            ("bongo-start-vlc-player" function (:arguments ("file-name" "extra-arguments")) nil [236716 238462])
+            ("define-bongo-backend" code nil nil [238492 240054])
+            ("bongo-mplayer-available-drivers" function (:arguments ("type")) nil [240056 241399])
+            ("bongo-mplayer-audio-driver" variable nil nil [241401 241910])
+            ("bongo-mplayer-video-driver" variable nil nil [241912 242421])
+            ("bongo-mplayer-interactive" variable (:default-value t) nil [242423 242613])
+            ("bongo-mplayer-time-update-delay-after-seek" variable (:default-value 1) nil [242615 242847])
+            ("bongo-mplayer-extra-arguments" variable nil nil [242849 243087])
+            ("bongo-mplayer-player-pause/resume" function (:arguments ("player")) nil [243089 243490])
+            ("bongo-mplayer-player-seek-to" function (:arguments ("player" "seconds")) nil [243492 243868])
+            ("bongo-mplayer-player-start-timer" function (:arguments ("player")) nil [243870 244078])
+            ("bongo-mplayer-player-stop-timer" function (:arguments ("player")) nil [244080 244266])
+            ("bongo-mplayer-player-tick" function (:arguments ("player")) nil [244268 244744])
+            ("bongo-mplayer-process-filter" function (:arguments ("process" "string")) nil [244839 245728])
+            ("bongo-start-mplayer-player" function (:arguments ("file-name" "extra-arguments")) nil [245730 247522])
+            ("define-bongo-backend" code nil nil [247548 247640])
+            ("define-bongo-backend" code nil nil [247642 247704])
+            ("define-bongo-backend" code nil nil [247706 247871])
+            ("define-bongo-backend" code nil nil [247873 248477])
+            ("define-bongo-backend" code nil nil [248479 248539])
+            ("bongo-audio-cd" customgroup (:user-visible-flag t) nil [248575 248669])
+            ("bongo-cd-device" variable nil nil [248671 248850])
+            ("bongo-libcddb-cddb-query-program-name" variable (:default-value "cddb_query") nil [248852 249023])
+            ("bongo-cdtool-cdir-program-name" variable (:default-value "cdir") nil [249025 249176])
+            ("bongo-cdtool-cdown-program-name" variable (:default-value "cdown") nil [249178 249332])
+            ("bongo-cdda-info-function" variable (:default-value (cond ((executable-find bongo-libcddb-cddb-query-program-name) (quote bongo-libcddb-cdda-info)) ((executable-find bongo-cdtool-cdir-program-name) (quote bongo-cdtool-cdda-info)))) nil [249334 250031])
+            ("bongo-use-cddb" variable (:default-value t) nil [250033 250161])
+            ("bongo-cddb-server" variable nil nil [250163 250373])
+            ("bongo-cddb-server-port" variable nil nil [250375 250580])
+            ("bongo-cddb-info-function" variable (:default-value (cond ((executable-find bongo-libcddb-cddb-query-program-name) (quote bongo-libcddb-cddb-info)) ((executable-find bongo-cdtool-cdown-program-name) (quote bongo-cdtool-cddb-info)))) nil [250582 251269])
+            ("bongo-cdda-info" function (:arguments ("device" "omit-lengths")) nil [251271 251901])
+            ("bongo-cdda-track-count" function (:arguments ("device")) nil [251903 252293])
+            ("bongo-cddb-info" function (:arguments ("device" "omit-lengths")) nil [252295 252804])
+            ("bongo-libcddb-cdda-info" function (:arguments ("device" "omit-lengths")) nil [252806 253581])
+            ("bongo-libcddb-cddb-info" function (:arguments ("device" "omit-lengths")) nil [253583 255592])
+            ("bongo-cdtool-cdda-info" function (:arguments ("device" "omit-lengths")) nil [255594 256705])
+            ("bongo-cdtool-cddb-info" function (:arguments ("device" "omit-lengths")) nil [256707 258886])
+            ("bongo-read-cd-device-name" function nil nil [258888 259386])
+            ("bongo-insert-cd-track" function
+               (:user-visible-flag t
+                :arguments ("track-index" "cddb-info" "device"))
+                nil [259388 262100])
+            ("bongo-insert-cd" function
+               (:user-visible-flag t
+                :arguments ("device"))
+                nil [262102 264019])
+            ("bongo-dwim" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [264043 265468])
+            ("bongo-mouse-dwim" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [265470 265896])
+            ("bongo-playing-p" function nil nil [265927 266132])
+            ("bongo-formatted-infoset" function nil nil [266134 266358])
+            ("bongo-pausing-supported-p" function nil nil [266360 266570])
+            ("bongo-paused-p" function nil nil [266572 266753])
+            ("bongo-seeking-supported-p" function nil nil [266755 266965])
+            ("bongo-elapsed-time" function nil nil [266967 267219])
+            ("bongo-remaining-time" function nil nil [267221 267530])
+            ("bongo-total-time" function nil nil [267532 267776])
+            ("bongo-current-track-marker" variable nil nil [267778 268006])
+            ("make-variable-buffer-local" code nil nil [268007 268063])
+            ("bongo-point-at-current-track-line" function nil nil [268065 268307])
+            ("bongo-set-current-track-marker" function (:arguments ("marker")) nil [268309 268601])
+            ("bongo-set-current-track-position" function (:arguments ("position")) nil [268603 268729])
+            ("bongo-unset-current-track-position" function nil nil [268731 268823])
+            ("bongo-current-track-line-p" function (:arguments ("point")) nil [268825 269180])
+            ("bongo-fringe-bitmap-from-strings" function (:arguments ("strings")) nil [269182 269464])
+            ("when" code nil nil [269466 271961])
+            ("bongo-queued-track-marker" variable nil nil [271963 272229])
+            ("make-variable-buffer-local" code nil nil [272230 272285])
+            ("bongo-point-at-queued-track-line" function nil nil [272287 272479])
+            ("bongo-queued-track-arrow-marker" variable nil nil [272481 272629])
+            ("make-variable-buffer-local" code nil nil [272630 272691])
+            ("bongo-queued-track-arrow-type" variable (:default-value (quote blinking-arrow)) nil [272693 273211])
+            ("bongo-queued-track-arrow-blink-frequency" variable (:default-value 1) nil [273213 273413])
+            ("bongo-queued-track-arrow-timer" variable nil nil [273415 273563])
+            ("make-variable-buffer-local" code nil nil [273564 273624])
+            ("bongo-queued-track-line-p" function (:arguments ("point")) nil [273626 273956])
+            ("bongo-unset-queued-track-position" function nil nil [273958 274533])
+            ("bongo-set-queued-track-position" function
+               (:user-visible-flag t
+                :arguments ("point"))
+                nil [274535 275806])
+            ("bongo-play-line" function
+               (:user-visible-flag t
+                :arguments ("point"))
+                nil [275808 277335])
+            ("bongo-play-lines" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [277337 278255])
+            ("bongo-play-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end"))
+                nil [278257 279087])
+            ("bongo-play-marked" function (:user-visible-flag t) nil [279089 279738])
+            ("bongo-play" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [279740 280758])
+            ("bongo-blink-queued-track-arrow" function nil nil [280760 281103])
+            ("bongo-play-queued" function nil nil [281105 281369])
+            ("bongo-repeating-playback-mode" function
+               (:user-visible-flag t
+                :arguments ("default"))
+                nil [281371 282051])
+            ("bongo-replay-current" function
+               (:user-visible-flag t
+                :arguments ("argument"))
+                nil [282053 282493])
+            ("put" code nil nil [282495 282567])
+            ("bongo-progressive-playback-mode" function
+               (:user-visible-flag t
+                :arguments ("default"))
+                nil [282569 283268])
+            ("put" code nil nil [283270 283383])
+            ("bongo-play-next" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [283385 284298])
+            ("bongo-play-next-or-stop" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [284300 284815])
+            ("put" code nil nil [284817 284878])
+            ("put" code nil nil [284879 284948])
+            ("bongo-next" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [284950 285703])
+            ("bongo-regressive-playback-mode" function
+               (:user-visible-flag t
+                :arguments ("default"))
+                nil [285705 286398])
+            ("put" code nil nil [286400 286518])
+            ("bongo-play-previous" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [286520 287436])
+            ("bongo-play-previous-or-stop" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [287438 287960])
+            ("put" code nil nil [287962 288034])
+            ("put" code nil nil [288035 288115])
+            ("bongo-previous" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [288117 288893])
+            ("bongo-random-playback-mode" function
+               (:user-visible-flag t
+                :arguments ("default"))
+                nil [288895 289564])
+            ("put" code nil nil [289566 289669])
+            ("bongo-randomly-playable-track-line-p" function (:arguments ("point")) nil [289671 290073])
+            ("bongo-unplayed-randomly-playable-track-line-p" function (:arguments ("point")) nil [290075 290548])
+            ("bongo-play-random" function
+               (:user-visible-flag t
+                :arguments ("argument"))
+                nil [290550 291884])
+            ("bongo-play-random-or-stop" function
+               (:user-visible-flag t
+                :arguments ("argument"))
+                nil [291886 292426])
+            ("put" code nil nil [292428 292497])
+            ("put" code nil nil [292498 292575])
+            ("bongo-start" function
+               (:user-visible-flag t
+                :arguments ("called-interactively-p"))
+                nil [292592 294050])
+            ("bongo-start/stop-playback-mode" function
+               (:user-visible-flag t
+                :arguments ("default"))
+                nil [294052 294708])
+            ("bongo-stop" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [294710 296437])
+            ("put" code nil nil [296439 296494])
+            ("put" code nil nil [296495 296721])
+            ("bongo-start/stop" function
+               (:user-visible-flag t
+                :arguments ("argument" "called-interactively-p"))
+                nil [296738 297171])
+            ("bongo-pause/resume" function (:user-visible-flag t) nil [297173 297478])
+            ("bongo-minibuffer-seek-string" function nil nil [297480 297718])
+            ("bongo-seek-forward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [297720 298322])
+            ("bongo-seek-backward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [298324 298925])
+            ("bongo-seek-to" function
+               (:user-visible-flag t
+                :arguments ("position"))
+                nil [298927 300465])
+            ("bongo-seek-electric-mode" variable (:default-value t) nil [300495 300680])
+            ("bongo-seeking-electrically" variable nil nil [300682 300833])
+            ("bongo-seek-bar" variable
+               (:default-value (quote ((t nil)))
+                :type "face")
+                nil [300835 300948])
+            ("bongo-filled-seek-bar" variable
+               (:default-value (quote ((t (:inverse-video t :bold t :inherit bongo-seek-bar))))
+                :type "face")
+                nil [300950 301119])
+            ("bongo-unfilled-seek-bar" variable
+               (:default-value (quote ((t (:inherit bongo-seek-bar))))
+                :type "face")
+                nil [301121 301269])
+            ("bongo-seek-message" variable
+               (:default-value (quote ((t nil)))
+                :type "face")
+                nil [301271 301379])
+            ("bongo-seek-quit" function (:user-visible-flag t) nil [301381 301719])
+            ("bongo-seek-forward-3" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [301721 301882])
+            ("bongo-seek-backward-3" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [301884 302048])
+            ("bongo-seek-forward-10" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [302050 302214])
+            ("bongo-seek-backward-10" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [302216 302383])
+            ("bongo-seek-forward-60" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [302385 302546])
+            ("bongo-seek-backward-60" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [302548 302712])
+            ("bongo-seek-mode-map" variable (:default-value (let ((map (make-sparse-keymap))) (suppress-keymap map) (define-key map "" (quote bongo-seek-backward)) (define-key map "" (quote bongo-seek-forward)) (define-key map "b" (quote bongo-seek-backward)) (define-key map "f" (quote bongo-seek-forward)) (define-key map "B" (quote bongo-seek-backward-3)) (define-key map "F" (quote bongo-seek-forward-3)) (define-key map [left] (quote bongo-seek-backward-3)) (define-key map [right] (quote bongo-seek-forward-3)) (define-key map "\342" (quote bongo-seek-backward-10)) (define-key map "\346" (quote bongo-seek-forward-10)) (define-key map "\302" (quote bongo-seek-backward-10)) (define-key map "\306" (quote bongo-seek-forward-10)) (define-key map [(control left)] (quote bongo-seek-backward-10)) (define-key map [(control right)] (quote bongo-seek-forward-10)) (define-key map [(meta left)] (quote bongo-seek-backward-10)) (define-key map [(meta right)] (quote bongo-seek-forward-10)) (define-key map [up] (quote bongo-seek-forward-10)) (define-key map [down] (quote bongo-seek-backward-10)) (define-key map [(control up)] (quote bongo-seek-forward-60)) (define-key map [(control down)] (quote bongo-seek-backward-60)) (define-key map [(meta up)] (quote bongo-seek-forward-60)) (define-key map [(meta down)] (quote bongo-seek-backward-60)) (define-key map "\202" (quote bongo-seek-backward-60)) (define-key map "\206" (quote bongo-seek-forward-60)) (define-key map [167772162] (quote bongo-seek-backward-60)) (define-key map [167772166] (quote bongo-seek-forward-60)) (define-key map [(control meta left)] (quote bongo-seek-backward-60)) (define-key map [(control meta right)] (quote bongo-seek-forward-60)) (define-key map "a" (quote bongo-replay-current)) (define-key map "e" (quote bongo-play-next)) (define-key map "" (quote bongo-replay-current)) (define-key map "" (quote bongo-perform-next-action)) (define-key map [home] (quote bongo-replay-current)) (define-key map [end] (quote bongo-perform-next-action)) (define-key map "p" (quote bongo-play-previous)) (define-key map "n" (quote bongo-play-next)) (define-key map "" (quote bongo-play-previous)) (define-key map "" (quote bongo-play-next)) (define-key map " " (quote bongo-pause/resume)) (define-key map "" (quote bongo-replay-current)) (define-key map "" (quote bongo-perform-next-action)) (define-key map "" (quote bongo-play-previous)) (define-key map "" (quote bongo-play-next)) (define-key map "" (quote bongo-play-random)) (define-key map "" (quote bongo-start/stop)) (define-key map "" (quote bongo-seek-redisplay)) (define-key map "l" (quote bongo-seek-redisplay)) (define-key map "" (quote bongo-seek-quit)) (define-key map "" (quote bongo-seek-quit)) (define-key map "q" (quote bongo-seek-quit)) (define-key map "s" (quote bongo-seek-quit)) (define-key map [escape escape] (quote bongo-seek-quit)) map)) nil [302714 305541])
+            ("bongo-seek-mode" function (:user-visible-flag t) nil [305543 305873])
+            ("bongo-seek-redisplaying" variable nil nil [305875 305971])
+            ("bongo-seek-status-string" function (:arguments ("width")) nil [305973 308659])
+            ("bongo-seek-redisplay" function (:user-visible-flag t) nil [308661 309168])
+            ("bongo-seek" function (:user-visible-flag t) nil [309282 311428])
+            ("bongo-insert-line" function (:arguments ("properties")) nil [311448 312349])
+            ("bongo-insert-header" function (:arguments ("fields")) nil [312351 312629])
+            ("bongo-insert-whole-directory-trees" variable (:default-value (quote ask)) nil [312631 313091])
+            ("bongo-insert-file" function
+               (:user-visible-flag t
+                :arguments ("file-name"))
+                nil [313093 315811])
+            ("bongo-maybe-insert-album-cover" function (:arguments ("directory-name")) nil [315813 316961])
+            ("bongo-maybe-join-inserted-tracks" function (:arguments ("beg" "end")) nil [316963 317381])
+            ("bongo-insert-directory" function
+               (:user-visible-flag t
+                :arguments ("directory-name"))
+                nil [317383 319080])
+            ("bongo-insert-directory-tree-total-file-count" variable nil nil [319082 319242])
+            ("bongo-insert-directory-tree-current-file-count" variable nil nil [319244 319449])
+            ("bongo-insert-directory-tree-1" function (:arguments ("directory-name")) nil [319451 320570])
+            ("bongo-insert-directory-tree" function
+               (:user-visible-flag t
+                :arguments ("directory-name"))
+                nil [320572 322391])
+            ("bongo-get-x-selection" function (:arguments ("type")) nil [322393 322818])
+            ("bongo-get-x-selection-uri" function nil nil [322820 323412])
+            ("bongo-insert-uri" function
+               (:user-visible-flag t
+                :arguments ("uri" "title"))
+                nil [323414 324459])
+            ("bongo-insert-m3u-playlist-contents" function
+               (:user-visible-flag t
+                :arguments ("file-name"))
+                nil [324461 325451])
+            ("bongo-insert-pls-playlist-contents" function
+               (:user-visible-flag t
+                :arguments ("file-name"))
+                nil [325453 326959])
+            ("bongo-playlist-file-name-extensions" variable (:default-value (quote ("pls" "playlist" "m3u" "m3u8"))) nil [326961 327092])
+            ("bongo-playlist-file-p" function (:arguments ("file-name")) nil [327094 327460])
+            ("bongo-insert-playlist-contents" function
+               (:user-visible-flag t
+                :arguments ("file-name"))
+                nil [327462 328026])
+            ("bongo-insert-action" function
+               (:user-visible-flag t
+                :arguments ("action"))
+                nil [328028 328226])
+            ("bongo-insertion-command-alist" variable (:default-value (quote (("Action" . bongo-insert-action) ("CD tracks" . bongo-insert-cd) ("Directory" . bongo-insert-directory) ("Directory tree" . bongo-insert-directory-tree) ("File" . bongo-insert-file) ("Playlist contents" . bongo-insert-playlist-contents) ("URI" . bongo-insert-uri)))) nil [328228 328619])
+            ("bongo-insert-special" function (:user-visible-flag t) nil [328621 329061])
+            ("bongo-enable-dnd-support" function (:user-visible-flag t) nil [329093 329399])
+            ("bongo-disable-dnd-support" function (:user-visible-flag t) nil [329401 329664])
+            ("bongo-dnd-support" variable (:default-value t) nil [329666 330494])
+            ("bongo-dnd-destination" variable (:default-value (quote before-point)) nil [330496 331176])
+            ("bongo-dnd-insert-uri" function (:arguments ("uri" "action")) nil [331178 332225])
+            ("bongo-collapse" function
+               (:user-visible-flag t
+                :arguments ("skip"))
+                nil [332260 334045])
+            ("bongo-expand" function
+               (:user-visible-flag t
+                :arguments ("skip"))
+                nil [334047 335756])
+            ("bongo-toggle-collapsed" function (:user-visible-flag t) nil [335758 336346])
+            ("bongo-join-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end" "fields"))
+                nil [336378 337350])
+            ("bongo-join" function
+               (:user-visible-flag t
+                :arguments ("skip"))
+                nil [337352 339768])
+            ("bongo-split" function
+               (:user-visible-flag t
+                :arguments ("skip"))
+                nil [339770 341483])
+            ("bongo-facify-below-existing-faces" variable nil nil [341504 341737])
+            ("bongo-facify-in-object" function (:arguments ("beg" "end" "object" "new-faces")) nil [341739 342880])
+            ("bongo-facify-string" function (:arguments ("string" "new-faces")) nil [342882 343101])
+            ("defalias" code nil nil [343103 343148])
+            ("bongo-facify-copy" function (:arguments ("string" "new-faces")) nil [343150 343380])
+            ("bongo-facify-region" function (:arguments ("beg" "end" "new-faces")) nil [343382 343642])
+            ("bongo-facify-current-line" function (:arguments ("new-faces")) nil [343644 343984])
+            ("bongo-pop-up-context-menu" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [343986 354857])
+            ("bongo-current-column" function (:arguments ("point" "window")) nil [354859 354999])
+            ("bongo-display-inline-playback-progress" variable nil nil [355001 355278])
+            ("bongo-redisplay-line" function (:arguments ("point")) nil [355280 358992])
+            ("bongo-redisplay-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end"))
+                nil [358994 359964])
+            ("bongo-redisplay" function (:user-visible-flag t) nil [359966 360262])
+            ("bongo-recenter" function (:user-visible-flag t) nil [360264 360761])
+            ("bongo-time-regexp" variable (:default-value (eval-when-compile (rx (and string-start (optional (and (optional (and (submatch (one-or-more digit)) ":")) (and (submatch (one-or-more digit))) ":")) (submatch (one-or-more digit) (optional (and "." (one-or-more digit)))) string-end)))) nil [360763 361351])
+            ("bongo-parse-time" function (:arguments ("time")) nil [361353 362003])
+            ("bongo-format-seconds" function (:arguments ("n")) nil [362005 362551])
+            ("bongo-show" function
+               (:user-visible-flag t
+                :arguments ("insert-flag"))
+                nil [362568 363561])
+            ("bongo-kill-line" function
+               (:user-visible-flag t
+                :arguments ("point"))
+                nil [363600 365293])
+            ("bongo-kill-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end"))
+                nil [365295 365691])
+            ("bongo-kill-marked" function (:user-visible-flag t) nil [365693 366294])
+            ("bongo-kill" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [366296 366927])
+            ("bongo-copy-line" function
+               (:user-visible-flag t
+                :arguments ("point"))
+                nil [366929 368441])
+            ("bongo-copy-line-forward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [368443 369016])
+            ("bongo-previous-object-or-line" function nil nil [369018 369448])
+            ("bongo-copy-line-backward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [369450 370082])
+            ("defalias" code nil nil [370084 370129])
+            ("bongo-copy-marked" function (:user-visible-flag t) nil [370131 370732])
+            ("bongo-copy-forward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [370734 371487])
+            ("bongo-copy-backward" function
+               (:user-visible-flag t
+                :arguments ("n"))
+                nil [371489 372056])
+            ("bongo-clean-up-after-insertion" function (:arguments ("beg" "end")) nil [372058 375080])
+            ("bongo-yank" function
+               (:user-visible-flag t
+                :arguments ("argument"))
+                nil [375082 375786])
+            ("bongo-yank-pop" function
+               (:user-visible-flag t
+                :arguments ("argument"))
+                nil [375836 376095])
+            ("bongo-undo" function
+               (:user-visible-flag t
+                :arguments ("argument"))
+                nil [376143 376336])
+            ("bongo-inhibit-recenter-after-enqueue" variable nil nil [376365 376477])
+            ("bongo-enqueue-text" function (:arguments ("mode" "text" "maybe-display-playlist")) nil [376479 378508])
+            ("bongo-enqueue-region" function (:arguments ("mode" "beg" "end" "maybe-display-playlist")) nil [378572 380920])
+            ("bongo-insert-enqueue-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end" "maybe-display-playlist"))
+                nil [380922 381347])
+            ("bongo-append-enqueue-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end" "maybe-display-playlist"))
+                nil [381349 381772])
+            ("bongo-enqueue-line" function (:arguments ("mode" "point" "maybe-display-playlist")) nil [381836 382360])
+            ("bongo-insert-enqueue-line" function (:arguments ("point" "maybe-display-playlist")) nil [382362 382735])
+            ("bongo-append-enqueue-line" function (:arguments ("point" "maybe-display-playlist")) nil [382737 383110])
+            ("bongo-enqueue-lines" function (:arguments ("mode" "n" "maybe-display-playlist")) nil [383204 384294])
+            ("bongo-insert-enqueue-lines" function
+               (:user-visible-flag t
+                :arguments ("n" "maybe-display-playlist"))
+                nil [384296 384837])
+            ("bongo-append-enqueue-lines" function
+               (:user-visible-flag t
+                :arguments ("n" "maybe-display-playlist"))
+                nil [384839 385380])
+            ("bongo-enqueue-marked" function (:arguments ("mode" "maybe-display-playlist")) nil [385433 386441])
+            ("bongo-insert-enqueue-marked" function
+               (:user-visible-flag t
+                :arguments ("maybe-display-playlist"))
+                nil [386443 386786])
+            ("bongo-append-enqueue-marked" function
+               (:user-visible-flag t
+                :arguments ("maybe-display-playlist"))
+                nil [386788 387131])
+            ("bongo-enqueue" function (:arguments ("mode" "n" "maybe-display-playlist")) nil [387183 388300])
+            ("bongo-append-enqueue" function
+               (:user-visible-flag t
+                :arguments ("n" "maybe-display-playlist"))
+                nil [388302 389088])
+            ("bongo-insert-enqueue" function
+               (:user-visible-flag t
+                :arguments ("n" "maybe-display-playlist"))
+                nil [389090 389896])
+            ("bongo-transpose-forward" function (:user-visible-flag t) nil [389929 390338])
+            ("bongo-transpose-backward" function (:user-visible-flag t) nil [390340 390552])
+            ("bongo-delete-empty-sections" function nil nil [390554 390974])
+            ("bongo-delete-played-tracks" function (:user-visible-flag t) nil [390976 391559])
+            ("bongo-erase-buffer" function (:user-visible-flag t) nil [391561 392215])
+            ("bongo-flush-playlist" function
+               (:user-visible-flag t
+                :arguments ("delete-all"))
+                nil [392217 392762])
+            ("bongo-reset-playlist" function (:user-visible-flag t) nil [392764 393412])
+            ("bongo-rename-line" function (:user-visible-flag t) nil [393414 394034])
+            ("bongo-rename-local-file-track" function
+               (:user-visible-flag t
+                :arguments ("new-name" "point"))
+                nil [394036 395449])
+            ("bongo-rename-uri-track" function
+               (:user-visible-flag t
+                :arguments ("new-uri" "new-title" "point"))
+                nil [395451 396340])
+            ("bongo-rename-action-track" function
+               (:user-visible-flag t
+                :arguments ("new-action" "point"))
+                nil [396342 397023])
+            ("bongo-dired-line" function
+               (:user-visible-flag t
+                :arguments ("point"))
+                nil [397025 397538])
+            ("bongo-library-magic-string" variable (:default-value "Content-Type: application/x-bongo-library
+") nil [397955 398163])
+            ("bongo-playlist-magic-string" variable (:default-value "Content-Type: application/x-bongo-playlist
+") nil [398165 398377])
+            ("bongo-magic-regexp" variable (:default-value "Content-Type: application/x-bongo\\(-library\\|-playlist\\)?
+") nil [398379 398633])
+            ("add-to-list" code nil nil [398635 398828])
+            ("add-to-list" code nil nil [398829 398916])
+            ("add-to-list" code nil nil [398917 399006])
+            ("add-to-list" code nil nil [399008 399195])
+            ("add-to-list" code nil nil [399196 399385])
+            ("bongo-decode" function (:arguments ("beg" "end")) nil [399387 400772])
+            ("bongo-line-serializable-properties" variable (:default-value (list (quote bongo-file-name) (quote bongo-action) (quote bongo-backend) (quote bongo-infoset) (quote bongo-uri-title) (quote bongo-track-length) (quote bongo-stream-name) (quote bongo-stream-genre) (quote bongo-fields) (quote bongo-external-fields) (quote bongo-header) (quote bongo-collapsed))) nil [400774 401342])
+            ("bongo-encode" function (:arguments ("beg" "end" "buffer")) nil [401344 402225])
+            ("bongo-dired-enqueue-lines" function (:arguments ("mode" "n" "maybe-display-playlist")) nil [402260 402638])
+            ("bongo-dired-append-enqueue-lines" function (:arguments ("n" "maybe-display-playlist")) nil [402640 402890])
+            ("bongo-dired-insert-enqueue-lines" function (:arguments ("n" "maybe-display-playlist")) nil [402892 403142])
+            ("bongo-dired-play-line" function nil nil [403144 403308])
+            ("bongo-dired-dwim" function nil nil [403310 403865])
+            ("bongo-dired-library-mode-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (define-key map "e" (quote bongo-dired-append-enqueue-lines)) (define-key map "E" (quote bongo-dired-insert-enqueue-lines)) (define-key map "h" (quote bongo-switch-buffers)) (define-key map "q" (quote bongo-quit)) (define-key map "" (quote bongo-dired-dwim)) (define-key map " " (quote bongo-pause/resume)) (define-key map "" (quote bongo-replay-current)) (define-key map "" (quote bongo-perform-next-action)) (define-key map "" (quote bongo-play-previous)) (define-key map "" (quote bongo-play-next)) (define-key map "" (quote bongo-play-random)) (define-key map "" (quote bongo-start/stop))))) nil [403867 404590])
+            ("define-minor-mode" code nil nil [404592 404778])
+            ("bongo-mode-hook" variable nil nil [404814 404932])
+            ("bongo-xmms-refugee-mode" variable nil nil [404934 405686])
+            ("bongo-mode-map" variable (:default-value (let ((map (make-sparse-keymap))) (prog1 map (suppress-keymap map)))) nil [405688 405847])
+            ("bongo-redefine-keys" function (:user-visible-flag t) nil [405849 416235])
+            ("bongo-redefine-keys" code nil nil [416237 416258])
+            ("bongo-mode" function nil nil [416260 417324])
+            ("define-derived-mode" code nil nil [417326 418008])
+            ("put" code nil nil [418010 418056])
+            ("define-derived-mode" code nil nil [418058 420129])
+            ("put" code nil nil [420131 420178])
+            ("define-minor-mode" code nil nil [420180 421764])
+            ("bongo-buffer-p" function (:arguments ("buffer")) nil [421766 422234])
+            ("bongo-library-buffer-p" function (:arguments ("buffer")) nil [422236 422673])
+            ("bongo-playlist-buffer-p" function (:arguments ("buffer")) nil [422675 423026])
+            ("bongo-embolden-quoted-substrings" function (:arguments ("string")) nil [423028 423467])
+            ("bongo-logo" variable (:default-value (bongo-find-image "bongo-logo.pbm" (quote bongo-comment))) nil [423469 423541])
+            ("bongo-insert-comment-text" function (:arguments ("text")) nil [423543 423668])
+            ("bongo-insert-warning-text" function (:arguments ("text")) nil [423670 423795])
+            ("bongo-update-enabled-backends-list" function nil nil [423797 424689])
+            ("bongo-insert-enabled-backends-comment" function nil nil [424691 425446])
+            ("bongo-default-library-buffer" function nil nil [425448 426742])
+            ("bongo-default-playlist-buffer" function nil nil [426744 428106])
+            ("bongo-buffer" function nil nil [428108 428976])
+            ("bongo-recent-playlist-buffer" function nil nil [428978 429326])
+            ("bongo-playlist-buffer" function nil nil [429328 429844])
+            ("bongo-recent-library-buffer" function nil nil [429846 430191])
+            ("bongo-library-buffer" function nil nil [430193 430699])
+            ("bongo-playlist" function (:user-visible-flag t) nil [430716 430883])
+            ("bongo-library" function (:user-visible-flag t) nil [430900 431063])
+            ("bongo-stored-window-configuration" variable nil nil [431065 431157])
+            ("bongo-quit" function (:user-visible-flag t) nil [431159 431698])
+            ("bongo-buffers" function nil nil [431700 431850])
+            ("bongo-switch-to-buffer" function nil nil [431852 432517])
+            ("bongo-switch-buffers" function
+               (:user-visible-flag t
+                :arguments ("prompt"))
+                nil [432534 433053])
+            ("bongo-list-buffers" function nil nil [433055 433431])
+            ("bongo" function (:user-visible-flag t) nil [433448 433717])
+            ("custom-reevaluate-setting" code nil nil [433719 433770])
+            ("custom-reevaluate-setting" code nil nil [433771 433830])
+            ("custom-reevaluate-setting" code nil nil [433831 433884])
+            ("bongo" package nil nil [434067 434083]))          
+      :file "bongo.el"
+      :pointmax 434107
+      :fsize 434170
+      :lastmodtime '(22387 47119 100682 47000)
+      :unmatched-syntax '((close-paren 127699 . 127700) (symbol 127401 . 127417) (open-paren 127400 . 127401) (close-paren 1398 . 1399) (symbol 1365 . 1382) (open-paren 1364 . 1365)))
+    (semanticdb-table "lastfm-submit.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("lastfmsubmit-program-name" variable (:default-value (or (executable-find "lastfmsubmit") (executable-find "/usr/lib/lastfmsubmitd/lastfmsubmit"))) nil [1235 1652])
+            ("lastfm-submit" function (:arguments ("artist" "title" "length" "album" "mbid" "time")) nil [1654 3077])
+            ("lastfm-submit" package nil nil [3128 3152]))          
+      :file "lastfm-submit.el"
+      :pointmax 3185
+      :fsize 3184
+      :lastmodtime '(22387 47119 280682 53000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!elpa!bongo-20160623.1058!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

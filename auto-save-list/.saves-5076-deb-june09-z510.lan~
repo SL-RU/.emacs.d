@@ -1,0 +1,4 @@
+/sudo:root@localhost:/etc/lightdm/lightdm-gtk-greeter.conf
+#_asudo_broot@localhost_b_aetc_alightdm_alightdm-gtk-greeter.conf#
+/etc/lightdm/lightdm.conf
+/etc/lightdm/#lightdm.conf#

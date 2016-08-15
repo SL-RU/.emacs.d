@@ -1,0 +1,41 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/lyra/scr/" . "CSharpCountAllLiness/")
+ ("/home/" . "lyra/")
+ ("/home/lyra/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/lyra/.emacs.d/"
+ "/home/lyra/scr/"
+ "/home/lyra/"
+ "/home/lyra/.i3/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "CSharpCountAllLines.py"
+ "scr"
+ "conky.conf"
+ "ido.last"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/lyra/.emacs.d/" (22374 57375 795212 47000) "auto-save-list/" "ido.last~" "session.102b03a261d967591146550501724875300000011670031" "url/" "../" "ac-comphist.dat" "./" "init.el~" "ido.last" "init.el" "elpa/")
+
+ ("/home/lyra/" (22374 61754 371261 206000) ".gnupg/" ".xsession-errors.old" ".gtkrc-2.0" ".bash_history" ".ICEauthority" ".gconf/" ".i3/" ".config/" ".Xauthority" "Шаблоны/" "git/" ".ssh/" ".smb/" ".cache/" "Видео/" "Загрузки/" ".gnome2/" "../" "Документы/" ".xinitrc" "Изображения/" ".thumbnails/" "prg/" "Музыка/" ".bashrc" ".conkyrc" ".xsessionrc" "./" ".Xresources" ".mozilla/" ".emacs.d/" "Общедоступные/" "Рабочий стол/" ".dmrc" ".dbus/" ".kodi/" "scr/" ".xmodmap" ".xsession-errors" ".local/" ".gnome2_private/" ".icedove/" ".python_history" ".bash_logout" ".profile" ".icons/" ".pki/" ".shutter/")
+
+ ("/home/lyra/scr/" (22374 60938 15252 41000) "../" "CSharpCountAllLines.py" "./" "CSharpCountAllLines.py~")
+
+ ("/home/" (22361 53362 610547 620000) "../" "lost+found/" "./" "lyra/")
+
+ ("/home/lyra/.i3/" (22370 58062 283694 514000) "resolution.sh" "resolution.py" "../" ".git/" "./" "config~" "conky.conf" "infoscreen/" "#config#" "info" "resolution.py~" "i3conky_status.sh" "i3conky_status.sh~" ".gitignore" "Readme.md" "config")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

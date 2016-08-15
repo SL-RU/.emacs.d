@@ -1,0 +1,82 @@
+;; Object stmtest/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "stmtest/"
+  :tables
+  (list
+    (semanticdb-table "Makefile"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("TARGET" variable (:default-value ("stmtest")) nil [200 217])
+            ("DEBUG" variable (:default-value ("1")) nil [332 342])
+            ("OPT" variable (:default-value ("-O0")) nil [357 367])
+            ("BUILD_DIR" variable (:default-value ("build")) nil [470 488])
+            ("C_SOURCES" variable (:default-value ("Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" "Src/stm32f1xx_hal_msp.c" "Src/stm32f1xx_it.c" "Src/main.c")) nil [576 1431])
+            ("ASM_SOURCES" variable (:default-value ("Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc/startup_stm32f103xb.s")) nil [1431 1526])
+            ("CC" variable (:default-value ("arm-none-eabi-gcc")) nil [1618 1641])
+            ("AS" variable (:default-value ("arm-none-eabi-gcc" "-x" "assembler-with-cpp")) nil [1641 1686])
+            ("CP" variable (:default-value ("arm-none-eabi-objcopy")) nil [1686 1713])
+            ("AR" variable (:default-value ("arm-none-eabi-ar")) nil [1713 1735])
+            ("SZ" variable (:default-value ("arm-none-eabi-size")) nil [1735 1759])
+            ("HEX" variable (:default-value ("$(CP)" "-O" "ihex")) nil [1759 1779])
+            ("BIN" variable (:default-value ("$(CP)" "-O" "binary" "-S")) nil [1779 1804])
+            ("AS_DEFS" variable nil nil [1912 1922])
+            ("C_DEFS" variable (:default-value ("-D__weak=\"__attribute__((weak))\"" "-D__packed=\"__attribute__((__packed__))\"" "-DUSE_HAL_DRIVER" "-DSTM32F103xB")) nil [1922 2036])
+            ("AS_INCLUDES" variable nil nil [2055 2069])
+            ("C_INCLUDES" variable (:default-value ("-IDrivers/CMSIS/Device/ST/STM32F1xx/Include")) nil [2069 2126])
+            ("C_INCLUDES" variable (:default-value ("-IDrivers/CMSIS/Include")) nil [2126 2164])
+            ("C_INCLUDES" variable (:default-value ("-IDrivers/STM32F1xx_HAL_Driver/Inc")) nil [2164 2213])
+            ("C_INCLUDES" variable (:default-value ("-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy")) nil [2213 2269])
+            ("C_INCLUDES" variable (:default-value ("-IInc")) nil [2269 2289])
+            ("ASFLAGS" variable (:default-value ("-mthumb" "-mcpu=cortex-m3" "$(AS_DEFS)" "$(AS_INCLUDES)" "$(OPT)" "-Wall" "-fdata-sections" "-ffunction-sections")) nil [2309 2418])
+            ("CFLAGS" variable (:default-value ("-mthumb" "-mcpu=cortex-m3" "$(C_DEFS)" "$(C_INCLUDES)" "$(OPT)" "-Wall" "-fdata-sections" "-ffunction-sections")) nil [2418 2524])
+            ("CFLAGS" variable (:default-value ("-g" "-gdwarf-2")) nil [2543 2566])
+            ("CFLAGS" variable (:default-value ("-MD" "-MP" "-MF" ".dep/$(@F).d")) nil [2606 2641])
+            ("LDSCRIPT" variable (:default-value ("STM32F103C8Tx_FLASH.ld")) nil [2746 2780])
+            ("LIBS" variable (:default-value ("-lc" "-lm" "-lnosys")) nil [2792 2815])
+            ("LIBDIR" variable nil nil [2815 2824])
+            ("LDFLAGS" variable (:default-value ("-mthumb" "-mcpu=cortex-m3" "-specs=nano.specs" "-T$(LDSCRIPT)" "$(LIBDIR)" "$(LIBS)" "-Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref" "-Wl,--gc-sections")) nil [2824 2969])
+            ("all" function (:arguments ("$(BUILD_DIR)/$(TARGET).elf" "$(BUILD_DIR)/$(TARGET).hex" "$(BUILD_DIR)/$(TARGET).bin")) nil [2998 3084])
+            ("OBJECTS" variable (:default-value ("$(addprefix $(BUILD_DIR)/,$(notdir $(C_SOURCES:.c=.o)))")) nil [3207 3273])
+            ("OBJECTS" variable (:default-value ("$(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))")) nil [3341 3410])
+            ("$(BUILD_DIR)" function (:arguments ("%.c" "Makefile" "|" "$(BUILD_DIR)")) nil [3451 3580])
+            ("$(BUILD_DIR)" function (:arguments ("%.s" "Makefile" "|" "$(BUILD_DIR)")) nil [3581 3656])
+            ("$(BUILD_DIR)" function (:arguments ("$(OBJECTS)" "Makefile")) nil [3657 3750])
+            ("$(BUILD_DIR)" function (:arguments ("$(BUILD_DIR)/%.elf" "|" "$(BUILD_DIR)")) nil [3751 3821])
+            ("$(BUILD_DIR)" function (:arguments ("$(BUILD_DIR)/%.elf" "|" "$(BUILD_DIR)")) nil [3821 3892])
+            ("$(BUILD_DIR)" function nil nil [3892 3921])
+            ("clean" function nil nil [4013 4047])
+            (".PHONY" function (:arguments ("clean" "all")) nil [4206 4224]))          
+      :file "Makefile"
+      :pointmax 4239
+      :fsize 4238
+      :lastmodtime '(22385 29299 83299 232000)
+      :unmatched-syntax '((semantic-list 4187 . 4204) (punctuation 4186 . 4187) (semantic-list 4155 . 4185) (punctuation 4154 . 4155) (symbol 4145 . 4153) (bol 4145 . 4145) (bol 4047 . 4047) (semantic-list 3421 . 3449) (punctuation 3420 . 3421) (symbol 3416 . 3419) (symbol 3410 . 3415) (bol 3410 . 3410) (semantic-list 3284 . 3310) (punctuation 3283 . 3284) (symbol 3279 . 3282) (symbol 3273 . 3278) (bol 3273 . 3273) (bol 1804 . 1804)))
+    (semanticdb-table "Project.ede"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede-proj-project" code nil nil [73 158]))          
+      :file "Project.ede"
+      :pointmax 159
+      :fsize 158
+      :lastmodtime '(22436 37255 138565 828000)
+      :unmatched-syntax nil)
+    (semanticdb-table "myproject.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede-cpp-root-project" code nil nil [1 375]))          
+      :file "myproject.el"
+      :pointmax 376
+      :fsize 375
+      :lastmodtime '(22436 37476 22571 277000)
+      :unmatched-syntax '((thing 376 . 376)))
+    (semanticdb-table "CubeMX2Makefile.py"
+      :major-mode 'python-mode
+      :tags nil
+      :file "CubeMX2Makefile.py"
+      :pointmax 8249
+      :fsize 8248
+      :lastmodtime '(22385 28925 151286 0)
+      :unmatched-syntax nil))
+  :file "!home!lyra!b!stmtest!stmtest!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

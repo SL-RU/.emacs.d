@@ -1,0 +1,24 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '(("login.vk.com"
+  [url-cookie "h" "1" "Thu, 22 Jun 2017 00:53:50 GMT" "/" "login.vk.com" nil]
+  [url-cookie "HttpOnly" nil "Thu, 22 Jun 2017 00:53:50 GMT" "/" "login.vk.com" nil])
+ (".vk.com"
+  [url-cookie "remixlang" "0" "Tue, 20 Jun 2017 23:31:01 GMT" "/" ".vk.com" nil]
+  [url-cookie "remixlhk" "191dced64d8ae5dfac" "Thu, 29 Jun 2017 15:49:08 GMT" "/" ".vk.com" nil]
+  [url-cookie "remixstid" "1170902970_21fc51f9a7cda6017e" "Wed, 21 Jun 2017 11:00:17 GMT" "/" ".vk.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '(("login.vk.com"
+  [url-cookie "s" "1" "Fri, 30 Jun 2017 04:12:19 GMT" "/" "login.vk.com" t]
+  [url-cookie "HttpOnly" nil "Mon, 12 Jun 2017 13:33:04 GMT" "/" "login.vk.com" t]
+  [url-cookie "l" "75136633" "Sat, 17 Jun 2017 06:55:03 GMT" "/" "login.vk.com" t]
+  [url-cookie "p" "d40e1637176da1948069a8597c45030966fec25838a3b511a818b" "Mon, 12 Jun 2017 13:33:04 GMT" "/" "login.vk.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

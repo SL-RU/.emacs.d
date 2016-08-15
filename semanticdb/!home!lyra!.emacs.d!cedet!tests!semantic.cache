@@ -1,0 +1,73 @@
+;; Object tests/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tests/"
+  :tables
+  (list
+    (semanticdb-table "cit-cpproot.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cit-integ-target-cpproot" variable (:default-value (expand-file-name "edeproj_ede_cpproot" cedet-integ-base)) nil [1221 1390])
+            ("cit-integ-cpproot-subdir" variable (:default-value "integ_src/cpproot/") nil [1392 1503])
+            ("cit-integ-cpproot-sys-subdir" variable (:default-value "integ_src/fauxsyslib/") nil [1505 1623])
+            ("cit-integ-cpproot-srcdir" variable (:default-value (expand-file-name cit-integ-cpproot-subdir (file-name-directory (locate-library "cit-cpproot")))) nil [1625 1814])
+            ("cit-integ-cpproot-sys-subdir" variable (:default-value "integ_src/fauxsyslib/") nil [1816 1934])
+            ("cit-integ-cpproot-sys-srcdir" variable (:default-value (expand-file-name cit-integ-cpproot-sys-subdir (file-name-directory (locate-library "cit-cpproot")))) nil [1936 2133])
+            ("cit-src-cpproot-main-tags" variable (:default-value (list (semantic-tag-new-include "cpprootsys.h" t) (semantic-tag-new-include "sppmacros.h" nil) (semantic-tag-new-include "projincmacros.h" nil) (semantic-tag-new-include "test.h" nil) (semantic-tag-new-function "main" "int" (list (semantic-tag-new-variable "argc" "int") (semantic-tag-new-variable "argv" "char" nil :pointer 1 :dereference 1))) (semantic-tag-new-function "feature1" "int" nil) (semantic-tag-new-function "feature2" "int" nil) (semantic-tag-new-function "feature3" "int" nil) (semantic-tag-new-function "projmacro_a" "char" nil) (semantic-tag-new-function "generic_feature" "int" nil))) nil [2135 2905])
+            ("cit-cpproot-depfiles" variable (:default-value (list (expand-file-name "cpprootsys.h" cit-integ-cpproot-sys-srcdir) (expand-file-name "sppmacros.h" cit-integ-target-cpproot) (expand-file-name "projinc/projincmacros.h" cit-integ-target-cpproot) (expand-file-name "test.h" cit-integ-target-cpproot))) nil [2907 3259])
+            ("cit-ede-cpproot-test" function nil nil [3261 5185])
+            ("cit-file-cpproot" function (:arguments ("filename")) nil [5188 5350])
+            ("cit-cpproot" package nil nil [5352 5374]))          
+      :file "cit-cpproot.el"
+      :pointmax 5405
+      :fsize 5404
+      :lastmodtime '(22436 31432 306422 180000)
+      :unmatched-syntax nil)
+    (semanticdb-table "cit-el.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cit-el-tags" variable
+               (:constant-flag t
+                :default-value (list (semantic-tag-new-variable "cit-spiffy-var" nil t) (semantic-tag-new-variable "cit-spiffy-var-const" nil "'(1 2 3)" :constant-flag t) (semantic-tag-new-function "doSomething" nil (list "arg1" "arg2") :parent "elfoo" :documentation "something for elfoo") (semantic-tag-new-function "niceMethod" nil (list "arg1") :parent "elfoo" :documentation "Nice method on elfoo") (semantic-tag-new-function "niceMethod" nil (list "arg1") :parent "elbar" :documentation "Method on elbar.") (semantic-tag-new-function "RegularFunction" nil (list "arg1") :documentation "Some boring old function.")))
+                nil [961 1729])
+            ("cit-el-tags-eieio" variable
+               (:constant-flag t
+                :default-value (list (semantic-tag-new-include "eieio" nil) (semantic-tag-new-type "elfoo" "class" (list (semantic-tag-new-variable "Field1" nil "t" :documentation "First Field") (semantic-tag-new-variable "Field2" nil "nil" :documentation "Second Field") (semantic-tag-new-variable "Field3" nil "1" :documentation "Third Field") (semantic-tag-new-variable "Field4" nil "\"Hi\"" :documentation "Fourth Field")) nil) (semantic-tag-new-type "elbar" "class" (list (semantic-tag-new-variable "Slot1" nil "nil" :documentation "First Slot") (semantic-tag-new-variable "Slot2" nil "\"What\"" :documentation "First Slot") (semantic-tag-new-variable "Slot3" nil "'(1 2 3)" :documentation "First Slot")) (list "elfoo"))))
+                nil [1731 2612])
+            ("cit-srecode-fill-el" function (:arguments ("make-type")) nil [2614 3677])
+            ("cit-el" package nil nil [3680 3697]))          
+      :file "cit-el.el"
+      :pointmax 3722
+      :fsize 3721
+      :lastmodtime '(22436 31432 306422 180000)
+      :unmatched-syntax nil)
+    (semanticdb-table "cit-gnustep.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede-gnustep" include nil nil [1222 1244])
+            ("cedet-integ-target-gnustep" variable (:default-value (expand-file-name "edeproj_ede_GSMake" cedet-integ-base)) nil [1246 1387])
+            ("cit-ede-step-test" function nil nil [1389 2776])
+            ("cit-step-test-compilation" function nil nil [2778 3616])
+            ("cit-step-file" function (:arguments ("filename")) nil [3618 3779])
+            ("cit-gnustep" package nil nil [3782 3804]))          
+      :file "cit-gnustep.el"
+      :pointmax 3805
+      :fsize 3804
+      :lastmodtime '(22436 31432 306422 180000)
+      :unmatched-syntax nil)
+    (semanticdb-table "cit-android.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cedet-android" include nil nil [1208 1232])
+            ("ede/android" include nil nil [1233 1255])
+            ("cit-integ-target-android" variable (:default-value (expand-file-name "edeproj_ede_Android" cedet-integ-base)) nil [1267 1419])
+            ("cit-ede-android-test" function nil nil [1421 2159])
+            ("cit-file-android" function (:arguments ("filename")) nil [2161 2323])
+            ("cit-android" package nil nil [2325 2347]))          
+      :file "cit-android.el"
+      :pointmax 2378
+      :fsize 2377
+      :lastmodtime '(22436 31432 306422 180000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!cedet!tests!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

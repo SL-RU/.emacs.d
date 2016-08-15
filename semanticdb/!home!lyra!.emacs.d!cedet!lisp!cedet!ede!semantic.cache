@@ -1,0 +1,3313 @@
+;; Object ede/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ede/"
+  :tables
+  (list
+    (semanticdb-table "autoconf-edit.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("unless" code nil nil [1000 1095])
+            ("declare-function" code nil nil [1096 1146])
+            ("declare-function" code nil nil [1147 1198])
+            ("autoconf-new-program" function
+               (:user-visible-flag t
+                :arguments ("rootdir" "program" "testfile"))
+                nil [1200 2228])
+            ("autoconf-preferred-macro-order" variable (:default-value (quote ("AC_INIT" "AC_CONFIG_SRCDIR" "AM_INIT_AUTOMAKE" "AM_CONFIG_HEADER" "AC_ARG_ENABLE" "AC_ARG_WITH" "AC_PROG_MAKE_SET" "AC_PROG_AWK" "AC_PROG_CC" "AC_PROG_CC_C_O" "AC_PROG_CPP" "AC_PROG_CXX" "AC_PROG_CXXCPP" "AC_ISC_POSIX" "AC_PROG_F77" "AC_PROG_GCC_TRADITIONAL" "AC_PROG_INSTALL" "AC_PROG_LEX" "AC_PROG_LN_S" "AC_PROG_RANLIB" "AC_PROG_YACC" "AC_CHECK_PROG" "AC_CHECK_PROGS" "AC_PROG_LIBTOOL" "AC_CHECK_LIB" "AC_PATH_XTRA" "AC_HEADER_STDC" "AC_HEADER_SYS_WAIT" "AC_HEADER_TIME" "AC_HEADERS" "AC_TYPE_PID_T" "AC_TYPE_SIGNAL" "AC_TYPE_UID_T" "AC_STRUCT_TM" "AC_CHECK_SIZEOF" "AC_C_CONST" "AC_CHECK_FUNCS" "AC_TRY_LINK" "AM_PATH_LISPDIR" "AM_INIT_GUILE_MODULE" "AC_OUTPUT"))) nil [2230 3813])
+            ("autoconf-multiple-macros" variable (:default-value (quote ("AC_ARG_ENABLE" "AC_ARG_WITH" "AC_CHECK_PROGS" "AC_CHECK_LIB" "AC_CHECK_SIZEOF" "AC_TRY_LINK"))) nil [3815 4012])
+            ("autoconf-multiple-multiple-macros" variable (:default-value (quote ("AC_HEADERS" "AC_CHECK_FUNCS"))) nil [4014 4161])
+            ("autoconf-in-macro" function (:arguments ("macro")) nil [4163 4351])
+            ("autoconf-find-last-macro" function (:arguments ("macro" "ignore-bol")) nil [4353 4855])
+            ("autoconf-parameter-strip" function (:arguments ("param")) nil [4857 5371])
+            ("autoconf-parameters-for-macro" function (:arguments ("macro" "ignore-bol" "ignore-case")) nil [5373 5938])
+            ("autoconf-position-for-macro" function (:arguments ("macro")) nil [5940 6745])
+            ("autoconf-insert-macro-at-point" function (:arguments ("macro" "param")) nil [6747 6969])
+            ("autoconf-insert-new-macro" function (:arguments ("macro" "param")) nil [6971 8509])
+            ("autoconf-find-query-for-header" function
+               (:user-visible-flag t
+                :arguments ("header"))
+                nil [8511 9051])
+            ("autoconf-add-query-for-header" function
+               (:user-visible-flag t
+                :arguments ("header"))
+                nil [9053 9292])
+            ("autoconf-find-query-for-func" function
+               (:user-visible-flag t
+                :arguments ("func"))
+                nil [9295 9827])
+            ("autoconf-add-query-for-func" function
+               (:user-visible-flag t
+                :arguments ("func"))
+                nil [9829 10056])
+            ("autoconf-program-builtin" variable (:default-value (quote (("AWK" . "AC_PROG_AWK") ("CC" . "AC_PROG_CC") ("CPP" . "AC_PROG_CPP") ("CXX" . "AC_PROG_CXX") ("CXXCPP" . "AC_PROG_CXXCPP") ("F77" . "AC_PROG_F77") ("GCC_TRADITIONAL" . "AC_PROG_GCC_TRADITIONAL") ("INSTALL" . "AC_PROG_INSTALL") ("LEX" . "AC_PROG_LEX") ("LN_S" . "AC_PROG_LN_S") ("RANLIB" . "AC_PROG_RANLIB") ("YACC" . "AC_PROG_YACC")))) nil [10058 10547])
+            ("autoconf-find-query-for-program" function (:arguments ("prog")) nil [10549 11161])
+            ("autoconf-add-query-for-program" function
+               (:user-visible-flag t
+                :arguments ("prog" "names"))
+                nil [11163 11679])
+            ("autoconf-deleted-text" variable nil nil [11711 11801])
+            ("autoconf-inserted-text" variable nil nil [11803 11895])
+            ("autoconf-edit-cycle" function (:arguments ("body")) nil [11897 12321])
+            ("autoconf-parameter-count" function nil nil [12323 13207])
+            ("autoconf-delete-parameter" function (:arguments ("index")) nil [13209 13711])
+            ("autoconf-insert" function (:arguments ("text")) nil [13713 13813])
+            ("autoconf-set-version" function (:arguments ("version")) nil [13815 14438])
+            ("autoconf-set-output" function (:arguments ("outputlist")) nil [14440 14868])
+            ("ede/autoconf-edit" package nil nil [14870 14898]))          
+      :file "autoconf-edit.el"
+      :pointmax 14935
+      :fsize 14934
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "source.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("eieio-base" include nil nil [1057 1078])
+            ("ede-sourcecode" type
+               (:superclasses "eieio-instance-inheritor"
+                :members 
+                  ( ("name" variable
+                       (:documentation "The name of this type of source code.
+Such as \"C\" or \"Emacs Lisp\""
+                        :type "string")
+                        nil nil)
+                    ("sourcepattern" variable
+                       (:documentation "Emacs regexp matching sourcecode this target accepts."
+                        :default-value ".*"
+                        :type "string")
+                        nil nil)
+                    ("auxsourcepattern" variable
+                       (:documentation "Emacs regexp matching auxiliary source code this target accepts.
+Aux source are source code files needed for compilation, which are not compiled
+themselves."
+                        :default-value "nil"
+                        :type "(or null string)")
+                        nil nil)
+                    ("enable-subdirectories" variable
+                       (:documentation "Non nil if this sourcecode type uses subdirectories.
+If sourcecode always lives near the target creating it, this should be nil.
+If sourcecode can, or typically lives in a subdirectory of the owning
+target, set this to t."
+                        :default-value "nil"
+                        :type "boolean")
+                        nil nil)
+                    ("garbagepattern" variable
+                       (:documentation "Shell file regexp matching files considered as garbage.
+This is a list of items added to an `rm' command when executing a `clean'
+type directive."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [1090 2464])
+            ("ede-sourcecode-list" variable nil nil [2466 2540])
+            ("initialize-instance" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "fields"))
+                nil [2557 3058])
+            ("ede-want-file-p" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "filename"))
+                nil [3060 3283])
+            ("ede-want-file-source-p" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "filename"))
+                nil [3285 3503])
+            ("ede-want-file-auxiliary-p" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "filename"))
+                nil [3505 3805])
+            ("ede-want-any-source-files-p" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "filenames"))
+                nil [3807 4081])
+            ("ede-want-any-auxiliary-files-p" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "filenames"))
+                nil [4083 4360])
+            ("ede-want-any-files-p" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "filenames"))
+                nil [4362 4615])
+            ("ede-buffer-header-file" function
+               (:parent "ede-sourcecode"
+                :arguments ("this" "filename"))
+                nil [4617 5057])
+            ("when" code nil nil [5084 5566])
+            ("ede-source-scheme" variable (:default-value (ede-sourcecode "ede-source-scheme" :name "Scheme" :sourcepattern "\\.scm$")) nil [5673 5821])
+            ("ede/source" package nil nil [5992 6013]))          
+      :file "source.el"
+      :pointmax 6043
+      :fsize 6042
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "base.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("eieio" include nil nil [923 939])
+            ("eieio-speedbar" include nil nil [940 965])
+            ("ede/auto" include nil nil [966 985])
+            ("ede-projects" variable nil nil [1009 1030])
+            ("ede-object" variable nil nil [1031 1050])
+            ("ede-object-root-project" variable nil nil [1051 1083])
+            ("declare-function" code nil nil [1085 1138])
+            ("declare-function" code nil nil [1139 1206])
+            ("declare-function" code nil nil [1207 1266])
+            ("declare-function" code nil nil [1267 1327])
+            ("ede-target" type
+               (:superclasses "eieio-speedbar-directory-button"
+                :members 
+                  ( ("buttonface" variable (:default-value "speedbar-file-face") nil nil)
+                    ("name" variable
+                       (:documentation "Name of this target."
+                        :type "string")
+                        nil nil)
+                    ("path" variable
+                       (:documentation "The path to the sources of this target.
+Relative to the path of the project it belongs to."
+                        :type "string")
+                        nil nil)
+                    ("source" variable
+                       (:documentation "Source files in this target."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("versionsource" variable
+                       (:documentation "Source files with a version string in them.
+These files are checked for a version string whenever the EDE version
+of the master project is changed.  When strings are found, the version
+previously there is updated."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("sourcetype" variable
+                       (:documentation "A list of `ede-sourcecode' objects this class will handle.
+This is used to match target objects with the compilers they can use, and
+which files this object is interested in."
+                        :static-flag t
+                        :type "list")
+                        nil nil)
+                    ("keybindings" variable
+                       (:documentation "Keybindings specialized to this type of target."
+                        :static-flag t
+                        :default-value "((\"D\" . ede-debug-target))")
+                        nil nil)
+                    ("menu" variable
+                       (:documentation "Menu specialized to this type of target."
+                        :static-flag t
+                        :default-value "([\"Debug target\" ede-debug-target (ede-buffer-belongs-to-target-p)] [\"Run target\" ede-run-target (ede-buffer-belongs-to-target-p)])")
+                        nil nil))                  
+                :type "class")
+                nil [1439 3719])
+            ("ede-project-placeholder" type
+               (:superclasses "eieio-speedbar-directory-button"
+                :members 
+                  ( ("name" variable
+                       (:documentation "The name used when generating distribution files."
+                        :default-value "Untitled"
+                        :type "string")
+                        nil nil)
+                    ("version" variable
+                       (:documentation "The version number used when distributing files."
+                        :default-value "1.0"
+                        :type "string")
+                        nil nil)
+                    ("directory" variable
+                       (:documentation "Directory this project is associated with."
+                        :type "string")
+                        nil nil)
+                    ("dirinode" variable (:documentation "The inode id for :directory.") nil nil)
+                    ("file" variable
+                       (:documentation "The File uniquely tagging this project instance.
+For some project types, this will be the file that stores the project configuration.
+In other projects types, this file is merely a unique identifier to this type of project."
+                        :type "string")
+                        nil nil)
+                    ("rootproject" variable
+                       (:documentation "Pointer to our root project."
+                        :default-value "nil"
+                        :type "(or null ede-project-placeholder-child)")
+                        nil nil))                  
+                :type "class")
+                nil [3957 5264])
+            ("ede-project" type
+               (:superclasses "ede-project-placeholder"
+                :members 
+                  ( ("subproj" variable
+                       (:documentation "Sub projects controlled by this project.
+For Automake based projects, each directory is treated as a project."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("targets" variable
+                       (:documentation "List of top level targets in this project."
+                        :type "ede-target-list")
+                        nil nil)
+                    ("locate-obj" variable
+                       (:documentation "A locate object to use as a backup to `ede-expand-filename'."
+                        :type "(or null ede-locate-base-child)")
+                        nil nil)
+                    ("tool-cache" variable
+                       (:documentation "List of tool cache configurations in this project.
+This allows any tool to create, manage, and persist project-specific settings."
+                        :type "list")
+                        nil nil)
+                    ("mailinglist" variable
+                       (:documentation "An email address where users might send email for help."
+                        :type "string")
+                        nil nil)
+                    ("web-site-url" variable
+                       (:documentation "URL to this projects web site.
+This is a URL to be sent to a web site for documentation."
+                        :type "string")
+                        nil nil)
+                    ("web-site-directory" variable (:documentation "A directory where web pages can be found by Emacs.
+For remote locations use a path compatible with ange-ftp or EFS.
+You can also use TRAMP for use with rcp & scp.") nil nil)
+                    ("web-site-file" variable (:documentation "A file which contains the home page for this project.
+This file can be relative to slot `web-site-directory'.
+This can be a local file, use ange-ftp, EFS, or TRAMP.") nil nil)
+                    ("ftp-site" variable
+                       (:documentation "FTP site where this project's distribution can be found.
+This FTP site should be in Emacs form, as needed by `ange-ftp', but can
+also be of a form used by TRAMP for use with scp, or rcp."
+                        :type "string")
+                        nil nil)
+                    ("ftp-upload-site" variable
+                       (:documentation "FTP Site to upload new distributions to.
+This FTP site should be in Emacs form as needed by `ange-ftp'.
+If this slot is nil, then use `ftp-site' instead."
+                        :type "string")
+                        nil nil)
+                    ("configurations" variable
+                       (:documentation "List of available configuration types.
+Individual target/project types can form associations between a configuration,
+and target specific elements such as build variables."
+                        :default-value "(\"debug\" \"release\")"
+                        :type "list")
+                        nil nil)
+                    ("configuration-default" variable
+                       (:documentation "The default configuration."
+                        :default-value "debug")
+                        nil nil)
+                    ("local-variables" variable
+                       (:documentation "Project local variables"
+                        :default-value "nil")
+                        nil nil)
+                    ("keybindings" variable
+                       (:documentation "Keybindings specialized to this type of target."
+                        :static-flag t
+                        :default-value "((\"D\" . ede-debug-target) (\"R\" . ede-run-target))")
+                        nil nil)
+                    ("menu" variable
+                       (:documentation "Menu specialized to this type of target."
+                        :static-flag t
+                        :default-value "([\"Update Version\" ede-update-version ede-object] [\"Version Control Status\" ede-vc-project-directory ede-object] [\"Edit Project Homepage\" ede-edit-web-page (and ede-object (oref (ede-toplevel) web-site-file))] [\"Browse Project URL\" ede-web-browse-home (and ede-object (not (string= \"\" (oref (ede-toplevel) web-site-url))))] \"--\" [\"Rescan Project Files\" ede-rescan-toplevel t] [\"Edit Projectfile\" ede-edit-file-target (ede-buffer-belongs-to-project-p)])")
+                        nil nil))                  
+                :type "class")
+                nil [5698 10239])
+            ("ede-with-projectfile" function (:arguments ("obj" "forms")) nil [10285 10778])
+            ("put" code nil nil [10779 10830])
+            ("ede-project-placeholder-cache-file" variable (:default-value (locate-user-emacs-file "ede-projects.el" ".projects.ede")) nil [11023 11259])
+            ("ede-project-cache-files" variable nil nil [11261 11344])
+            ("ede-save-cache" function (:user-visible-flag t) nil [11346 12386])
+            ("ede-load-cache" function nil nil [12388 13292])
+            ("ede-subproject-relative-path" function
+               (:parent "ede-project"
+                :arguments ("proj" "parent-in"))
+                nil [13903 14426])
+            ("ede-subproject-p" function
+               (:parent "ede-project"
+                :arguments ("proj"))
+                nil [14428 14649])
+            ("ede-name" function
+               (:parent "ede-target"
+                :arguments ("this"))
+                nil [14860 14955])
+            ("ede-target-name" function
+               (:parent "ede-target"
+                :arguments ("this"))
+                nil [14957 15102])
+            ("ede-name" function
+               (:parent "ede-project"
+                :arguments ("this"))
+                nil [15104 15260])
+            ("ede-description" function
+               (:parent "ede-project"
+                :arguments ("this"))
+                nil [15262 15508])
+            ("ede-description" function
+               (:parent "ede-target"
+                :arguments ("this"))
+                nil [15510 15715])
+            ("ede-header-file" function nil nil [15990 16214])
+            ("ede-buffer-header-file" function
+               (:parent "ede-project"
+                :arguments ("this" "buffer"))
+                nil [16216 16334])
+            ("ede-buffer-header-file" function
+               (:parent "ede-target"
+                :arguments ("this" "buffer"))
+                nil [16336 16870])
+            ("ede-documentation-files" function nil nil [16872 17198])
+            ("ede-buffer-documentation-files" function
+               (:parent "ede-project"
+                :arguments ("this" "buffer"))
+                nil [17200 17384])
+            ("ede-buffer-documentation-files" function
+               (:parent "ede-target"
+                :arguments ("this" "buffer"))
+                nil [17386 17882])
+            ("ede-documentation" function
+               (:parent "ede-project"
+                :arguments ("this"))
+                nil [17884 18377])
+            ("ede-documentation" function
+               (:parent "ede-target"
+                :arguments ("this"))
+                nil [18379 18583])
+            ("ede-html-documentation-files" function nil nil [18585 18745])
+            ("ede-html-documentation" function
+               (:parent "ede-project"
+                :arguments ("this"))
+                nil [18747 18864])
+            ("ede-want-file-p" function
+               (:parent "ede-target"
+                :arguments ("this" "file"))
+                nil [19016 19332])
+            ("ede-want-file-source-p" function
+               (:parent "ede-target"
+                :arguments ("this" "file"))
+                nil [19334 19664])
+            ("ede-target-sourcecode" function
+               (:parent "ede-target"
+                :arguments ("this"))
+                nil [19666 19927])
+            ("ede-adebug-project" function (:user-visible-flag t) nil [19949 20249])
+            ("ede-adebug-project-parent" function (:user-visible-flag t) nil [20251 20563])
+            ("ede-adebug-project-root" function (:user-visible-flag t) nil [20565 20863])
+            ("ede-toplevel" function (:arguments ("subproj")) nil [20997 21443])
+            ("ede-normalize-file/directory" function (:arguments ("this" "project-file-name")) nil [21473 22171])
+            ("ede/base" package nil nil [22398 22417]))          
+      :file "base.el"
+      :pointmax 22560
+      :fsize 22559
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "auto.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("eieio" include nil nil [1090 1106])
+            ("declare-function" code nil nil [1108 1153])
+            ("declare-function" code nil nil [1154 1209])
+            ("ede-project-autoload-dirmatch" type
+               (:members 
+                  ( ("fromconfig" variable
+                       (:documentation "A config file within which the match pattern lives."
+                        :default-value "nil")
+                        nil nil)
+                    ("configregex" variable
+                       (:documentation "A regexp to identify the dirmatch pattern."
+                        :default-value "nil")
+                        nil nil)
+                    ("configregexidx" variable
+                       (:documentation "An index into the match-data of `configregex'."
+                        :default-value "nil")
+                        nil nil)
+                    ("subdir-only" variable
+                       (:documentation "Non-nil means an exact match to the found directory is a non-match.
+This implies projects exist only in subdirectories of the configuration path.
+If `:subdir-only' is nil, then the directory from the configuration file is the project."
+                        :default-value "t")
+                        nil nil)
+                    ("configdatastash" variable (:documentation "Save discovered match string.") nil nil))                  
+                :type "class")
+                nil [1211 2337])
+            ("ede-calc-fromconfig" function
+               (:parent "ede-project-autoload-dirmatch"
+                :arguments ("dirmatch"))
+                nil [2339 2676])
+            ("ede-dirmatch-installed" function
+               (:parent "ede-project-autoload-dirmatch"
+                :arguments ("dirmatch"))
+                nil [2679 2885])
+            ("ede-do-dirmatch" function
+               (:parent "ede-project-autoload-dirmatch"
+                :arguments ("dirmatch" "file"))
+                nil [2887 4613])
+            ("declare-function" code nil nil [4615 4660])
+            ("declare-function" code nil nil [4661 4716])
+            ("ede-project-autoload" type
+               (:members 
+                  ( ("name" variable (:documentation "Name of this project type") nil nil)
+                    ("file" variable (:documentation "The lisp file belonging to this class.") nil nil)
+                    ("proj-file" variable (:documentation "Name of a project file of this type.") nil nil)
+                    ("root-only" variable
+                       (:documentation "Non-nil if project detection only finds proj-file @ project root."
+                        :default-value "t")
+                        nil nil)
+                    ("proj-root-dirmatch" variable
+                       (:documentation "To avoid loading a project, check if the directory matches this.
+Specifying this matcher object will allow EDE to perform a complex
+check without loading the project.
+
+NOTE: If you use dirmatch, you may need to set :root-only to `nil'.
+While it may be a root based project, all subdirs will happen to return
+true for the dirmatch, so for scanning purposes, set it to `nil'."
+                        :default-value "nil"
+                        :type "(or null string ede-project-autoload-dirmatch)")
+                        nil nil)
+                    ("proj-root" variable
+                       (:documentation "A function symbol to call for the project root.
+This function takes no arguments, and returns the current directories
+root, if available.  Leave blank to use the EDE directory walking
+routine instead."
+                        :type "function")
+                        nil nil)
+                    ("initializers" variable
+                       (:documentation "Initializers passed to the project object.
+These are used so there can be multiple types of projects
+associated with a single object class, based on the initializers used."
+                        :default-value "nil")
+                        nil nil)
+                    ("load-type" variable (:documentation "Fn symbol used to load this project file.") nil nil)
+                    ("class-sym" variable (:documentation "Symbol representing the project class to use.") nil nil)
+                    ("generic-p" variable
+                       (:documentation "Generic projects are added to the project list at the end.
+The add routine will set this to non-nil so that future non-generic placement will
+be successful."
+                        :default-value "nil")
+                        nil nil)
+                    ("new-p" variable
+                       (:documentation "Non-nil if this is an option when a user creates a project."
+                        :default-value "t")
+                        nil nil)
+                    ("safe-p" variable
+                       (:documentation "Non-nil if the project load files are \"safe\".
+An unsafe project is one that loads project variables via Emacs
+Lisp code.  A safe project is one that loads project variables by
+scanning files without loading Lisp code from them."
+                        :default-value "t")
+                        nil nil))                  
+                :type "class")
+                nil [4718 7318])
+            ("ede-project-class-files" variable (:default-value (list (ede-project-autoload "edeproject-makefile" :name "Make" :file (quote ede/proj) :proj-file "Project.ede" :root-only nil :load-type (quote ede-proj-load) :class-sym (quote ede-proj-project) :safe-p nil) (ede-project-autoload "edeproject-automake" :name "Automake" :file (quote ede/proj) :proj-file "Project.ede" :root-only nil :initializers (quote (:makefile-type Makefile\.am)) :load-type (quote ede-proj-load) :class-sym (quote ede-proj-project) :safe-p nil) (ede-project-autoload "automake" :name "automake" :file (quote ede/project-am) :proj-file "Makefile.am" :root-only nil :load-type (quote project-am-load) :class-sym (quote project-am-makefile) :new-p nil :safe-p t))) nil [7320 8133])
+            ("put" code nil nil [8135 8189])
+            ("ede-show-supported-projects" function (:user-visible-flag t) nil [8191 8416])
+            ("ede-add-project-autoload" function (:arguments ("projauto" "flag")) nil [8418 10089])
+            ("ede-auto-detect-in-dir" function
+               (:parent "ede-project-autoload"
+                :arguments ("this" "dir"))
+                nil [10154 10785])
+            ("ede-auto-load-project" function
+               (:parent "ede-project-autoload"
+                :arguments ("this" "dir"))
+                nil [10787 11584])
+            ("ede-project-root" function
+               (:parent "ede-project-autoload"
+                :arguments ("this"))
+                nil [11701 11869])
+            ("ede-project-root-directory" function
+               (:parent "ede-project-autoload"
+                :arguments ("this" "file"))
+                nil [11920 12012])
+            ("ede/auto" package nil nil [12014 12033]))          
+      :file "auto.el"
+      :pointmax 12061
+      :fsize 12060
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "detect.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/auto" include nil nil [1143 1162])
+            ("unless" code nil nil [1281 1396])
+            ("ede--detect-stop-scan-p" function (:arguments ("dir")) nil [1424 1597])
+            ("ede--detect-found-project" variable nil nil [1660 1761])
+            ("ede--detect-ldf-predicate" function (:arguments ("dir")) nil [1763 2293])
+            ("ede--detect-scan-directory-for-project" function (:arguments ("directory")) nil [2295 2767])
+            ("ede--detect-ldf-rootonly-predicate" function (:arguments ("dir")) nil [2983 3569])
+            ("ede--detect-scan-directory-for-rootonly-project" function (:arguments ("directory")) nil [3571 4061])
+            ("ede--detect-nomatch-auto" variable nil nil [4191 4277])
+            ("ede--detect-ldf-root-predicate" function (:arguments ("dir")) nil [4279 4835])
+            ("ede--detect-scan-directory-for-project-root" function (:arguments ("directory" "auto")) nil [4837 5317])
+            ("ede-detect-directory-for-project" function (:arguments ("directory")) nil [5389 6429])
+            ("ede-detect-qtest" function (:user-visible-flag t) nil [6479 6885])
+            ("ede/detect" package nil nil [6890 6911]))          
+      :file "detect.el"
+      :pointmax 6937
+      :fsize 6936
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "files.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [1238 1252])
+            ("declare-function" code nil nil [1254 1309])
+            ("declare-function" code nil nil [1310 1369])
+            ("declare-function" code nil nil [1370 1428])
+            ("declare-function" code nil nil [1429 1482])
+            ("ede--disable-inode" variable nil nil [1484 1571])
+            ("ede-find-file" function
+               (:user-visible-flag t
+                :arguments ("file"))
+                nil [1598 2030])
+            ("ede-flush-project-hash" function (:user-visible-flag t) nil [2032 2274])
+            ("ede-global-list-sanity-check" function (:user-visible-flag t) nil [2276 2957])
+            ("ede-project-root" function
+               (:parent "ede-project-placeholder"
+                :arguments ("this"))
+                nil [3023 3214])
+            ("ede-project-root-directory" function
+               (:parent "ede-project-placeholder"
+                :arguments ("this" "file"))
+                nil [3216 3630])
+            ("ede-inode-directory-hash" variable (:default-value (make-hash-table :test (quote equal))) nil [3863 4035])
+            ("ede--put-inode-dir-hash" function (:arguments ("dir" "inode")) nil [4037 4226])
+            ("ede--get-inode-dir-hash" function (:arguments ("dir")) nil [4228 4397])
+            ("ede--inode-for-dir" function (:arguments ("dir")) nil [4399 4722])
+            ("ede--project-inode" function
+               (:parent "ede-project-placeholder"
+                :arguments ("proj"))
+                nil [4724 4974])
+            ("ede--inode-get-toplevel-open-project" function (:arguments ("inode")) nil [4976 5391])
+            ("ede-directory-get-open-project" function (:arguments ("dir" "rootreturn")) nil [5628 6543])
+            ("ede-directory-get-toplevel-open-project" function (:arguments ("dir" "exact")) nil [6638 8641])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-project-placeholder"
+                :arguments ("proj" "dir"))
+                nil [8643 9450])
+            ("ede-project-directory-hash" variable (:default-value (make-hash-table :test (quote equal))) nil [9675 9869])
+            ("ede-flush-directory-hash" function (:user-visible-flag t) nil [9871 10285])
+            ("ede-project-directory-remove-hash" function (:arguments ("dir")) nil [10287 10891])
+            ("ede--directory-project-from-hash" function (:arguments ("dir")) nil [10893 11130])
+            ("ede--directory-project-add-description-to-hash" function (:arguments ("dir" "desc")) nil [11132 11380])
+            ("ede-directory-project-p" function (:arguments ("dir" "force")) nil [11617 12399])
+            ("ede-directory-project-cons" function (:arguments ("dir" "force")) nil [12401 13262])
+            ("ede-toplevel-project" function (:arguments ("dir")) nil [13466 14134])
+            ("defalias" code nil nil [14136 14197])
+            ("ede-convert-path" function
+               (:parent "ede-project"
+                :arguments ("this" "path"))
+                nil [14233 14788])
+            ("ede-convert-path" function
+               (:parent "ede-target"
+                :arguments ("this" "path" "project"))
+                nil [14790 15518])
+            ("ede-get-locator-object" function (:arguments ("proj")) nil [15546 15983])
+            ("ede-expand-filename" function
+               (:parent "ede-project"
+                :arguments ("this" "filename" "force"))
+                nil [15985 18346])
+            ("ede-expand-filename-impl" function
+               (:parent "ede-project"
+                :arguments ("this" "filename" "force"))
+                nil [18348 19133])
+            ("ede-expand-filename-local" function
+               (:parent "ede-project"
+                :arguments ("this" "filename"))
+                nil [19135 19551])
+            ("ede-expand-filename-impl-via-subproj" function
+               (:parent "ede-project"
+                :arguments ("this" "filename"))
+                nil [19553 20106])
+            ("ede-expand-filename" function
+               (:parent "ede-target"
+                :arguments ("this" "filename" "force"))
+                nil [20108 20481])
+            ("ede-up-directory" function (:arguments ("dir")) nil [20501 20820])
+            ("ede/files" package nil nil [20823 20843]))          
+      :file "files.el"
+      :pointmax 20988
+      :fsize 20987
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "make.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("declare-function" code nil nil [1179 1233])
+            ("if" code nil nil [1235 1779])
+            ("ede-make-min-version" variable (:default-value "3.0") nil [1781 1858])
+            ("ede-make-command" variable (:default-value (cond ((ede--find-executable "gmake") "gmake") (t "make"))) nil [1860 2205])
+            ("ede-make-check-version" function
+               (:user-visible-flag t
+                :arguments ("noerror"))
+                nil [2222 3427])
+            ("ede/make" package nil nil [3429 3448]))          
+      :file "make.el"
+      :pointmax 3591
+      :fsize 3590
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "custom.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [1095 1109])
+            ("eieio-custom" include nil nil [1129 1152])
+            ("eieio-ede-old-variables" variable nil nil [1155 1228])
+            ("ede-customize-project" function (:user-visible-flag t) nil [1342 1681])
+            ("defalias" code nil nil [1698 1750])
+            ("ede-customize-current-target" function (:user-visible-flag t) nil [1767 2050])
+            ("defalias" code nil nil [2067 2125])
+            ("ede-customize-target" function (:arguments ("obj")) nil [2127 2412])
+            ("ede-customize" function
+               (:parent "ede-project"
+                :arguments ("proj"))
+                nil [2414 2537])
+            ("ede-customize" function
+               (:parent "ede-target"
+                :arguments ("target"))
+                nil [2539 2659])
+            ("ede-project-sort-targets-order" variable nil nil [2850 2963])
+            ("ede-project-sort-targets" function (:user-visible-flag t) nil [2980 4510])
+            ("ede-project-sort-targets-list" function nil nil [4512 6756])
+            ("eieio-done-customizing" function
+               (:parent "ede-project"
+                :arguments ("proj"))
+                nil [6844 7376])
+            ("eieio-done-customizing" function
+               (:parent "ede-target"
+                :arguments ("target"))
+                nil [7512 7629])
+            ("ede-commit-project" function
+               (:parent "ede-project"
+                :arguments ("proj"))
+                nil [7631 7734])
+            ("ede/custom" package nil nil [7736 7757]))          
+      :file "custom.el"
+      :pointmax 7904
+      :fsize 7903
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1152 . 1153) (symbol 1111 . 1128) (open-paren 1110 . 1111)))
+    (semanticdb-table "proj.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/proj-comp" include nil nil [1225 1249])
+            ("ede/make" include nil nil [1250 1269])
+            ("declare-function" code nil nil [1271 1326])
+            ("declare-function" code nil nil [1327 1388])
+            ("ede-proj-target-aux" function (:prototype-flag t) nil [1390 1488])
+            ("ede-proj-target-elisp" function (:prototype-flag t) nil [1489 1591])
+            ("ede-proj-target-elisp-autoloads" function (:prototype-flag t) nil [1592 1708])
+            ("ede-proj-target-scheme" function (:prototype-flag t) nil [1709 1813])
+            ("ede-proj-target-makefile-miscelaneous" function (:prototype-flag t) nil [1814 1956])
+            ("ede-proj-target-makefile-program" function (:prototype-flag t) nil [1957 2066])
+            ("ede-proj-target-makefile-archive" function (:prototype-flag t) nil [2067 2195])
+            ("ede-proj-target-makefile-shared-object" function (:prototype-flag t) nil [2196 2319])
+            ("ede-proj-target-makefile-info" function (:prototype-flag t) nil [2320 2418])
+            ("eieio-defclass-autoload" code nil nil [2420 2546])
+            ("eieio-defclass-autoload" code nil nil [2547 2686])
+            ("eieio-defclass-autoload" code nil nil [2687 2837])
+            ("eieio-defclass-autoload" code nil nil [2838 2970])
+            ("eieio-defclass-autoload" code nil nil [2971 3150])
+            ("eieio-defclass-autoload" code nil nil [3151 3308])
+            ("eieio-defclass-autoload" code nil nil [3309 3485])
+            ("eieio-defclass-autoload" code nil nil [3486 3654])
+            ("eieio-defclass-autoload" code nil nil [3655 3790])
+            ("eieio-defclass-autoload" code nil nil [3831 3984])
+            ("ede-proj-target" type
+               (:superclasses "ede-target"
+                :members 
+                  ( ("auxsource" variable
+                       (:documentation "Auxiliary source files included in this target.
+Each of these is considered equivalent to a source file, but it is not
+distributed, and each should have a corresponding rule to build it."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("dirty" variable
+                       (:documentation "Non-nil when generated files needs updating."
+                        :default-value "nil"
+                        :type "boolean")
+                        nil nil)
+                    ("compiler" variable
+                       (:documentation "The compiler to be used to compile this object.
+This should be a symbol, which contains the object defining the compiler.
+This enables save/restore to do so by name, permitting the sharing
+of these compiler resources, and global customization thereof."
+                        :default-value "nil"
+                        :type "(or null symbol)")
+                        nil nil)
+                    ("linker" variable
+                       (:documentation "The linker to be used to link compiled sources for this object.
+This should be a symbol, which contains the object defining the linker.
+This enables save/restore to do so by name, permitting the sharing
+of these linker resources, and global customization thereof."
+                        :default-value "nil"
+                        :type "(or null symbol)")
+                        nil nil)
+                    ("phony" variable
+                       (:documentation "A phony target is one where the build target does not relate to a file.
+Such targets are always built, but make knows how to deal with them.."
+                        :static-flag t
+                        :default-value "nil"
+                        :type "boolean")
+                        nil nil)
+                    ("availablecompilers" variable
+                       (:documentation "A list of `ede-compiler' objects.
+These are the compilers the user can choose from when setting the
+`compiler' slot."
+                        :static-flag t
+                        :default-value "nil"
+                        :type "(or null list)")
+                        nil nil)
+                    ("availablelinkers" variable
+                       (:documentation "A list of `ede-linker' objects.
+These are the linkers the user can choose from when setting the
+`linker' slot."
+                        :static-flag t
+                        :default-value "nil"
+                        :type "(or null list)")
+                        nil nil))                  
+                :type "class")
+                nil [4009 6484])
+            ("ede-proj-target-makefile" type
+               (:superclasses "ede-proj-target"
+                :members 
+                  ( ("makefile" variable
+                       (:documentation "File name of generated Makefile."
+                        :default-value "Makefile"
+                        :type "string")
+                        nil nil)
+                    ("partofall" variable
+                       (:documentation "Non nil means the rule created is part of the all target.
+Setting this to nil creates the rule to build this item, but does not
+include it in the ALL`all:' rule."
+                        :default-value "t"
+                        :type "boolean")
+                        nil nil)
+                    ("configuration-variables" variable
+                       (:documentation "Makefile variables appended to use in different configurations.
+These variables are used in the makefile when a configuration becomes active.
+Target variables are always renamed such as foo_CFLAGS, then included into
+commands where the variable would usually appear."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("rules" variable
+                       (:documentation "Arbitrary rules and dependencies needed to make this target.
+It is safe to leave this blank."
+                        :default-value "nil"
+                        :type "ede-makefile-rule-list")
+                        nil nil))                  
+                :type "class")
+                nil [6486 8032])
+            ("ede-proj-target-alist" variable (:default-value (quote (("program" . ede-proj-target-makefile-program) ("archive" . ede-proj-target-makefile-archive) ("sharedobject" . ede-proj-target-makefile-shared-object) ("emacs lisp" . ede-proj-target-elisp) ("emacs lisp autoloads" . ede-proj-target-elisp-autoloads) ("info" . ede-proj-target-makefile-info) ("auxiliary" . ede-proj-target-aux) ("scheme" . ede-proj-target-scheme) ("miscellaneous" . ede-proj-target-makefile-miscelaneous)))) nil [8034 8599])
+            ("ede-proj-register-target" function (:arguments ("name" "class")) nil [8601 8924])
+            ("ede-proj-project" type
+               (:interfaces ("ede-project")
+                :superclasses "eieio-persistent"
+                :members 
+                  ( ("extension" variable (:default-value ".ede") nil nil)
+                    ("file-header-line" variable (:default-value ";; EDE Project Files are auto generated: Do Not Edit") nil nil)
+                    ("makefile-type" variable
+                       (:documentation "The type of Makefile to generate.
+Can be one of 'Makefile, 'Makefile.in, or 'Makefile.am.
+If this value is NOT 'Makefile, then that overrides the :makefile slot
+in targets."
+                        :default-value "Makefile"
+                        :type "symbol")
+                        nil nil)
+                    ("variables" variable
+                       (:documentation "Variables to set in this Makefile."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("configuration-variables" variable
+                       (:documentation "Makefile variables to use in different configurations.
+These variables are used in the makefile when a configuration becomes active."
+                        :default-value "(\"debug\" ((\"DEBUG\" . \"1\")))"
+                        :type "list")
+                        nil nil)
+                    ("inference-rules" variable
+                       (:documentation "Inference rules to add to the makefile."
+                        :default-value "nil"
+                        :type "ede-makefile-rule-list")
+                        nil nil)
+                    ("include-file" variable
+                       (:documentation "Additional files to include.
+These files can contain additional rules, variables, and customizations."
+                        :default-value "nil")
+                        nil nil)
+                    ("automatic-dependencies" variable
+                       (:documentation "Non-nil to do implement automatic dependencies in the Makefile."
+                        :default-value "t"
+                        :type "boolean")
+                        nil nil)
+                    ("menu" variable (:default-value "([\"Regenerate Makefiles\" ede-proj-regenerate t] [\"Upload Distribution\" ede-upload-distribution t])") nil nil)
+                    ("metasubproject" variable
+                       (:documentation "Non-nil if this is a metasubproject.
+Usually, a subproject is determined by a parent project.  If multiple top level
+projects are grouped into a large project not maintained by EDE, then you need
+to set this to non-nil.  The only effect is that the `dist' rule will then avoid
+making a tar file."
+                        :default-value "nil"
+                        :type "boolean")
+                        nil nil))                  
+                :type "class")
+                nil [8926 11521])
+            ("ede-proj-load" function (:arguments ("project" "rootproj")) nil [11533 12591])
+            ("ede-proj-save" function (:arguments ("project")) nil [12593 12979])
+            ("ede-commit-local-variables" function
+               (:parent "ede-proj-project"
+                :arguments ("proj"))
+                nil [12981 13114])
+            ("eieio-done-customizing" function
+               (:parent "ede-proj-project"
+                :arguments ("proj"))
+                nil [13116 13318])
+            ("eieio-done-customizing" function
+               (:parent "ede-proj-target"
+                :arguments ("target"))
+                nil [13320 13569])
+            ("ede-commit-project" function
+               (:parent "ede-proj-project"
+                :arguments ("proj"))
+                nil [13571 13693])
+            ("ede-buffer-mine" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "buffer"))
+                nil [13695 14210])
+            ("ede-buffer-mine" function
+               (:parent "ede-proj-target"
+                :arguments ("this" "buffer"))
+                nil [14212 14433])
+            ("ede-proj-target-history" variable nil nil [14466 14547])
+            ("project-new-target" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "name" "type" "autoadd"))
+                nil [14549 15911])
+            ("project-new-target-custom" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [15913 16310])
+            ("project-delete-target" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [16312 17027])
+            ("project-add-file" function
+               (:parent "ede-proj-target"
+                :arguments ("this" "file"))
+                nil [17029 17648])
+            ("project-remove-file" function
+               (:parent "ede-proj-target"
+                :arguments ("target" "file"))
+                nil [17650 17991])
+            ("project-update-version" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [17993 18117])
+            ("project-make-dist" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [18119 18691])
+            ("project-dist-files" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [18693 18972])
+            ("project-compile-project" function
+               (:parent "ede-proj-project"
+                :arguments ("proj" "command"))
+                nil [18974 19466])
+            ("project-compile-target" function
+               (:parent "ede-proj-target"
+                :arguments ("obj" "command"))
+                nil [19515 19750])
+            ("project-compile-target" function
+               (:parent "ede-proj-target-makefile"
+                :arguments ("obj" "command"))
+                nil [19752 20121])
+            ("project-debug-target" function
+               (:parent "ede-proj-target"
+                :arguments ("obj"))
+                nil [20123 20302])
+            ("project-run-target" function
+               (:parent "ede-proj-target"
+                :arguments ("obj"))
+                nil [20304 20465])
+            ("ede-proj-makefile-target-name" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [20467 20607])
+            ("ede-want-file-auxiliary-p" function
+               (:parent "ede-target"
+                :arguments ("this" "file"))
+                nil [20653 20989])
+            ("ede-proj-compilers" function
+               (:parent "ede-proj-target"
+                :arguments ("obj"))
+                nil [20991 22379])
+            ("ede-proj-linkers" function
+               (:parent "ede-proj-target"
+                :arguments ("obj"))
+                nil [22381 23803])
+            ("ede-proj-makefile-type" function (:arguments ("proj")) nil [23865 24014])
+            ("ede-proj-automake-p" function (:arguments ("proj")) nil [24016 24175])
+            ("ede-proj-autoconf-p" function (:arguments ("proj")) nil [24177 24336])
+            ("ede-proj-make-p" function (:arguments ("proj")) nil [24338 24490])
+            ("ede-proj-dist-makefile" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [24492 25336])
+            ("ede-proj-regenerate" function (:user-visible-flag t) nil [25338 25497])
+            ("ede-proj-makefile-create-maybe" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "mfilename"))
+                nil [25499 25907])
+            ("ede-proj-setup-buildenvironment" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "force"))
+                nil [25909 26897])
+            ("project-rescan" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [26930 27419])
+            ("ede/proj" package nil nil [27421 27440]))          
+      :file "proj.el"
+      :pointmax 27468
+      :fsize 27467
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-comp.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1889 1902])
+            ("ede" include nil nil [1904 1918])
+            ("ede/autoconf-edit" include nil nil [1937 1965])
+            ("ede-compilation-program" type
+               (:superclasses "eieio-instance-inheritor"
+                :members 
+                  ( ("name" variable
+                       (:documentation "Name of this type of compiler."
+                        :type "string")
+                        nil nil)
+                    ("variables" variable
+                       (:documentation "Variables needed in the Makefile for this compiler.
+An assoc list where each element is (VARNAME . VALUE) where VARNAME
+is a string, and VALUE is either a string, or a list of strings.
+For example, GCC would define CC=gcc, and emacs would define EMACS=emacs."
+                        :type "list")
+                        nil nil)
+                    ("sourcetype" variable
+                       (:documentation "A list of `ede-sourcecode' objects this class will handle.
+This is used to match target objects with the compilers and linkers
+they can use, and which files this object is interested in."
+                        :type "list")
+                        nil nil)
+                    ("rules" variable
+                       (:documentation "Auxiliary rules needed for this compiler to run.
+For example, yacc/lex files need additional chain rules, or inferences."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("commands" variable
+                       (:documentation "The commands used to execute this compiler.
+The object which uses this compiler will place these commands after
+its rule definition."
+                        :type "list")
+                        nil nil)
+                    ("autoconf" variable
+                       (:documentation "Autoconf function to call if this type of compiler is used.
+When a project is in Automake mode, this defines the autoconf function to
+call to initialize automake to use this compiler.
+For example, there may be multiple C compilers, but they all probably
+use the same autoconf form."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("objectextention" variable
+                       (:documentation "A string which is the extension used for object files.
+For example, C code uses .o on Unix, and Emacs Lisp uses .elc."
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [1978 4174])
+            ("ede-compiler" type
+               (:superclasses "ede-compilation-program"
+                :members 
+                  ( ("makedepends" variable
+                       (:documentation "Non-nil if this compiler can make dependencies."
+                        :default-value "nil"
+                        :type "boolean")
+                        nil nil)
+                    ("uselinker" variable
+                       (:documentation "Non-nil if this compiler creates code that can be linked.
+This requires that the containing target also define a list of available
+linkers that can be used."
+                        :default-value "nil"
+                        :type "boolean")
+                        nil nil))                  
+                :type "class")
+                nil [4176 4752])
+            ("ede-linker" type
+               (:superclasses "ede-compilation-program"
+                :type "class")
+                nil [4754 4884])
+            ("ede-makefile-rule" type
+               (:members 
+                  ( ("target" variable
+                       (:documentation "The target pattern.
+A pattern of \"%.o\" is used for inference rules, and would match object files.
+A target of \"foo.o\" explicitly matches the file foo.o."
+                        :type "string")
+                        nil nil)
+                    ("dependencies" variable
+                       (:documentation "Dependencies on this target.
+A pattern of \"%.o\" would match a file of the same prefix as the target
+if that target is also an inference rule pattern.
+A dependency of \"foo.c\" explicitly lists foo.c as a dependency.
+A variable such as $(name_SOURCES) will list all the source files
+belonging to the target name."
+                        :type "string")
+                        nil nil)
+                    ("rules" variable
+                       (:documentation "Scripts to execute.
+These scripts will be executed in sh (Unless the SHELL variable is overridden).
+Do not prefix with TAB.
+Each individual element of this list can be either a string, or
+a lambda function.  (The custom element does not yet express that."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("phony" variable
+                       (:documentation "Is this a phony rule?
+Adds this rule to a .PHONY list."
+                        :default-value "nil"
+                        :type "boolean")
+                        nil nil))                  
+                :type "class")
+                nil [4886 6162])
+            ("ede-compiler-list" variable nil nil [6174 6246])
+            ("ede-linker-list" variable nil nil [6248 6318])
+            ("ede-current-build-list" variable nil nil [6320 6528])
+            ("initialize-instance" function
+               (:parent "ede-compiler"
+                :arguments ("this" "fields"))
+                nil [6530 6722])
+            ("initialize-instance" function
+               (:parent "ede-linker"
+                :arguments ("this" "fields"))
+                nil [6724 6910])
+            ("ede-compiler-begin-unique" function (:arguments ("body")) nil [6912 7155])
+            ("ede-compiler-only-once" function (:arguments ("object" "body")) nil [7157 7402])
+            ("ede-linker-begin-unique" function (:arguments ("body")) nil [7404 7645])
+            ("ede-linker-only-once" function (:arguments ("object" "body")) nil [7647 7890])
+            ("add-hook" code nil nil [7892 8250])
+            ("ede-proj-find-compiler" function (:arguments ("compilers" "sourcetype")) nil [8264 8546])
+            ("ede-proj-find-linker" function (:arguments ("linkers" "sourcetype")) nil [8548 8859])
+            ("ede-proj-tweak-autoconf" function
+               (:parent "ede-compilation-program"
+                :arguments ("this"))
+                nil [8874 9281])
+            ("ede-proj-flush-autoconf" function
+               (:parent "ede-compilation-program"
+                :arguments ("this"))
+                nil [9283 9424])
+            ("proj-comp-insert-variable-once" function (:arguments ("varname" "body")) nil [9426 9811])
+            ("put" code nil nil [9812 9873])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-compilation-program"
+                :arguments ("this"))
+                nil [9875 10322])
+            ("ede-compiler-intermediate-objects-p" function
+               (:parent "ede-compiler"
+                :arguments ("this"))
+                nil [10324 10609])
+            ("ede-compiler-intermediate-object-variable" function
+               (:parent "ede-compiler"
+                :arguments ("this" "targetname"))
+                nil [10611 10876])
+            ("ede-proj-makefile-insert-object-variables" function
+               (:parent "ede-compiler"
+                :arguments ("this" "targetname" "sourcefiles"))
+                nil [10878 11767])
+            ("ede-proj-makefile-insert-rules" function
+               (:parent "ede-compilation-program"
+                :arguments ("this"))
+                nil [11769 11987])
+            ("ede-proj-makefile-insert-rules" function
+               (:parent "ede-makefile-rule"
+                :arguments ("this"))
+                nil [11989 12305])
+            ("ede-proj-makefile-insert-commands" function
+               (:parent "ede-compilation-program"
+                :arguments ("this"))
+                nil [12307 12908])
+            ("add-hook" code nil nil [12950 13052])
+            ("put" code nil nil [13053 13109])
+            ("put" code nil nil [13110 13163])
+            ("put" code nil nil [13164 13218])
+            ("put" code nil nil [13219 13270])
+            ("ede/proj-comp" package nil nil [13272 13296]))          
+      :file "proj-comp.el"
+      :pointmax 13329
+      :fsize 13328
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1902 . 1903) (symbol 1871 . 1888) (open-paren 1870 . 1871)))
+    (semanticdb-table "arduino.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/config" include nil nil [1205 1226])
+            ("declare-function" code nil nil [1228 1281])
+            ("ede-arduino-makefile-name" variable (:default-value "Makefile") nil [1293 1414])
+            ("ede-arduino-preferences-file" variable (:default-value "~/.arduino/preferences.txt") nil [1416 1648])
+            ("ede-arduino-config" type
+               (:interfaces ("ede-extra-config-c")
+                :superclasses "ede-extra-config"
+                :members 
+                  ( ("file-header-line" variable (:default-value ";; EDE Arduino Project Configuration") nil nil)
+                    ("board" variable
+                       (:documentation "An arduino board that represents the upload target.
+A nil/empty value means to use the default value from the Arduino IDE preferences."
+                        :default-value "nil"
+                        :type "(or null string)")
+                        nil nil)
+                    ("boardobj" variable
+                       (:documentation "Runtime cache of the board data loaded from and aruidno config file."
+                        :default-value "nil")
+                        nil nil)
+                    ("port" variable
+                       (:documentation "The serial port used to upload programs to the target board.
+A nil/empty value means to use the default value from the Arduino IDE preferences."
+                        :default-value "nil"
+                        :type "(or null string)")
+                        nil nil))                  
+                :type "class")
+                nil [1713 2753])
+            ("eieio-done-customizing" function
+               (:parent "ede-arduino-config"
+                :arguments ("config"))
+                nil [2755 2976])
+            ("ede-arduino-target" type
+               (:interfaces ("ede-target-with-config-c")
+                :superclasses "ede-target-with-config"
+                :type "class")
+                nil [3087 3261])
+            ("ede-arduino-project" type
+               (:interfaces ("ede-project-with-config-c")
+                :superclasses "ede-project-with-config"
+                :members 
+                  ( ("keybindings" variable (:default-value "((\"U\" . ede-arduino-upload))") nil nil)
+                    ("config-class" variable (:default-value "ede-arduino-config") nil nil)
+                    ("config-file-basename" variable (:default-value "Arduino.ede") nil nil)
+                    ("menu" variable (:default-value "([\"Upload Project to Board\" ede-arduino-upload] [\"Serial Monitor\" cedet-arduino-serial-monitor] \"--\")") nil nil))                  
+                :type "class")
+                nil [3263 3680])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-arduino-project"
+                :arguments ("proj" "dir"))
+                nil [3682 3831])
+            ("ede-find-target" function
+               (:parent "ede-arduino-project"
+                :arguments ("proj" "buffer"))
+                nil [3858 4362])
+            ("ede-arduino-root" function (:arguments ("dir" "basefile")) nil [4379 5610])
+            ("ede-arduino-file" function (:arguments ("dir")) nil [5627 5938])
+            ("ede-arduino-load" function (:arguments ("dir" "rootproj")) nil [5955 6795])
+            ("ede-add-project-autoload" code nil nil [6812 7532])
+            ("ede-arduino-upload" function (:user-visible-flag t) nil [7890 8072])
+            ("declare-function" code nil nil [8110 8150])
+            ("cedet-arduino-serial-monitor" function (:user-visible-flag t) nil [8152 8629])
+            ("project-compile-project" function
+               (:parent "ede-arduino-project"
+                :arguments ("proj" "command"))
+                nil [8631 8937])
+            ("project-compile-target" function
+               (:parent "ede-arduino-target"
+                :arguments ("obj" "command"))
+                nil [8939 9177])
+            ("project-debug-target" function
+               (:parent "ede-arduino-target"
+                :arguments ("target"))
+                nil [9179 9349])
+            ("project-rescan" function
+               (:parent "ede-arduino-project"
+                :arguments ("this"))
+                nil [9351 9507])
+            ("semantic/db" include nil nil [9527 9549])
+            ("ede-preprocessor-map" function
+               (:parent "ede-arduino-target"
+                :arguments ("this"))
+                nil [9550 10258])
+            ("ede-system-include-path" function
+               (:parent "ede-arduino-target"
+                :arguments ("this"))
+                nil [10260 11031])
+            ("ede-arduino-boardobj" function
+               (:parent "ede-arduino-project"
+                :arguments ("this"))
+                nil [11180 11860])
+            ("ede-arduino-port" function
+               (:parent "ede-arduino-project"
+                :arguments ("this"))
+                nil [11862 12236])
+            ("ede/srecode" include nil nil [12327 12349])
+            ("ede-arduino-regenerate" function (:user-visible-flag t) nil [12351 12509])
+            ("ede-arduino-create-makefile" function
+               (:parent "ede-arduino-project"
+                :arguments ("proj"))
+                nil [12511 14344])
+            ("ede-arduino-guess-libs" function (:user-visible-flag t) nil [14477 15387])
+            ("ede-arduino-guess-sketch" function nil nil [15394 15908])
+            ("ede-arduino-prefs" type
+               (:members 
+                  ( ("timestamp" variable (:default-value "nil") nil nil)
+                    ("prefssize" variable (:default-value "nil") nil nil)
+                    ("board" variable (:default-value "uno") nil nil)
+                    ("port" variable (:default-value "/dev/ttyUSB1") nil nil)
+                    ("sketchbook" variable (:default-value "~/arduino") nil nil)
+                    ("boardobj" variable (:default-value "nil") nil nil))                  
+                :type "class")
+                nil [15991 16256])
+            ("ede-arduino-active-prefs" variable nil nil [16258 16357])
+            ("ede-arduino-sync" function (:user-visible-flag t) nil [16359 17114])
+            ("ede-arduino-read-prefs" function (:arguments ("prefsfile")) nil [17116 18909])
+            ("ede-arduino-arduino-command" variable (:default-value "arduino") nil [19031 19388])
+            ("ede-arduino-appdir" variable nil nil [19390 19571])
+            ("ede-arduino" function (:user-visible-flag t) nil [19573 19874])
+            ("ede-arduino-find-install" function nil nil [19876 20907])
+            ("ede-arduino-Arduino.mk" function nil nil [20909 21237])
+            ("ede-arduino-Arduino-Version" function nil nil [21239 21737])
+            ("ede-arduino-boards.txt" function nil nil [21742 21928])
+            ("ede-arduino-libdir" function (:arguments ("library")) nil [21930 22242])
+            ("ede-arduino-board" type
+               (:members 
+                  ( ("name" variable
+                       (:documentation "The name of the arduino board represented by this object."
+                        :default-value "nil")
+                        nil nil)
+                    ("buildname" variable
+                       (:documentation "The name of the arduino board used by the build system."
+                        :default-value "nil")
+                        nil nil)
+                    ("protocol" variable
+                       (:documentation "The protocol used to talk to the board."
+                        :default-value "nil")
+                        nil nil)
+                    ("speed" variable
+                       (:documentation "The SPEED of the arduino board's serial upload."
+                        :default-value "nil")
+                        nil nil)
+                    ("maximum-size" variable
+                       (:documentation "The MAXIMUM_SIZE of the arduino board's uploadable target ."
+                        :default-value "nil")
+                        nil nil)
+                    ("mcu" variable
+                       (:documentation "The MCU of the arduino board."
+                        :default-value "nil")
+                        nil nil)
+                    ("f_cpu" variable
+                       (:documentation "The F_CPU of the arduino board."
+                        :default-value "nil")
+                        nil nil)
+                    ("core" variable
+                       (:documentation "The core name for this board."
+                        :default-value "nil")
+                        nil nil))                  
+                :type "class")
+                nil [22303 23316])
+            ("ede-arduino-allboard-buffer" function nil nil [23318 23732])
+            ("ede-arduino-allboard-names" function nil nil [23734 24081])
+            ("ede-arduino-board-data" function (:arguments ("boardname")) nil [24083 26449])
+            ("ede/arduino" package nil nil [26451 26473]))          
+      :file "arduino.el"
+      :pointmax 26618
+      :fsize 26617
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "config.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [2206 2220])
+            ("ede/shell" include nil nil [2221 2241])
+            ("declare-function" code nil nil [2243 2304])
+            ("declare-function" code nil nil [2305 2364])
+            ("declare-function" code nil nil [2365 2422])
+            ("ede-extra-config" type
+               (:superclasses "eieio-persistent"
+                :members 
+                  ( ("extension" variable (:default-value ".ede") nil nil)
+                    ("file-header-line" variable (:default-value ";; EDE Project Configuration") nil nil)
+                    ("project" variable
+                       (:documentation "The project this config is bound to."
+                        :type "ede-project-with-config-child")
+                        nil nil)
+                    ("ignored-file" variable
+                       (:documentation "Set to non-nil if this was created and an on-disk file
+was ignored.  Use this to warn the user that they might want to load in
+an on-disk version."
+                        :default-value "nil"
+                        :type "(or null symbol)")
+                        nil nil))                  
+                :type "class")
+                nil [2543 3210])
+            ("ede-project-with-config" type
+               (:superclasses "ede-project"
+                :members 
+                  ( ("menu" variable (:default-value "nil") nil nil)
+                    ("config-file-basename" variable
+                       (:documentation "The filename to use for saving the configuration.
+This filename excludes the directory name and is used to
+initalize the :file slot of the persistent baseclass."
+                        :static-flag t
+                        :default-value "Config.ede"
+                        :type "string")
+                        nil nil)
+                    ("config-class" variable
+                       (:documentation "The class of the configuration used by this project."
+                        :static-flag t
+                        :default-value "ede-extra-config"
+                        :type "class")
+                        nil nil)
+                    ("config" variable
+                       (:documentation "The configuration object for this project."
+                        :default-value "nil"
+                        :type "(or null ede-extra-config-child)")
+                        nil nil))                  
+                :type "class")
+                nil [3393 4106])
+            ("ede-target-with-config" type
+               (:superclasses "ede-target"
+                :type "class")
+                nil [4108 4223])
+            ("project-rescan" function
+               (:parent "ede-project-with-config"
+                :arguments ("this"))
+                nil [4241 4510])
+            ("ede-config-get-configuration" function
+               (:parent "ede-project-with-config"
+                :arguments ("proj" "loadask"))
+                nil [4551 6418])
+            ("ede-config-setup-configuration" function
+               (:parent "ede-project-with-config"
+                :arguments ("proj" "config"))
+                nil [6420 6548])
+            ("ede-commit-project" function
+               (:parent "ede-project-with-config"
+                :arguments ("proj"))
+                nil [6550 6735])
+            ("ede-customize" function
+               (:parent "ede-project-with-config"
+                :arguments ("proj"))
+                nil [6758 6987])
+            ("ede-customize" function
+               (:parent "ede-target-with-config"
+                :arguments ("target"))
+                nil [6989 7200])
+            ("eieio-done-customizing" function
+               (:parent "ede-extra-config"
+                :arguments ("config"))
+                nil [7202 7676])
+            ("ede-commit" function
+               (:parent "ede-extra-config"
+                :arguments ("config"))
+                nil [7678 8013])
+            ("ede-extra-config-program" type
+               (:members 
+                  ( ("debug-command" variable
+                       (:documentation "Command used for debugging this project."
+                        :default-value "gdb "
+                        :type "string")
+                        nil nil)
+                    ("run-command" variable
+                       (:documentation "Command used to run something related to this project."
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [8311 8833])
+            ("ede-project-with-config-program" type (:type "class") nil [8835 8950])
+            ("ede-target-with-config-program" type (:type "class") nil [8952 9155])
+            ("project-debug-target" function
+               (:parent "ede-target-with-config-program"
+                :arguments ("target"))
+                nil [9157 9780])
+            ("project-run-target" function
+               (:parent "ede-target-with-config-program"
+                :arguments ("target"))
+                nil [9782 10142])
+            ("ede-extra-config-build" type
+               (:members 
+                  ( ("build-command" variable
+                       (:documentation "Command used for building this project."
+                        :default-value "make -k"
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [10215 10522])
+            ("ede-project-with-config-build" type (:type "class") nil [10524 10687])
+            ("ede-target-with-config-build" type (:type "class") nil [10689 10855])
+            ("project-compile-project" function
+               (:parent "ede-project-with-config-build"
+                :arguments ("proj" "command"))
+                nil [10857 11164])
+            ("project-compile-target" function
+               (:parent "ede-target-with-config-build"
+                :arguments ("obj" "command"))
+                nil [11166 11414])
+            ("ede-extra-config-c" type
+               (:members 
+                  ( ("c-include-path" variable
+                       (:documentation "The include path used by C/C++ projects.
+The include path is used when searching for symbols."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("c-preprocessor-table" variable
+                       (:documentation "Preprocessor Symbols for this project.
+When files within this project are parsed by CEDET, these symbols will be
+used to resolve macro occurrences in source fies.
+If you modify this slot, you will need to force your source files to be
+parsed again."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("c-preprocessor-files" variable
+                       (:documentation "Files parsed and used to populate preprocessor tables.
+When files within this project are parsed by CEDET, these symbols will be used to
+resolve macro occurences in source files.
+If you modify this slot, you will need to force your source files to be
+parsed again."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [11508 12758])
+            ("ede-project-with-config-c" type (:type "class") nil [12760 12855])
+            ("ede-target-with-config-c" type (:type "class") nil [12857 13048])
+            ("ede-preprocessor-map" function
+               (:parent "ede-target-with-config-c"
+                :arguments ("this"))
+                nil [13050 13749])
+            ("ede-system-include-path" function
+               (:parent "ede-target-with-config-c"
+                :arguments ("this"))
+                nil [13751 13996])
+            ("ede-extra-config-java" type (:type "class") nil [14058 14153])
+            ("ede-project-with-config-java" type
+               (:members 
+                  ( ("classpath" variable
+                       (:documentation "The default classpath used within a project.
+ All files listed in the local path are full paths to files."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [14155 14600])
+            ("ede-target-with-config-java" type (:type "class") nil [14602 14697])
+            ("ede-java-classpath" function
+               (:parent "ede-project-with-config-java"
+                :arguments ("proj"))
+                nil [14699 14866])
+            ("ede/config" package nil nil [14985 15006]))          
+      :file "config.el"
+      :pointmax 15032
+      :fsize 15031
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "srecode.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("srecode" include nil nil [942 960])
+            ("declare-function" code nil nil [962 1027])
+            ("declare-function" code nil nil [1028 1096])
+            ("declare-function" code nil nil [1097 1159])
+            ("declare-function" code nil nil [1160 1207])
+            ("declare-function" code nil nil [1208 1268])
+            ("declare-function" code nil nil [1269 1323])
+            ("declare-function" code nil nil [1324 1385])
+            ("declare-function" code nil nil [1386 1441])
+            ("ede-srecode-setup" function nil nil [1453 1862])
+            ("ede-srecode-insert-with-dictionary" function (:arguments ("template" "forms")) nil [1864 2565])
+            ("ede-srecode-insert" function (:arguments ("template" "dictionary-entries")) nil [2567 3224])
+            ("ede/srecode" package nil nil [3226 3248]))          
+      :file "srecode.el"
+      :pointmax 3279
+      :fsize 3278
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "speedbar.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [989 1002])
+            ("speedbar" include nil nil [1004 1023])
+            ("eieio-speedbar" include nil nil [1024 1049])
+            ("ede" include nil nil [1050 1064])
+            ("ede-speedbar-key-map" variable nil nil [1095 1180])
+            ("ede-speedbar-make-map" function nil nil [1182 2177])
+            ("ede-speedbar-menu" variable (:default-value (quote (["Compile" ede-speedbar-compile-line t] ["Compile Project" ede-speedbar-compile-project (ede-project-child-p (speedbar-line-token))] "---" ["Edit File/Tag" speedbar-edit-line (not (eieio-object-p (speedbar-line-token)))] ["Expand" speedbar-expand-line (save-excursion (beginning-of-line) (looking-at "[0-9]+: *.\\+. "))] ["Contract" speedbar-contract-line (save-excursion (beginning-of-line) (looking-at "[0-9]+: *.-. "))] "---" ["Remove File from Target" ede-speedbar-remove-file-from-target (stringp (speedbar-line-token))] ["Customize Project/Target" eieio-speedbar-customize-line (eieio-object-p (speedbar-line-token))] ["Edit Project File" ede-speedbar-edit-projectfile t] ["Make Distribution" ede-speedbar-make-distribution (ede-project-child-p (speedbar-line-token))]))) nil [2179 3175])
+            ("eieio-speedbar-create" code nil nil [3177 3341])
+            ("ede-speedbar" function (:user-visible-flag t) nil [3344 3550])
+            ("ede-speedbar-toplevel-buttons" function (:arguments ("dir")) nil [3552 3738])
+            ("ede-speedbar-remove-file-from-target" function (:user-visible-flag t) nil [3783 3986])
+            ("ede-speedbar-compile-line" function (:user-visible-flag t) nil [3988 4393])
+            ("ede-speedbar-get-top-project-for-line" function (:user-visible-flag t) nil [4395 4815])
+            ("ede-speedbar-compile-project" function (:user-visible-flag t) nil [4817 4992])
+            ("ede-speedbar-compile-file-project" function (:user-visible-flag t) nil [4994 5412])
+            ("ede-speedbar-make-distribution" function (:user-visible-flag t) nil [5414 5579])
+            ("ede-speedbar-edit-projectfile" function (:user-visible-flag t) nil [5581 5752])
+            ("ede-find-nearest-file-line" function nil nil [5786 6165])
+            ("eieio-speedbar-derive-line-path" function
+               (:parent "ede-project"
+                :arguments ("obj" "depth"))
+                nil [6167 6358])
+            ("eieio-speedbar-derive-line-path" function
+               (:parent "ede-target"
+                :arguments ("obj" "depth"))
+                nil [6360 6958])
+            ("eieio-speedbar-description" function
+               (:parent "ede-project"
+                :arguments ("obj"))
+                nil [6960 7086])
+            ("eieio-speedbar-description" function
+               (:parent "ede-target"
+                :arguments ("obj"))
+                nil [7088 7213])
+            ("eieio-speedbar-child-description" function
+               (:parent "ede-target"
+                :arguments ("obj"))
+                nil [7215 7480])
+            ("eieio-speedbar-object-buttonname" function
+               (:parent "ede-project"
+                :arguments ("object"))
+                nil [7482 7725])
+            ("eieio-speedbar-object-buttonname" function
+               (:parent "ede-target"
+                :arguments ("object"))
+                nil [7727 7873])
+            ("eieio-speedbar-object-children" function
+               (:parent "ede-project"
+                :arguments ("this"))
+                nil [7875 8104])
+            ("eieio-speedbar-object-children" function
+               (:parent "ede-target"
+                :arguments ("this"))
+                nil [8106 8248])
+            ("eieio-speedbar-child-make-tag-lines" function
+               (:parent "ede-target"
+                :arguments ("this" "depth"))
+                nil [8250 8646])
+            ("ede-file-find" function (:arguments ("text" "token" "indent")) nil [8691 8945])
+            ("ede-create-tag-buttons" function (:arguments ("filename" "indent")) nil [8947 9417])
+            ("ede-tag-expand" function (:arguments ("text" "token" "indent")) nil [9419 10185])
+            ("ede-tag-find" function (:arguments ("text" "token" "indent")) nil [10187 10792])
+            ("ede-speedbar-file-menu-additions" variable (:default-value (quote ("----" ["Create EDE Target" ede-new-target (ede-current-project)] ["Add to project" ede-speedbar-file-add-to-project (ede-current-project)] ["Compile project" ede-speedbar-compile-project (ede-current-project)] ["Compile file target" ede-speedbar-compile-file-target (ede-current-project)] ["Make distribution" ede-make-dist (ede-current-project)]))) nil [10928 11408])
+            ("ede-speedbar-file-keymap" variable (:default-value (let ((km (make-sparse-keymap))) (define-key km "a" (quote ede-speedbar-file-add-to-project)) (define-key km "t" (quote ede-new-target)) (define-key km "s" (quote ede-speedbar)) (define-key km "C" (quote ede-speedbar-compile-project)) (define-key km "c" (quote ede-speedbar-compile-file-target)) (define-key km "d" (quote ede-make-dist)) km)) nil [11410 11818])
+            ("ede-speedbar-file-setup" function nil nil [11835 12378])
+            ("ede/speedbar" package nil nil [12380 12403]))          
+      :file "speedbar.el"
+      :pointmax 12554
+      :fsize 12553
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax '((close-paren 1002 . 1003) (symbol 971 . 988) (open-paren 970 . 971)))
+    (semanticdb-table "pmake.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1682 1695])
+            ("ede/proj" include nil nil [1697 1716])
+            ("ede/proj-obj" include nil nil [1717 1740])
+            ("ede/proj-comp" include nil nil [1741 1765])
+            ("declare-function" code nil nil [1767 1817])
+            ("declare-function" code nil nil [1818 1869])
+            ("ede-proj-makefile-create" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "mfilename"))
+                nil [1881 7581])
+            ("ede-pmake-end-of-variable" function nil nil [7609 7799])
+            ("ede-pmake-insert-variable-shared" function (:arguments ("varname" "body")) nil [7801 8442])
+            ("put" code nil nil [8443 8506])
+            ("ede-pmake-insert-variable-once" function (:arguments ("varname" "body")) nil [8508 8898])
+            ("put" code nil nil [8899 8960])
+            ("ede-pmake-varname" function (:arguments ("obj")) nil [9001 9244])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [9246 9414])
+            ("ede-proj-makefile-dependency-files" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [9455 9643])
+            ("ede-proj-makefile-configuration-variables" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "configuration"))
+                nil [9670 9954])
+            ("ede-proj-makefile-insert-variables-new" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [9956 11683])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [11685 12952])
+            ("ede-proj-makefile-insert-source-variables" function
+               (:parent "ede-proj-target"
+                :arguments ("this" "moresource"))
+                nil [12954 13558])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-proj-target"
+                :arguments ("this" "moresource"))
+                nil [13560 13866])
+            ("ede-proj-makefile-configuration-variables" function
+               (:parent "ede-proj-target-makefile"
+                :arguments ("this" "configuration"))
+                nil [13868 14160])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-proj-target-makefile"
+                :arguments ("this" "moresource"))
+                nil [14162 15234])
+            ("ede-proj-makefile-insert-automake-pre-variables" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [15236 15402])
+            ("ede-proj-makefile-insert-automake-post-variables" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [15404 15570])
+            ("ede-proj-makefile-garbage-patterns" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [15596 16133])
+            ("ede-proj-makefile-garbage-patterns" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [16135 16542])
+            ("ede-proj-makefile-insert-subproj-rules" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [16558 16907])
+            ("ede-proj-makefile-insert-rules" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [16909 17089])
+            ("ede-proj-makefile-insert-dist-dependencies" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [17091 17362])
+            ("ede-proj-makefile-insert-dist-dependencies" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [17364 17563])
+            ("ede-proj-makefile-insert-dist-filepatterns" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [17565 17813])
+            ("ede-proj-makefile-automake-insert-subdirs" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [17815 18097])
+            ("ede-proj-makefile-automake-insert-extradist" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [18099 18322])
+            ("ede-proj-makefile-insert-dist-rules" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [18324 20693])
+            ("ede-proj-makefile-insert-rules" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [20695 20808])
+            ("ede-proj-makefile-insert-rules" function
+               (:parent "ede-proj-target-makefile"
+                :arguments ("this"))
+                nil [20810 21340])
+            ("ede-proj-makefile-insert-commands" function
+               (:parent "ede-proj-target-makefile"
+                :arguments ("this"))
+                nil [21342 21735])
+            ("ede-proj-makefile-insert-user-rules" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [21738 22088])
+            ("ede-proj-makefile-insert-user-rules" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [22090 22276])
+            ("ede-proj-makefile-dependencies" function
+               (:parent "ede-proj-target-makefile"
+                :arguments ("this"))
+                nil [22278 23201])
+            ("ede-proj-makefile-tags" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "targets"))
+                nil [23211 23946])
+            ("ede/pmake" package nil nil [23949 23969]))          
+      :file "pmake.el"
+      :pointmax 23998
+      :fsize 23997
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1695 . 1696) (symbol 1664 . 1681) (open-paren 1663 . 1664)))
+    (semanticdb-table "proj-obj.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1030 1043])
+            ("ede/proj" include nil nil [1045 1064])
+            ("declare-function" code nil nil [1065 1113])
+            ("ede-proj-objectcode-dodependencies" variable nil nil [1115 1211])
+            ("ede-proj-target-makefile-objectcode" type
+               (:superclasses "ede-proj-target-makefile"
+                :members 
+                  ( ("configuration-variables" variable (:default-value "(\"debug\" (\"CFLAGS\" . \"-g\") (\"LDFLAGS\" . \"-g\"))") nil nil)
+                    ("availablecompilers" variable (:default-value "(quote (ede-gcc-compiler ede-g++-compiler ede-gfortran-compiler ede-gfortran-module-compiler ede-lex-compiler ede-yacc-compiler))") nil nil)
+                    ("availablelinkers" variable (:default-value "(quote (ede-g++-linker ede-cc-linker ede-ld-linker ede-gfortran-linker))") nil nil)
+                    ("sourcetype" variable (:default-value "(quote (ede-source-c ede-source-c++ ede-source-f77 ede-source-f90 ede-source-lex ede-source-yacc))") nil nil))                  
+                :type "class")
+                nil [1223 2360])
+            ("ede-object-compiler" type
+               (:superclasses "ede-compiler"
+                :members 
+                  ( ("uselinker" variable (:default-value "t") nil nil)
+                    ("dependencyvar" variable
+                       (:documentation "A variable dedicated to dependency generation."
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [2362 2700])
+            ("ede-source-c" variable (:default-value (ede-sourcecode "ede-source-c" :name "C" :sourcepattern "\\.c$" :auxsourcepattern "\\.h$" :garbagepattern (quote ("*.o" "*.obj" ".deps/*.P" ".lo")))) nil [2737 2948])
+            ("ede-gcc-compiler" variable (:default-value (ede-object-compiler "ede-c-compiler-gcc" :name "gcc" :dependencyvar (quote ("C_DEPENDENCIES" . "-Wp,-MD,.deps/$(*F).P")) :variables (quote (("CC" . "gcc") ("C_COMPILE" . "$(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)"))) :rules (list (ede-makefile-rule "c-inference-rule" :target "%.o" :dependencies "%.c" :rules (quote ("@echo '$(C_COMPILE) -c $<'; \\" "$(C_COMPILE) $(C_DEPENDENCIES) -o $@ -c $<")))) :autoconf (quote ("AC_PROG_CC" "AC_PROG_GCC_TRADITIONAL")) :sourcetype (quote (ede-source-c)) :objectextention ".o" :makedepends t :uselinker t)) nil [2950 3586])
+            ("ede-cc-linker" variable (:default-value (ede-linker "ede-cc-linker" :name "cc" :sourcetype (quote (ede-source-c)) :variables (quote (("C_LINK" . "$(CC) $(CFLAGS) $(LDFLAGS) -L."))) :commands (quote ("$(C_LINK) -o $@ $^ $(LDDEPS)")) :objectextention "")) nil [3588 3852])
+            ("ede-source-c++" variable (:default-value (ede-sourcecode "ede-source-c++" :name "C++" :sourcepattern "\\.\\(c\\(pp?\\|c\\|xx\\|++\\)\\|C\\(PP\\)?\\)$" :auxsourcepattern "\\.\\(hpp?\\|hh?\\|hxx\\|H\\)$" :garbagepattern (quote ("*.o" "*.obj" ".deps/*.P" ".lo")))) nil [3854 4141])
+            ("ede-g++-compiler" variable (:default-value (ede-object-compiler "ede-c-compiler-g++" :name "g++" :dependencyvar (quote ("CXX_DEPENDENCIES" . "-Wp,-MD,.deps/$(*F).P")) :variables (quote (("CXX" "g++") ("CXX_COMPILE" . "$(CXX) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)"))) :rules (list (ede-makefile-rule "c++-inference-rule" :target "%.o" :dependencies "%.cpp" :rules (quote ("@echo '$(CXX_COMPILE) -c $<'; \\" "$(CXX_COMPILE) $(CXX_DEPENDENCIES) -o $@ -c $<")))) :autoconf (quote ("AC_PROG_CXX")) :sourcetype (quote (ede-source-c++)) :objectextention ".o" :makedepends t :uselinker t)) nil [4143 4773])
+            ("ede-g++-linker" variable (:default-value (ede-linker "ede-g++-linker" :name "g++" :sourcetype (quote (ede-source-c++)) :variables (quote (("CXX_LINK" . "$(CXX) $(CFLAGS) $(LDFLAGS) -L."))) :commands (quote ("$(CXX_LINK) -o $@ $^ $(LDDEPS)")) :autoconf (quote ("AC_PROG_CXX")) :objectextention "")) nil [4775 5130])
+            ("ede-source-lex" variable (:default-value (ede-sourcecode "ede-source-lex" :name "lex" :sourcepattern "\\.l\\(l\\|pp\\|++\\)")) nil [5140 5341])
+            ("ede-lex-compiler" variable (:default-value (ede-object-compiler "ede-lex-compiler" :autoconf (quote ("AC_PROG_LEX")) :sourcetype (quote (ede-source-lex)))) nil [5343 5560])
+            ("ede-source-yacc" variable (:default-value (ede-sourcecode "ede-source-yacc" :name "yacc" :sourcepattern "\\.y\\(y\\|pp\\|++\\)")) nil [5571 5776])
+            ("ede-yacc-compiler" variable (:default-value (ede-object-compiler "ede-yacc-compiler" :autoconf (quote ("AC_PROG_YACC")) :sourcetype (quote (ede-source-yacc)))) nil [5778 6016])
+            ("ede-source-f90" variable (:default-value (ede-sourcecode "ede-source-f90" :name "Fortran 90/95" :sourcepattern "\\.[fF]9[05]$" :auxsourcepattern "\\.incf$" :garbagepattern (quote ("*.o" "*.mod" ".deps/*.P")))) nil [6081 6325])
+            ("ede-source-f77" variable (:default-value (ede-sourcecode "ede-source-f77" :name "Fortran 77" :sourcepattern "\\.\\([fF]\\|for\\)$" :auxsourcepattern "\\.incf$" :garbagepattern (quote ("*.o" ".deps/*.P")))) nil [6327 6564])
+            ("ede-gfortran-compiler" variable (:default-value (ede-object-compiler "ede-f90-compiler-gfortran" :name "gfortran" :dependencyvar (quote ("F90_DEPENDENCIES" . "-Wp,-MD,.deps/$(*F).P")) :variables (quote (("F90" . "gfortran") ("F90_COMPILE" . "$(F90) $(DEFS) $(INCLUDES) $(F90FLAGS)"))) :rules (list (ede-makefile-rule "f90-inference-rule" :target "%.o" :dependencies "%.f90" :rules (quote ("@echo '$(F90_COMPILE) -c $<'; \\" "$(F90_COMPILE) $(F90_DEPENDENCIES) -o $@ -c $<")))) :sourcetype (quote (ede-source-f90 ede-source-f77)) :objectextention ".o" :makedepends t :uselinker t)) nil [6566 7198])
+            ("ede-gfortran-module-compiler" variable (:default-value (clone ede-gfortran-compiler "ede-f90-module-compiler-gfortran" :name "gfortranmod" :sourcetype (quote (ede-source-f90)) :commands (quote ("$(F90_COMPILE) -c $^")) :objectextention ".mod" :uselinker nil)) nil [7200 7481])
+            ("ede-gfortran-linker" variable (:default-value (ede-linker "ede-gfortran-linker" :name "gfortran" :sourcetype (quote (ede-source-f90 ede-source-f77)) :variables (quote (("F90_LINK" . "$(F90) $(CFLAGS) $(LDFLAGS) -L."))) :commands (quote ("$(F90_LINK) -o $@ $^")) :objectextention "")) nil [7484 7789])
+            ("ede-ld-linker" variable (:default-value (ede-linker "ede-ld-linker" :name "ld" :variables (quote (("LD" . "ld") ("LD_LINK" . "$(LD) $(LDFLAGS) -L."))) :commands (quote ("$(LD_LINK) -o $@ $^ $(LDDEPS)")) :objectextention "")) nil [7813 8062])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-object-compiler"
+                :arguments ("this"))
+                nil [8095 8518])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target-makefile-objectcode"
+                :arguments ("this"))
+                nil [8558 8763])
+            ("ede-proj-makefile-dependency-files" function
+               (:parent "ede-proj-target-makefile-objectcode"
+                :arguments ("this"))
+                nil [8765 9021])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-proj-target-makefile-objectcode"
+                :arguments ("this" "moresource"))
+                nil [9023 9360])
+            ("ede-buffer-header-file" function
+               (:parent "ede-proj-target-makefile-objectcode"
+                :arguments ("this" "buffer"))
+                nil [9362 9691])
+            ("ede/proj-obj" package nil nil [9693 9716]))          
+      :file "proj-obj.el"
+      :pointmax 9748
+      :fsize 9747
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1043 . 1044) (symbol 1012 . 1029) (open-paren 1011 . 1012)))
+    (semanticdb-table "dired.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1078 1091])
+            ("easymenu" include nil nil [1093 1112])
+            ("dired" include nil nil [1113 1129])
+            ("ede" include nil nil [1130 1144])
+            ("ede-dired-keymap" variable (:default-value (let ((map (make-sparse-keymap))) (define-key map ".a" (quote ede-dired-add-to-target)) (define-key map ".t" (quote ede-new-target)) (define-key map ".s" (quote ede-speedbar)) (define-key map ".C" (quote ede-compile-project)) (define-key map ".d" (quote ede-make-dist)) (easy-menu-define ede-dired-menu map "EDE Dired Minor Mode Menu" (quote ("Project" ["Add files to target" ede-dired-add-to-target (ede-current-project)] ("Build" :filter ede-build-forms-menu) "-" ["Create Project" ede-new (not (ede-current-project))] ["Create Target" ede-new-target (ede-current-project)] "-" ("Customize Project" :filter ede-customize-forms-menu) ["View Project Tree" ede-speedbar (ede-current-project)]))) map)) nil [1156 2008])
+            ("define-minor-mode" code nil nil [2025 2491])
+            ("ede-dired-add-to-target" function
+               (:user-visible-flag t
+                :arguments ("target"))
+                nil [2493 3047])
+            ("ede/dired" package nil nil [3049 3069]))          
+      :file "dired.el"
+      :pointmax 3214
+      :fsize 3213
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1091 . 1092) (symbol 1060 . 1077) (open-paren 1059 . 1060)))
+    (semanticdb-table "util.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [1086 1100])
+            ("ede-update-version" function
+               (:user-visible-flag t
+                :arguments ("newversion"))
+                nil [1167 1784])
+            ("project-update-version" function
+               (:parent "ede-project"
+                :arguments ("ot"))
+                nil [1786 2002])
+            ("ede-update-version-in-source" function
+               (:parent "ede-project"
+                :arguments ("this" "version"))
+                nil [2004 2313])
+            ("ede-update-version-in-source" function
+               (:parent "ede-target"
+                :arguments ("this" "version"))
+                nil [2315 3040])
+            ("ede-make-buffer-writable" function (:arguments ("buffer")) nil [3165 3393])
+            ("ede/util" package nil nil [3395 3414]))          
+      :file "util.el"
+      :pointmax 3557
+      :fsize 3556
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "locate.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [1759 1773])
+            ("locate" include nil nil [1793 1810])
+            ("ede-locate-setup-options" variable (:default-value (quote (ede-locate-base))) nil [1823 2381])
+            ("ede-enable-locate-on-project" function
+               (:user-visible-flag t
+                :arguments ("project"))
+                nil [2398 3420])
+            ("ede-locate-base" type
+               (:members 
+                  ( ("root" variable (:documentation "The root of these locat searches.") nil nil)
+                    ("file" variable (:documentation "The last file search for with EDE locate.") nil nil)
+                    ("lastanswer" variable (:documentation "The last answer provided by the locator.") nil nil)
+                    ("hash" variable (:documentation "Hash table of previously found files.") nil nil))                  
+                :type "class")
+                nil [3495 3869])
+            ("initialize-instance" function
+               (:parent "ede-locate-base"
+                :arguments ("loc" "fields"))
+                nil [3871 4084])
+            ("ede-locate-ok-in-project" function
+               (:parent "ede-locate-base"
+                :arguments ("loc" "root"))
+                nil [4086 4223])
+            ("ede-locate-flush-hash" function
+               (:parent "ede-locate-base"
+                :arguments ("loc"))
+                nil [4225 4384])
+            ("ede-locate-file-in-hash" function
+               (:parent "ede-locate-base"
+                :arguments ("loc" "filestring"))
+                nil [4386 4557])
+            ("ede-locate-add-file-to-hash" function
+               (:parent "ede-locate-base"
+                :arguments ("loc" "filestring" "fullfilename"))
+                nil [4559 4759])
+            ("ede-locate-file-in-project" function
+               (:parent "ede-locate-base"
+                :arguments ("loc" "filesubstring"))
+                nil [4761 5149])
+            ("ede-locate-file-in-project-impl" function
+               (:parent "ede-locate-base"
+                :arguments ("loc" "filesubstring"))
+                nil [5151 5407])
+            ("ede-locate-create/update-root-database" function
+               (:parent "ede-locate-base"
+                :arguments ("loc" "root"))
+                nil [5409 5684])
+            ("ede-locate-locate" type
+               (:superclasses "ede-locate-base"
+                :type "class")
+                nil [5852 6032])
+            ("ede-locate-ok-in-project" function
+               (:parent "ede-locate-locate"
+                :arguments ("loc" "root"))
+                nil [6034 6224])
+            ("ede-locate-file-in-project-impl" function
+               (:parent "ede-locate-locate"
+                :arguments ("loc" "filesubstring"))
+                nil [6226 6949])
+            ("declare-function" code nil nil [6966 7030])
+            ("declare-function" code nil nil [7031 7086])
+            ("declare-function" code nil nil [7087 7153])
+            ("declare-function" code nil nil [7154 7227])
+            ("ede-locate-global" type
+               (:superclasses "ede-locate-base"
+                :type "class")
+                nil [7229 7409])
+            ("initialize-instance" function
+               (:parent "ede-locate-global"
+                :arguments ("loc" "slots"))
+                nil [7411 7831])
+            ("ede-locate-ok-in-project" function
+               (:parent "ede-locate-global"
+                :arguments ("loc" "root"))
+                nil [7833 8113])
+            ("ede-locate-file-in-project-impl" function
+               (:parent "ede-locate-global"
+                :arguments ("loc" "filesubstring"))
+                nil [8115 8497])
+            ("ede-locate-create/update-root-database" function
+               (:parent "ede-locate-global"
+                :arguments ("loc" "root"))
+                nil [8499 8709])
+            ("declare-function" code nil nil [8727 8789])
+            ("declare-function" code nil nil [8790 8860])
+            ("declare-function" code nil nil [8861 8925])
+            ("declare-function" code nil nil [8926 8997])
+            ("ede-locate-idutils" type
+               (:superclasses "ede-locate-base"
+                :type "class")
+                nil [8999 9201])
+            ("initialize-instance" function
+               (:parent "ede-locate-idutils"
+                :arguments ("loc" "slots"))
+                nil [9203 9579])
+            ("ede-locate-ok-in-project" function
+               (:parent "ede-locate-idutils"
+                :arguments ("loc" "root"))
+                nil [9581 9837])
+            ("ede-locate-file-in-project-impl" function
+               (:parent "ede-locate-idutils"
+                :arguments ("loc" "filesubstring"))
+                nil [9839 10220])
+            ("ede-locate-create/update-root-database" function
+               (:parent "ede-locate-idutils"
+                :arguments ("loc" "root"))
+                nil [10222 10430])
+            ("declare-function" code nil nil [10447 10507])
+            ("declare-function" code nil nil [10508 10576])
+            ("declare-function" code nil nil [10577 10639])
+            ("declare-function" code nil nil [10640 10709])
+            ("ede-locate-cscope" type
+               (:superclasses "ede-locate-base"
+                :type "class")
+                nil [10711 10908])
+            ("initialize-instance" function
+               (:parent "ede-locate-cscope"
+                :arguments ("loc" "slots"))
+                nil [10910 11280])
+            ("ede-locate-ok-in-project" function
+               (:parent "ede-locate-cscope"
+                :arguments ("loc" "root"))
+                nil [11282 11534])
+            ("ede-locate-file-in-project-impl" function
+               (:parent "ede-locate-cscope"
+                :arguments ("loc" "filesubstring"))
+                nil [11536 11916])
+            ("ede-locate-create/update-root-database" function
+               (:parent "ede-locate-cscope"
+                :arguments ("loc" "root"))
+                nil [11918 12150])
+            ("ede/locate" package nil nil [12152 12173]))          
+      :file "locate.el"
+      :pointmax 12320
+      :fsize 12319
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1810 . 1811) (symbol 1775 . 1792) (open-paren 1774 . 1775)))
+    (semanticdb-table "proj-elisp.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/proj" include nil nil [942 961])
+            ("ede/pmake" include nil nil [962 982])
+            ("ede/pconf" include nil nil [983 1003])
+            ("semantic-ede-proj-target-grammar" function (:prototype-flag t) nil [1005 1072])
+            ("ede-proj-target-elisp" type
+               (:superclasses "ede-proj-target-makefile"
+                :members 
+                  ( ("menu" variable (:default-value "nil") nil nil)
+                    ("keybindings" variable (:default-value "nil") nil nil)
+                    ("phony" variable (:default-value "t") nil nil)
+                    ("sourcetype" variable (:default-value "(quote (ede-source-emacs))") nil nil)
+                    ("availablecompilers" variable (:default-value "(quote (ede-emacs-compiler ede-xemacs-compiler))") nil nil)
+                    ("aux-packages" variable
+                       (:documentation "Additional packages needed.
+There should only be one toplevel package per auxiliary tool needed.
+These packages location is found, and added to the compile time
+load path."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("pre-load-packages" variable
+                       (:documentation "Additional packages to pre-load.
+Each package name will be loaded with `require'.
+Each package's directory should also appear in :aux-packages via a package name."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [1084 2084])
+            ("ede-proj-makefile-insert-rules" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this"))
+                nil [2086 2447])
+            ("ede-proj-makefile-dependencies" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this"))
+                nil [2449 2907])
+            ("ede-source-emacs" variable (:default-value (ede-sourcecode "ede-emacs-source" :name "Emacs Lisp" :sourcepattern "\\.el$" :garbagepattern (quote ("*.elc")))) nil [2909 3093])
+            ("ede-emacs-compiler" variable (:default-value (ede-compiler "ede-emacs-compiler" :name "emacs" :variables (quote (("EMACS" . "emacs") ("EMACSFLAGS" . "-batch --no-site-file --eval '(setq debug-on-error t)'") ("require" . "$(foreach r,$(1),(require (quote $(r))))"))) :rules (list (ede-makefile-rule "elisp-inference-rule" :target "%.elc" :dependencies "%.el" :rules (quote ("$(EMACS) $(EMACSFLAGS) $(addprefix -L ,$(LOADPATH)) --eval '(progn $(call require, $(PRELOADS)))' -f batch-byte-compile $^")))) :autoconf (quote ("AM_PATH_LISPDIR")) :sourcetype (quote (ede-source-emacs)) :objectextention ".elc")) nil [3095 3731])
+            ("ede-xemacs-compiler" variable (:default-value (clone ede-emacs-compiler "ede-xemacs-compiler" :name "xemacs" :variables (quote (("EMACS" . "xemacs"))))) nil [3733 3911])
+            ("ede-buffer-mine" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this" "buffer"))
+                nil [3932 4412])
+            ("ede-proj-elisp-packages-to-loadpath" function (:arguments ("packages")) nil [4460 5073])
+            ("project-compile-target" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("obj"))
+                nil [5075 5979])
+            ("ede-update-version-in-source" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this" "version"))
+                nil [5981 6918])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this"))
+                nil [6958 7180])
+            ("ede-proj-makefile-insert-loadpath-items" function (:arguments ("items")) nil [7182 7657])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this"))
+                nil [7659 7973])
+            ("ede-proj-elisp-add-path" function (:arguments ("path")) nil [7975 8469])
+            ("ede-proj-tweak-autoconf" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this"))
+                nil [8471 9468])
+            ("ede-proj-flush-autoconf" function
+               (:parent "ede-proj-target-elisp"
+                :arguments ("this"))
+                nil [9470 10062])
+            ("ede-proj-target-elisp-autoloads" type
+               (:superclasses "ede-proj-target-elisp"
+                :members 
+                  ( ("availablecompilers" variable (:default-value "(quote (ede-emacs-cedet-autogen-compiler))") nil nil)
+                    ("phony" variable (:default-value "t") nil nil)
+                    ("rules" variable (:default-value "nil") nil nil)
+                    ("autoload-file" variable
+                       (:documentation "The file that autoload definitions are placed in.
+There should be one load defs file for a given package.  The load defs are created
+for all Emacs Lisp sources that exist in the directory of the created target."
+                        :default-value "loaddefs.el"
+                        :type "string")
+                        nil nil)
+                    ("autoload-dirs" variable
+                       (:documentation "The directories to scan for autoload definitions.
+If nil defaults to the current directory."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [10094 10926])
+            ("ede-buffer-mine" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this" "buffer"))
+                nil [10948 11322])
+            ("ede-emacs-cedet-autogen-compiler" variable (:default-value (ede-compiler "ede-emacs-autogen-compiler" :name "emacs" :variables (quote (("EMACS" . "emacs") ("EMACSFLAGS" . "-batch --no-site-file --eval '(setq debug-on-error t)'") ("require" . "$(foreach r,$(1),(require (quote $(r))))"))) :commands (quote ("$(EMACS) $(EMACSFLAGS) $(AUTOGENFLAGS) $(addprefix -L ,$(LOADPATH)) --eval '(progn $(call require, $(PRELOADS)) (setq generated-autoload-file \"$(abspath $(LOADDEFS))\"))' -f batch-update-autoloads $(abspath $(LOADDIRS))")) :rules (list (ede-makefile-rule "clean-autoloads" :target "clean-autoloads" :phony t :rules (quote ("rm -f $(LOADDEFS)")))) :sourcetype (quote (ede-source-emacs)))) nil [11337 12050])
+            ("ede-proj-compilers" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("obj"))
+                nil [12052 12563])
+            ("ede-proj-makefile-insert-source-variables" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this" "moresource"))
+                nil [12565 12851])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this"))
+                nil [12853 12988])
+            ("ede-proj-makefile-dependencies" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this"))
+                nil [13004 13210])
+            ("ede-proj-makefile-insert-variables" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this"))
+                nil [13212 13611])
+            ("project-compile-target" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("obj"))
+                nil [13613 13915])
+            ("ede-update-version-in-source" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this" "version"))
+                nil [13917 14212])
+            ("ede-proj-makefile-insert-dist-dependencies" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this"))
+                nil [14214 14628])
+            ("ede-proj-makefile-insert-dist-filepatterns" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this"))
+                nil [14630 14950])
+            ("ede-proj-tweak-autoconf" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this"))
+                nil [14952 15147])
+            ("ede-proj-flush-autoconf" function
+               (:parent "ede-proj-target-elisp-autoloads"
+                :arguments ("this"))
+                nil [15149 15298])
+            ("ede/proj-elisp" package nil nil [15300 15325]))          
+      :file "proj-elisp.el"
+      :pointmax 15359
+      :fsize 15358
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "pconf.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/proj" include nil nil [955 974])
+            ("ede/autoconf-edit" include nil nil [975 1003])
+            ("compilation-in-progress" variable nil nil [1004 1036])
+            ("ede-pconf-create-file-query" variable (:default-value (quote ask)) nil [1038 1318])
+            ("ede-proj-configure-file" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [1330 1502])
+            ("ede-proj-configure-test-required-file" function
+               (:parent "ede-proj-project"
+                :arguments ("this" "file"))
+                nil [1504 2217])
+            ("ede-proj-configure-synchronize" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [2220 5510])
+            ("ede-proj-configure-recreate" function
+               (:parent "ede-proj-project"
+                :arguments ("this"))
+                nil [5512 5992])
+            ("ede-proj-tweak-autoconf" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [5994 6340])
+            ("ede-proj-flush-autoconf" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [6342 6613])
+            ("ede-proj-configure-add-missing" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [6649 6845])
+            ("ede-proj-configure-create-missing" function
+               (:parent "ede-proj-target"
+                :arguments ("this"))
+                nil [6886 7015])
+            ("ede/pconf" package nil nil [7017 7037]))          
+      :file "pconf.el"
+      :pointmax 7066
+      :fsize 7065
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "system.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [1071 1085])
+            ("ede-web-browse-home" function (:user-visible-flag t) nil [1137 1464])
+            ("ede-edit-web-page" function (:user-visible-flag t) nil [1481 2030])
+            ("ede-upload-distribution" function (:user-visible-flag t) nil [2047 3217])
+            ("ede-upload-html-documentation" function (:user-visible-flag t) nil [3234 4316])
+            ("ede-vc-project-directory" function (:user-visible-flag t) nil [4411 4588])
+            ("ede/system" package nil nil [4590 4611]))          
+      :file "system.el"
+      :pointmax 4758
+      :fsize 4757
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-shared.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/pmake" include nil nil [1020 1040])
+            ("ede/proj-obj" include nil nil [1041 1064])
+            ("ede/proj-prog" include nil nil [1065 1089])
+            ("ede-proj-target-makefile-shared-object" type
+               (:superclasses "ede-proj-target-makefile-program"
+                :members 
+                  ( ("availablecompilers" variable (:default-value "(quote (ede-gcc-libtool-shared-compiler ede-g++-libtool-shared-compiler))") nil nil)
+                    ("availablelinkers" variable (:default-value "(quote (ede-cc-linker-libtool ede-g++-linker-libtool))") nil nil)
+                    ("ldflags" variable (:documentation "Additional flags to add when linking this shared library.
+Use ldlibs to add addition libraries.") nil nil))                  
+                :type "class")
+                nil [1142 1771])
+            ("ede-gcc-shared-compiler" variable (:default-value (clone ede-gcc-compiler "ede-c-shared-compiler" :name "gcc -shared" :variables (quote (("CC_SHARED" . "gcc") ("C_SHARED_COMPILE" . "$(CC_SHARED) -shared $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)"))) :autoconf (quote ("AC_PROG_LIBTOOL")))) nil [1773 2288])
+            ("ede-gcc-libtool-shared-compiler" variable (:default-value (clone ede-gcc-shared-compiler "ede-c-shared-compiler-libtool" :name "libtool" :variables (quote (("LIBTOOL" . "libtool") ("LTCOMPILE" . "$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)") ("LTLINK" . "$(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -L. -o $@"))) :rules (list (ede-makefile-rule "cc-inference-rule-libtool" :target "%.o" :dependencies "%.c" :rules (quote ("@echo '$(LTCOMPILE) -o $@ $<'; \\" "$(LTCOMPILE) -o $@ $<")))) :autoconf (quote ("AC_PROG_LIBTOOL")))) nil [2290 2938])
+            ("ede-cc-linker-libtool" variable (:default-value (clone ede-cc-linker "ede-cc-linker-libtool" :name "cc shared" :sourcetype (quote (ede-source-c++)) :variables (quote (("LIBTOOL" . "libtool") ("LTLINK" . "$(LIBTOOL) --tag=CPP --mode=link $(CPP) $(CFLAGS) $(LDFLAGS) -L. -o $@"))) :commands (quote ("$(LTLINK) -o $@ $^")) :autoconf (quote ("AC_PROG_LIBTOOL")) :objectextention ".la")) nil [2940 3391])
+            ("ede-g++-shared-compiler" variable (:default-value (clone ede-g++-compiler "ede-c++-shared-compiler" :name "gcc -shared" :variables (quote (("CXX_SHARED" . "g++") ("CXX_SHARED_COMPILE" . "$(CXX_SHARED) -shared $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)"))) :autoconf (quote ("AC_PROG_LIBTOOL")))) nil [3393 3764])
+            ("ede-g++-libtool-shared-compiler" variable (:default-value (clone ede-g++-shared-compiler "ede-c++-shared-compiler-libtool" :name "libtool" :variables (quote (("CXX" "g++") ("LIBTOOL" . "libtool") ("LTCOMPILE" . "$(LIBTOOL) --tag=CXX --mode=compile $(CXX) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)"))) :rules (list (ede-makefile-rule "c++-inference-rule-libtool" :target "%.o" :dependencies "%.cpp" :rules (quote ("@echo '$(LTCOMPILE) -o $@ $<'; \\" "$(LTCOMPILE) -o $@ $<")))) :autoconf (quote ("AC_PROG_LIBTOOL")))) nil [3766 4369])
+            ("ede-g++-linker-libtool" variable (:default-value (clone ede-g++-linker "ede-g++-linker-libtool" :name "g++" :sourcetype (quote (ede-source-c++)) :variables (quote (("LIBTOOL" . "libtool") ("LTLINK" . "$(LIBTOOL) --tag=CXX --mode=link $(CXX) $(CFLAGS) $(LDFLAGS) -L. -o $@"))) :commands (quote ("$(LTLINK) -o $@ $^")) :autoconf (quote ("AC_PROG_LIBTOOL")) :objectextention ".la")) nil [4371 4819])
+            ("when" code nil nil [4861 5443])
+            ("ede-proj-configure-add-missing" function
+               (:parent "ede-proj-target-makefile-shared-object"
+                :arguments ("this"))
+                nil [5445 5776])
+            ("ede-proj-makefile-insert-automake-pre-variables" function
+               (:parent "ede-proj-target-makefile-shared-object"
+                :arguments ("this"))
+                nil [5778 6187])
+            ("ede-proj-makefile-insert-automake-post-variables" function
+               (:parent "ede-proj-target-makefile-shared-object"
+                :arguments ("this"))
+                nil [6189 6419])
+            ("ede-proj-makefile-target-name" function
+               (:parent "ede-proj-target-makefile-shared-object"
+                :arguments ("this"))
+                nil [6421 6739])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target-makefile-shared-object"
+                :arguments ("this"))
+                nil [6741 7023])
+            ("ede/proj-shared" package nil nil [7026 7052]))          
+      :file "proj-shared.el"
+      :pointmax 7087
+      :fsize 7086
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-prog.el"
+      :file "proj-prog.el"
+      :fsize 4809
+      :lastmodtime '(22436 31432 250422 178000))
+    (semanticdb-table "shell.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [1120 1134])
+            ("declare-function" code nil nil [1136 1181])
+            ("ede-shell-run-something" function
+               (:parent "ede-target"
+                :arguments ("target" "command"))
+                nil [1183 2244])
+            ("ede-shell-run-command" function (:arguments ("command")) nil [2246 2511])
+            ("ede-shell-buffer" function
+               (:parent "ede-target"
+                :arguments ("target"))
+                nil [2513 2711])
+            ("ede/shell" package nil nil [2713 2733]))          
+      :file "shell.el"
+      :pointmax 2878
+      :fsize 2877
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-misc.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1065 1078])
+            ("ede/pmake" include nil nil [1080 1100])
+            ("ede/proj-comp" include nil nil [1101 1125])
+            ("ede-proj-target-makefile-miscelaneous" type
+               (:superclasses "ede-proj-target-makefile"
+                :members 
+                  ( ("sourcetype" variable (:default-value "(quote (ede-misc-source))") nil nil)
+                    ("availablecompilers" variable (:default-value "(quote (ede-misc-compile))") nil nil)
+                    ("submakefile" variable
+                       (:documentation "Miscellaneous sources which have a specialized makefile.
+The sub-makefile is used to build this target."
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [1192 1721])
+            ("ede-misc-source" variable (:default-value (ede-sourcecode "ede-misc-source" :name "Miscellaneous" :sourcepattern ".*")) nil [1723 1870])
+            ("ede-misc-compile" variable (:default-value (ede-compiler "ede-misc-compile" :name "Sub Makefile" :commands (quote nil) :autoconf nil :sourcetype (quote (ede-misc-source)))) nil [1872 2068])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target-makefile-miscelaneous"
+                :arguments ("this"))
+                nil [2070 2249])
+            ("ede-proj-makefile-dependency-files" function
+               (:parent "ede-proj-target-makefile-miscelaneous"
+                :arguments ("this"))
+                nil [2251 2540])
+            ("ede-proj-makefile-insert-rules" function
+               (:parent "ede-proj-target-makefile-miscelaneous"
+                :arguments ("this"))
+                nil [2542 3054])
+            ("ede/proj-misc" package nil nil [3056 3080]))          
+      :file "proj-misc.el"
+      :pointmax 3113
+      :fsize 3112
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1078 . 1079) (symbol 1047 . 1064) (open-paren 1046 . 1047)))
+    (semanticdb-table "cpp-root.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [6131 6145])
+            ("semantic-lex-spp-project-macro-symbol-obarray" variable nil nil [6147 6201])
+            ("declare-function" code nil nil [6202 6267])
+            ("declare-function" code nil nil [6268 6329])
+            ("declare-function" code nil nil [6330 6389])
+            ("declare-function" code nil nil [6390 6447])
+            ("ede-cpp-root-project-list" variable nil nil [6685 6786])
+            ("ede-cpp-root-target" type
+               (:superclasses "ede-target"
+                :members 
+                  ( ("project" variable (:default-value "nil") nil nil))                  
+                :type "class")
+                nil [7471 7640])
+            ("ede-cpp-root-project" type
+               (:interfaces ("eieio-instance-tracker")
+                :superclasses "ede-project"
+                :members 
+                  ( ("tracking-symbol" variable (:default-value "(quote ede-cpp-root-project-list)") nil nil)
+                    ("include-path" variable
+                       (:documentation "The default locate function expands filenames within a project.
+If a header file (.h, .hh, etc) name is expanded, and
+the :locate-fcn slot is nil, then the include path is checked
+first, and other directories are ignored.  For very large
+projects, this optimization can save a lot of time.
+
+Directory names in the path can be relative to the current
+buffer's `default-directory' (not starting with a /).  Directories
+that are relative to the project's root should start with a /, such
+as  \"/include\", meaning the directory `include' off the project root
+directory."
+                        :default-value "(quote (\"/include\" \"../include/\"))"
+                        :type "list")
+                        nil nil)
+                    ("system-include-path" variable
+                       (:documentation "The system include path for files in this project.
+C files initialized in an ede-cpp-root-project have their semantic
+system include path set to this value.  If this is nil, then the
+semantic path is not modified."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("spp-table" variable
+                       (:documentation "C Preprocessor macros for your files.
+Preprocessor symbols will be used while parsing your files.
+These macros might be passed in through the command line compiler, or
+are critical symbols derived from header files.  Providing header files
+macro values through this slot improves accuracy and performance.
+Use `:spp-files' to use these files directly."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("spp-files" variable
+                       (:documentation "C header file with Preprocessor macros for your files.
+The PreProcessor symbols appearing in these files will be used while
+parsing files in this project.
+See `semantic-lex-c-preprocessor-symbol-map' for more on how this works."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("header-match-regexp" variable
+                       (:documentation "Regexp used to identify C/C++ header files."
+                        :default-value "\\.\\(h\\(h\\|xx\\|pp\\|\\+\\+\\)?\\|H\\)$\\|\\<\\w+$"
+                        :type "string")
+                        nil nil)
+                    ("locate-fcn" variable
+                       (:documentation "The locate function can be used in place of
+`ede-expand-filename' so you can quickly customize your custom target
+to use specialized local routines instead of the EDE routines.
+The function symbol must take two arguments:
+  NAME - The name of the file to find.
+  DIR - The directory root for this cpp-root project.
+
+It should return the fully qualified file name passed in from NAME.  If that file does not
+exist, it should return nil."
+                        :default-value "nil"
+                        :type "(or null function)")
+                        nil nil)
+                    ("compile-command" variable
+                       (:documentation "Compilation command that will be used for this project.
+It could be string or function that will accept proj argument and should return string.
+The string will be passed to 'compile' function that will be issued in root
+directory of project."
+                        :default-value "nil"
+                        :type "(or null string function)")
+                        nil nil))                  
+                :type "class")
+                nil [7657 10835])
+            ("initialize-instance" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("this" "fields"))
+                nil [11076 12281])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("proj" "dir"))
+                nil [12439 12589])
+            ("ede-find-target" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("proj" "buffer"))
+                nil [12766 13289])
+            ("ede-expand-filename-impl" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("proj" "name"))
+                nil [13590 14652])
+            ("ede-project-root" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("this"))
+                nil [14654 14739])
+            ("ede-project-root-directory" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("this"))
+                nil [14741 14853])
+            ("ede-cpp-root-header-file-p" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("proj" "name"))
+                nil [14995 15198])
+            ("ede-cpp-root-translate-file" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("proj" "filename"))
+                nil [15200 15805])
+            ("ede-system-include-path" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("this"))
+                nil [15807 15960])
+            ("ede-preprocessor-map" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("this"))
+                nil [15962 16926])
+            ("ede-system-include-path" function
+               (:parent "ede-cpp-root-target"
+                :arguments ("this"))
+                nil [16928 17098])
+            ("ede-preprocessor-map" function
+               (:parent "ede-cpp-root-target"
+                :arguments ("this"))
+                nil [17100 17260])
+            ("project-compile-project" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("proj" "command"))
+                nil [17262 17895])
+            ("project-compile-target" function
+               (:parent "ede-cpp-root-target"
+                :arguments ("obj" "command"))
+                nil [17897 18165])
+            ("project-rescan" function
+               (:parent "ede-cpp-root-project"
+                :arguments ("this"))
+                nil [18168 18318])
+            ("ede-create-lots-of-projects-under-dir" function (:arguments ("dir" "projfile" "attributes")) nil [18335 18912])
+            ("ede/cpp-root" package nil nil [18914 18937]))          
+      :file "cpp-root.el"
+      :pointmax 19088
+      :fsize 19087
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "m3.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [976 990])
+            ("cedet-m3" include nil nil [991 1010])
+            ("ede-m3-ede-items" function nil nil [1012 1935])
+            ("ede-m3-install" function nil nil [1952 2035])
+            ("ede/m3" package nil nil [2037 2054]))          
+      :file "m3.el"
+      :pointmax 2193
+      :fsize 2192
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "generic.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("eieio-opt" include nil nil [3263 3283])
+            ("ede/config" include nil nil [3284 3305])
+            ("ede/shell" include nil nil [3306 3326])
+            ("semantic/db" include nil nil [3327 3349])
+            ("ede-generic-config" type
+               (:interfaces ("ede-extra-config-build" "ede-extra-config-program" "ede-extra-config-c")
+                :superclasses "ede-extra-config"
+                :members 
+                  ( ("file-header-line" variable (:default-value ";; EDE Generic Project Configuration") nil nil))                  
+                :type "class")
+                nil [3403 3674])
+            ("ede-generic-load" function (:arguments ("dir" "rootproj")) nil [3676 4459])
+            ("ede-generic-target" type
+               (:interfaces ("ede-target-with-config-build" "ede-target-with-config-program")
+                :superclasses "ede-target-with-config"
+                :members 
+                  ( ("shortname" variable
+                       (:documentation "Something prepended to the target name."
+                        :static-flag t
+                        :type "string")
+                        nil nil)
+                    ("extension" variable
+                       (:documentation "Regular expression representing the extension used for this target.
+subclasses of this base target will override the default value."
+                        :static-flag t
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [4493 5087])
+            ("ede-generic-project" type
+               (:interfaces ("ede-project-with-config-build" "ede-project-with-config-program" "ede-project-with-config-c" "ede-project-with-config-java")
+                :superclasses "ede-project-with-config"
+                :members 
+                  ( ("config-class" variable (:default-value "ede-generic-config") nil nil)
+                    ("config-file-basename" variable (:default-value "EDEConfig.el") nil nil)
+                    ("buildfile" variable
+                       (:documentation "The file name that identifies a project of this type.
+The class allocated value is replace by different sub classes."
+                        :static-flag t
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [5089 5687])
+            ("initialize-instance" function
+               (:parent "ede-generic-project"
+                :arguments ("this" "fields"))
+                nil [5689 5899])
+            ("ede-project-root" function
+               (:parent "ede-generic-project"
+                :arguments ("this"))
+                nil [5901 5985])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-generic-project"
+                :arguments ("proj" "dir"))
+                nil [5987 6136])
+            ("ede-generic-target-c-cpp" type
+               (:interfaces ("ede-target-with-config-c")
+                :superclasses "ede-generic-target"
+                :members 
+                  ( ("shortname" variable (:default-value "C/C++") nil nil)
+                    ("extension" variable (:default-value "\\([ch]\\(pp\\|xx\\|\\+\\+\\)?\\|cc\\|hh\\|CC?\\)") nil nil))                  
+                :type "class")
+                nil [6170 6463])
+            ("ede-generic-target-el" type
+               (:superclasses "ede-generic-target"
+                :members 
+                  ( ("shortname" variable (:default-value "ELisp") nil nil)
+                    ("extension" variable (:default-value "el") nil nil))                  
+                :type "class")
+                nil [6465 6676])
+            ("ede-generic-target-fortran" type
+               (:superclasses "ede-generic-target"
+                :members 
+                  ( ("shortname" variable (:default-value "Fortran") nil nil)
+                    ("extension" variable (:default-value "[fF]9[05]\\|[fF]\\|for") nil nil))                  
+                :type "class")
+                nil [6678 6913])
+            ("ede-generic-target-texi" type
+               (:superclasses "ede-generic-target"
+                :members 
+                  ( ("shortname" variable (:default-value "Texinfo") nil nil)
+                    ("extension" variable (:default-value "texi") nil nil))                  
+                :type "class")
+                nil [6915 7129])
+            ("ede-generic-target-java" type
+               (:interfaces ("ede-target-with-config-java")
+                :superclasses "ede-generic-target"
+                :members 
+                  ( ("shortname" variable (:default-value "Java") nil nil)
+                    ("extension" variable (:default-value "java") nil nil))                  
+                :type "class")
+                nil [7131 7377])
+            ("ede-generic-target-misc" type
+               (:superclasses "ede-generic-target"
+                :members 
+                  ( ("shortname" variable (:default-value "Misc") nil nil)
+                    ("extension" variable nil nil nil))                  
+                :type "class")
+                nil [7444 7649])
+            ("ede-generic-find-matching-target" function (:arguments ("class" "dir" "targets")) nil [7685 7976])
+            ("ede-find-target" function
+               (:parent "ede-generic-project"
+                :arguments ("proj" "buffer"))
+                nil [7978 9022])
+            ("ede-generic-new-autoloader" function (:arguments ("internal-name" "external-name" "projectfile" "class")) nil [9153 10296])
+            ("ede-enable-generic-projects" function (:user-visible-flag t) nil [10313 11624])
+            ("ede-generic-makefile-project" type
+               (:superclasses "ede-generic-project"
+                :members 
+                  ( ("buildfile" variable (:default-value "Makefile") nil nil))                  
+                :type "class")
+                nil [11683 11820])
+            ("ede-generic-setup-configuration" function
+               (:parent "ede-generic-makefile-project"
+                :arguments ("proj" "config"))
+                nil [11822 12026])
+            ("ede-generic-scons-project" type
+               (:superclasses "ede-generic-project"
+                :members 
+                  ( ("buildfile" variable (:default-value "SConstruct") nil nil))                  
+                :type "class")
+                nil [12039 12171])
+            ("ede-generic-setup-configuration" function
+               (:parent "ede-generic-scons-project"
+                :arguments ("proj" "config"))
+                nil [12173 12373])
+            ("ede-generic-cmake-project" type
+               (:superclasses "ede-generic-project"
+                :members 
+                  ( ("buildfile" variable (:default-value "CMakeLists") nil nil))                  
+                :type "class")
+                nil [12386 12518])
+            ("ede-generic-setup-configuration" function
+               (:parent "ede-generic-cmake-project"
+                :arguments ("proj" "config"))
+                nil [12520 12720])
+            ("ede-generic-vc-project" type
+               (:superclasses "ede-generic-project"
+                :type "class")
+                nil [12757 12870])
+            ("ede-generic-setup-configuration" function
+               (:parent "ede-generic-vc-project"
+                :arguments ("proj" "config"))
+                nil [12872 13028])
+            ("ede/generic" package nil nil [13030 13052]))          
+      :file "generic.el"
+      :pointmax 13201
+      :fsize 13200
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-aux.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/proj" include nil nil [978 997])
+            ("ede/pmake" include nil nil [998 1018])
+            ("ede-proj-target-aux" type
+               (:superclasses "ede-proj-target"
+                :members 
+                  ( ("sourcetype" variable (:default-value "(quote (ede-aux-source))") nil nil))                  
+                :type "class")
+                nil [1030 1190])
+            ("ede-aux-source" variable (:default-value (ede-sourcecode "ede-aux-source-txt" :name "Auxiliary Text" :sourcepattern "^[A-Z]+$\\|\\.txt$")) nil [1192 1359])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target-aux"
+                :arguments ("this"))
+                nil [1361 1521])
+            ("ede/proj-aux" package nil nil [1523 1546]))          
+      :file "proj-aux.el"
+      :pointmax 1578
+      :fsize 1577
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ant.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/jvm-base" include nil nil [854 877])
+            ("ede-ant" customgroup (:user-visible-flag t) nil [879 999])
+            ("ede-ant-ant-command" variable (:default-value "ant") nil [1001 1137])
+            ("ede-ant-ant-options" variable (:default-value (quote ("-noinput" "-e"))) nil [1139 1272])
+            ("ede-ant-execute-ant-to-get-info" variable (:default-value t) nil [1274 1446])
+            ("ede-ant-project-file-name" variable
+               (:constant-flag t
+                :default-value "build.xml")
+                nil [1463 1553])
+            ("ede-ant-load" function (:arguments ("dir" "rootproj")) nil [1570 2051])
+            ("ede-ant-project" type
+               (:superclasses "ede-jvm-base-project"
+                :members 
+                  ( ("srcroot" variable
+                       (:documentation "A list of roots of the java sources in this project.
+Each directory is relative to the directory that :file is in.
+This directory is used as part of the class path when searching for
+symbols within this project.
+Use this if the root of your project is not the same as the root of
+your java sources."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("localclasspath" variable
+                       (:documentation "The default classpath used within a project of relative path names.
+All files listed in the local class path are relative to this project's root.
+This classpath is prepended to CLASSPATH when searching for symbols.
+The current project's java source root is always search before this
+classpath."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [2068 2982])
+            ("initialize-instance" function
+               (:parent "ede-ant-project"
+                :arguments ("this" "fields"))
+                nil [2984 3210])
+            ("project-compile-project" function
+               (:parent "ede-ant-project"
+                :arguments ("proj" "command"))
+                nil [3212 3703])
+            ("ede-java-classpath" function
+               (:parent "ede-ant-project"
+                :arguments ("proj"))
+                nil [3873 4561])
+            ("ede-source-paths" function
+               (:parent "ede-ant-project"
+                :arguments ("proj" "mode"))
+                nil [4563 5450])
+            ("project-rescan" function
+               (:parent "ede-ant-project"
+                :arguments ("proj"))
+                nil [5483 5651])
+            ("ede-expand-filename-impl" function
+               (:parent "ede-ant-project"
+                :arguments ("proj" "name"))
+                nil [5718 6474])
+            ("ede-add-project-autoload" code nil nil [6491 6823])
+            ("ede/ant" package nil nil [6825 6843]))          
+      :file "ant.el"
+      :pointmax 6980
+      :fsize 6979
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "jvm-base.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede" include nil nil [843 857])
+            ("cedet-files" include nil nil [858 880])
+            ("ede-jvm-base-project" type
+               (:superclasses "ede-project"
+                :members 
+                  ( ("classpath" variable
+                       (:documentation "Classpath that is either detected automatically, or set by user, depending
+on project's type."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("file-mod-time" variable (:default-value "0") nil nil)
+                    ("current-target" variable (:type "string") nil nil)
+                    ("target-options" variable
+                       (:default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("existing-targets" variable
+                       (:default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [897 1579])
+            ("ede-java-classpath" function
+               (:parent "ede-jvm-base-project"
+                :arguments ("proj"))
+                nil [1581 1716])
+            ("initialize-instance" function
+               (:parent "ede-jvm-base-project"
+                :arguments ("this" "fields"))
+                nil [1718 1950])
+            ("ede-jvm-base-target" type
+               (:superclasses "ede-target"
+                :members 
+                  ( ("project" variable (:default-value "nil") nil nil))                  
+                :type "class")
+                nil [1978 2152])
+            ("ede-jvm-base-find-matching-target" function (:arguments ("class" "dir" "targets")) nil [2154 2462])
+            ("ede-find-target" function
+               (:parent "ede-jvm-base-project"
+                :arguments ("proj" "buffer"))
+                nil [2464 3155])
+            ("project-compile-target" function
+               (:parent "ede-jvm-base-target"
+                :arguments ("obj" "command"))
+                nil [3157 3425])
+            ("ede-project-root-directory" function
+               (:parent "ede-jvm-base-project"
+                :arguments ("this" "file"))
+                nil [3445 3640])
+            ("ede-project-root" function
+               (:parent "ede-jvm-base-project"
+                :arguments ("this"))
+                nil [3642 3727])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-jvm-base-project"
+                :arguments ("proj" "dir"))
+                nil [3729 3914])
+            ("ede-jvm-base-get-mod-time" function (:arguments ("file")) nil [3939 4108])
+            ("ede-jvm-base-file-updated-p" function (:arguments ("proj")) nil [4110 4314])
+            ("ede-jvm-get-classpath-from-command" function (:arguments ("proj" "exec-flag" "outfile-name" "exec-command" "options")) nil [4316 5443])
+            ("ede/jvm-base" package nil nil [5445 5468]))          
+      :file "jvm-base.el"
+      :pointmax 5615
+      :fsize 5614
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-info.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/pmake" include nil nil [947 967])
+            ("ede-proj-target-makefile-info" type
+               (:superclasses "ede-proj-target-makefile"
+                :members 
+                  ( ("menu" variable (:default-value "nil") nil nil)
+                    ("keybindings" variable (:default-value "nil") nil nil)
+                    ("availablecompilers" variable (:default-value "(quote (ede-makeinfo-compiler ede-texi2html-compiler))") nil nil)
+                    ("sourcetype" variable (:default-value "(quote (ede-makeinfo-source))") nil nil)
+                    ("mainmenu" variable
+                       (:documentation "The main menu resides in this file.
+All other sources should be included independently."
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [979 1478])
+            ("ede-makeinfo-source" variable (:default-value (ede-sourcecode "ede-makeinfo-source" :name "Texinfo" :sourcepattern "\\.texi?$" :garbagepattern (quote ("*.info*" "*.html")))) nil [1480 1678])
+            ("ede-makeinfo-compiler" variable (:default-value (ede-compiler "ede-makeinfo-compiler" :name "makeinfo" :variables (quote (("MAKEINFO" . "makeinfo"))) :commands (quote ("$(MAKEINFO) $<")) :autoconf (quote (("AC_CHECK_PROG" . "MAKEINFO, makeinfo"))) :sourcetype (quote (ede-makeinfo-source)))) nil [1680 1992])
+            ("ede-texi2html-compiler" variable (:default-value (ede-compiler "ede-texi2html-compiler" :name "texi2html" :variables (quote (("TEXI2HTML" . "makeinfo -html"))) :commands (quote ("makeinfo -o $@ $<")) :sourcetype (quote (ede-makeinfo-source)))) nil [1994 2262])
+            ("ede-proj-configure-add-missing" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this"))
+                nil [2291 2556])
+            ("ede-proj-makefile-sourcevar" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this"))
+                nil [2558 2733])
+            ("ede-proj-makefile-insert-source-variables" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this" "moresource"))
+                nil [2735 3679])
+            ("ede-makeinfo-find-info-filename" function (:arguments ("source")) nil [3681 4174])
+            ("ede-proj-makefile-target-name" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this"))
+                nil [4176 4624])
+            ("ede-proj-makefile-insert-dist-dependencies" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this"))
+                nil [4626 5036])
+            ("ede-proj-makefile-insert-dist-filepatterns" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this"))
+                nil [5038 5452])
+            ("object-write" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this"))
+                nil [5555 5982])
+            ("ede-documentation" function
+               (:parent "ede-proj-target-makefile-info"
+                :arguments ("this"))
+                nil [5984 6491])
+            ("ede/proj-info" package nil nil [6493 6517]))          
+      :file "proj-info.el"
+      :pointmax 6550
+      :fsize 6549
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "android.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cedet-android" include nil nil [951 975])
+            ("ede" include nil nil [976 990])
+            ("semantic/analyze" include nil nil [991 1018])
+            ("sgml-mode" include nil nil [1019 1039])
+            ("nxml-mode" include nil nil [1040 1066])
+            ("ede-android-project-data" function (:arguments ("dir")) nil [1078 2034])
+            ("ede-android-load" function (:arguments ("dir" "rootproj")) nil [2051 2614])
+            ("ede-add-project-autoload" code nil nil [2631 2907])
+            ("ede-android-target-misc" type
+               (:superclasses "ede-target"
+                :type "class")
+                nil [3009 3167])
+            ("ede-android-target-java" type
+               (:superclasses "ede-target"
+                :members 
+                  ( ("keybindings" variable (:default-value "((\"D\" . ede-debug-target) (\"E\" . ede-android-visit-resource))") nil nil)
+                    ("menu" variable (:default-value "([\"Debug target\" ede-debug-target (ede-buffer-belongs-to-target-p)] [\"Visit Resrouce under Cursor\" ede-android-visit-resource ede-object])") nil nil))                  
+                :type "class")
+                nil [3169 3547])
+            ("ede-android-target-xml" type
+               (:superclasses "ede-target"
+                :members 
+                  ( ("keybindings" variable (:default-value "((\"D\" . ede-debug-target) (\"A\" . ede-android-visit-activity))") nil nil)
+                    ("menu" variable (:default-value "([\"Debug target\" ede-debug-target (ede-buffer-belongs-to-target-p)] [\"Visit Activity Under Cursor\" ede-android-visit-activity ede-object])") nil nil))                  
+                :type "class")
+                nil [3549 3925])
+            ("ede-android-target-misc" type
+               (:superclasses "ede-target"
+                :type "class")
+                nil [3927 4026])
+            ("ede-android-project" type
+               (:superclasses "ede-project"
+                :members 
+                  ( ("keybindings" variable (:default-value "((\"S\" . ede-android-visit-strings) (\"U\" . ede-android-install))") nil nil)
+                    ("menu" variable (:default-value "([\"Upload/Install to Device\" ede-android-install] [\"Start Debug Proxy (DDMS)\" cedet-android-start-ddms] \"---\" [\"Visit strings.xml\" ede-android-visit-strings] [\"Edit Projectfile\" ede-edit-file-target (ede-buffer-belongs-to-project-p)] \"--\" [\"Update Version\" ede-update-version ede-object] [\"Version Control Status\" ede-vc-project-directory ede-object] [\"Android Shell\" cedet-android-adb-shell ede-object] [\"Layout Optimizer\" ede-android-layoutopt ede-object] \"--\" [\"Rescan Project Files\" ede-rescan-toplevel t])") nil nil)
+                    ("package" variable
+                       (:documentation "The package extracted from the Manifest."
+                        :default-value "com"
+                        :type "string")
+                        nil nil))                  
+                :type "class")
+                nil [4044 5194])
+            ("initialize-instance" function
+               (:parent "ede-android-project"
+                :arguments ("this" "fields"))
+                nil [5196 6222])
+            ("ede-commit-project" function
+               (:parent "ede-android-project"
+                :arguments ("proj"))
+                nil [6224 6406])
+            ("project-rescan" function
+               (:parent "ede-android-project"
+                :arguments ("this"))
+                nil [6408 6704])
+            ("ede-project-root-directory" function
+               (:parent "ede-android-project"
+                :arguments ("this" "file"))
+                nil [6848 7038])
+            ("ede-project-root" function
+               (:parent "ede-android-project"
+                :arguments ("this"))
+                nil [7040 7124])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-android-project"
+                :arguments ("proj" "dir"))
+                nil [7126 7275])
+            ("ede-android-find-matching-target" function (:arguments ("class" "dir" "targets")) nil [7302 7593])
+            ("ede-find-target" function
+               (:parent "ede-android-project"
+                :arguments ("proj" "buffer"))
+                nil [7595 8383])
+            ("ede-system-include-path" function
+               (:parent "ede-android-target-java"
+                :arguments ("this"))
+                nil [8406 8578])
+            ("ede-android-fname-if-exists" function (:arguments ("name")) nil [8580 8704])
+            ("ede-expand-filename-impl" function
+               (:parent "ede-android-project"
+                :arguments ("proj" "name"))
+                nil [8706 9909])
+            ("ede-source-paths" function
+               (:parent "ede-android-project"
+                :arguments ("proj" "mode"))
+                nil [9911 10513])
+            ("ede-java-classpath" function
+               (:parent "ede-android-project"
+                :arguments ("this"))
+                nil [10515 10773])
+            ("ede-android-install" function (:user-visible-flag t) nil [10805 11039])
+            ("project-compile-project" function
+               (:parent "ede-android-project"
+                :arguments ("proj" "command"))
+                nil [11077 11413])
+            ("project-compile-target" function
+               (:parent "ede-android-target-java"
+                :arguments ("proj" "command"))
+                nil [11417 11684])
+            ("project-compile-target" function
+               (:parent "ede-android-target-xml"
+                :arguments ("proj" "command"))
+                nil [11688 11954])
+            ("project-debug-target" function
+               (:parent "ede-android-target-java"
+                :arguments ("targ"))
+                nil [11956 12143])
+            ("project-debug-target" function
+               (:parent "ede-android-target-xml"
+                :arguments ("targ"))
+                nil [12145 12331])
+            ("android-jdb-port-history" variable nil nil [12333 12366])
+            ("declare-function" code nil nil [12367 12407])
+            ("ede-android-debug-project" function (:arguments ("startdir")) nil [12408 13122])
+            ("ede-android-layoutopt" function (:user-visible-flag t) nil [13124 13298])
+            ("condition-case" code nil nil [13318 13427])
+            ("ede-android-xml-looking-at-elt-p" function (:arguments ("elt")) nil [13429 13663])
+            ("ede-android-find-element-above-cursor" function (:arguments ("elt")) nil [13665 14031])
+            ("ede-android-find-attribute" function (:arguments ("attr")) nil [14033 14416])
+            ("ede-android-name-to-java" function (:arguments ("name")) nil [14418 14816])
+            ("ede-android-visit-activity" function (:user-visible-flag t) nil [14818 15221])
+            ("ede-android-resource-file" function (:arguments ("where" "what")) nil [15252 15625])
+            ("ede-android-visit-resource" function (:user-visible-flag t) nil [15627 16159])
+            ("ede-android-visit-strings" function (:user-visible-flag t) nil [16161 16330])
+            ("ede/android" package nil nil [16332 16354]))          
+      :file "android.el"
+      :pointmax 16503
+      :fsize 16502
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-archive.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/pmake" include nil nil [917 937])
+            ("ede/proj-obj" include nil nil [938 961])
+            ("ede-proj-target-makefile-archive" type
+               (:superclasses "ede-proj-target-makefile-objectcode"
+                :members 
+                  ( ("availablelinkers" variable (:default-value "(quote (ede-archive-linker))") nil nil))                  
+                :type "class")
+                nil [974 1162])
+            ("ede-archive-linker" variable (:default-value (ede-linker "ede-archive-linker" :name "ar" :variables (quote (("AR" . "ar") ("AR_CMD" . "$(AR) cr"))) :commands (quote ("$(AR_CMD) lib$@.a $^")) :autoconf (quote (("AC_CHECK_PROGS" . "RANLIB, ranlib"))) :objectextention "")) nil [1164 1462])
+            ("ede-proj-makefile-insert-source-variables" function
+               (:parent "ede-proj-target-makefile-archive"
+                :arguments ("this" "moresource"))
+                nil [1464 1922])
+            ("ede-proj-makefile-garbage-patterns" function
+               (:parent "ede-proj-target-makefile-archive"
+                :arguments ("this"))
+                nil [1924 2220])
+            ("ede/proj-archive" package nil nil [2222 2249]))          
+      :file "proj-archive.el"
+      :pointmax 2285
+      :fsize 2284
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "linux.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1179 1192])
+            ("ede" include nil nil [1195 1209])
+            ("ede/make" include nil nil [1210 1229])
+            ("declare-function" code nil nil [1231 1292])
+            ("declare-function" code nil nil [1293 1352])
+            ("declare-function" code nil nil [1353 1410])
+            ("project-linux" customgroup (:user-visible-flag t) nil [1422 1530])
+            ("project-linux-build-directory-default" variable (:default-value (quote ask)) nil [1532 1745])
+            ("project-linux-architecture-default" variable (:default-value (quote ask)) nil [1747 1982])
+            ("project-linux-compile-target-command" variable
+               (:user-visible-flag t
+                :default-value (concat ede-make-command " -k -C %s SUBDIRS=%s"))
+                nil [1985 2169])
+            ("project-linux-compile-project-command" variable
+               (:user-visible-flag t
+                :default-value (concat ede-make-command " -k -C %s"))
+                nil [2171 2346])
+            ("ede-linux-version" function (:arguments ("dir")) nil [2348 3026])
+            ("ede-linux-project" type
+               (:superclasses "ede-project"
+                :members 
+                  ( ("build-directory" variable
+                       (:documentation "Build directory."
+                        :type "string")
+                        nil nil)
+                    ("architecture" variable
+                       (:documentation "Target architecture."
+                        :type "string")
+                        nil nil)
+                    ("include-path" variable
+                       (:documentation "Include directories.
+Contains both common and target architecture-specific directories."
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [3028 3606])
+            ("ede-linux--get-build-directory" function (:arguments ("dir")) nil [3609 4117])
+            ("ede-linux--get-archs" function (:arguments ("dir")) nil [4120 4731])
+            ("ede-linux--detect-architecture" function (:arguments ("dir")) nil [4734 5532])
+            ("ede-linux--get-architecture" function (:arguments ("dir" "bdir")) nil [5534 5987])
+            ("ede-linux--include-path" function (:arguments ("dir" "bdir" "arch")) nil [5990 6688])
+            ("ede-linux-load" function (:arguments ("dir" "rootproj")) nil [6705 7429])
+            ("ede-add-project-autoload" code nil nil [7446 7721])
+            ("ede-linux-target-c" type
+               (:superclasses "ede-target"
+                :type "class")
+                nil [7723 7853])
+            ("ede-linux-target-misc" type
+               (:superclasses "ede-target"
+                :type "class")
+                nil [7855 7992])
+            ("initialize-instance" function
+               (:parent "ede-linux-project"
+                :arguments ("this" "fields"))
+                nil [7994 8199])
+            ("ede-project-root-directory" function
+               (:parent "ede-linux-project"
+                :arguments ("this" "file"))
+                nil [8219 8424])
+            ("ede-project-root" function
+               (:parent "ede-linux-project"
+                :arguments ("this"))
+                nil [8426 8508])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-linux-project"
+                :arguments ("proj" "dir"))
+                nil [8510 8657])
+            ("ede-linux-find-matching-target" function (:arguments ("class" "dir" "targets")) nil [8684 8973])
+            ("ede-find-target" function
+               (:parent "ede-linux-project"
+                :arguments ("proj" "buffer"))
+                nil [8975 9685])
+            ("ede-preprocessor-map" function
+               (:parent "ede-linux-target-c"
+                :arguments ("this"))
+                nil [9713 10375])
+            ("ede-linux-file-exists-name" function (:arguments ("name" "root" "subdir")) nil [10377 10603])
+            ("ede-expand-filename-impl" function
+               (:parent "ede-linux-project"
+                :arguments ("proj" "name"))
+                nil [10605 11574])
+            ("project-compile-project" function
+               (:parent "ede-linux-project"
+                :arguments ("proj" "command"))
+                nil [11599 12108])
+            ("project-compile-target" function
+               (:parent "ede-linux-target-c"
+                :arguments ("obj" "command"))
+                nil [12110 12711])
+            ("project-rescan" function
+               (:parent "ede-linux-project"
+                :arguments ("this"))
+                nil [12713 13179])
+            ("ede/linux" package nil nil [13181 13201]))          
+      :file "linux.el"
+      :pointmax 13346
+      :fsize 13345
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax '((close-paren 1192 . 1193) (symbol 1161 . 1178) (open-paren 1160 . 1161)))
+    (semanticdb-table "lein2.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/jvm-base" include nil nil [854 877])
+            ("ede-lein2" customgroup (:user-visible-flag t) nil [879 1003])
+            ("ede-lein2-execute-lein-to-get-classpath" variable (:default-value t) nil [1005 1190])
+            ("ede-lein2-lein-command" variable (:default-value "lein") nil [1192 1337])
+            ("ede-lein2-project-file-name" variable
+               (:constant-flag t
+                :default-value "project.clj")
+                nil [1354 1450])
+            ("ede-lein2-load" function (:arguments ("dir" "rootproj")) nil [1467 1961])
+            ("ede-lein2-project" type
+               (:superclasses "ede-jvm-base-project"
+                :type "class")
+                nil [1978 2112])
+            ("initialize-instance" function
+               (:parent "ede-lein2-project"
+                :arguments ("this" "fields"))
+                nil [2114 2385])
+            ("project-compile-project" function
+               (:parent "ede-lein2-project"
+                :arguments ("proj" "command"))
+                nil [2387 2840])
+            ("lein2-outfile-name" variable
+               (:constant-flag t
+                :default-value "lein-classpath")
+                nil [2870 2916])
+            ("ede-java-classpath" function
+               (:parent "ede-lein2-project"
+                :arguments ("proj"))
+                nil [2918 3216])
+            ("ede-source-paths" function
+               (:parent "ede-lein2-project"
+                :arguments ("proj" "mode"))
+                nil [3311 3635])
+            ("project-rescan" function
+               (:parent "ede-lein2-project"
+                :arguments ("proj"))
+                nil [3697 3867])
+            ("ede-add-project-autoload" code nil nil [3884 4232])
+            ("ede/lein2" package nil nil [4234 4254]))          
+      :file "lein2.el"
+      :pointmax 4395
+      :fsize 4394
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "maven2.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/jvm-base" include nil nil [3904 3927])
+            ("ede-maven2" customgroup (:user-visible-flag t) nil [3940 4066])
+            ("ede-maven2-execute-mvn-to-get-classpath" variable (:default-value t) nil [4068 4256])
+            ("ede-maven2-maven-command" variable (:default-value "mvn") nil [4258 4407])
+            ("ede-maven2-maven-options" variable (:default-value (quote ("-B"))) nil [4409 4545])
+            ("ede-maven2-project-file-name" variable
+               (:constant-flag t
+                :default-value "pom.xml")
+                nil [4547 4641])
+            ("ede-maven2-deps-plugin-options" variable (:default-value (quote ("-DincludeTypes=jar"))) nil [4643 4860])
+            ("ede-maven2-load" function (:arguments ("dir" "rootproj")) nil [4877 5461])
+            ("ede-maven2-project" type
+               (:superclasses "ede-jvm-base-project"
+                :members 
+                  ( ("file-header-line" variable (:default-value ";; EDE Maven2 project wrapper") nil nil)
+                    ("pom" variable
+                       (:documentation "Parsed pom.xml file"
+                        :default-value "nil")
+                        nil nil))                  
+                :type "class")
+                nil [5478 5764])
+            ("initialize-instance" function
+               (:parent "ede-maven2-project"
+                :arguments ("this" "fields"))
+                nil [5766 6036])
+            ("project-compile-project" function
+               (:parent "ede-maven2-project"
+                :arguments ("proj" "command"))
+                nil [6328 6832])
+            ("maven2-outfile-name" variable
+               (:constant-flag t
+                :default-value "mvn-classpath")
+                nil [6859 6905])
+            ("ede-java-classpath" function
+               (:parent "ede-maven2-project"
+                :arguments ("proj"))
+                nil [6907 7325])
+            ("ede-source-paths" function
+               (:parent "ede-maven2-project"
+                :arguments ("proj" "mode"))
+                nil [7440 7811])
+            ("project-rescan" function
+               (:parent "ede-maven2-project"
+                :arguments ("proj"))
+                nil [7873 8069])
+            ("ede-add-project-autoload" code nil nil [8113 8463])
+            ("ede/maven2" package nil nil [8465 8486]))          
+      :file "maven2.el"
+      :pointmax 8634
+      :fsize 8633
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "java-root.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede/jvm-base" include nil nil [4302 4325])
+            ("ede-java-root-project-list" variable nil nil [4762 4865])
+            ("ede-java-root-target" type
+               (:superclasses "ede-target"
+                :type "class")
+                nil [5550 5675])
+            ("ede-java-root-project" type
+               (:interfaces ("eieio-instance-tracker")
+                :superclasses "ede-jvm-base-project"
+                :members 
+                  ( ("tracking-symbol" variable (:default-value "(quote ede-java-root-project-list)") nil nil)
+                    ("srcroot" variable
+                       (:documentation "A list of roots of the java sources in this project.
+Each directory is relative to the directory that :file is in.
+This directory is used as part of the class path when searching for
+symbols within this project.
+Use this if the root of your project is not the same as the root of
+your java sources."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("localclasspath" variable
+                       (:documentation "The default classpath used within a project of relative path names.
+All files listed in the local class path are relative to this project's root.
+This classpath is prepended to CLASSPATH when searching for symbols.
+The current project's java source root is always search before this
+classpath."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("locate-fcn" variable
+                       (:documentation "The locate function can be used in place of
+`ede-expand-filename' so you can quickly customize your custom target
+to use specialized local routines instead of the EDE routines.
+The function symbol must take two arguments:
+  NAME - The name of the file to find.
+  DIR - The directory root for this java-root project.
+
+It should return the fully qualified file name passed in from NAME.  If that file does not
+exist, it should return nil."
+                        :default-value "nil"
+                        :type "(or null function)")
+                        nil nil))                  
+                :type "class")
+                nil [5692 7282])
+            ("initialize-instance" function
+               (:parent "ede-java-root-project"
+                :arguments ("this" "fields"))
+                nil [7524 8724])
+            ("ede-find-subproject-for-directory" function
+               (:parent "ede-java-root-project"
+                :arguments ("proj" "dir"))
+                nil [8882 9033])
+            ("ede-find-target" function
+               (:parent "ede-java-root-project"
+                :arguments ("proj" "buffer"))
+                nil [9210 9719])
+            ("ede-expand-filename-impl" function
+               (:parent "ede-java-root-project"
+                :arguments ("proj" "name"))
+                nil [10024 10930])
+            ("ede-project-root" function
+               (:parent "ede-java-root-project"
+                :arguments ("this"))
+                nil [10932 11018])
+            ("ede-project-root-directory" function
+               (:parent "ede-java-root-project"
+                :arguments ("this"))
+                nil [11020 11151])
+            ("project-rescan" function
+               (:parent "ede-java-root-project"
+                :arguments ("this"))
+                nil [11176 11328])
+            ("ede-java-classpath" function
+               (:parent "ede-java-root-project"
+                :arguments ("proj"))
+                nil [11542 12006])
+            ("ede-source-paths" function
+               (:parent "ede-java-root-project"
+                :arguments ("proj" "mode"))
+                nil [12008 12251])
+            ("ede/java-root" package nil nil [12253 12277]))          
+      :file "java-root.el"
+      :pointmax 12430
+      :fsize 12429
+      :lastmodtime '(22436 31432 250422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "proj-scheme.el"
+      :file "proj-scheme.el"
+      :fsize 1618
+      :lastmodtime '(22436 31432 250422 178000)))
+  :file "!home!lyra!.emacs.d!cedet!lisp!cedet!ede!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

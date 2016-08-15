@@ -1,0 +1,438 @@
+;; Object site-lisp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "site-lisp/"
+  :tables
+  (list
+    (semanticdb-table "debian-startup.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("debian-pkg-add-load-path-item" function (:arguments ("item")) nil [1192 2287])
+            ("debian-unique-strings" function (:arguments ("strings")) nil [2289 2635])
+            ("debian-run-directories" function (:arguments ("dirs")) nil [2637 4594])
+            ("debian-startup" function (:arguments ("flavor")) nil [4596 5625]))          
+      :file "debian-startup.el"
+      :pointmax 5626
+      :fsize 5625
+      :lastmodtime '(21373 3162 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "rst.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("when" code nil nil [4595 4862])
+            ("rst-testcover-defcustom" function nil nil [4864 5346])
+            ("rst-testcover-add-compose" function (:arguments ("fun")) nil [5348 5531])
+            ("rst-testcover-add-1value" function (:arguments ("fun")) nil [5533 5712])
+            ("cl" include nil nil [5912 5925])
+            ("rst-signum" function (:arguments ("x")) nil [6029 6158])
+            ("rst-some" function (:arguments ("seq" "pred")) nil [6160 6567])
+            ("rst-position-if" function (:arguments ("pred" "seq")) nil [6569 6815])
+            ("rst-position" function (:arguments ("elem" "seq")) nil [6817 7218])
+            ("rst-extract-version" function (:arguments ("delim-re" "head-re" "re" "tail-re" "var" "default")) nil [7397 7813])
+            ("rst-cvs-header" variable
+               (:constant-flag t
+                :default-value "$CVSHeader: sm/rst_el/rst.el,v 1.326 2012-09-20 21:28:04 stefan Exp $")
+                nil [7909 8008])
+            ("rst-cvs-rev" variable
+               (:constant-flag t
+                :default-value (rst-extract-version "\\$" "CVSHeader: \\S + " "[0-9]+\\(?:\\.[0-9]+\\)+" " .*" rst-cvs-header "0.0"))
+                nil [8009 8222])
+            ("rst-cvs-timestamp" variable
+               (:constant-flag t
+                :default-value (rst-extract-version "\\$" "CVSHeader: \\S + \\S + " "[0-9]+-[0-9]+-[0-9]+ [0-9]+:[0-9]+:[0-9]+" " .*" rst-cvs-header "1970-01-01 00:00:00"))
+                nil [8223 8449])
+            ("rst-svn-rev" variable
+               (:constant-flag t
+                :default-value (rst-extract-version "\\$" "LastChangedRevision: " "[0-9]+" " " "$LastChangedRevision: 7515 $"))
+                nil [8509 8723])
+            ("rst-svn-timestamp" variable
+               (:constant-flag t
+                :default-value (rst-extract-version "\\$" "LastChangedDate: " ".+?+" " " "$LastChangedDate: 2012-09-20 23:28:53 +0200 (Don, 20. Sep 2012) $"))
+                nil [8724 8927])
+            ("rst-official-version" variable
+               (:constant-flag t
+                :default-value (rst-extract-version "%" "OfficialVersion: " "[0-9]+\\(?:\\.[0-9]+\\)+" " " "%OfficialVersion: 1.4.0 %"))
+                nil [8967 9151])
+            ("rst-official-cvs-rev" variable
+               (:constant-flag t
+                :default-value (rst-extract-version "[%$]" "Revision: " "[0-9]+\\(?:\\.[0-9]+\\)+" " " "$Revision: 7515 $"))
+                nil [9152 9342])
+            ("rst-version" variable
+               (:constant-flag t
+                :default-value (if (equal rst-official-cvs-rev rst-cvs-rev) rst-official-version (format "%s (development %s [%s])" rst-official-version rst-cvs-rev rst-cvs-timestamp)))
+                nil [9344 9695])
+            ("rst-package-emacs-version-alist" variable
+               (:constant-flag t
+                :default-value (quote (("1.0.0" . "24.3") ("1.1.0" . "24.3") ("1.2.0" . "24.3") ("1.2.1" . "24.3") ("1.3.0" . "24.3") ("1.3.1" . "24.3") ("1.4.0" . "24.3"))))
+                nil [9697 9906])
+            ("unless" code nil nil [9908 10062])
+            ("add-to-list" code nil nil [10064 10167])
+            ("rst" customgroup (:user-visible-flag t) nil [10281 10435])
+            ("rst-bullets" variable
+               (:constant-flag t
+                :default-value (quote (45 42 43 8226 8227 8259)))
+                nil [10777 10966])
+            ("rst-uri-schemes" variable
+               (:constant-flag t
+                :default-value (quote ("acap" "cid" "data" "dav" "fax" "file" "ftp" "gopher" "http" "https" "imap" "ldap" "mailto" "mid" "modem" "news" "nfs" "nntp" "pop" "prospero" "rtsp" "service" "sip" "tel" "telnet" "tip" "urn" "vemmi" "wais")))
+                nil [10968 11242])
+            ("rst-adornment-chars" variable
+               (:constant-flag t
+                :default-value (quote (93 33 34 35 36 37 38 39 40 41 42 43 44 46 47 58 59 60 61 62 63 64 91 92 94 95 96 123 124 125 126 45)))
+                nil [11244 11537])
+            ("rst-max-inline-length" variable
+               (:constant-flag t
+                :default-value 1000)
+                nil [11539 11628])
+            ("rst-re-alist-def" variable
+               (:constant-flag t
+                :default-value (\` ((hws-prt "[	 ]") (hws-tag hws-prt "*") (hws-sta hws-prt "+") (lin-beg "^" hws-tag) (lin-end hws-tag "$") (linemp-tag "^" hws-tag "$") (ell-tag "\\.\\.\\.") (bul-tag (\, (concat "[" rst-bullets "]"))) (ltr-tag "[a-zA-Z]") (num-prt "[0-9]") (num-tag num-prt "+") (rom-prt "[IVXLCDMivxlcdm]") (rom-tag rom-prt "+") (aut-tag "#") (dcl-tag "::") (bli-sfx (:alt hws-sta "$")) (bul-sta bul-tag bli-sfx) (exm-tag "\\.\\.") (exm-sta exm-tag hws-sta) (exm-beg lin-beg exm-sta) (cntany-tag (:alt ltr-tag num-tag rom-tag aut-tag)) (cntexp-tag (:alt ltr-tag num-tag rom-tag)) (enmany-tag (:alt (:seq cntany-tag "\\.") (:seq "(?" cntany-tag ")"))) (enmexp-tag (:alt (:seq cntexp-tag "\\.") (:seq "(?" cntexp-tag ")"))) (enmaut-tag (:alt (:seq aut-tag "\\.") (:seq "(?" aut-tag ")"))) (enmany-sta enmany-tag bli-sfx) (enmexp-sta enmexp-tag bli-sfx) (enmexp-beg lin-beg enmexp-sta) (itmany-tag (:alt enmany-tag bul-tag)) (itmany-sta-1 (:grp itmany-tag) bli-sfx) (itmany-beg-1 lin-beg itmany-sta-1) (ilm-pfx (:alt "^" hws-prt "[-'\"([{<‘“«’/:]")) (ilm-sfx (:alt "$" hws-prt "[]-'\")}>’”»/:.,;!?\\]")) (ilcsgl-tag "\\S ") (ilcast-prt (:alt "[^*\\]" "\\\\.")) (ilcbkq-prt (:alt "[^`\\]" "\\\\.")) (ilcbkqdef-prt (:alt "[^`\\
+]" "\\\\.")) (ilcbar-prt (:alt "[^|\\]" "\\\\.")) (ilcbardef-prt (:alt "[^|\\
+]" "\\\\.")) (ilcast-sfx "[^	 *\\]") (ilcbkq-sfx "[^	 `\\]") (ilcbar-sfx "[^	 |\\]") (ilcrep-hlp (\, (format "\\{0,%d\\}" rst-max-inline-length))) (ilcast-tag (:alt ilcsgl-tag (:seq ilcsgl-tag ilcast-prt ilcrep-hlp ilcast-sfx))) (ilcbkq-tag (:alt ilcsgl-tag (:seq ilcsgl-tag ilcbkq-prt ilcrep-hlp ilcbkq-sfx))) (ilcbkqdef-tag (:alt ilcsgl-tag (:seq ilcsgl-tag ilcbkqdef-prt ilcrep-hlp ilcbkq-sfx))) (ilcbar-tag (:alt ilcsgl-tag (:seq ilcsgl-tag ilcbar-prt ilcrep-hlp ilcbar-sfx))) (ilcbardef-tag (:alt ilcsgl-tag (:seq ilcsgl-tag ilcbardef-prt ilcrep-hlp ilcbar-sfx))) (fldnam-prt (:alt "[^:
+]" "\\\\:")) (fldnam-tag fldnam-prt "+") (fld-tag ":" fldnam-tag ":") (optsta-tag (:alt "[-+/]" "--")) (optnam-tag "\\sw" (:alt "-" "\\sw") "*") (optarg-tag (:shy "[ =]\\S +")) (optsep-tag (:shy "," hws-prt)) (opt-tag (:shy optsta-tag optnam-tag optarg-tag "?")) (fncnam-prt "[^]
+]") (fncnam-tag fncnam-prt "+") (fnc-tag "\\[" fncnam-tag "]") (fncdef-tag-2 (:grp exm-sta) (:grp fnc-tag)) (fnc-sta-2 fncdef-tag-2 bli-sfx) (sub-tag "|" ilcbar-tag "|") (subdef-tag "|" ilcbardef-tag "|") (sym-prt "[-+.:_]") (sym-tag (:shy "\\sw+" (:shy sym-prt "\\sw+") "*")) (uri-tag (:alt (\,@ rst-uri-schemes))) (ado-prt "[" (\, (concat rst-adornment-chars)) "]") (adorep3-hlp "\\{3,\\}") (adorep2-hlp "\\{2,\\}") (ado-tag-1-1 (:grp ado-prt) "\\1" adorep2-hlp) (ado-tag-1-2 (:grp ado-prt) "\\2" adorep2-hlp) (ado-beg-2-1 "^" (:grp ado-tag-1-2) lin-end) (ttl-tag "\\S *\\w\\S *") (ttl-beg lin-beg ttl-tag) (dir-tag-3 (:grp exm-sta) (:grp (:shy subdef-tag hws-sta) "?") (:grp sym-tag dcl-tag)) (dir-sta-3 dir-tag-3 bli-sfx) (lit-sta-2 (:grp (:alt "[^.
+]" "\\.[^.
+]") ".*") "?" (:grp dcl-tag) "$") (cmt-sta-1 (:grp exm-sta) "[^[|_
+]" (:alt "[^:
+]" (:seq ":" (:alt "[^:
+]" "$"))) "*$") (par-tag- (:alt itmany-tag fld-tag opt-tag fncdef-tag-2 dir-tag-3 exm-tag)))))
+                nil [11630 20261])
+            ("rst-re-alist" variable nil nil [20263 20284])
+            ("rst-testcover-add-compose" code nil nil [20393 20428])
+            ("rst-re" function (:arguments ("args")) nil [20447 22161])
+            ("with-no-warnings" code nil nil [22237 22671])
+            ("rst-define-key" function (:arguments ("keymap" "key" "def" "deprecated")) nil [22794 23439])
+            ("rst-mode-map" variable (:default-value (let ((map (make-sparse-keymap))) (rst-define-key map [3 8] (quote describe-prefix-bindings)) (rst-define-key map [3 67108925] (quote rst-adjust) [3 1 t]) (rst-define-key map [67108925] (quote rst-adjust)) (rst-define-key map [3 1 8] (quote describe-prefix-bindings)) (rst-define-key map [3 1 1] (quote rst-adjust)) (rst-define-key map [3 1 4] (quote rst-display-adornments-hierarchy)) (rst-define-key map [3 1 19] (quote rst-straighten-adornments) [3 19]) (rst-define-key map [134217736] (quote rst-mark-section) [3 13]) (rst-define-key map [134217729] (quote rst-backward-section) [3 14]) (rst-define-key map [134217733] (quote rst-forward-section) [3 16]) (rst-define-key map [3 18 8] (quote describe-prefix-bindings)) (rst-define-key map [3 18 12] (quote rst-line-block-region) [3 4]) (rst-define-key map [3 18 tab] (quote rst-shift-region) [3 18 t] [3 12 t]) (rst-define-key map [3 12 8] (quote describe-prefix-bindings)) (rst-define-key map [3 12 2] (quote rst-bullet-list-region) [3 2]) (rst-define-key map [3 12 5] (quote rst-enumerate-region) [3 5]) (rst-define-key map [3 12 3] (quote rst-convert-bullets-to-enumeration) [3 22]) (rst-define-key map [3 12 19] (quote rst-straighten-bullets-region) [3 23]) (rst-define-key map [3 12 9] (quote rst-insert-list)) (rst-define-key map [3 20 8] (quote describe-prefix-bindings)) (rst-define-key map [3 20 20] (quote rst-toc)) (rst-define-key map [3 20 9] (quote rst-toc-insert) [3 9]) (rst-define-key map [3 20 21] (quote rst-toc-update) [3 21]) (rst-define-key map [3 20 10] (quote rst-goto-section) [3 6]) (rst-define-key map [3 3 8] (quote describe-prefix-bindings)) (rst-define-key map [3 3 3] (quote rst-compile) [3 49]) (rst-define-key map [3 3 1] (quote rst-compile-alt-toolset) [3 50]) (rst-define-key map [3 3 24] (quote rst-compile-pseudo-region) [3 51]) (rst-define-key map [3 3 16] (quote rst-compile-pdf-preview) [3 52]) (rst-define-key map [3 3 19] (quote rst-compile-slides-preview) [3 53]) map)) nil [23458 27959])
+            ("define-abbrev-table" code nil nil [27974 28381])
+            ("rst-mode-syntax-table" variable (:default-value (let ((st (copy-syntax-table text-mode-syntax-table))) (modify-syntax-entry 36 "." st) (modify-syntax-entry 37 "." st) (modify-syntax-entry 38 "." st) (modify-syntax-entry 39 "." st) (modify-syntax-entry 42 "." st) (modify-syntax-entry 43 "." st) (modify-syntax-entry 45 "." st) (modify-syntax-entry 47 "." st) (modify-syntax-entry 60 "." st) (modify-syntax-entry 61 "." st) (modify-syntax-entry 62 "." st) (modify-syntax-entry 92 "\\" st) (modify-syntax-entry 95 "." st) (modify-syntax-entry 124 "." st) (modify-syntax-entry 171 "." st) (modify-syntax-entry 187 "." st) (modify-syntax-entry 8216 "." st) (modify-syntax-entry 8217 "." st) (modify-syntax-entry 8220 "." st) (modify-syntax-entry 8221 "." st) st)) nil [28401 29292])
+            ("rst-mode-hook" variable nil nil [29295 29446])
+            ("rst-testcover-defcustom" code nil nil [29447 29472])
+            ("newcomment" include nil nil [29531 29552])
+            ("define-derived-mode" code nil nil [29790 32469])
+            ("define-minor-mode" code nil nil [32486 33008])
+            ("rst-adjust" customgroup (:user-visible-flag t) nil [36197 36323])
+            ("define-obsolete-variable-alias" code nil nil [36325 36420])
+            ("rst-preferred-adornments" variable (:default-value (quote ((61 over-and-under 1) (61 simple 0) (45 simple 0) (126 simple 0) (43 simple 0) (96 simple 0) (35 simple 0) (64 simple 0)))) nil [36421 37795])
+            ("rst-testcover-defcustom" code nil nil [37796 37821])
+            ("rst-default-indent" variable (:default-value 1) nil [37823 38081])
+            ("rst-testcover-defcustom" code nil nil [38082 38107])
+            ("rst-compare-adornments" function (:arguments ("ado1" "ado2")) nil [38109 38425])
+            ("rst-get-adornment-match" function (:arguments ("hier" "ado")) nil [38428 38794])
+            ("rst-suggest-new-adornment" function (:arguments ("allados" "prev")) nil [38902 39946])
+            ("rst-delete-entire-line" function nil nil [39948 40136])
+            ("rst-update-section" function (:arguments ("char" "style" "indent")) nil [40138 42361])
+            ("rst-classify-adornment" function (:arguments ("adornment" "end")) nil [42363 45889])
+            ("rst-find-title-line" function nil nil [45891 48100])
+            ("rst-all-sections" variable nil nil [48305 48455])
+            ("make-variable-buffer-local" code nil nil [48456 48502])
+            ("rst-section-hierarchy" variable nil nil [48611 48798])
+            ("make-variable-buffer-local" code nil nil [48799 48850])
+            ("rst-testcover-add-1value" code nil nil [48852 48904])
+            ("rst-reset-section-caches" function nil nil [48905 49104])
+            ("rst-find-all-adornments" function nil nil [49106 50301])
+            ("rst-infer-hierarchy" function (:arguments ("adornments")) nil [50303 51068])
+            ("rst-get-hierarchy" function (:arguments ("ignore")) nil [51070 51967])
+            ("rst-get-adornments-around" function nil nil [51969 52540])
+            ("rst-adornment-complete-p" function (:arguments ("ado")) nil [52542 53559])
+            ("rst-get-next-adornment" function (:arguments ("curado" "hier" "suggestion" "reverse-direction")) nil [53562 54579])
+            ("rst-adjust" function
+               (:user-visible-flag t
+                :arguments ("pfxarg"))
+                nil [54648 56378])
+            ("rst-adjust-hook" variable nil nil [56380 56532])
+            ("rst-testcover-defcustom" code nil nil [56533 56558])
+            ("rst-new-adornment-down" variable nil nil [56560 56843])
+            ("rst-testcover-defcustom" code nil nil [56844 56869])
+            ("rst-adjust-adornment" function
+               (:user-visible-flag t
+                :arguments ("pfxarg"))
+                nil [56871 57309])
+            ("rst-adjust-adornment-work" function (:arguments ("toggle-style" "reverse-direction")) nil [57311 65179])
+            ("defalias" code nil nil [65221 65269])
+            ("rst-promote-region" function
+               (:user-visible-flag t
+                :arguments ("demote"))
+                nil [65272 66808])
+            ("rst-display-adornments-hierarchy" function
+               (:user-visible-flag t
+                :arguments ("adornments"))
+                nil [66812 67467])
+            ("rst-straighten-adornments" function (:user-visible-flag t) nil [67469 68412])
+            ("rst-arabic-to-roman" variable
+               (:constant-flag t
+                :default-value (quote ((1000 . "M") (900 . "CM") (500 . "D") (400 . "CD") (100 . "C") (90 . "XC") (50 . "L") (40 . "XL") (10 . "X") (9 . "IX") (5 . "V") (4 . "IV") (1 . "I"))))
+                nil [68758 69077])
+            ("rst-arabic-to-roman" function (:arguments ("num" "arg")) nil [69079 69689])
+            ("rst-roman-to-arabic" function (:arguments ("string" "arg")) nil [69691 70276])
+            ("rst-find-pfx-in-region" function (:arguments ("beg" "end" "pfx-re")) nil [70329 71291])
+            ("rst-insert-list-pos" function (:arguments ("newitem")) nil [71293 72179])
+            ("rst-initial-enums" variable (:default-value (let (vals) (dolist (fmt (quote ("%s." "(%s)" "%s)"))) (dolist (c (quote ("1" "a" "A" "I" "i"))) (push (format fmt c) vals))) (cons "#." (nreverse vals)))) nil [72216 72441])
+            ("rst-initial-items" variable (:default-value (append (mapcar (quote char-to-string) rst-bullets) rst-initial-enums)) nil [72478 72643])
+            ("rst-insert-list-new-item" function (:user-visible-flag t) nil [72645 74250])
+            ("rst-preferred-bullets" variable (:default-value (quote (42 45 43))) nil [74252 74518])
+            ("rst-testcover-defcustom" code nil nil [74519 74544])
+            ("rst-insert-list-continue" function (:arguments ("curitem" "prefer-roman")) nil [74546 76020])
+            ("rst-insert-list" function
+               (:user-visible-flag t
+                :arguments ("prefer-roman"))
+                nil [76023 77465])
+            ("rst-straighten-bullets-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end"))
+                nil [77467 78812])
+            ("rst-section-tree" function nil nil [78988 80432])
+            ("rst-section-tree-rec" function (:arguments ("remaining" "lev")) nil [80482 81793])
+            ("rst-section-tree-point" function (:arguments ("tree" "point")) nil [81795 83199])
+            ("rst-toc" customgroup (:user-visible-flag t) nil [83201 83308])
+            ("rst-toc-indent" variable (:default-value 2) nil [83310 83467])
+            ("rst-testcover-defcustom" code nil nil [83468 83493])
+            ("rst-toc-insert-style" variable (:default-value (quote fixed)) nil [83495 83883])
+            ("rst-testcover-defcustom" code nil nil [83884 83909])
+            ("rst-toc-insert-number-separator" variable (:default-value "  ") nil [83911 84039])
+            ("rst-testcover-defcustom" code nil nil [84040 84065])
+            ("rst-toc-insert-click-keymap" variable (:default-value (let ((map (make-sparse-keymap))) (define-key map [mouse-1] (quote rst-toc-mode-mouse-goto)) map)) nil [84126 84344])
+            ("rst-toc-insert-max-level" variable nil nil [84346 84455])
+            ("rst-testcover-defcustom" code nil nil [84456 84481])
+            ("rst-toc-insert" function
+               (:user-visible-flag t
+                :arguments ("pfxarg"))
+                nil [84483 85660])
+            ("rst-toc-insert-node" function (:arguments ("node" "level" "indent" "pfx")) nil [85662 88268])
+            ("rst-toc-update" function (:user-visible-flag t) nil [88271 89652])
+            ("defalias" code nil nil [90125 90174])
+            ("rst-toc-node" function (:arguments ("node" "level")) nil [90278 90859])
+            ("rst-toc-count-lines" function (:arguments ("node" "target-node")) nil [90861 91433])
+            ("rst-toc-buffer-name" variable (:default-value "*Table of Contents*") nil [91435 91527])
+            ("rst-toc-return-wincfg" variable nil nil [91529 91629])
+            ("rst-toc" function (:user-visible-flag t) nil [91632 93053])
+            ("rst-toc-mode-find-section" function nil nil [93056 93366])
+            ("rst-goto-section" function
+               (:user-visible-flag t
+                :arguments ("kill"))
+                nil [93546 94067])
+            ("rst-toc-mode-goto-section" function (:user-visible-flag t) nil [94069 94218])
+            ("rst-toc-mode-mouse-goto" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [94220 94650])
+            ("rst-toc-mode-mouse-goto-kill" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [94652 94913])
+            ("rst-toc-quit-window" function (:user-visible-flag t) nil [94915 95110])
+            ("rst-toc-mode-map" variable (:default-value (let ((map (make-sparse-keymap))) (define-key map [mouse-1] (quote rst-toc-mode-mouse-goto-kill)) (define-key map [mouse-2] (quote rst-toc-mode-mouse-goto)) (define-key map "" (quote rst-toc-mode-goto-section)) (define-key map "f" (quote rst-toc-mode-goto-section)) (define-key map "q" (quote rst-toc-quit-window)) (define-key map "z" (quote kill-this-buffer)) map)) nil [95112 95526])
+            ("put" code nil nil [95528 95568])
+            ("define-derived-mode" code nil nil [95616 95777])
+            ("rst-forward-section" function
+               (:user-visible-flag t
+                :arguments ("offset"))
+                nil [96008 97291])
+            ("rst-backward-section" function (:user-visible-flag t) nil [97293 97427])
+            ("rst-mark-section" function
+               (:user-visible-flag t
+                :arguments ("count" "allow-extend"))
+                nil [97467 98099])
+            ("rst-find-leftmost-column" function (:arguments ("beg" "end")) nil [98321 98706])
+            ("rst-iterate-leftmost-paragraphs" function (:arguments ("beg" "end" "first-only" "body-consequent" "body-alternative")) nil [98812 99860])
+            ("rst-iterate-leftmost-paragraphs-2" function (:arguments ("spec" "body")) nil [99981 101034])
+            ("rst-indent" customgroup (:user-visible-flag t) nil [101391 101764])
+            ("define-obsolete-variable-alias" code nil nil [101766 101850])
+            ("rst-indent-width" variable (:default-value 2) nil [101851 101984])
+            ("rst-testcover-defcustom" code nil nil [101985 102010])
+            ("rst-indent-field" variable (:default-value 3) nil [102012 102162])
+            ("rst-testcover-defcustom" code nil nil [102163 102188])
+            ("rst-indent-literal-normal" variable (:default-value 3) nil [102190 102342])
+            ("rst-testcover-defcustom" code nil nil [102343 102368])
+            ("rst-indent-literal-minimized" variable (:default-value 2) nil [102370 102520])
+            ("rst-testcover-defcustom" code nil nil [102521 102546])
+            ("rst-indent-comment" variable (:default-value 3) nil [102548 102673])
+            ("rst-testcover-defcustom" code nil nil [102674 102699])
+            ("rst-line-tabs" function nil nil [102815 105092])
+            ("rst-compute-tabs" function (:arguments ("pt")) nil [105094 106461])
+            ("rst-indent-line" function (:arguments ("dflt")) nil [106463 107587])
+            ("rst-shift-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end" "cnt"))
+                nil [107589 109067])
+            ("rst-adaptive-fill" function nil nil [109226 109785])
+            ("rst-comment-line-break" function (:arguments ("soft")) nil [109881 110372])
+            ("rst-comment-indent" function nil nil [110374 110487])
+            ("rst-comment-insert-comment" function nil nil [110489 110615])
+            ("rst-comment-region" function (:arguments ("beg" "end" "arg")) nil [110617 111100])
+            ("rst-uncomment-region" function (:arguments ("beg" "end" "arg")) nil [111102 111472])
+            ("rst-enumerate-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end" "all"))
+                nil [111803 112321])
+            ("rst-bullet-list-region" function
+               (:user-visible-flag t
+                :arguments ("beg" "end" "all"))
+                nil [112323 112673])
+            ("rst-convert-bullets-to-enumeration" function
+               (:user-visible-flag t
+                :arguments ("beg" "end"))
+                nil [112860 113449])
+            ("rst-line-block-region" function
+               (:user-visible-flag t
+                :arguments ("rbeg" "rend" "pfxarg"))
+                nil [113533 114127])
+            ("font-lock" include nil nil [114239 114259])
+            ("rst-faces" customgroup (:user-visible-flag t) nil [114448 114546])
+            ("rst-block" variable
+               (:default-value (quote ((t :inherit font-lock-keyword-face)))
+                :type "face")
+                nil [114548 114701])
+            ("rst-block-face" variable (:default-value (quote rst-block)) nil [114703 114837])
+            ("rst-testcover-defcustom" code nil nil [114838 114863])
+            ("make-obsolete-variable" code nil nil [114864 115001])
+            ("rst-external" variable
+               (:default-value (quote ((t :inherit font-lock-type-face)))
+                :type "face")
+                nil [115003 115151])
+            ("rst-external-face" variable (:default-value (quote rst-external)) nil [115153 115288])
+            ("rst-testcover-defcustom" code nil nil [115289 115314])
+            ("make-obsolete-variable" code nil nil [115315 115458])
+            ("rst-definition" variable
+               (:default-value (quote ((t :inherit font-lock-function-name-face)))
+                :type "face")
+                nil [115460 115616])
+            ("rst-definition-face" variable (:default-value (quote rst-definition)) nil [115618 115754])
+            ("rst-testcover-defcustom" code nil nil [115755 115780])
+            ("make-obsolete-variable" code nil nil [115781 115928])
+            ("rst-directive" variable
+               (:default-value (if (boundp (quote font-lock-builtin-face)) (quote ((t :inherit font-lock-builtin-face))) (quote ((t :inherit font-lock-preprocessor-face))))
+                :type "face")
+                nil [115959 116233])
+            ("rst-directive-face" variable (:default-value (quote rst-directive)) nil [116235 116342])
+            ("rst-testcover-defcustom" code nil nil [116343 116368])
+            ("make-obsolete-variable" code nil nil [116369 116514])
+            ("rst-comment" variable
+               (:default-value (quote ((t :inherit font-lock-comment-face)))
+                :type "face")
+                nil [116516 116642])
+            ("rst-comment-face" variable (:default-value (quote rst-comment)) nil [116644 116753])
+            ("rst-testcover-defcustom" code nil nil [116754 116779])
+            ("make-obsolete-variable" code nil nil [116780 116921])
+            ("rst-emphasis1" variable
+               (:default-value (quote ((t :inherit italic)))
+                :type "face")
+                nil [116923 117042])
+            ("rst-emphasis1-face" variable (:default-value (quote rst-emphasis1)) nil [117044 117164])
+            ("rst-testcover-defcustom" code nil nil [117165 117190])
+            ("make-obsolete-variable" code nil nil [117191 117336])
+            ("rst-emphasis2" variable
+               (:default-value (quote ((t :inherit bold)))
+                :type "face")
+                nil [117338 117455])
+            ("rst-emphasis2-face" variable (:default-value (quote rst-emphasis2)) nil [117457 117559])
+            ("rst-testcover-defcustom" code nil nil [117560 117585])
+            ("make-obsolete-variable" code nil nil [117586 117731])
+            ("rst-literal" variable
+               (:default-value (quote ((t :inherit font-lock-string-face)))
+                :type "face")
+                nil [117733 117862])
+            ("rst-literal-face" variable (:default-value (quote rst-literal)) nil [117864 117977])
+            ("rst-testcover-defcustom" code nil nil [117978 118003])
+            ("make-obsolete-variable" code nil nil [118004 118145])
+            ("rst-reference" variable
+               (:default-value (quote ((t :inherit font-lock-variable-name-face)))
+                :type "face")
+                nil [118147 118299])
+            ("rst-reference-face" variable (:default-value (quote rst-reference)) nil [118301 118432])
+            ("rst-testcover-defcustom" code nil nil [118433 118458])
+            ("make-obsolete-variable" code nil nil [118459 118604])
+            ("rst-transition" variable
+               (:default-value (quote ((t :inherit font-lock-keyword-face)))
+                :type "face")
+                nil [118606 118757])
+            ("rst-adornment" variable
+               (:default-value (quote ((t :inherit font-lock-keyword-face)))
+                :type "face")
+                nil [118759 118930])
+            ("dolist" code nil nil [119013 119399])
+            ("rst-level-1" variable
+               (:default-value (quote ((((background light)) (:background "grey85")) (((background dark)) (:background "grey15"))))
+                :type "face")
+                nil [119476 119688])
+            ("rst-level-2" variable
+               (:default-value (quote ((((background light)) (:background "grey78")) (((background dark)) (:background "grey22"))))
+                :type "face")
+                nil [119690 119902])
+            ("rst-level-3" variable
+               (:default-value (quote ((((background light)) (:background "grey71")) (((background dark)) (:background "grey29"))))
+                :type "face")
+                nil [119904 120116])
+            ("rst-level-4" variable
+               (:default-value (quote ((((background light)) (:background "grey64")) (((background dark)) (:background "grey36"))))
+                :type "face")
+                nil [120118 120330])
+            ("rst-level-5" variable
+               (:default-value (quote ((((background light)) (:background "grey57")) (((background dark)) (:background "grey43"))))
+                :type "face")
+                nil [120332 120544])
+            ("rst-level-6" variable
+               (:default-value (quote ((((background light)) (:background "grey50")) (((background dark)) (:background "grey50"))))
+                :type "face")
+                nil [120546 120758])
+            ("rst-adornment-faces-alist" variable (:default-value (quote ((t . rst-transition) (nil . rst-adornment) (1 . rst-level-1) (2 . rst-level-2) (3 . rst-level-3) (4 . rst-level-4) (5 . rst-level-5) (6 . rst-level-6)))) nil [120760 121425])
+            ("rst-testcover-defcustom" code nil nil [121426 121451])
+            ("rst-font-lock-keywords" variable (:default-value (\` (((\, (rst-re (quote lin-beg) (quote (:grp bul-sta)))) 1 rst-block-face) ((\, (rst-re (quote lin-beg) (quote (:grp enmany-sta)))) 1 rst-block-face) ((\, (rst-re (quote lin-beg) (quote (:grp fld-tag)) (quote bli-sfx))) 1 rst-external-face) ((\, (rst-re (quote lin-beg) (quote (:grp opt-tag (:shy optsep-tag opt-tag) "*")) (quote (:alt "$" (:seq hws-prt "\\{2\\}"))))) 1 rst-block-face) ((\, (rst-re (quote lin-beg) (quote (:grp "|" bli-sfx)) "[^|
+]*$")) 1 rst-block-face) ((\, (rst-re (quote lin-beg) (quote fnc-sta-2))) (1 rst-definition-face) (2 rst-definition-face)) ((\, (rst-re (quote lin-beg) (quote dir-sta-3))) (1 rst-directive-face) (2 rst-definition-face) (3 rst-directive-face)) ((\, (rst-re (quote lin-beg) (quote (:grp exm-sta "_" (:alt (:seq "`" ilcbkqdef-tag "`") (:seq (:alt "[^:\\
+]" "\\\\.") "+")) ":")) (quote bli-sfx))) 1 rst-definition-face) ((\, (rst-re (quote lin-beg) (quote (:grp "__")) (quote bli-sfx))) 1 rst-definition-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp "\\*\\*" ilcast-tag "\\*\\*")) (quote ilm-sfx))) 1 rst-emphasis2-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp "\\*" ilcast-tag "\\*")) (quote ilm-sfx))) 1 rst-emphasis1-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp "``" ilcbkq-tag "``")) (quote ilm-sfx))) 1 rst-literal-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp "_`" ilcbkq-tag "`")) (quote ilm-sfx))) 1 rst-definition-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp (:alt (:seq "`" ilcbkq-tag "`") (:seq "\\sw" (:alt "\\sw" "-") "+\\sw")) "__?")) (quote ilm-sfx))) 1 rst-reference-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp (:shy ":" sym-tag ":") "?")) (quote (:grp "`" ilcbkq-tag "`")) (quote (:grp (:shy ":" sym-tag ":") "?")) (quote ilm-sfx))) (1 rst-directive-face) (2 rst-external-face) (3 rst-directive-face)) ((\, (rst-re (quote ilm-pfx) (quote (:grp fnc-tag "_")) (quote ilm-sfx))) 1 rst-reference-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp sub-tag)) (quote ilm-sfx))) 1 rst-reference-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp uri-tag ":\\S +")) (quote ilm-sfx))) 1 rst-definition-face) ((\, (rst-re (quote ilm-pfx) (quote (:grp sym-tag "@" sym-tag)) (quote ilm-sfx))) 1 rst-definition-face) ((\, (rst-re (quote ado-beg-2-1))) (rst-font-lock-handle-adornment-matcher (rst-font-lock-handle-adornment-pre-match-form (match-string-no-properties 1) (match-end 1)) nil (1 (cdr (assoc nil rst-adornment-faces-alist)) append t) (2 (cdr (assoc rst-font-lock-adornment-level rst-adornment-faces-alist)) append t) (3 (cdr (assoc nil rst-adornment-faces-alist)) append t))) ((\, (rst-re (quote lin-beg) (quote cmt-sta-1))) (1 rst-comment-face) (rst-font-lock-find-unindented-line-match (rst-font-lock-find-unindented-line-limit (match-end 1)) nil (0 rst-comment-face append))) ((\, (rst-re (quote lin-beg) (quote (:grp exm-tag)) (quote (:grp hws-tag)) "$")) (1 rst-comment-face) (2 rst-comment-face) (rst-font-lock-find-unindented-line-match (rst-font-lock-find-unindented-line-limit (quote next)) nil (0 rst-comment-face append))) ((\, (rst-re (quote lin-beg) (quote lit-sta-2))) (2 rst-block-face) (rst-font-lock-find-unindented-line-match (rst-font-lock-find-unindented-line-limit t) nil (0 rst-literal-face append))) ((\, (rst-re (quote lin-beg) (quote (:grp (:alt ">>>" ell-tag))) (quote (:grp ".+")))) (1 rst-block-face) (2 rst-literal-face))))) nil [121534 128658])
+            ("font-lock-beg" variable nil nil [128660 128682])
+            ("font-lock-end" variable nil nil [128683 128705])
+            ("rst-font-lock-extend-region" function nil nil [128707 129075])
+            ("rst-font-lock-extend-region-internal" function (:arguments ("beg" "end")) nil [129077 129443])
+            ("rst-forward-line" function (:arguments ("n")) nil [129445 129718])
+            ("rst-font-lock-extend-region-extend" function (:arguments ("pt" "dir")) nil [129846 132019])
+            ("rst-forward-indented-block" function
+               (:user-visible-flag t
+                :arguments ("column" "limit"))
+                nil [132121 133356])
+            ("rst-font-lock-find-unindented-line-begin" variable nil nil [133358 133483])
+            ("rst-font-lock-find-unindented-line-end" variable nil nil [133485 133689])
+            ("rst-font-lock-find-unindented-line-limit" function (:arguments ("ind-pnt")) nil [133691 135551])
+            ("rst-font-lock-find-unindented-line-match" function (:arguments ("limit")) nil [135553 136269])
+            ("rst-font-lock-adornment-level" variable nil nil [136366 136535])
+            ("rst-adornment-level" function (:arguments ("key")) nil [136537 137180])
+            ("rst-font-lock-adornment-match" variable nil nil [137182 137395])
+            ("rst-font-lock-handle-adornment-pre-match-form" function (:arguments ("ado" "ado-end")) nil [137397 138264])
+            ("rst-font-lock-handle-adornment-matcher" function (:arguments ("limit")) nil [138286 138957])
+            ("rst-compile" customgroup (:user-visible-flag t) nil [139057 139205])
+            ("rst-compile-toolsets" variable (:default-value (\` ((html (\, (if (executable-find "rst2html.py") "rst2html.py" "rst2html")) ".html" nil) (latex (\, (if (executable-find "rst2latex.py") "rst2latex.py" "rst2latex")) ".tex" nil) (newlatex (\, (if (executable-find "rst2newlatex.py") "rst2newlatex.py" "rst2newlatex")) ".tex" nil) (pseudoxml (\, (if (executable-find "rst2pseudoxml.py") "rst2pseudoxml.py" "rst2pseudoxml")) ".xml" nil) (xml (\, (if (executable-find "rst2xml.py") "rst2xml.py" "rst2xml")) ".xml" nil) (pdf (\, (if (executable-find "rst2pdf.py") "rst2pdf.py" "rst2pdf")) ".pdf" nil) (s5 (\, (if (executable-find "rst2s5.py") "rst2s5.py" "rst2s5")) ".html" nil)))) nil [139207 140957])
+            ("rst-testcover-defcustom" code nil nil [140958 140983])
+            ("rst-compile-primary-toolset" variable (:default-value (quote html)) nil [141016 141102])
+            ("rst-compile-secondary-toolset" variable (:default-value (quote latex)) nil [141135 141247])
+            ("rst-compile-find-conf" function (:user-visible-flag t) nil [141249 142013])
+            ("compile" include nil nil [142015 142033])
+            ("rst-compile" function
+               (:user-visible-flag t
+                :arguments ("use-alt"))
+                nil [142035 143523])
+            ("rst-compile-alt-toolset" function (:user-visible-flag t) nil [143525 143644])
+            ("rst-compile-pseudo-region" function (:user-visible-flag t) nil [143646 144134])
+            ("rst-pdf-program" variable (:default-value "xpdf") nil [144169 144239])
+            ("rst-compile-pdf-preview" function (:user-visible-flag t) nil [144241 144757])
+            ("rst-slides-program" variable (:default-value "sensible-browser") nil [144827 144912])
+            ("rst-compile-slides-preview" function (:user-visible-flag t) nil [144914 145453])
+            ("rst-imenu-find-adornments-for-position" function (:arguments ("adornments" "pos")) nil [145676 145993])
+            ("rst-imenu-convert-cell" function (:arguments ("elt" "adornments")) nil [145995 147045])
+            ("rst-imenu-create-index" function nil nil [147175 147784])
+            ("rst-replace-lines" function
+               (:user-visible-flag t
+                :arguments ("fromchar" "tochar"))
+                nil [147996 148585])
+            ("rst-join-paragraph" function (:user-visible-flag t) nil [148643 148852])
+            ("rst-force-fill-paragraph" function (:user-visible-flag t) nil [148910 149131])
+            ("rst-repeat-last-character" function
+               (:user-visible-flag t
+                :arguments ("use-next"))
+                nil [149344 151097])
+            ("rst" package nil nil [151362 151376]))          
+      :file "rst.el"
+      :pointmax 151399
+      :fsize 151398
+      :lastmodtime '(21470 57563 0 0)
+      :unmatched-syntax '((close-paren 5925 . 5926) (symbol 5892 . 5909) (open-paren 5891 . 5892))))
+  :file "!usr!share!emacs!site-lisp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

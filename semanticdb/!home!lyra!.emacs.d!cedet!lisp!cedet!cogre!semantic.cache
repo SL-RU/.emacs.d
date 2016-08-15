@@ -1,0 +1,603 @@
+;; Object cogre/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cogre/"
+  :tables
+  (list
+    (semanticdb-table "layout.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cogre/convert" include nil nil [1028 1052])
+            ("cogre/dot-mode" include nil nil [1053 1078])
+            ("cogre-layout" function (:user-visible-flag t) nil [1105 3598])
+            ("cogre/layout" package nil nil [3600 3623]))          
+      :file "layout.el"
+      :pointmax 3774
+      :fsize 3773
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "convert.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cogre" include nil nil [1871 1887])
+            ("cogre/srecode" include nil nil [1888 1912])
+            ("cogre/uml" include nil nil [1913 1933])
+            ("cogre/dot-mode" include nil nil [1934 1959])
+            ("srecode/semantic" include nil nil [1960 1987])
+            ("cedet-graphviz" include nil nil [1988 2013])
+            ("ps-print" include nil nil [2034 2053])
+            ("cogre-export-max-y" variable nil nil [2065 2134])
+            ("cogre-export-dot" function (:user-visible-flag t) nil [2151 3204])
+            ("cogre-export-dot-png" function (:user-visible-flag t) nil [3221 4194])
+            ("declare-function" code nil nil [4196 4239])
+            ("cogre-export-dot-postscript-print" function (:user-visible-flag t) nil [4256 5103])
+            ("cogre-export-dot-method" function
+               (:parent "cogre-base-graph"
+                :arguments ("g"))
+                nil [5105 5457])
+            ("cogre-tag-put-dot-attribute" function (:arguments ("tag" "attribute" "value")) nil [5459 6183])
+            ("cogre-export-dot-method" function
+               (:parent "cogre-node"
+                :arguments ("node"))
+                nil [6195 6639])
+            ("cogre-calculate-node-position-scale" function nil nil [6641 7082])
+            ("cogre-dot-node-position-scale" variable (:default-value (cogre-calculate-node-position-scale)) nil [7084 7363])
+            ("cogre-export-dot-pos" function
+               (:parent "cogre-node"
+                :arguments ("node"))
+                nil [7365 7743])
+            ("cogre-export-dot-shape" function
+               (:parent "cogre-node"
+                :arguments ("node"))
+                nil [7745 7858])
+            ("cogre-export-dot-shape" function
+               (:parent "cogre-class"
+                :arguments ("node"))
+                nil [7860 7977])
+            ("cogre-export-dot-shape" function
+               (:parent "cogre-package"
+                :arguments ("node"))
+                nil [7979 8095])
+            ("cogre-export-dot-shape" function
+               (:parent "cogre-note"
+                :arguments ("node"))
+                nil [8097 8211])
+            ("cogre-export-dot-label" function
+               (:parent "cogre-node"
+                :arguments ("node"))
+                nil [8213 8372])
+            ("cogre-export-dot-label" function
+               (:parent "cogre-scoped-node"
+                :arguments ("node"))
+                nil [8374 8679])
+            ("cogre-export-dot-label" function
+               (:parent "cogre-class"
+                :arguments ("node"))
+                nil [8681 8909])
+            ("cogre-export-dot-methodlist" function
+               (:parent "cogre-class"
+                :arguments ("node"))
+                nil [8911 9120])
+            ("cogre-export-dot-fieldslist" function
+               (:parent "cogre-class"
+                :arguments ("node"))
+                nil [9122 9333])
+            ("cogre-export-dot-label" function
+               (:parent "cogre-instance"
+                :arguments ("node"))
+                nil [9335 9576])
+            ("cogre-export-dot-method" function
+               (:parent "cogre-link"
+                :arguments ("link"))
+                nil [9592 10000])
+            ("cogre-export-dot-method" function
+               (:parent "cogre-inherit"
+                :arguments ("link"))
+                nil [10004 10364])
+            ("cogre-export-dot-method" function
+               (:parent "cogre-aggregate"
+                :arguments ("link"))
+                nil [10368 10582])
+            ("cogre-export-dot-method" function
+               (:parent "cogre-arrow"
+                :arguments ("link"))
+                nil [10586 10793])
+            ("cogre/convert" package nil nil [10795 10819]))          
+      :file "convert.el"
+      :pointmax 10972
+      :fsize 10971
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 2053 . 2054) (symbol 2016 . 2033) (open-paren 2015 . 2016)))
+    (semanticdb-table "dot-mode.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("mode-local" include nil nil [1081 1102])
+            ("declare-function" code nil nil [1143 1199])
+            ("graphviz-dot-mode-syntax-table" variable nil nil [1200 1239])
+            ("cogre-dot-mode-hook" variable nil nil [1258 1429])
+            ("cogre-dot-mode-syntax-table" variable (:default-value (let ((st (make-syntax-table))) (modify-syntax-entry 47 ". 124b" st) (modify-syntax-entry 42 ". 23" st) (modify-syntax-entry 10 "> b" st) (modify-syntax-entry 61 "." st) (modify-syntax-entry 95 "_" st) (modify-syntax-entry 45 "_" st) (modify-syntax-entry 62 "." st) (modify-syntax-entry 60 "." st) (modify-syntax-entry 91 "(" st) (modify-syntax-entry 93 ")" st) (modify-syntax-entry 34 "\"" st) (setq graphviz-dot-mode-syntax-table st))) nil [1431 2052])
+            ("cogre-dot-font-lock-keywords" variable (:default-value (\` (("\\(:?di\\|sub\\)?graph \\(\\sw+\\)" (2 font-lock-function-name-face))))) nil [2054 2230])
+            ("cogre-dot-mode" function (:user-visible-flag t) nil [2247 3474])
+            ("add-to-list" code nil nil [3628 3690])
+            ("set-mode-local-parent" code nil nil [3809 3867])
+            ("cogre/dot-mode" package nil nil [3869 3894]))          
+      :file "dot-mode.el"
+      :pointmax 4049
+      :fsize 4048
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "picture-hack.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("picture" include nil nil [1179 1197])
+            ("rect" include nil nil [1198 1213])
+            ("unless" code nil nil [1262 1507])
+            ("unless" code nil nil [1509 2114])
+            ("unless" code nil nil [2116 2227])
+            ("unless" code nil nil [2229 2414])
+            ("unless" code nil nil [2416 2603])
+            ("unless" code nil nil [2605 2796])
+            ("unless" code nil nil [2798 2991])
+            ("unless" code nil nil [2993 3189])
+            ("unless" code nil nil [3191 3386])
+            ("cogre-picture-insert-rectangle" function (:arguments ("rectangle")) nil [3403 4135])
+            ("if" code nil nil [4174 4773])
+            ("picture-insert" function (:arguments ("ch" "arg" "textproperties")) nil [4833 6075])
+            ("picture-mouse-set-point" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [6077 6663])
+            ("picture-goto-coordinate" function (:arguments ("x" "y")) nil [6686 6823])
+            ("picture-set-motion" function (:arguments ("vert" "horiz")) nil [6825 7332])
+            ("picture-draw-rectilinear-line" function (:arguments ("x1" "y1" "x2" "y2" "direction" "textproperties")) nil [7334 10578])
+            ("cogre/picture-hack" package nil nil [10580 10609]))          
+      :file "picture-hack.el"
+      :pointmax 10772
+      :fsize 10771
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semantic.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("semantic" include nil nil [1232 1251])
+            ("semantic/tag-ls" include nil nil [1252 1278])
+            ("semantic/sort" include nil nil [1279 1303])
+            ("semantic/db-find" include nil nil [1304 1331])
+            ("semantic/analyze" include nil nil [1332 1359])
+            ("cogre" include nil nil [1360 1376])
+            ("cogre/srecode" include nil nil [1377 1401])
+            ("cogre/layout" include nil nil [1402 1425])
+            ("srecode/find" include nil nil [1426 1449])
+            ("srecode/semantic" include nil nil [1450 1477])
+            ("cl" include nil nil [1546 1559])
+            ("semantic/find" include nil nil [1519 1543])
+            ("eieio" include nil nil [1500 1516])
+            ("cogre-peer-project-semantic" type
+               (:superclasses "cogre-element-peer"
+                :type "class")
+                nil [1707 1848])
+            ("cogre-peer-semantic" type
+               (:superclasses "cogre-element-peer"
+                :members 
+                  ( ("tag" variable
+                       (:documentation "The Semantic Tag managed by this peer."
+                        :default-value "nil"
+                        :type "(or null semantic-tag)")
+                        nil nil))                  
+                :type "class")
+                nil [1935 2157])
+            ("cogre-peer-source-file" function
+               (:parent "cogre-peer-semantic"
+                :arguments ("peer"))
+                nil [2159 2320])
+            ("cogre-peer-semantic-class" type
+               (:superclasses "cogre-peer-semantic"
+                :type "class")
+                nil [2322 2429])
+            ("cogre-refresh-tag" function (:arguments ("tag")) nil [2431 3337])
+            ("cogre-peer-update-from-source" function
+               (:parent "cogre-peer-semantic-class"
+                :arguments ("peer" "node"))
+                nil [3339 4914])
+            ("cogre-peer-jump-to-source" function
+               (:parent "cogre-peer-semantic-class"
+                :arguments ("peer" "node"))
+                nil [4916 5391])
+            ("cogre-peer-update-from-element" function
+               (:parent "cogre-peer-semantic-class"
+                :arguments ("peer" "element"))
+                nil [5394 5614])
+            ("cogre-semantic-tag-to-node" function (:arguments ("tag")) nil [5727 6659])
+            ("cogre-export-semantic" function
+               (:user-visible-flag t
+                :arguments ("m-mode"))
+                nil [6818 7574])
+            ("cogre-export-semantic-method" function
+               (:parent "cogre-base-graph"
+                :arguments ("g"))
+                nil [7576 8326])
+            ("cogre-export-code" function
+               (:user-visible-flag t
+                :arguments ("file"))
+                nil [8463 9264])
+            ("cogre-class-history" variable nil nil [9552 9623])
+            ("cogre-read-class-name" function nil nil [9625 10628])
+            ("cogre-uml-quick-class" function
+               (:user-visible-flag t
+                :arguments ("class"))
+                nil [10645 11918])
+            ("cogre-uml-parent-classes" function (:arguments ("class-tok" "tag-node")) nil [11921 12756])
+            ("cogre-uml-children-classes" function (:arguments ("class-tok" "tag-node")) nil [12758 13526])
+            ("cogre/semantic" package nil nil [13528 13553]))          
+      :file "semantic.el"
+      :pointmax 13708
+      :fsize 13707
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1559 . 1560) (symbol 1480 . 1497) (open-paren 1479 . 1480)))
+    (semanticdb-table "srecode.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("srecode" include nil nil [967 985])
+            ("srecode/dictionary" include nil nil [986 1015])
+            ("srecode/map" include nil nil [1016 1038])
+            ("srecode/find" include nil nil [1039 1062])
+            ("semantic" include nil nil [1063 1082])
+            ("semantic/find" include nil nil [1083 1107])
+            ("cogre" include nil nil [1108 1124])
+            ("cogre-srecode-setup" function nil nil [1151 1635])
+            ("cogre-srecode-load-tables" function nil nil [1637 1836])
+            ("cogre-srecode-current-graph" variable nil nil [1838 1925])
+            ("srecode-semantic-handle-:cogre" function (:arguments ("dict")) nil [1942 2412])
+            ("eval-after-load" code nil nil [2429 2483])
+            ("srecode-semantic-handle-:dot" function (:arguments ("dict")) nil [2500 2649])
+            ("cogre-srecode-add-attr" function (:arguments ("label" "value" "dict")) nil [2651 3043])
+            ("srecode-calculate-context" function
+               (:parent "graphviz-dot-mode"
+                :override-function-flag t)
+                nil [3045 3669])
+            ("srecode-semantic-apply-tag-to-dict" function
+               (:parent "graphviz-dot-mode"
+                :override-function-flag t
+                :arguments ("tagobj" "dict"))
+                nil [3671 4949])
+            ("cogre/srecode" package nil nil [4951 4975]))          
+      :file "srecode.el"
+      :pointmax 5128
+      :fsize 5127
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "uml.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cogre" include nil nil [1087 1103])
+            ("semantic/find" include nil nil [1104 1128])
+            ("semantic/format" include nil nil [1129 1155])
+            ("data-debug" include nil nil [1156 1177])
+            ("declare-function" code nil nil [1179 1242])
+            ("picture" include nil nil [1265 1283])
+            ("cogre-package" type
+               (:superclasses "cogre-node"
+                :members 
+                  ( ("name-default" variable (:default-value "Package") nil nil)
+                    ("blank-lines-top" variable (:default-value "1") nil nil)
+                    ("blank-lines-bottom" variable (:default-value "1") nil nil)
+                    ("alignment" variable (:default-value "left") nil nil)
+                    ("subgraph" variable
+                       (:documentation "A graph which represents the classes within this package.
+The subgraph should be scanned to extract all the elements drawn into
+the package node."
+                        :default-value "nil"
+                        :type "(or null cogre-base-graph)")
+                        nil nil))                  
+                :type "class")
+                nil [1296 1882])
+            ("cogre-node-rebuild-default" function
+               (:parent "cogre-package"
+                :arguments ("node"))
+                nil [1884 2498])
+            ("cogre-note" type
+               (:superclasses "cogre-node"
+                :members 
+                  ( ("name-default" variable (:default-value "Note...") nil nil)
+                    ("blank-lines-top" variable (:default-value "1") nil nil)
+                    ("blank-lines-bottom" variable (:default-value "1") nil nil)
+                    ("alignment" variable (:default-value "left") nil nil))                  
+                :type "class")
+                nil [2500 2841])
+            ("cogre-node-rebuild-default" function
+               (:parent "cogre-note"
+                :arguments ("node"))
+                nil [2843 3207])
+            ("cogre-scoped-node" type
+               (:superclasses "cogre-node"
+                :members 
+                  ( ("package-name" variable
+                       (:documentation "The package name of this node.
+Package names are displayed in italic at the top of the node above the name
+in UML, usuall like this:
+   +---------------+
+   | <<mypackage>> |
+   | NameOfNode    |          
+   | ...           |"
+                        :type "string")
+                        nil nil)
+                    ("package-delimiters" variable
+                       (:documentation "Decoration delimiters for left/right side of package name.
+It is a list of the form ( \"LEFTDELIM\" . \"RIGHTDELIM\")."
+                        :static-flag t
+                        :default-value "(\"<<\" . \">>\")")
+                        nil nil))                  
+                :type "class")
+                nil [3209 3913])
+            ("cogre-node-title" function
+               (:parent "cogre-scoped-node"
+                :arguments ("node"))
+                nil [3915 4424])
+            ("cogre-augment-element-menu" function
+               (:parent "cogre-scoped-node"
+                :arguments ("node" "menu"))
+                nil [4426 4675])
+            ("cogre-class" type
+               (:superclasses "cogre-scoped-node"
+                :members 
+                  ( ("name-default" variable (:default-value "Class") nil nil)
+                    ("blank-lines-top" variable (:default-value "0") nil nil)
+                    ("blank-lines-bottom" variable (:default-value "0") nil nil)
+                    ("alignment" variable (:default-value "left") nil nil)
+                    ("attributes" variable
+                       (:documentation "A list of attributes belonging to this Class representation.
+Each attribute must in the form of a semantic token. ei.
+ (\"object-name\" variable \"type\" ... )
+See `semantic-fetch-tags' for details on possible token forms.
+These items do not need to be REAL semantic tokens, however.
+Only the format is needed to get the name/typing information."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil)
+                    ("methods" variable
+                       (:documentation "A list of methods belonging to this Class representation.
+See `attribute' slot for details on the form of each token in this list."
+                        :default-value "nil"
+                        :type "list")
+                        nil nil))                  
+                :type "class")
+                nil [4677 5743])
+            ("cogre-uml-stoken->uml" function
+               (:parent "cogre-class"
+                :arguments ("class" "stoken" "text"))
+                nil [5745 6944])
+            ("cogre-node-slots" function
+               (:parent "cogre-class"
+                :arguments ("class"))
+                nil [6946 8913])
+            ("cogre-instance" type
+               (:superclasses "cogre-scoped-node"
+                :members 
+                  ( ("name-default" variable (:default-value "Instance") nil nil)
+                    ("blank-lines-top" variable (:default-value "1") nil nil)
+                    ("blank-lines-bottom" variable (:default-value "1") nil nil)
+                    ("alignment" variable (:default-value "left") nil nil))                  
+                :type "class")
+                nil [8915 9214])
+            ("cogre-node-title" function
+               (:parent "cogre-instance"
+                :arguments ("node"))
+                nil [9216 9684])
+            ("cogre-inherit" type
+               (:superclasses "cogre-link"
+                :members 
+                  ( ("end-glyph" variable nil nil nil)
+                    ("horizontal-preference-ratio" variable (:default-value "0.1") nil nil))                  
+                :type "class")
+                nil [9699 10110])
+            ("cogre-aggregate" type
+               (:superclasses "cogre-link"
+                :members 
+                  ( ("start-glyph" variable nil nil nil)
+                    ("horizontal-preference-ratio" variable (:default-value "1") nil nil))                  
+                :type "class")
+                nil [10112 10483])
+            ("cogre-uml-enable-unicode" function (:user-visible-flag t) nil [10524 11937])
+            ("cogre-nodes-linkedto" function (:arguments ("node" "links" "slot")) nil [12062 12584])
+            ("cogre-nodes-all-in-list" function (:arguments ("checknodes" "refnodes")) nil [12586 12861])
+            ("cogre-uml-sort-for-lineage" function
+               (:user-visible-flag t
+                :arguments ("g"))
+                nil [12878 14957])
+            ("cogre/uml" package nil nil [14959 14979]))          
+      :file "uml.el"
+      :pointmax 15124
+      :fsize 15123
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1283 . 1284) (symbol 1245 . 1262) (open-paren 1244 . 1245)))
+    (semanticdb-table "mode.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cogre/picture-hack" include nil nil [1310 1339])
+            ("eieio" include nil nil [1340 1356])
+            ("eieio-opt" include nil nil [1357 1377])
+            ("eieio-base" include nil nil [1378 1399])
+            ("eieio-custom" include nil nil [1400 1423])
+            ("cogre" include nil nil [1424 1440])
+            ("cogre/convert" include nil nil [1441 1465])
+            ("cogre/semantic" include nil nil [1466 1491])
+            ("semantic/senator" include nil nil [1492 1519])
+            ("cl" include nil nil [1542 1555])
+            ("cogre-box-face" variable
+               (:default-value (quote ((((class color) (background dark)) (:background "gray30" :foreground "white")) (((class color) (background light)) (:background "gray" :foreground "black"))))
+                :type "face")
+                nil [1568 1844])
+            ("cogre-box-first-face" variable
+               (:default-value (quote ((((class color) (background dark)) (:background "gray30" :foreground "white" :overline "white")) (((class color) (background light)) (:background "gray" :foreground "black" :overline "black"))))
+                :type "face")
+                nil [1846 2271])
+            ("cogre-box-last-face" variable
+               (:default-value (quote ((((class color) (background dark)) (:background "gray30" :foreground "white" :underline "white")) (((class color) (background light)) (:background "gray" :foreground "black" :underline "black"))))
+                :type "face")
+                nil [2273 2699])
+            ("cogre-substitute" function (:arguments ("km" "oldfun" "newfun")) nil [2701 2915])
+            ("cogre-mode-map" variable (:default-value (let ((km (make-keymap))) (suppress-keymap km) (define-key km "" (quote cogre-activate-element)) (define-key km "R" (quote cogre-refresh)) (define-key km "N" (quote cogre-new-node)) (define-key km "L" (quote cogre-new-link)) (define-key km "D" (quote cogre-delete)) (define-key km "U" (quote cogre-update-node-from-source)) (define-key km "J" (quote cogre-jump-from-node-to-peer)) (define-key km "" (quote cogre-default-node)) (define-key km "" (quote cogre-default-link)) (define-key km "" (quote cogre-kill-element)) (define-key km "" (quote cogre-kill-element)) (define-key km "\367" (quote cogre-copy-element)) (define-key km "" (quote cogre-yank-element)) (define-key km "n" (quote cogre-set-element-name)) (define-key km [(meta left)] (quote cogre-move-node-left)) (define-key km [(meta right)] (quote cogre-move-node-right)) (define-key km [(meta down)] (quote cogre-move-node-down)) (define-key km [(meta up)] (quote cogre-move-node-up)) (define-key km "\342" (quote cogre-move-node-left)) (define-key km "\346" (quote cogre-move-node-right)) (define-key km "\356" (quote cogre-move-node-down)) (define-key km "\360" (quote cogre-move-node-up)) (define-key km "	" (quote cogre-next-node)) (define-key km "\211" (quote cogre-prev-node)) (cogre-substitute km (quote forward-char) (quote picture-forward-column)) (cogre-substitute km (quote backward-char) (quote picture-backward-column)) (cogre-substitute km (quote next-line) (quote picture-move-down)) (cogre-substitute km (quote previous-line) (quote picture-move-up)) (define-key km [down-mouse-1] (quote cogre-down-mouse-1)) (define-key km [drag-mouse-1] (quote ignore)) (define-key km [down-mouse-2] (quote cogre-down-mouse-2)) (define-key km [drag-mouse-2] (quote ignore)) (define-key km [down-mouse-3] (quote cogre-down-mouse-3)) (define-key km [drag-mouse-3] (quote ignore)) km)) nil [2917 4954])
+            ("easy-menu-define" code nil nil [4956 6412])
+            ("cogre-popup-map" variable (:default-value (make-sparse-keymap)) nil [6414 6484])
+            ("easy-menu-define" code nil nil [6486 6916])
+            ("easy-menu-define" code nil nil [6918 7275])
+            ("cogre-node-base-menu" variable (:default-value (quote ("Update Node" ["Rename" cogre-set-element-name t] ["View/Edit" cogre-activate-element t] ["Update Node from Peer" cogre-update-node-from-source (cogre-node-with-peer)] ["Jump to Peer" cogre-jump-from-node-to-peer (cogre-node-with-peer)] "---" ["Kill Node" cogre-kill-element (cogre-current-element)] ["Copy Node" cogre-copy-element (cogre-current-element)] ["Delete" cogre-delete (cogre-current-element)]))) nil [7277 7815])
+            ("easy-menu-define" code nil nil [7817 7935])
+            ("cogre-link-base-menu" variable (:default-value (quote ("Update Link" ["View/Edit" cogre-activate-element t] ["Update Node from Peer" cogre-update-node-from-source (cogre-node-with-peer)] "---" ["Delete" cogre-delete (cogre-current-element)]))) nil [7937 8232])
+            ("easy-menu-define" code nil nil [8234 8352])
+            ("cogre-tool-bar-map" variable (:default-value (let ((tool-bar-map (make-sparse-keymap))) (when (fboundp (quote tool-bar-add-item)) (tool-bar-add-item "cogre-node" (quote cogre-new-node) (quote node)) (tool-bar-add-item "cogre-class" (quote cogre-new-node) (quote class)) (tool-bar-add-item "cogre-package" (quote cogre-new-node) (quote package)) (tool-bar-add-item "cogre-instance" (quote cogre-new-node) (quote instance)) (tool-bar-add-item "cogre-note" (quote cogre-new-node) (quote note)) (tool-bar-add-item "cogre-link" (quote cogre-new-link) (quote link)) (tool-bar-add-item "cogre-arrow" (quote cogre-new-link) (quote arrow)) (tool-bar-add-item "cogre-isa" (quote cogre-new-link) (quote inherit)) (tool-bar-add-item "cogre-hasa" (quote cogre-new-link) (quote aggregate))) tool-bar-map)) nil [8354 9103])
+            ("cogre-insert-class-list" function
+               (:parent "cogre-base-graph"
+                :arguments ("graph"))
+                nil [9106 9265])
+            ("cogre-insert-forms-menu" function (:arguments ("menu-def")) nil [9267 10039])
+            ("cogre-change-forms-menu" function (:arguments ("menu-def")) nil [10041 10523])
+            ("cogre-mode" function (:user-visible-flag t) nil [10558 11499])
+            ("put" code nil nil [11500 11544])
+            ("add-to-list" code nil nil [11561 11622])
+            ("cogre-convert-buffer-contents-on-init" function nil nil [11624 12538])
+            ("cogre-save-hook" function nil nil [12540 13006])
+            ("cogre-switch-to-save-text" function nil nil [13008 13622])
+            ("cogre-customize-graph" function (:user-visible-flag t) nil [13652 13878])
+            ("cogre-killring-active" function nil nil [13899 14026])
+            ("cogre-node-with-peer" function nil nil [14028 14209])
+            ("cogre-node-at-point-interactive" function (:arguments ("pos")) nil [14248 14528])
+            ("cogre-link-at-point-interactive" function (:arguments ("pos")) nil [14530 14810])
+            ("cogre-element-at-point-interactive" function (:arguments ("pos")) nil [14812 15054])
+            ("cogre-activate-element" function
+               (:user-visible-flag t
+                :arguments ("element"))
+                nil [15082 15342])
+            ("cogre-new-node" function
+               (:user-visible-flag t
+                :arguments ("point" "nodetype" "fields"))
+                nil [15365 16042])
+            ("cogre-new-link" function
+               (:user-visible-flag t
+                :arguments ("mark" "point" "linktype"))
+                nil [16044 16665])
+            ("cogre-delete-dont-ask" variable nil nil [16667 16769])
+            ("cogre-delete" function
+               (:user-visible-flag t
+                :arguments ("element"))
+                nil [16771 17447])
+            ("cogre-kill-element" function
+               (:user-visible-flag t
+                :arguments ("element"))
+                nil [17466 17775])
+            ("cogre-copy-element" function
+               (:user-visible-flag t
+                :arguments ("element"))
+                nil [17777 18330])
+            ("cogre-yank-element" function (:user-visible-flag t) nil [18332 19402])
+            ("cogre-goto-element" function (:arguments ("elt")) nil [19422 19771])
+            ("cogre-next-node" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [19773 20287])
+            ("cogre-prev-node" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [20289 20455])
+            ("cogre-render-node-after-erase" function (:arguments ("node")) nil [20482 20699])
+            ("cogre-set-element-name" function
+               (:user-visible-flag t
+                :arguments ("node" "name"))
+                nil [20701 21288])
+            ("cogre-set-scoped-node-package" function
+               (:user-visible-flag t
+                :arguments ("node" "package"))
+                nil [21290 21879])
+            ("cogre-update-node-from-source" function
+               (:user-visible-flag t
+                :arguments ("node"))
+                nil [21881 22326])
+            ("cogre-jump-from-node-to-peer" function
+               (:user-visible-flag t
+                :arguments ("node"))
+                nil [22328 22697])
+            ("cogre-update-graph-from-source" function (:user-visible-flag t) nil [22699 22915])
+            ("cogre-move-node" function
+               (:user-visible-flag t
+                :arguments ("x" "y" "node"))
+                nil [22938 23517])
+            ("cogre-node-position" function (:arguments ("noerror")) nil [23519 23817])
+            ("cogre-move-node-left" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [23819 24002])
+            ("cogre-move-node-right" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [24004 24189])
+            ("cogre-move-node-up" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [24191 24370])
+            ("cogre-move-node-down" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [24372 24555])
+            ("cogre-down-mouse-1" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [24680 26494])
+            ("cogre-down-mouse-2-link-selector" variable nil nil [26496 26610])
+            ("cogre-select-a-link" function (:user-visible-flag t) nil [26612 26764])
+            ("cogre-down-mouse-2" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [26766 28294])
+            ("cogre-down-mouse-3" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [28296 29682])
+            ("cogre/mode" package nil nil [29684 29705]))          
+      :file "mode.el"
+      :pointmax 29852
+      :fsize 29851
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1555 . 1556) (symbol 1522 . 1539) (open-paren 1521 . 1522)))
+    (semanticdb-table "periodic.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cogre/uml" include nil nil [1039 1059])
+            ("cogre/picture-hack" include nil nil [1060 1089])
+            ("cogre/mode" include nil nil [1090 1111])
+            ("cogre-periodic" function (:user-visible-flag t) nil [1128 2733])
+            ("cogre-periodic-make-node-at" function (:arguments ("x" "y" "type" "name" "fields")) nil [2735 3052])
+            ("cogre-periodic-link-at" function (:arguments ("node1" "node2" "type")) nil [3054 3237])
+            ("cogre/periodic" package nil nil [3239 3264]))          
+      :file "periodic.el"
+      :pointmax 3419
+      :fsize 3418
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ascii.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cogre/uml" include nil nil [956 976])
+            ("picture" include nil nil [977 995])
+            ("cogre-export-ascii" function (:user-visible-flag t) nil [1012 1589])
+            ("cogre-horizontal-box-line" function (:arguments ("width")) nil [1591 1810])
+            ("cogre-string-with-edges" function (:arguments ("str" "width" "align")) nil [1812 2480])
+            ("cogre-node-rebuild-ascii" function
+               (:parent "cogre-node"
+                :arguments ("node"))
+                nil [2482 4042])
+            ("cogre-node-rebuild-ascii" function
+               (:parent "cogre-package"
+                :arguments ("node"))
+                nil [4045 4741])
+            ("cogre-node-rebuild-ascii" function
+               (:parent "cogre-note"
+                :arguments ("node"))
+                nil [4747 5298])
+            ("cogre/ascii" package nil nil [5300 5322]))          
+      :file "ascii.el"
+      :pointmax 5471
+      :fsize 5470
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!cedet!lisp!cedet!cogre!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

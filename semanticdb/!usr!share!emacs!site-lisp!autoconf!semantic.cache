@@ -1,0 +1,32 @@
+;; Object autoconf/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "autoconf/"
+  :tables
+  (list
+    (semanticdb-table "autotest-mode.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("autotest-font-lock-keywords" variable (:default-value (\` (("\\bdnl\\b\\(.*\\)" 1 font-lock-comment-face t) ("\\$[0-9*#@]" . font-lock-variable-name-face) ("^\\(m4_define\\|m4_defun\\)(\\[*\\([A-Za-z0-9_]+\\)" 2 font-lock-function-name-face) ("^AT_SETUP(\\[+\\([^]]+\\)" 1 font-lock-function-name-face) ("^AT_DATA(\\[+\\([^]]+\\)" 1 font-lock-variable-name-face) ("\\b\\(_?m4_[_a-z0-9]*\\|_?A[ST]_[_A-Z0-9]+\\)\\b" . font-lock-keyword-face) "default font-lock-keywords"))) nil [1343 1821])
+            ("autotest-mode-syntax-table" variable nil nil [1823 1901])
+            ("setq" code nil nil [1902 1955])
+            ("modify-syntax-entry" code nil nil [1956 2014])
+            ("modify-syntax-entry" code nil nil [2076 2134])
+            ("modify-syntax-entry" code nil nil [2135 2193])
+            ("modify-syntax-entry" code nil nil [2194 2253])
+            ("modify-syntax-entry" code nil nil [2254 2313])
+            ("modify-syntax-entry" code nil nil [2314 2372])
+            ("modify-syntax-entry" code nil nil [2373 2431])
+            ("modify-syntax-entry" code nil nil [2432 2490])
+            ("modify-syntax-entry" code nil nil [2491 2549])
+            ("autotest-mode-map" variable (:default-value (let ((map (make-sparse-keymap))) (define-key map (quote [(control c) (\;)]) (quote comment-region)) map)) nil [2551 2679])
+            ("autotest-current-defun" function nil nil [2681 3016])
+            ("autotest-mode" function (:user-visible-flag t) nil [3033 3754])
+            ("autotest-mode" package nil nil [3756 3780]))          
+      :file "autotest-mode.el"
+      :pointmax 3813
+      :fsize 3812
+      :lastmodtime '(20250 49599 0 0)
+      :unmatched-syntax nil))
+  :file "!usr!share!emacs!site-lisp!autoconf!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

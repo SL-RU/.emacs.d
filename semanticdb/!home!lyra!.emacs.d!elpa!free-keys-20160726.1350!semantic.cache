@@ -1,0 +1,16 @@
+;; Object free-keys-20160726.1350/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "free-keys-20160726.1350/"
+  :tables
+  (list
+    (semanticdb-table "free-keys-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "free-keys-autoloads.el"
+      :pointmax 291
+      :fsize 936
+      :lastmodtime '(22437 61979 549315 339000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!elpa!free-keys-20160726.1350!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

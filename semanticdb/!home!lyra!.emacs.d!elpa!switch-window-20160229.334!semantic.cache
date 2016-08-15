@@ -1,0 +1,64 @@
+;; Object switch-window-20160229.334/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "switch-window-20160229.334/"
+  :tables
+  (list
+    (semanticdb-table "switch-window.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl-lib" include nil nil [1782 1799])
+            ("quail" include nil nil [1831 1847])
+            ("switch-window" customgroup (:user-visible-flag t) nil [1849 1937])
+            ("switch-window-increase" variable (:default-value 12) nil [1939 2085])
+            ("switch-window-timeout" variable (:default-value 5) nil [2087 2220])
+            ("switch-window-threshold" variable (:default-value 2) nil [2222 2359])
+            ("switch-window-relative" variable nil nil [2361 2518])
+            ("switch-window-shortcut-style" variable (:default-value (quote quail)) nil [2520 2819])
+            ("switch-window-qwerty-shortcuts" variable (:default-value (quote ("a" "s" "d" "f" "j" "k" "l" ";" "w" "e" "i" "o"))) nil [2821 3032])
+            ("switch-window-minibuffer-shortcut" variable nil nil [3034 3415])
+            ("switch-window-configuration-change-hook-inhibit" variable nil nil [3417 3598])
+            ("switch-window--list-keyboard-keys" function nil nil [3600 3913])
+            ("switch-window--list-keys" function nil nil [3915 4447])
+            ("switch-window--enumerate" function nil nil [4449 4859])
+            ("switch-window--label" function (:arguments ("num")) nil [4861 4994])
+            ("switch-window--list" function (:arguments ("from-current-window")) nil [4996 5280])
+            ("switch-window--display-number" function (:arguments ("win" "num")) nil [5282 6181])
+            ("switch-window--jump-to-window" function (:arguments ("index")) nil [6183 6412])
+            ("switch-window--list-eobp" function nil nil [6414 6743])
+            ("switch-window--restore-eobp" function (:arguments ("eobp-window-list")) nil [6745 7084])
+            ("switch-window-then-delete" function (:user-visible-flag t) nil [7101 7335])
+            ("defalias" code nil nil [7337 7395])
+            ("make-obsolete" code nil nil [7396 7502])
+            ("switch-window-then-maximize" function (:user-visible-flag t) nil [7519 7773])
+            ("switch-window" function (:user-visible-flag t) nil [7790 8013])
+            ("switch-window-then-split-horizontally" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [8030 8267])
+            ("switch-window-then-split-vertically" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [8284 8513])
+            ("switch-window-then-split-below" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [8530 8764])
+            ("switch-window-then-split-right" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [8781 9015])
+            ("switch-window-then-swap-buffer" function
+               (:user-visible-flag t
+                :arguments ("arg"))
+                nil [9032 9514])
+            ("switch-window--then" function (:arguments ("prompt" "function1" "function2" "return-original-window" "threshold")) nil [9516 10689])
+            ("switch-window--prompt" function (:arguments ("prompt-message")) nil [10691 13624])
+            ("switch-window" package nil nil [13626 13650]))          
+      :file "switch-window.el"
+      :pointmax 13682
+      :fsize 13682
+      :lastmodtime '(22391 64317 302561 297000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!elpa!switch-window-20160229.334!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

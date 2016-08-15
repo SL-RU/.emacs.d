@@ -1,0 +1,70 @@
+;; Object lib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "lib/"
+  :tables
+  (list
+    (semanticdb-table "hyperspec.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl-lib" include nil nil [1367 1390])
+            ("cl-lib" include (:directory "lib/cl-lib") nil [1391 1421])
+            ("browse-url" include nil nil [1422 1443])
+            ("thingatpt" include nil nil [1493 1513])
+            ("common-lisp-hyperspec-root" variable (:default-value "http://www.lispworks.com/reference/HyperSpec/") nil [1515 1768])
+            ("common-lisp-hyperspec-symbol-table" variable nil nil [1859 2104])
+            ("common-lisp-hyperspec-history" variable nil nil [2106 2211])
+            ("common-lisp-hyperspec--symbols" variable (:default-value (make-hash-table :test (quote equal))) nil [2213 2335])
+            ("common-lisp-hyperspec--find" function (:arguments ("name")) nil [2388 2533])
+            ("common-lisp-hyperspec--insert" function (:arguments ("name" "relative-url")) nil [2535 2756])
+            ("common-lisp-hyperspec--strip-cl-package" function (:arguments ("name")) nil [2758 3062])
+            ("common-lisp-hyperspec-read-symbol-name" function (:arguments ("symbol-at-point")) nil [3135 3690])
+            ("common-lisp-hyperspec" function
+               (:user-visible-flag t
+                :arguments ("symbol-name"))
+                nil [3744 4983])
+            ("common-lisp-hyperspec--get-one-line" function nil nil [5199 5319])
+            ("common-lisp-hyperspec--parse-map-file" function (:arguments ("file")) nil [5321 5767])
+            ("mapc" code nil nil [5769 39327])
+            ("common-lisp-hyperspec--reader-macros" variable (:default-value (make-hash-table :test (function equal))) nil [39423 39500])
+            ("mapc" code nil nil [39620 40301])
+            ("common-lisp-hyperspec-lookup-reader-macro" function
+               (:user-visible-flag t
+                :arguments ("macro"))
+                nil [40303 40754])
+            ("common-lisp-hyperspec-reader-macro-at-point" function nil nil [40756 40937])
+            ("common-lisp-hyperspec-format-history" variable nil nil [41074 41196])
+            ("common-lisp-hyperspec-section-6.0" function (:arguments ("indices")) nil [41198 41541])
+            ("common-lisp-hyperspec-section-4.0" function (:arguments ("indices")) nil [41543 41779])
+            ("common-lisp-hyperspec-section-fun" variable (:default-value (quote common-lisp-hyperspec-section-6\.0)) nil [41781 41858])
+            ("common-lisp-hyperspec-section" function (:arguments ("indices")) nil [41860 41961])
+            ("common-lisp-hyperspec--format-characters" variable (:default-value (make-hash-table :test (quote equal))) nil [41963 42045])
+            ("common-lisp-hyperspec--read-format-character" function nil nil [42047 42523])
+            ("common-lisp-hyperspec-format" function (:arguments ("character-name")) nil [42525 42902])
+            ("common-lisp-hyperspec--insert-format-directive" function (:arguments ("char" "section" "summary")) nil [43114 43394])
+            ("mapc" code nil nil [43396 45116])
+            ("common-lisp-hyperspec-glossary-function" variable (:default-value (quote common-lisp-glossary-6\.0)) nil [45135 45262])
+            ("define-obsolete-variable-alias" code nil nil [45264 45365])
+            ("common-lisp-hyperspec--glossary-terms" variable (:default-value (make-hash-table :test (function equal))) nil [45367 45497])
+            ("mapc" code nil nil [47267 71684])
+            ("common-lisp-hyperspec-glossary-term" function
+               (:user-visible-flag t
+                :arguments ("term"))
+                nil [71686 71993])
+            ("common-lisp-glossary-6.0" function (:arguments ("term")) nil [71995 72423])
+            ("common-lisp-glossary-4.0" function (:arguments ("string")) nil [72521 72792])
+            ("common-lisp-hyperspec-issuex-table" variable nil nil [72848 73115])
+            ("common-lisp-hyperspec--issuex-symbols" variable (:default-value (make-hash-table :test (quote equal))) nil [73117 73196])
+            ("mapc" code nil nil [73198 93757])
+            ("common-lisp-issuex" function (:arguments ("issue-name")) nil [93759 93945])
+            ("defalias" code nil nil [94101 94152])
+            ("defalias" code nil nil [94153 94239])
+            ("defalias" code nil nil [94240 94305])
+            ("hyperspec" package nil nil [94307 94327]))          
+      :file "hyperspec.el"
+      :pointmax 94356
+      :fsize 94356
+      :lastmodtime '(22379 8389 750434 361000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!elpa!slime-20160614.1114!lib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

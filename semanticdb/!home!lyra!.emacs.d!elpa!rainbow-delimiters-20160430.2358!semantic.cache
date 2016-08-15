@@ -1,0 +1,51 @@
+;; Object rainbow-delimiters-20160430.2358/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "rainbow-delimiters-20160430.2358/"
+  :tables
+  (list
+    (semanticdb-table "rainbow-delimiters-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "rainbow-delimiters-autoloads.el"
+      :pointmax 877
+      :fsize 979
+      :lastmodtime '(22448 34761 459448 259000)
+      :unmatched-syntax nil)
+    (semanticdb-table "rainbow-delimiters.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("rainbow-delimiters" customgroup (:user-visible-flag t) nil [3183 3476])
+            ("rainbow-delimiters-faces" customgroup (:user-visible-flag t) nil [3478 3770])
+            ("rainbow-delimiters-pick-face-function" variable (:default-value (function rainbow-delimiters-default-pick-face)) nil [3772 4494])
+            ("rainbow-delimiters-unmatched-face" variable
+               (:default-value (quote ((((background light)) (:foreground "#88090B")) (((background dark)) (:foreground "#88090B"))))
+                :type "face")
+                nil [4496 4731])
+            ("rainbow-delimiters-mismatched-face" variable
+               (:default-value (quote ((t :inherit rainbow-delimiters-unmatched-face)))
+                :type "face")
+                nil [4733 4920])
+            ("rainbow-delimiters--define-depth-faces" function nil nil [4943 5752])
+            ("rainbow-delimiters--define-depth-faces" code nil nil [5754 5794])
+            ("rainbow-delimiters-max-face-count" variable (:default-value 9) nil [5796 6163])
+            ("rainbow-delimiters-outermost-only-face-count" variable nil nil [6165 6405])
+            ("rainbow-delimiters-default-pick-face" function (:arguments ("depth" "match" "_loc")) nil [6408 7743])
+            ("rainbow-delimiters--apply-color" function (:arguments ("loc" "depth" "match")) nil [7745 8210])
+            ("rainbow-delimiters--char-ineligible-p" function (:arguments ("loc" "ppss" "delim-syntax-code")) nil [8212 9238])
+            ("rainbow-delimiters--propertize" function (:arguments ("end")) nil [9278 10709])
+            ("rainbow-delimiters--font-lock-keywords" variable
+               (:constant-flag t
+                :default-value (quote (rainbow-delimiters--propertize)))
+                nil [10817 10902])
+            ("define-minor-mode" code nil nil [10919 12328])
+            ("rainbow-delimiters-mode-enable" function nil nil [12345 12454])
+            ("rainbow-delimiters-mode-disable" function nil nil [12471 12582])
+            ("rainbow-delimiters" package nil nil [12584 12613]))          
+      :file "rainbow-delimiters.el"
+      :pointmax 12650
+      :fsize 12649
+      :lastmodtime '(22448 34761 387448 256000)
+      :unmatched-syntax '((close-paren 5752 . 5753) (symbol 4923 . 4940) (open-paren 4922 . 4923))))
+  :file "!home!lyra!.emacs.d!elpa!rainbow-delimiters-20160430.2358!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,16 @@
+;; Object sr-speedbar-20150804.951/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "sr-speedbar-20150804.951/"
+  :tables
+  (list
+    (semanticdb-table "sr-speedbar-autoloads.el"
+      :major-mode 'emacs-lisp-mode
+      :tags nil
+      :file "sr-speedbar-autoloads.el"
+      :pointmax 845
+      :fsize 940
+      :lastmodtime '(22437 44684 801852 970000)
+      :unmatched-syntax nil))
+  :file "!home!lyra!.emacs.d!elpa!sr-speedbar-20150804.951!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

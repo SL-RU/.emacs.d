@@ -1,0 +1,29 @@
+python3 main.py 
+python3 main.py 
+python3 main.py 
+python3 main.py 
+python3 main.py 
+git add -A
+git commit
+git commit -m "CPU temp, pavucontrol"
+git push origin master
+cd cedet-1.1/
+make EMACS=emacs
+make clean-all && make
+make MAKEINFO=echo
+make
+make clean
+ls
+emacs -Q -l cedet-build.el -f cedet-build
+cat INSTALL 
+make clean
+make
+emacs -Q -l cedet-build.el -f cedet-build
+make clean
+emacs -Q -l cedet-build.el -f cedet-build
+make clean
+make EMACS=emacs
+make EMACS=emacs
+cd ..
+make
+wget https://www.emacswiki.org/emacs/download/hl-spotlight.el
