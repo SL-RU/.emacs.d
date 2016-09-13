@@ -1,11 +1,11 @@
 
 ;; Enable EDE only in C/C++
 (require 'ede)
-(require 'cedet)
-(require 'eieio)
-(require 'eieio-speedbar)
-(require 'eieio-opt)
-(require 'eieio-base)
+;(require 'cedet)
+;(require 'eieio)
+;(require 'eieio-speedbar)
+;(require 'eieio-opt)
+;(require 'eieio-base)
 (require 'ede/source)
 (require 'ede/base)
 (require 'ede/auto)
@@ -17,8 +17,8 @@
 (require 'ede/proj-info)
 (require 'ede/proj-misc)
 (require 'ede/proj-obj)
-(require 'ede/proj-prog)
-(require 'ede/proj-scheme)
+;(require 'ede/proj-prog)
+;(require 'ede/proj-scheme)
 (require 'ede/proj-shared)
 (require 'ede/cpp-root)
 
@@ -32,6 +32,7 @@
 ;(global-semantic-idle-completions-mode)
 (global-semantic-highlight-func-mode)
 (global-semantic-show-unmatched-syntax-mode)
+(global-semantic-tag-folding-mode 1)
 
 (semantic-mode 1)
 (global-ede-mode t)
@@ -59,25 +60,23 @@
   (oset config debug-command "gdb")
   )
 
-(ede-generic-new-autoloader "generic-makefile" "Make"
-			    "Makefile" 'ede-generic-makefile-project)  
 
+(defun dennis-flycheck-get-ede-includes ()
+  "Check if the current file is part of an EDE project.
+If yes, set up `flycheck-clang-include-path'"
+  (interactive)
+  (make-variable-buffer-local 'flycheck-clang-include-path)
+  (let* ((rel-includes
+          (flycheck-cedet-get-cpp-includes "" (buffer-file-name)))
+         (dirname (when rel-includes
+                    (ede-cpp-root-project-root default-directory))))
+    (when rel-includes
+      (when (string-match "\\(.*\\)/$" dirname)
+        (setq dirname (substring dirname (match-beginning 1) (match-end 1))))
+      (setq incl-paths
+            (mapcar '(lambda (arg) (concat dirname arg))
+                    rel-includes))
+      (setq flycheck-clang-include-path
+            (append flycheck-clang-include-path incl-paths)))))
 
-(ede-cpp-root-project "stm test"
-                      :name "stm test"
-                      :file "/home/lyra/b/stmtest/stmtest/Readme"
-                      :include-path '("/Inc"
-                                      "/Drivers/STM32F1xx_HAL_Driver/Inc"
-				      "/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"
-				      "/Drivers/CMSIS/Include")
-                      )
-
-
-
-
-
-
-
-
-
-
+(add-hook 'c-mode-common-hook 'dennis-flycheck-get-ede-includes)

@@ -5,11 +5,12 @@
   (list
     (semanticdb-table "ede-projects.el"
       :major-mode 'emacs-lisp-mode
-      :tags nil
+      :tags 
+        '( ("anonymous" code nil nil [82 85]))          
       :file "ede-projects.el"
       :pointmax 86
       :fsize 85
-      :lastmodtime '(22449 59328 618717 850000)
+      :lastmodtime '(22488 8191 880929 534000)
       :unmatched-syntax nil)
     (semanticdb-table "init.el"
       :major-mode 'emacs-lisp-mode
@@ -30,57 +31,49 @@
             ("set-keyboard-coding-system" code nil nil [885 920])
             ("set-language-environment" code nil nil [921 955])
             ("prefer-coding-system" code nil nil [956 985])
-            ("undo-tree" include nil nil [1049 1069])
-            ("global-undo-tree-mode" code nil nil [1070 1093])
-            ("load" code nil nil [1095 1124])
-            ("drag-stuff" include nil nil [1126 1147])
-            ("drag-stuff-global-mode" code nil nil [1148 1172])
-            ("show-paren-mode" code nil nil [1174 1191])
+            ("show-paren-mode" code nil nil [987 1004])
+            ("nyan-mode" include nil nil [1021 1041])
+            ("nyan-mode" code nil nil [1042 1055])
+            ("switch-window" include nil nil [1057 1081])
+            ("global-set-key" code nil nil [1082 1127])
+            ("diredp-toggle-find-file-reuse-dir" code nil nil [1129 1166])
+            ("undo-tree" include nil nil [1178 1198])
+            ("global-undo-tree-mode" code nil nil [1199 1222])
+            ("drag-stuff" include nil nil [1225 1246])
+            ("drag-stuff-global-mode" code nil nil [1247 1271])
+            ("tramp" include nil nil [1273 1289])
             ("sudo-edit" function
                (:user-visible-flag t
                 :arguments ("arg"))
-                nil [1193 1648])
-            ("global-set-key" code nil nil [1650 1694])
-            ("nyan-mode" include nil nil [2026 2046])
-            ("nyan-mode" code nil nil [2047 2060])
-            ("elpy" include nil nil [2063 2078])
-            ("elpy-enable" code nil nil [2079 2092])
-            ("setq" code nil nil [2093 2133])
-            ("cc-mode" include nil nil [2135 2153])
-            ("setq" code nil nil [2154 2207])
-            ("cl" include nil nil [2210 2223])
-            ("c-add-style" code nil nil [2258 2577])
-            ("my-c++-mode-hook" function nil nil [2579 2730])
-            ("add-hook" code nil nil [2732 2775])
-            ("switch-window" include nil nil [2777 2801])
-            ("global-set-key" code nil nil [2802 2847])
-            ("auto-complete" include nil nil [2849 2873])
-            ("auto-complete-config" include nil nil [2912 2943])
-            ("ac-config-default" code nil nil [2944 2963])
-            ("yasnippet" include nil nil [2993 3013])
-            ("yas-global-mode" code nil nil [3014 3033])
-            ("setq" code nil nil [3036 3065])
-            ("multiple-cursors" include nil nil [3067 3094])
-            ("global-set-key" code nil nil [3095 3146])
-            ("global-set-key" code nil nil [3147 3199])
-            ("global-set-key" code nil nil [3200 3256])
-            ("global-set-key" code nil nil [3257 3312])
-            ("cc-mode" include nil nil [3392 3410])
-            ("semantic" include nil nil [3411 3430])
-            ("semantic/ia" include nil nil [3431 3453])
-            ("semantic/bovine/gcc" include nil nil [3454 3484])
-            ("alexott/cedet-hook" function nil nil [3486 3622])
-            ("add-hook" code nil nil [3624 3674])
-            ("add-hook" code nil nil [3675 3718])
-            ("add-hook" code nil nil [3719 3764])
-            ("load-file" code nil nil [3766 3822])
-            ("load-file" code nil nil [3823 3876])
-            ("custom-set-variables" code nil nil [3878 4186])
-            ("custom-set-faces" code nil nil [4187 4426]))          
+                nil [1291 1746])
+            ("global-set-key" code nil nil [1748 1792])
+            ("elpy" include nil nil [1795 1810])
+            ("elpy-enable" code nil nil [1811 1824])
+            ("setq" code nil nil [1825 1865])
+            ("auto-complete" include nil nil [1868 1892])
+            ("auto-complete-config" include nil nil [1931 1962])
+            ("ac-config-default" code nil nil [1963 1982])
+            ("yasnippet" include nil nil [2012 2032])
+            ("yas-global-mode" code nil nil [2033 2052])
+            ("flycheck" include nil nil [2054 2073])
+            ("global-flycheck-mode" code nil nil [2074 2098])
+            ("setq" code nil nil [2100 2129])
+            ("multiple-cursors" include nil nil [2131 2158])
+            ("global-set-key" code nil nil [2159 2210])
+            ("global-set-key" code nil nil [2211 2263])
+            ("global-set-key" code nil nil [2264 2320])
+            ("global-set-key" code nil nil [2321 2376])
+            ("load-file" code nil nil [2379 2435])
+            ("load-file" code nil nil [2436 2491])
+            ("load-file" code nil nil [2493 2551])
+            ("stm32-load-all-projects" code nil nil [2571 2596])
+            ("load-file" code nil nil [2598 2646])
+            ("setq" code nil nil [2648 2708])
+            ("load" code nil nil [2709 2727]))          
       :file "init.el"
-      :pointmax 4427
-      :fsize 4426
-      :lastmodtime '(22449 59315 402718 120000)
+      :pointmax 2728
+      :fsize 2727
+      :lastmodtime '(22488 8187 744929 618000)
       :unmatched-syntax nil)
     (semanticdb-table "helm-init.el"
       :major-mode 'emacs-lisp-mode
@@ -131,68 +124,98 @@
       :major-mode 'emacs-lisp-mode
       :tags 
         '( ("ede" include nil nil [30 44])
-            ("cedet" include nil nil [45 61])
-            ("eieio" include nil nil [62 78])
-            ("eieio-speedbar" include nil nil [79 104])
-            ("eieio-opt" include nil nil [105 125])
-            ("eieio-base" include nil nil [126 147])
-            ("ede/source" include nil nil [148 169])
-            ("ede/base" include nil nil [170 189])
-            ("ede/auto" include nil nil [190 209])
-            ("ede/proj" include nil nil [210 229])
-            ("ede/proj-archive" include nil nil [230 257])
-            ("ede/proj-aux" include nil nil [258 281])
-            ("ede/proj-comp" include nil nil [282 306])
-            ("ede/proj-elisp" include nil nil [307 332])
-            ("ede/proj-info" include nil nil [333 357])
-            ("ede/proj-misc" include nil nil [358 382])
-            ("ede/proj-obj" include nil nil [383 406])
-            ("ede/proj-prog" include nil nil [407 431])
-            ("ede/proj-scheme" include nil nil [432 458])
-            ("ede/proj-shared" include nil nil [459 485])
-            ("ede/cpp-root" include nil nil [486 509])
-            ("global-semanticdb-minor-mode" code nil nil [512 544])
-            ("global-semantic-idle-scheduler-mode" code nil nil [545 584])
-            ("global-semantic-stickyfunc-mode" code nil nil [585 620])
-            ("global-semantic-decoration-mode" code nil nil [621 656])
-            ("ede-enable-generic-projects" code nil nil [657 686])
-            ("global-semantic-idle-scheduler-mode" code nil nil [687 724])
-            ("global-semantic-highlight-func-mode" code nil nil [766 803])
-            ("global-semantic-show-unmatched-syntax-mode" code nil nil [804 848])
-            ("semantic-mode" code nil nil [850 867])
-            ("global-ede-mode" code nil nil [868 887])
-            ("ede-enable-generic-projects" code nil nil [889 918])
-            ("my:add-semantic-to-autocomplete" function nil nil [920 1017])
-            ("add-hook" code nil nil [1018 1081])
-            ("add-hook" code nil nil [1082 1138])
-            ("add-hook" code nil nil [1139 1197])
+            ("ede/source" include nil nil [153 174])
+            ("ede/base" include nil nil [175 194])
+            ("ede/auto" include nil nil [195 214])
+            ("ede/proj" include nil nil [215 234])
+            ("ede/proj-archive" include nil nil [235 262])
+            ("ede/proj-aux" include nil nil [263 286])
+            ("ede/proj-comp" include nil nil [287 311])
+            ("ede/proj-elisp" include nil nil [312 337])
+            ("ede/proj-info" include nil nil [338 362])
+            ("ede/proj-misc" include nil nil [363 387])
+            ("ede/proj-obj" include nil nil [388 411])
+            ("ede/proj-shared" include nil nil [466 492])
+            ("ede/cpp-root" include nil nil [493 516])
+            ("global-semanticdb-minor-mode" code nil nil [519 551])
+            ("global-semantic-idle-scheduler-mode" code nil nil [552 591])
+            ("global-semantic-stickyfunc-mode" code nil nil [592 627])
+            ("global-semantic-decoration-mode" code nil nil [628 663])
+            ("ede-enable-generic-projects" code nil nil [664 693])
+            ("global-semantic-idle-scheduler-mode" code nil nil [694 731])
+            ("global-semantic-highlight-func-mode" code nil nil [773 810])
+            ("global-semantic-show-unmatched-syntax-mode" code nil nil [811 855])
+            ("global-semantic-tag-folding-mode" code nil nil [856 892])
+            ("semantic-mode" code nil nil [894 911])
+            ("global-ede-mode" code nil nil [912 931])
+            ("ede-enable-generic-projects" code nil nil [933 962])
+            ("my:add-semantic-to-autocomplete" function nil nil [964 1061])
+            ("add-hook" code nil nil [1062 1125])
+            ("add-hook" code nil nil [1126 1182])
+            ("add-hook" code nil nil [1183 1241])
             ("ede-generic-makefile-project" type
                (:superclasses "ede-generic-project"
                 :members 
                   ( ("buildfile" variable (:default-value "Makefile") nil nil))                  
                 :type "class")
-                nil [1214 1351])
+                nil [1258 1395])
             ("ede-generic-setup-configuration" function
                (:parent "ede-generic-makefile-project"
                 :arguments ("proj" "config"))
-                nil [1353 1553])
-            ("ede-generic-new-autoloader" code nil nil [1555 1657])
-            ("ede-cpp-root-project" code nil nil [1662 2031]))          
+                nil [1397 1597])
+            ("dennis-flycheck-get-ede-includes" function (:user-visible-flag t) nil [1600 2384])
+            ("add-hook" code nil nil [2386 2450]))          
       :file "ede-init.el"
-      :pointmax 2042
-      :fsize 2041
-      :lastmodtime '(22449 63743 262627 766000)
+      :pointmax 2451
+      :fsize 2450
+      :lastmodtime '(22488 6810 632957 719000)
       :unmatched-syntax nil)
-    (semanticdb-table "stm32.el"
+    (semanticdb-table "custom.el"
       :major-mode 'emacs-lisp-mode
       :tags 
-        '( ("get-project-root-dir" function (:user-visible-flag t) nil [1 475])
-            ("stm32-generate-makefile" function (:user-visible-flag t) nil [478 860])
-            ("stm32-load-project" function (:user-visible-flag t) nil [862 1163]))          
-      :file "stm32.el"
-      :pointmax 1164
-      :fsize 1163
-      :lastmodtime '(22449 64059 902621 305000)
+        '( ("custom-set-variables" code nil nil [1 417])
+            ("custom-set-faces" code nil nil [418 657]))          
+      :file "custom.el"
+      :pointmax 658
+      :fsize 657
+      :lastmodtime '(22487 7898 571038 46000)
+      :unmatched-syntax nil)
+    (semanticdb-table "flycheck-cedet.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("dash" include nil nil [1025 1040])
+            ("flycheck" include nil nil [1041 1060])
+            ("flycheck-cedet-get-ede-cpp-project" function (:arguments ("file")) nil [1089 1431])
+            ("flycheck-cedet-get-ede-cpp-project-includes" function (:arguments ("project")) nil [1433 1759])
+            ("flycheck-cedet-get-cpp-includes" function (:arguments ("option-name" "file")) nil [1784 2289])
+            ("flycheck-cedet-get-cpp-definitions" function (:arguments ("option-name" "file")) nil [2291 2985])
+            ("flycheck-cedet" package nil nil [2988 3013]))          
+      :file "flycheck-cedet.el"
+      :pointmax 3046
+      :fsize 3045
+      :lastmodtime '(22488 4754 616999 674000)
+      :unmatched-syntax nil)
+    (semanticdb-table "c.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cc-mode" include nil nil [1 19])
+            ("setq" code nil nil [22 75])
+            ("cl" include nil nil [78 91])
+            ("c-add-style" code nil nil [126 445])
+            ("my-c++-mode-hook" function nil nil [447 598])
+            ("add-hook" code nil nil [600 643])
+            ("cc-mode" include nil nil [645 663])
+            ("semantic" include nil nil [664 683])
+            ("semantic/ia" include nil nil [684 706])
+            ("semantic/bovine/gcc" include nil nil [707 737])
+            ("alexott/cedet-hook" function nil nil [739 875])
+            ("add-hook" code nil nil [877 927])
+            ("add-hook" code nil nil [928 971])
+            ("add-hook" code nil nil [972 1017]))          
+      :file "c.el"
+      :pointmax 1018
+      :fsize 1017
+      :lastmodtime '(22488 6142 572971 351000)
       :unmatched-syntax nil))
   :file "!home!lyra!.emacs.d!semantic.cache"
   :semantic-tag-version "2.0"

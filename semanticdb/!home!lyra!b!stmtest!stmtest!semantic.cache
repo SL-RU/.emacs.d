@@ -68,7 +68,7 @@
       :pointmax 376
       :fsize 375
       :lastmodtime '(22436 37476 22571 277000)
-      :unmatched-syntax '((thing 376 . 376)))
+      :unmatched-syntax nil)
     (semanticdb-table "CubeMX2Makefile.py"
       :major-mode 'python-mode
       :tags nil

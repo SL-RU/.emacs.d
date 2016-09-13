@@ -25,18 +25,25 @@
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
 
+(show-paren-mode) ;pair brackets
 
-;; Package: undo-tree
-;; GROUP: Editing -> Undo -> Undo Tree
+(require 'nyan-mode)
+(nyan-mode 1)
+
+(require 'switch-window)
+(global-set-key (kbd "C-x o") 'switch-window)
+
+(diredp-toggle-find-file-reuse-dir 1) ;;dired+
+
+
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-(load "~/.emacs.d/helm-init")
 
 (require 'drag-stuff)
 (drag-stuff-global-mode)
 
-(show-paren-mode)
+(require 'tramp)
 
 (defun sudo-edit (&optional arg)
   "Edit currently visited file as root.
@@ -52,45 +59,11 @@ buffer is not visiting a file."
 
 (global-set-key (kbd "C-x C-r ") 'sudo-edit)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; PACKAGE: nyan-mode                    ;;
-;;                                       ;;
-;; GROUOP: Environment -> Frames -> Nyan ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; only turn on if a window system is available
-;; this prevents error under terminal that does not support X
-(require 'nyan-mode)
-(nyan-mode 1)
-
 
 (require 'elpy)
 (elpy-enable)
 (setq elpy-rpc-python-command "python3")
 
-(require 'cc-mode)
-(setq c-default-style "linux"
-      c-basic-offset 4)
-
-
-(require 'cl)
-; style I want to use in c++ mode
-(c-add-style "my-style" 
-	     '("stroustrup"
-	       (indent-tabs-mode . nil)        ; use spaces rather than tabs
-	       (c-basic-offset . 4)            ; indent by four spaces
-	       (c-offsets-alist . ((inline-open . 0)  ; custom indentation rules
-				   (brace-list-open . 0)
-				   (statement-case-open . +)))))
-
-(defun my-c++-mode-hook ()
-  (c-set-style "my-style")        ; use my-style defined above
-  (auto-fill-mode)         
-  (c-toggle-auto-hungry-state 1))
-
-(add-hook 'c++-mode-hook 'my-c++-mode-hook)
-
-(require 'switch-window)
-(global-set-key (kbd "C-x o") 'switch-window)
 
 (require 'auto-complete)
 ; do default config for auto-complete
@@ -100,6 +73,8 @@ buffer is not visiting a file."
 (require 'yasnippet)
 (yas-global-mode 1)
 
+(require 'flycheck)
+(global-flycheck-mode t)
 
 (setq steam-username "sl_ru")
 
@@ -109,37 +84,15 @@ buffer is not visiting a file."
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;(setq package-enable-at-startup nil)
-;(package-initialize)
 
-;; -----------
+(load-file (concat user-emacs-directory "helm-init.el"))
+(load-file (concat user-emacs-directory "ede-init.el"))
 
+(load-file (concat user-emacs-directory "stm32/stm32.el"))
+;;(require 'stm32)
+(stm32-load-all-projects)
 
-(require 'cc-mode)
-(require 'semantic)
-(require 'semantic/ia)
-(require 'semantic/bovine/gcc)
+(load-file (concat user-emacs-directory "c.el"))
 
-(defun alexott/cedet-hook ()
-  (local-set-key "\C-c\C-j" 'semantic-ia-fast-jump)
-  (local-set-key "\C-c\C-s" 'semantic-ia-show-summary))
-
-(add-hook 'c-mode-common-hook 'alexott/cedet-hook)
-(add-hook 'c-mode-hook 'alexott/cedet-hook)
-(add-hook 'c++-mode-hook 'alexott/cedet-hook)
-
-(load-file (concat user-emacs-directory "/ede-init.el"))
-(load-file (concat user-emacs-directory "/stm32.el"))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ede-project-directories (quote ("/home/lyra/b/stm32/dac"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file)

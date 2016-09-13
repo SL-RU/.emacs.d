@@ -49,7 +49,7 @@
       :file "Makefile"
       :pointmax 4440
       :fsize 4439
-      :lastmodtime '(22448 45624 823825 759000)
+      :lastmodtime '(22450 262 666585 824000)
       :unmatched-syntax '((thing 4388 . 4405) (thing 4387 . 4388) (thing 4356 . 4386) (thing 4355 . 4356) (thing 4346 . 4354) (thing 4346 . 4346) (thing 4248 . 4248) (thing 3622 . 3650) (thing 3621 . 3622) (thing 3617 . 3620) (thing 3611 . 3616) (thing 3611 . 3611) (thing 3485 . 3511) (thing 3484 . 3485) (thing 3480 . 3483) (thing 3474 . 3479) (thing 3474 . 3474) (thing 2005 . 2005)))
     (semanticdb-table "CubeMX2Makefile.py"
       :major-mode 'python-mode
@@ -58,15 +58,6 @@
       :pointmax 8249
       :fsize 8248
       :lastmodtime '(22385 28925 151286 0)
-      :unmatched-syntax nil)
-    (semanticdb-table "myproject.el"
-      :major-mode 'emacs-lisp-mode
-      :tags 
-        '( ("ede-cpp-root-project" code nil nil [1 392]))          
-      :file "myproject.el"
-      :pointmax 393
-      :fsize 392
-      :lastmodtime '(22449 63802 50626 566000)
       :unmatched-syntax nil)
     (semanticdb-table "EDEConfig.el"
       :major-mode 'emacs-lisp-mode
@@ -78,6 +69,15 @@
       :pointmax 192
       :fsize 191
       :lastmodtime '(22448 45955 827837 261000)
+      :unmatched-syntax nil)
+    (semanticdb-table "project.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("ede-cpp-root-project" code nil nil [1 520]))          
+      :file "project.el"
+      :pointmax 521
+      :fsize 520
+      :lastmodtime '(22452 28552 694481 152000)
       :unmatched-syntax nil))
   :file "!home!lyra!b!stm32!dac!semantic.cache"
   :semantic-tag-version "2.0"

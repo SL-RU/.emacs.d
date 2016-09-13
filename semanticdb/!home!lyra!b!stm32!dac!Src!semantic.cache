@@ -46,21 +46,21 @@
                (:arguments 
                   ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3689 3694]))                  
                 :type "int")
-                nil [3680 4733])
+                nil [3680 4795])
             ("SystemClock_Config" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4794 4799]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4856 4861]))                  
                 :type "void")
-                nil [4770 6282])
+                nil [4832 6344])
             ("Error_Handler" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6457 6462]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6524 6529]))                  
                 :type "void")
-                nil [6438 6654]))          
+                nil [6505 6721]))          
       :file "main.c"
-      :pointmax 7322
-      :fsize 7545
-      :lastmodtime '(22449 63928 778623 980000)
+      :pointmax 7389
+      :fsize 7551
+      :lastmodtime '(22450 3039 538529 160000)
       :unmatched-syntax nil)
     (semanticdb-table "printf.c"
       :major-mode 'c-mode
@@ -97,30 +97,30 @@
                         :type ("FILE" type (:type "class") nil nil))
                         (reparse-symbol arg-sub-list) [1071 1079]))                  
                 :type "int")
-                nil [1054 1162])
+                nil [1054 1173])
             ("fgetc" function
                (:arguments 
                   ( ("f" variable
                        (:pointer 1
                         :type ("FILE" type (:type "class") nil nil))
-                        (reparse-symbol arg-sub-list) [1175 1183]))                  
+                        (reparse-symbol arg-sub-list) [1186 1194]))                  
                 :type "int")
-                nil [1165 1221])
+                nil [1176 1232])
             ("_ttywrch" function
                (:arguments 
-                  ( ("c" variable (:type "int") (reparse-symbol arg-sub-list) [1238 1244]))                  
+                  ( ("c" variable (:type "int") (reparse-symbol arg-sub-list) [1249 1255]))                  
                 :type "void")
-                nil [1224 1314])
+                nil [1235 1327])
             ("_sys_exit" function
                (:arguments 
-                  ( ("return_code" variable (:type "int") (reparse-symbol arg-sub-list) [1332 1348]))                  
+                  ( ("return_code" variable (:type "int") (reparse-symbol arg-sub-list) [1345 1361]))                  
                 :type "void")
-                nil [1317 1392]))          
+                nil [1330 1405]))          
       :file "printf.c"
-      :pointmax 1393
-      :fsize 1448
-      :lastmodtime '(22439 5970 278347 440000)
-      :unmatched-syntax '((thing 1245 . 1314) (thing 1237 . 1244))))
+      :pointmax 1406
+      :fsize 1461
+      :lastmodtime '(22452 21183 678225 79000)
+      :unmatched-syntax nil))
   :file "!home!lyra!b!stm32!dac!Src!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")
