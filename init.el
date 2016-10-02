@@ -99,9 +99,11 @@ buffer is not visiting a file."
 (defun my-ede-hook ()
   "hook for activating flycheck"
   (interactive)
-  (flycheck-setup-from-cedet)
-  (setq flycheck-clang-language-standard "gnu99"))
-
+  (flycheck-setup-from-cedet))
 (add-hook 'c-mode-common-hook 'my-ede-hook)
+
+(defun my-flycheck-c-setup ()
+  (setq flycheck-gcc-language-standard "gnu99"))
+(add-hook 'c-mode-hook #'my-flycheck-c-setup)
 
 (load-file (concat user-emacs-directory "c.el"))
