@@ -12,6 +12,9 @@
 
 (package-initialize) ;; You might already have this line
 
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file)
+
 ;;THEME
 (load-theme 'monokai t)
 (tool-bar-mode -1)
@@ -89,10 +92,16 @@ buffer is not visiting a file."
 (load-file (concat user-emacs-directory "ede-init.el"))
 
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
-;;(require 'stm32)
+(load-file (concat user-emacs-directory "flycheck-cedet.el"))
+;(require 'stm32)
 (stm32-load-all-projects)
 
-(load-file (concat user-emacs-directory "c.el"))
+(defun my-ede-hook ()
+  "hook for activating flycheck"
+  (interactive)
+  (flycheck-setup-from-cedet)
+  (setq flycheck-clang-language-standard "gnu99"))
 
-(setq custom-file (concat user-emacs-directory "custom.el"))
-(load custom-file)
+(add-hook 'c-mode-common-hook 'my-ede-hook)
+
+(load-file (concat user-emacs-directory "c.el"))

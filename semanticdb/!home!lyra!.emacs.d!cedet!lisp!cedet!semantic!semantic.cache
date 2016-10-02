@@ -2962,9 +2962,32 @@ To save the version number, we must hand-set this version string."
       :lastmodtime '(22436 31432 262422 179000)
       :unmatched-syntax '((close-paren 1744 . 1745) (symbol 1542 . 1559) (open-paren 1541 . 1542)))
     (semanticdb-table "wisent.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("semantic" include nil nil [1068 1087])
+            ("semantic/wisent/wisent" include nil nil [1088 1121])
+            ("wisent-lex-istream" variable nil nil [1148 1232])
+            ("wisent-lex-lookahead" variable nil nil [1234 1357])
+            ("semantic-alias-obsolete" code nil nil [1467 1583])
+            ("wisent-lex-eoi" function nil nil [1585 1811])
+            ("define-wisent-lexer" function (:arguments ("name" "doc" "body")) nil [1813 2667])
+            ("define-wisent-lexer" code nil nil [2669 3204])
+            ("wisent-error-function" variable nil nil [3230 3351])
+            ("make-variable-buffer-local" code nil nil [3352 3403])
+            ("wisent-lexer-function" variable (:default-value (quote wisent-lex)) nil [3405 3573])
+            ("make-variable-buffer-local" code nil nil [3574 3625])
+            ("wisent-raw-tag" function (:arguments ("semantic-tag")) nil [3648 4021])
+            ("wisent-cook-tag" function (:arguments ("raw-tag")) nil [4023 4398])
+            ("wisent-collect-unmatched-syntax" function (:arguments ("nomatch")) nil [4433 5000])
+            ("wisent-parse-stream" function (:arguments ("stream" "goal")) nil [5546 9973])
+            ("wisent-parse-region" function (:arguments ("start" "end" "goal" "depth" "returnonerror")) nil [9975 12865])
+            ("add-hook" code nil nil [12899 13042])
+            ("semantic/wisent" package nil nil [13044 13070]))          
       :file "wisent.el"
+      :pointmax 13105
       :fsize 13104
-      :lastmodtime '(22436 31432 278422 179000))
+      :lastmodtime '(22436 31432 278422 179000)
+      :unmatched-syntax nil)
     (semanticdb-table "grammar-wy.el"
       :major-mode 'emacs-lisp-mode
       :tags 
@@ -5129,7 +5152,123 @@ and file names."
       :pointmax 8243
       :fsize 8242
       :lastmodtime '(22436 31432 262422 179000)
-      :unmatched-syntax nil))
+      :unmatched-syntax nil)
+    (semanticdb-table "mru-bookmark.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1577 1590])
+            ("semantic" include nil nil [1592 1611])
+            ("eieio-base" include nil nil [1612 1633])
+            ("ring" include nil nil [1634 1649])
+            ("declare-function" code nil nil [1651 1704])
+            ("declare-function" code nil nil [1705 1772])
+            ("declare-function" code nil nil [1773 1844])
+            ("declare-function" code nil nil [1845 1904])
+            ("semantic-bookmark" type
+               (:superclasses "eieio-named"
+                :members 
+                  ( ("tag" variable
+                       (:documentation "The TAG this bookmark belongs to."
+                        :type "semantic-tag")
+                        nil nil)
+                    ("parent" variable
+                       (:documentation "The tag that is the parent of :tag."
+                        :type "(or semantic-tag null)")
+                        nil nil)
+                    ("offset" variable
+                       (:documentation "The offset from `tag' start that is
+somehow interesting."
+                        :type "number")
+                        nil nil)
+                    ("filename" variable
+                       (:documentation "String the tag belongs to.
+Set this when the tag gets unlinked from the buffer it belongs to."
+                        :type "string")
+                        nil nil)
+                    ("frequency" variable
+                       (:documentation "Track the frequency this tag is visited."
+                        :default-value "0"
+                        :type "number")
+                        nil nil)
+                    ("reason" variable
+                       (:documentation "The reason this tag is interesting.
+Nice values are 'edit, 'read, 'jump, and 'mark.
+ edit - created because the tag text was edited.
+ read - created because point lingered in tag text.
+ jump - jumped to another tag from this tag.
+ mark - created a regular mark in this tag."
+                        :default-value "t"
+                        :type "symbol")
+                        nil nil))                  
+                :type "class")
+                nil [1977 2937])
+            ("initialize-instance" function
+               (:parent "semantic-bookmark"
+                :arguments ("sbm" "fields"))
+                nil [2939 3316])
+            ("semantic-mrub-visit" function
+               (:parent "semantic-bookmark"
+                :arguments ("sbm"))
+                nil [3318 3995])
+            ("semantic-mrub-update" function
+               (:parent "semantic-bookmark"
+                :arguments ("sbm" "point" "reason"))
+                nil [3997 4472])
+            ("semantic-mrub-preflush" function
+               (:parent "semantic-bookmark"
+                :arguments ("sbm"))
+                nil [4474 5040])
+            ("semantic-bookmark-ring" type
+               (:members 
+                  ( ("ring" variable
+                       (:documentation "List of `semantic-bookmark' objects.
+This list is maintained as a list with the first item
+being the current location, and the rest being a list of
+items that were recently visited."
+                        :type "ring")
+                        nil nil)
+                    ("current-index" variable
+                       (:documentation "The current index into RING for some operation.
+User commands use this to move through the ring, or reset."
+                        :default-value "0"
+                        :type "number")
+                        nil nil))                  
+                :type "class")
+                nil [5042 5676])
+            ("semantic-mru-bookmark-ring" variable (:default-value (semantic-bookmark-ring "Ring" :ring (make-ring 20))) nil [5678 5867])
+            ("semantic-mrub-find-nearby-tag" function (:arguments ("point")) nil [5869 6396])
+            ("semantic-mrub-push" function
+               (:parent "semantic-bookmark-ring"
+                :arguments ("sbr" "point" "reason"))
+                nil [6398 7220])
+            ("semantic-mrub-cache-flush-fcn" function nil nil [7222 7575])
+            ("add-hook" code nil nil [7577 7664])
+            ("semantic-mrub-last-overlay" variable nil nil [7686 7797])
+            ("semantic-mru-bookmark-change-hook-fcn" function (:arguments ("overlay")) nil [7799 8204])
+            ("global-semantic-mru-bookmark-mode" variable nil nil [8249 8718])
+            ("define-minor-mode" code nil nil [8735 9164])
+            ("semantic-mru-bookmark-mode-hook" variable (:user-visible-flag t) nil [9166 9313])
+            ("semantic-mru-bookmark-mode-map" variable (:default-value (let ((km (make-sparse-keymap))) (define-key km "B" (quote semantic-mrub-switch-tags)) km)) nil [9315 9492])
+            ("define-minor-mode" code nil nil [9494 10885])
+            ("semantic-add-minor-mode" code nil nil [10887 10969])
+            ("semantic-mrub-read-history" function nil nil [11034 11120])
+            ("semantic-mrub-ring-to-assoc-list" function (:arguments ("ring")) nil [11122 11448])
+            ("semantic-mrub-completing-read" function (:arguments ("prompt")) nil [11450 12977])
+            ("semantic-mrub-switch-tags" function
+               (:user-visible-flag t
+                :arguments ("tagmark"))
+                nil [12979 13423])
+            ("semantic-adebug-mrub" function (:user-visible-flag t) nil [13442 13751])
+            ("semantic/mru-bookmark" package nil nil [13754 13786]))          
+      :file "mru-bookmark.el"
+      :pointmax 13955
+      :fsize 13954
+      :lastmodtime '(22436 31432 266422 179000)
+      :unmatched-syntax '((close-paren 1590 . 1591) (symbol 1559 . 1576) (open-paren 1558 . 1559)))
+    (semanticdb-table "java.el"
+      :file "java.el"
+      :fsize 16954
+      :lastmodtime '(22436 31432 266422 179000)))
   :file "!home!lyra!.emacs.d!cedet!lisp!cedet!semantic!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

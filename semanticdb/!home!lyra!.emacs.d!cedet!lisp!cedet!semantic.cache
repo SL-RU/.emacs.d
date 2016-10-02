@@ -532,9 +532,26 @@
       :lastmodtime '(22436 31432 246422 178000)
       :unmatched-syntax '((close-paren 1680 . 1681) (symbol 1625 . 1641) (open-paren 1624 . 1625)))
     (semanticdb-table "cedet.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cl" include nil nil [1155 1168])
+            ("declare-function" code nil nil [1171 1224])
+            ("cedet-version" variable
+               (:constant-flag t
+                :default-value "2.0")
+                nil [1226 1286])
+            ("cedet-packages" variable
+               (:constant-flag t
+                :default-value (\` ((cedet (\, cedet-version) "common" "common") (eieio "1.4" nil "eieio") (semantic "2.2" nil "semantic/doc") (srecode "1.2" nil "srecode") (ede "1.2" nil "ede") (cogre "1.2" nil "cogre") (cedet-contrib "1.2" "contrib" nil))))
+                nil [1288 1847])
+            ("cedet-menu-map" variable (:default-value (let ((map (make-sparse-keymap "CEDET menu"))) (define-key map [semantic-force-refresh] (quote undefined)) (define-key map [semantic-edit-menu] (quote undefined)) (define-key map [navigate-menu] (quote undefined)) (define-key map [semantic-options-separator] (quote undefined)) (define-key map [global-semantic-highlight-func-mode] (quote undefined)) (define-key map [global-semantic-stickyfunc-mode] (quote undefined)) (define-key map [global-semantic-decoration-mode] (quote undefined)) (define-key map [global-semantic-idle-completions-mode] (quote undefined)) (define-key map [global-semantic-idle-summary-mode] (quote undefined)) (define-key map [global-semantic-idle-scheduler-mode] (quote undefined)) (define-key map [global-semanticdb-minor-mode] (quote undefined)) (define-key map [cedet-menu-separator] (quote undefined)) (define-key map [ede-find-file] (quote undefined)) (define-key map [ede-speedbar] (quote undefined)) (define-key map [ede] (quote undefined)) (define-key map [ede-new] (quote undefined)) (define-key map [ede-target-options] (quote undefined)) (define-key map [ede-project-options] (quote undefined)) (define-key map [ede-build-forms-menu] (quote undefined)) map)) nil [1849 3226])
+            ("cedet-version" function (:user-visible-flag t) nil [3228 5007])
+            ("cedet" package nil nil [5009 5025]))          
       :file "cedet.el"
+      :pointmax 5050
       :fsize 5049
-      :lastmodtime '(22436 31432 246422 178000))
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1168 . 1169) (symbol 1135 . 1152) (open-paren 1134 . 1135)))
     (semanticdb-table "working.el"
       :file "working.el"
       :fsize 23671
@@ -594,17 +611,105 @@
       :lastmodtime '(22436 31432 254422 178000)
       :unmatched-syntax '((close-paren 7598 . 7599) (punctuation 5508 . 5509) (symbol 4136 . 4152) (open-paren 4135 . 4136)))
     (semanticdb-table "cedet-m3.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("semantic/util-modes" include nil nil [1238 1268])
+            ("semantic/senator" include nil nil [1269 1296])
+            ("if" code nil nil [1328 1547])
+            ("global-cedet-m3-minor-mode" variable nil nil [1550 1835])
+            ("cedet-m3-minor-mode" variable nil nil [1837 1927])
+            ("make-variable-buffer-local" code nil nil [1928 1977])
+            ("cedet-m3-minor-mode-hook" variable nil nil [1979 2115])
+            ("cedet-m3-prefix-key" variable (:default-value (if (featurep (quote xemacs)) [button3] [mouse-3])) nil [2117 2243])
+            ("cedet-m3-minor-menu" variable nil nil [2245 2325])
+            ("cedet-m3-mode-map" variable (:default-value (let ((km (make-sparse-keymap))) (define-key km cedet-m3-prefix-key (quote cedet-m3-menu)) km)) nil [2327 2536])
+            ("cedet-m3-hack-map" variable (:default-value (make-sparse-keymap)) nil [2538 2628])
+            ("define-minor-mode" code nil nil [2645 3149])
+            ("semantic-add-minor-mode" code nil nil [3151 3202])
+            ("define-minor-mode" code nil nil [3219 3545])
+            ("cedet-m3-menu" function
+               (:user-visible-flag t
+                :arguments ("event"))
+                nil [3574 4350])
+            ("cedet-m3-menu-kbd" function (:user-visible-flag t) nil [4352 4603])
+            ("cedet-m3-menu-query-hooks" variable nil nil [4653 4840])
+            ("cedet-m3-menu-visit-hooks" variable nil nil [4842 5037])
+            ("cedet-m3-menu-completions-hooks" variable nil nil [5039 5235])
+            ("cedet-m3-menu-do-hooks" variable nil nil [5237 5422])
+            ("cedet-m3-menu-item" function (:arguments ("itemname" "function" "attributes")) nil [5424 5844])
+            ("cedet-m3-create-menu" function nil nil [5846 6585])
+            ("cedet-m3" package nil nil [6587 6606]))          
       :file "cedet-m3.el"
+      :pointmax 6634
       :fsize 6633
-      :lastmodtime '(22436 31432 246422 178000))
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1547 . 1548) (symbol 1309 . 1325) (open-paren 1308 . 1309)))
     (semanticdb-table "cedet-android.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("inversion" include nil nil [1070 1090])
+            ("cedet-java" include nil nil [1113 1134])
+            ("cedet-android-sdk-adb-min-version" variable (:default-value "1.0.26") nil [1137 1249])
+            ("cedet-android-sdk-root" variable (:default-value "/usr/local/android/android-sdk-linux/") nil [1251 1390])
+            ("cedet-android-sdk-adb" variable (:default-value (expand-file-name "platform-tools/adb" cedet-android-sdk-root)) nil [1392 1542])
+            ("cedet-android-sdk-android" variable (:default-value (expand-file-name "tools/android" cedet-android-sdk-root)) nil [1544 1677])
+            ("cedet-android-sdk-layoutopt" variable (:default-value (expand-file-name "tools/layoutopt" cedet-android-sdk-root)) nil [1679 1822])
+            ("cedet-android-sdk-ddms" variable (:default-value (expand-file-name "tools/ddms" cedet-android-sdk-root)) nil [1824 1957])
+            ("cedet-android-create-project" function
+               (:user-visible-flag t
+                :arguments ("name" "package" "target" "dir"))
+                nil [2013 2955])
+            ("cedet-android-target-list" function (:user-visible-flag t) nil [2972 3148])
+            ("cedet-android-android-show-output" function (:arguments ("flags")) nil [3150 3399])
+            ("cedet-android-android-call" function (:arguments ("flags")) nil [3401 3733])
+            ("cedet-android-layoutopt" function
+               (:user-visible-flag t
+                :arguments ("projectroot"))
+                nil [3767 4049])
+            ("cedet-android-layoutopt-show-output" function (:arguments ("flags")) nil [4051 4314])
+            ("cedet-android-layoutopt-call" function (:arguments ("flags")) nil [4316 4664])
+            ("cedet-android-start-ddms" function (:user-visible-flag t) nil [4698 4823])
+            ("cedet-android-ddms-call" function (:arguments ("flags")) nil [4825 5149])
+            ("cedet-android-ddms-active-p" function nil nil [5151 5453])
+            ("cedet-android-adb-help" function (:user-visible-flag t) nil [5490 5626])
+            ("cedet-android-adb-devices" function (:user-visible-flag t) nil [5643 5810])
+            ("cedet-android-adb-start-server" function (:user-visible-flag t) nil [5812 5968])
+            ("cedet-android-adb-kill-server" function (:user-visible-flag t) nil [5970 6123])
+            ("cedet-android-adb-show-output" function (:arguments ("flags")) nil [6125 6378])
+            ("cedet-android-adb-call" function (:arguments ("flags")) nil [6380 6713])
+            ("cedet-android-adb-version-check" function
+               (:user-visible-flag t
+                :arguments ("noerror"))
+                nil [6730 7754])
+            ("declare-function" code nil nil [7832 7869])
+            ("declare-function" code nil nil [7870 7915])
+            ("cedet-android-adb-shell" function (:user-visible-flag t) nil [7932 8481])
+            ("cedet-android-current-version" variable (:default-value "8") nil [8506 8738])
+            ("cedet-android-get-samples-alist" function nil nil [8740 9117])
+            ("cedet-android-visit-sample" function
+               (:user-visible-flag t
+                :arguments ("sample"))
+                nil [9123 9469])
+            ("cedet-android-sdk-jar" function nil nil [9500 9764])
+            ("cedet-android-sdk-update-classpath" function (:user-visible-flag t) nil [9781 10049])
+            ("cedet-android" package nil nil [10055 10079]))          
       :file "cedet-android.el"
+      :pointmax 10112
       :fsize 10111
-      :lastmodtime '(22436 31432 246422 178000))
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1134 . 1135) (symbol 1093 . 1110) (open-paren 1092 . 1093)))
     (semanticdb-table "cedet-files.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("cedet-directory-name-to-file-name" function (:arguments ("referencedir" "testmode")) nil [993 2384])
+            ("cedet-file-name-to-directory-name" function (:arguments ("referencefile" "testmode")) nil [2386 3418])
+            ("cedet-files-list-recursively" function (:arguments ("dir" "re")) nil [3420 4120])
+            ("cedet-files" package nil nil [4123 4145]))          
       :file "cedet-files.el"
+      :pointmax 4176
       :fsize 4175
-      :lastmodtime '(22436 31432 246422 178000))
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
     (semanticdb-table "inversion.el"
       :major-mode 'emacs-lisp-mode
       :tags 
@@ -1232,21 +1337,227 @@ This can have a value of 'up, 'down, 'left, 'right, 'horizontal,
       :lastmodtime '(22436 31432 246422 178000)
       :unmatched-syntax '((close-paren 6621 . 6622) (symbol 6368 . 6384) (open-paren 6367 . 6368) (close-paren 1324 . 1325) (symbol 1293 . 1310) (open-paren 1292 . 1293)))
     (semanticdb-table "cedet-graphviz.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("inversion" include nil nil [1073 1093])
+            ("cedet-graphviz-min-version" variable (:default-value "2.8") nil [1095 1190])
+            ("cedet-graphviz-dot-command" variable (:default-value "dot") nil [1207 1333])
+            ("cedet-graphviz-neato-command" variable (:default-value "neato") nil [1350 1482])
+            ("cedet-graphviz-dot-call" function (:arguments ("flags")) nil [1484 1814])
+            ("cedet-graphviz-neato-call" function (:arguments ("flags")) nil [1816 2152])
+            ("cedet-graphviz-translate-file" function (:arguments ("bufferin" "fileout" "outputformat" "flags")) nil [2154 2900])
+            ("cedet-graphviz-dot-version-check" function
+               (:user-visible-flag t
+                :arguments ("noerror"))
+                nil [2917 3777])
+            ("cedet-graphviz" package nil nil [3779 3804]))          
       :file "cedet-graphviz.el"
+      :pointmax 3837
       :fsize 3836
-      :lastmodtime '(22436 31432 246422 178000))
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
     (semanticdb-table "pulse.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("pulse-available-p" function nil nil [1938 2155])
+            ("pulse-flag" variable (:default-value (pulse-available-p)) nil [2157 2642])
+            ("pulse-highlight-start-face" variable
+               (:default-value (quote ((((class color) (background dark)) (:background "#AAAA33")) (((class color) (background light)) (:background "#FFFFAA"))))
+                :type "face")
+                nil [2644 2879])
+            ("pulse-highlight-face" variable
+               (:default-value (quote ((((class color) (background dark)) (:background "#AAAA33")) (((class color) (background light)) (:background "#FFFFAA"))))
+                :type "face")
+                nil [2881 3186])
+            ("pulse-int-to-hex" function (:arguments ("int" "nb-digits")) nil [3201 3880])
+            ("pulse-color-values-to-hex" function (:arguments ("values")) nil [3882 4372])
+            ("pulse-iterations" variable (:default-value 10) nil [4381 4491])
+            ("pulse-delay" variable (:default-value 0.03) nil [4492 4619])
+            ("pulse-lighten-highlight" function nil nil [4621 5603])
+            ("pulse-reset-face" function (:arguments ("face")) nil [5605 5965])
+            ("pulse" function (:arguments ("face")) nil [5967 6332])
+            ("pulse-momentary-overlay" variable nil nil [6363 6432])
+            ("pulse-momentary-highlight-overlay" function (:arguments ("o" "face")) nil [6434 7328])
+            ("pulse-momentary-unhighlight" function nil nil [7330 8078])
+            ("pulse-momentary-highlight-one-line" function (:arguments ("point" "face")) nil [8080 8481])
+            ("pulse-momentary-highlight-region" function (:arguments ("start" "end" "face")) nil [8483 8839])
+            ("pulse-command-advice-flag" variable nil nil [8882 8920])
+            ("pulse-line-hook-function" function nil nil [8922 9159])
+            ("pulse" package nil nil [9161 9177]))          
       :file "pulse.el"
+      :pointmax 9202
       :fsize 9201
-      :lastmodtime '(22436 31432 254422 178000))
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax nil)
     (semanticdb-table "cedet-global.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("declare-function" code nil nil [944 998])
+            ("cedet-global-min-version" variable (:default-value "5.0") nil [1000 1083])
+            ("cedet-global-command" variable (:default-value "global") nil [1085 1206])
+            ("cedet-global-gtags-command" variable (:default-value "gtags") nil [1208 1412])
+            ("cedet-gnu-global-search" function (:arguments ("searchtext" "texttype" "type" "scope")) nil [1424 2383])
+            ("cedet-gnu-global-call" function (:arguments ("flags")) nil [2385 2701])
+            ("cedet-gnu-global-gtags-call" function (:arguments ("flags")) nil [2703 3229])
+            ("cedet-gnu-global-expand-filename" function
+               (:user-visible-flag t
+                :arguments ("filename"))
+                nil [3231 3842])
+            ("cedet-gnu-global-show-root" function (:user-visible-flag t) nil [3844 4003])
+            ("cedet-gnu-global-root" function (:arguments ("dir")) nil [4005 4445])
+            ("cedet-gnu-global-version-check" function
+               (:user-visible-flag t
+                :arguments ("noerror"))
+                nil [4462 5460])
+            ("cedet-gnu-global-scan-hits" function (:arguments ("buffer")) nil [5462 5886])
+            ("cedet-gnu-global-create/update-database" function
+               (:user-visible-flag t
+                :arguments ("dir"))
+                nil [5888 6292])
+            ("cedet-global" package nil nil [6294 6317]))          
       :file "cedet-global.el"
+      :pointmax 6349
       :fsize 6348
-      :lastmodtime '(22436 31432 246422 178000))
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
     (semanticdb-table "cedet-java.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("inversion" include nil nil [958 978])
+            ("ede" include nil nil [979 993])
+            ("cedet-java-min-version" variable (:default-value "1.4") nil [995 1069])
+            ("cedet-java-command" variable (:default-value "java") nil [1071 1178])
+            ("cedet-jar-command" variable (:default-value "jar") nil [1180 1297])
+            ("cedet-javap-command" variable (:default-value "javap") nil [1299 1424])
+            ("cedet-java-classpath-extension" variable nil nil [1426 1595])
+            ("cedet-java-version-regexp" variable (:default-value "java version \"\\([0-9._]+\\)\"") nil [1597 1768])
+            ("cedet-java-call" function (:arguments ("flags")) nil [1798 2260])
+            ("cedet-java-version-check" function
+               (:user-visible-flag t
+                :arguments ("noerror"))
+                nil [2277 2890])
+            ("cedet-java-get-version" function nil nil [2892 3412])
+            ("cedet-jar-table-of-contents" function (:arguments ("jarfile")) nil [3448 3854])
+            ("cedet-jar-call" function (:arguments ("flags")) nil [3856 4166])
+            ("cedet-javap-call" function (:arguments ("flags")) nil [4197 4667])
+            ("cedet-javap-get-class" function (:arguments ("jar" "class")) nil [4669 5017])
+            ("cedet-javap-dump-class" function
+               (:user-visible-flag t
+                :arguments ("class"))
+                nil [5034 5230])
+            ("cedet-java-jdk-root" variable nil nil [5802 6156])
+            ("cedet-java-core-jar-name" variable (:default-value (if (eq system-type (quote darwin)) "Contents/Classes/classes.jar" (concat (file-name-as-directory (concat (file-name-as-directory "jre") "lib")) "rt.jar"))) nil [6158 6474])
+            ("cedet-java-create-rt-file-name" function (:arguments ("path")) nil [6476 6694])
+            ("cedet-java-check-symlinks" function (:arguments ("fname")) nil [6696 7194])
+            ("cedet-java-try-to-list-jdk-dirs" function (:arguments ("basedirs" "all-res")) nil [7196 7997])
+            ("cedet-java-jdk-core-jar" variable nil nil [7999 8082])
+            ("cedet-java-find-jdk-core-jar" function nil nil [8084 9544])
+            ("cedet-java-find-jdk-home" function nil nil [9546 9795])
+            ("cedet-java-describe" function (:user-visible-flag t) nil [9797 11038])
+            ("cedet-java" package nil nil [11040 11061]))          
       :file "cedet-java.el"
+      :pointmax 11091
       :fsize 11090
-      :lastmodtime '(22436 31432 246422 178000)))
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "srecode.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("eieio" include nil nil [1541 1557])
+            ("mode-local" include nil nil [1558 1579])
+            ("load" code nil nil [1580 1620])
+            ("srecode-version" variable (:default-value "1.2") nil [1622 1697])
+            ("srecode" customgroup (:user-visible-flag t) nil [1709 1790])
+            ("srecode" package nil nil [1792 1810]))          
+      :file "srecode.el"
+      :pointmax 1837
+      :fsize 1836
+      :lastmodtime '(22436 31432 278422 179000)
+      :unmatched-syntax nil)
+    (semanticdb-table "cedet-edebug.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("debug" include nil nil [1366 1382])
+            ("edebug" include nil nil [1346 1363])
+            ("cedet-edebug-prin1-extensions" variable nil nil [1398 1552])
+            ("cedet-edebug-prin1-recurse" function (:arguments ("object")) nil [1554 1738])
+            ("cedet-edebug-rebuild-prin1" function (:user-visible-flag t) nil [1740 2452])
+            ("cedet-edebug-prin1-to-string" function (:arguments ("object" "noescape")) nil [2454 2937])
+            ("cedet-edebug-add-print-override" function (:arguments ("testfcn" "printfcn")) nil [2940 3908])
+            ("add-hook" code nil nil [4015 4583])
+            ("add-hook" code nil nil [4681 4889])
+            ("cedet-edebug" package nil nil [4891 4914]))          
+      :file "cedet-edebug.el"
+      :pointmax 4946
+      :fsize 4945
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1385 . 1386) (symbol 1326 . 1343) (open-paren 1325 . 1326)))
+    (semanticdb-table "cedet-compat.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("inversion" include nil nil [1157 1177])
+            ("cl" include nil nil [1200 1213])
+            ("when" code nil nil [1238 1553])
+            ("when" code nil nil [1555 2580])
+            ("when" code nil nil [2662 2866])
+            ("when" code nil nil [2868 4455])
+            ("if" code nil nil [4457 4731])
+            ("if" code nil nil [4829 5332])
+            ("cedet-split-string-1" function (:arguments ("string" "separators" "omit-nulls")) nil [5334 6322])
+            ("when" code nil nil [6324 7551])
+            ("cedet-compat" package nil nil [7553 7576]))          
+      :file "cedet-compat.el"
+      :pointmax 7608
+      :fsize 7607
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax '((close-paren 1213 . 1214) (symbol 1180 . 1197) (open-paren 1179 . 1180)))
+    (semanticdb-table "pprint.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("pprint-standard-printers" variable nil nil [1993 2057])
+            ("pprint-printers" variable nil nil [2059 2185])
+            ("pprint-clear-printers" function nil nil [2187 2291])
+            ("pprint-push-printer" function (:arguments ("printer" "matcher")) nil [2293 2505])
+            ("put" code nil nil [2506 2556])
+            ("pprint-with-printers" function (:arguments ("table" "body")) nil [2558 3052])
+            ("put" code nil nil [3053 3104])
+            ("pprint-min-width" variable (:default-value 20) nil [3138 3298])
+            ("pprint-width" variable nil nil [3300 3321])
+            ("pprint-no-break" variable nil nil [3322 3346])
+            ("pprint-no-break-p" function (:arguments ("motions")) nil [3348 3663])
+            ("pprint-maybe-newline-and-indent" function nil nil [3665 3957])
+            ("pprint-search-printer" function (:arguments ("table")) nil [3959 4236])
+            ("pprint-dispatch-printer" function nil nil [4240 4479])
+            ("pprint-sexp-try" function (:arguments ("room")) nil [4481 5095])
+            ("pprint-close-list" function nil nil [5097 5204])
+            ("pprint-nil-as-list" function nil nil [5206 5502])
+            ("pprint-list" function nil nil [5504 5994])
+            ("pprint-sequence" function nil nil [5996 6212])
+            ("pprint-sexp" function (:arguments ("pprint-no-break")) nil [6214 7095])
+            ("pprint-lambda" function nil nil [7132 7370])
+            ("pprint-defun" function nil nil [7372 7661])
+            ("pprint-defvar" function nil nil [7663 7950])
+            ("pprint-let" function nil nil [7952 8430])
+            ("pprint-if" function nil nil [8432 8639])
+            ("pprint-while" function nil nil [8641 8802])
+            ("pprint-progn" function nil nil [8804 8947])
+            ("pprint-setq" function nil nil [8949 9256])
+            ("pprint-cond" function nil nil [9258 9537])
+            ("pprint-with" function nil nil [9539 9878])
+            ("pprint-setup-standard-printers" function nil nil [9880 11475])
+            ("pprint-setup-standard-printers" code nil nil [11477 11509])
+            ("pprint-to-string" function (:arguments ("object" "width")) nil [11571 12602])
+            ("pprint" function (:arguments ("object" "stream" "width")) nil [12619 13115])
+            ("pprint-function" function
+               (:user-visible-flag t
+                :arguments ("function-name"))
+                nil [13132 13664])
+            ("pprint" package nil nil [13666 13683]))          
+      :file "pprint.el"
+      :pointmax 13709
+      :fsize 13708
+      :lastmodtime '(22436 31432 254422 178000)
+      :unmatched-syntax nil))
   :file "!home!lyra!.emacs.d!cedet!lisp!cedet!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

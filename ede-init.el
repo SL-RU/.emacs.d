@@ -1,4 +1,3 @@
-
 ;; Enable EDE only in C/C++
 (require 'ede)
 ;(require 'cedet)
@@ -31,7 +30,7 @@
 (global-semantic-idle-scheduler-mode)
 ;(global-semantic-idle-completions-mode)
 (global-semantic-highlight-func-mode)
-(global-semantic-show-unmatched-syntax-mode)
+;(global-semantic-show-unmatched-syntax-mode)
 (global-semantic-tag-folding-mode 1)
 
 (semantic-mode 1)
@@ -60,23 +59,7 @@
   (oset config debug-command "gdb")
   )
 
+;(load-file (concat user-emacs-directory "flycheck-cedet.el"))
+;(require 'flycheck-cedet)
 
-(defun dennis-flycheck-get-ede-includes ()
-  "Check if the current file is part of an EDE project.
-If yes, set up `flycheck-clang-include-path'"
-  (interactive)
-  (make-variable-buffer-local 'flycheck-clang-include-path)
-  (let* ((rel-includes
-          (flycheck-cedet-get-cpp-includes "" (buffer-file-name)))
-         (dirname (when rel-includes
-                    (ede-cpp-root-project-root default-directory))))
-    (when rel-includes
-      (when (string-match "\\(.*\\)/$" dirname)
-        (setq dirname (substring dirname (match-beginning 1) (match-end 1))))
-      (setq incl-paths
-            (mapcar '(lambda (arg) (concat dirname arg))
-                    rel-includes))
-      (setq flycheck-clang-include-path
-            (append flycheck-clang-include-path incl-paths)))))
-
-(add-hook 'c-mode-common-hook 'dennis-flycheck-get-ede-includes)
+;(add-hook 'c-mode-common-hook 'flycheck-setup-from-cedet)

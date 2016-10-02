@@ -155,6 +155,29 @@
           ("__GNUC_VA_LIST")
           ("va_arg" (spp-arg-list ("v" "l") 1530 . 1535) . ((symbol "__builtin_va_arg" 1536 . 1552) (semantic-list "(v,l)" 1552 . 1557)))
           )
+)
+    (semanticdb-table "stdbool.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_STDBOOL_H" variable (:constant-flag t) nil [1055 1065])
+            ("_Bool" variable (:constant-flag t) nil [1229 1234])
+            ("bool" variable (:constant-flag t) nil [1248 1252])
+            ("false" variable (:constant-flag t) nil [1266 1271])
+            ("true" variable (:constant-flag t) nil [1286 1290])
+            ("__bool_true_false_are_defined" variable (:constant-flag t) nil [1383 1412]))          
+      :file "stdbool.h"
+      :pointmax 1439
+      :fsize 1438
+      :lastmodtime '(21660 18848 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("false" . ((symbol "false" 1272 . 1277)))
+          ("bool" . ((BOOL "bool" 1253 . 1257)))
+          ("__bool_true_false_are_defined" . ((number "1" 1413 . 1414)))
+          ("_STDBOOL_H")
+          ("true" . ((symbol "true" 1291 . 1295)))
+          ("_Bool" . ((BOOL "bool" 1235 . 1239)))
+          )
 ))
   :file "!usr!lib!gcc!x86_64-linux-gnu!4.9!include!semantic.cache"
   :semantic-tag-version "2.0"

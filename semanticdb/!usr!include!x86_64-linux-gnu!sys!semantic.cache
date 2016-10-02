@@ -1797,7 +1797,249 @@
           ("__FD_MASK" (spp-arg-list ("d") 1891 . 1894) . ((semantic-list "((__fd_mask) 1 << ((d) % __NFDBITS))" 1895 . 1931)))
           ("FD_SETSIZE" . ((symbol "__FD_SETSIZE" 2405 . 2417)))
           )
-))
+)
+    (semanticdb-table "ucontext.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_SYS_UCONTEXT_H" variable (:constant-flag t) nil [822 837])
+            ("features.h" include (:system-flag t) nil [841 862])
+            ("signal.h" include (:system-flag t) nil [863 882])
+            ("bits/sigcontext.h" include (:system-flag t) nil [983 1011])
+            ("greg_t" variable (:type "long int") nil [1093 1109])
+            ("NGREG" variable (:constant-flag t) nil [1155 1160])
+            ("gregset_t" type
+               (:typedef ("greg_t" type (:type "class") nil nil)
+                :type "typedef")
+                nil [1209 1241])
+            ("" type
+               (:members 
+                  ( ("REG_R8" variable
+                       (:constant-flag t
+                        :default-value (1335 1336)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1326 1337])
+                    ("REG_R9" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1364 1371])
+                    ("REG_R10" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1398 1406])
+                    ("REG_R11" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1434 1442])
+                    ("REG_R12" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1470 1478])
+                    ("REG_R13" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1506 1514])
+                    ("REG_R14" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1542 1550])
+                    ("REG_R15" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1578 1586])
+                    ("REG_RDI" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1614 1622])
+                    ("REG_RSI" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1650 1658])
+                    ("REG_RBP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1686 1694])
+                    ("REG_RBX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1722 1730])
+                    ("REG_RDX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1758 1766])
+                    ("REG_RAX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1794 1802])
+                    ("REG_RCX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1830 1838])
+                    ("REG_RSP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1866 1874])
+                    ("REG_RIP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1902 1910])
+                    ("REG_EFL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1938 1946])
+                    ("REG_CSGSFS" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1974 1985])
+                    ("REG_ERR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2062 2070])
+                    ("REG_TRAPNO" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2098 2109])
+                    ("REG_OLDMASK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2143 2155])
+                    ("REG_CR2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2191 2215]))                  
+                :type "enum")
+                nil [1317 2226])
+            ("_libc_fpxreg" type
+               (:members 
+                  ( ("significand" variable
+                       (:dereference 1
+                        :type "unsigned short int")
+                        (reparse-symbol classsubparts) [2259 2293])
+                    ("exponent" variable (:type "unsigned short int") (reparse-symbol classsubparts) [2296 2324])
+                    ("padding" variable
+                       (:dereference 1
+                        :type "unsigned short int")
+                        (reparse-symbol classsubparts) [2327 2357]))                  
+                :type "struct")
+                nil [2235 2360])
+            ("_libc_xmmreg" type
+               (:members 
+                  ( ("element" variable
+                       (:dereference 1
+                        :type ("__uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2386 2408]))                  
+                :type "struct")
+                nil [2362 2411])
+            ("_libc_fpstate" type
+               (:members 
+                  ( ("cwd" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2469 2485])
+                    ("swd" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2488 2504])
+                    ("ftw" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2507 2523])
+                    ("fop" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2526 2542])
+                    ("rip" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2545 2561])
+                    ("rdp" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2564 2580])
+                    ("mxcsr" variable (:type ("__uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2583 2601])
+                    ("mxcr_mask" variable (:type ("__uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2604 2626])
+                    ("_st" variable
+                       (:dereference 1
+                        :type ("_libc_fpxreg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2629 2656])
+                    ("_xmm" variable
+                       (:dereference 1
+                        :type ("_libc_xmmreg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2659 2688])
+                    ("padding" variable
+                       (:dereference 1
+                        :type ("__uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2691 2715]))                  
+                :type "struct")
+                nil [2413 2718])
+            ("fpregset_t" type
+               (:typedef ("_libc_fpstate" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :pointer 1
+                :type "typedef")
+                nil [2764 2805])
+            ("mcontext_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("gregs" variable (:type ("gregset_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2880 2896])
+                          ("fpregs" variable (:type ("fpregset_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2943 2961])
+                          ("__reserved1" variable
+                             (:dereference 1
+                              :type "unsigned long long")
+                              (reparse-symbol classsubparts) [2980 3015]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [2857 3029])
+            ("ucontext" type
+               (:members 
+                  ( ("uc_flags" variable (:type "unsigned long int") (reparse-symbol classsubparts) [3089 3116])
+                    ("uc_link" variable
+                       (:pointer 1
+                        :type ("ucontext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3121 3146])
+                    ("uc_stack" variable (:type ("stack_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3151 3168])
+                    ("uc_mcontext" variable (:type ("mcontext_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3173 3196])
+                    ("uc_sigmask" variable (:type ("__sigset_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3201 3223])
+                    ("__fpregs_mem" variable (:type ("_libc_fpstate" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3228 3262]))                  
+                :type "struct")
+                nil [3057 3278])
+            ("ucontext_t" type
+               (:typedef ("ucontext" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3057 3278]))          
+      :file "ucontext.h"
+      :pointmax 5386
+      :fsize 5385
+      :lastmodtime '(22228 32503 0 0)
+      :unmatched-syntax '((symbol 2966 . 2979) (spp-macro-def 2208 . 2215) (spp-macro-def 2165 . 2176) (spp-macro-def 2119 . 2129) (spp-macro-def 2080 . 2087) (spp-macro-def 2038 . 2048) (spp-macro-def 1956 . 1963) (spp-macro-def 1920 . 1927) (spp-macro-def 1884 . 1891) (spp-macro-def 1848 . 1855) (spp-macro-def 1812 . 1819) (spp-macro-def 1776 . 1783) (spp-macro-def 1740 . 1747) (spp-macro-def 1704 . 1711) (spp-macro-def 1668 . 1675) (spp-macro-def 1632 . 1639) (spp-macro-def 1596 . 1603) (spp-macro-def 1560 . 1567) (spp-macro-def 1524 . 1531) (spp-macro-def 1488 . 1495) (spp-macro-def 1452 . 1459) (spp-macro-def 1416 . 1423) (spp-macro-def 1381 . 1387) (spp-macro-def 1347 . 1353) (LONG 1088 . 1092) (TYPEDEF 1080 . 1087) (symbol 1066 . 1079))
+      :lexical-table 
+        '(("REG_RDX" . ((symbol "REG_RDX" 1784 . 1791)))
+          ("REG_R8" . ((symbol "REG_R8" 1355 . 1361)))
+          ("REG_R9" . ((symbol "REG_R9" 1389 . 1395)))
+          ("REG_RSI" . ((symbol "REG_RSI" 1676 . 1683)))
+          ("REG_RAX" . ((symbol "REG_RAX" 1820 . 1827)))
+          ("REG_TRAPNO" . ((symbol "REG_TRAPNO" 2130 . 2140)))
+          ("REG_R10" . ((symbol "REG_R10" 1424 . 1431)))
+          ("REG_RBX" . ((symbol "REG_RBX" 1748 . 1755)))
+          ("REG_RIP" . ((symbol "REG_RIP" 1928 . 1935)))
+          ("REG_EFL" . ((symbol "REG_EFL" 1964 . 1971)))
+          ("REG_OLDMASK" . ((symbol "REG_OLDMASK" 2177 . 2188)))
+          ("NGREG" . ((number "23" 1161 . 1163)))
+          ("REG_R11" . ((symbol "REG_R11" 1460 . 1467)))
+          ("REG_R12" . ((symbol "REG_R12" 1496 . 1503)))
+          ("_SYS_UCONTEXT_H" . ((number "1" 838 . 839)))
+          ("REG_R13" . ((symbol "REG_R13" 1532 . 1539)))
+          ("REG_RCX" . ((symbol "REG_RCX" 1856 . 1863)))
+          ("REG_CSGSFS" . ((symbol "REG_CSGSFS" 2049 . 2059)))
+          ("REG_ERR" . ((symbol "REG_ERR" 2088 . 2095)))
+          ("REG_R14" . ((symbol "REG_R14" 1568 . 1575)))
+          ("REG_RDI" . ((symbol "REG_RDI" 1640 . 1647)))
+          ("REG_RSP" . ((symbol "REG_RSP" 1892 . 1899)))
+          ("REG_R15" . ((symbol "REG_R15" 1604 . 1611)))
+          ("REG_RBP" . ((symbol "REG_RBP" 1712 . 1719)))
+          ("REG_CR2" . ((symbol "REG_CR2" 2216 . 2223)))
+          )
+)
+    (semanticdb-table "signal.h"
+      :file "signal.h"
+      :fsize 20
+      :lastmodtime '(22228 32502 0 0)))
   :file "!usr!include!x86_64-linux-gnu!sys!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

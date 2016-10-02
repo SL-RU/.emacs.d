@@ -597,7 +597,59 @@ See `attribute' slot for details on the form of each token in this list."
       :pointmax 5471
       :fsize 5470
       :lastmodtime '(22436 31432 246422 178000)
-      :unmatched-syntax nil))
+      :unmatched-syntax nil)
+    (semanticdb-table "wisent-dot.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("semantic/wisent" include nil nil [1382 1408])
+            ("semantic" include nil nil [1409 1428])
+            ("semantic/ctxt" include nil nil [1429 1453])
+            ("cogre/wisent-dot-wy" include nil nil [1454 1484])
+            ("semantic-tag-components" function
+               (:parent "graphviz-dot-mode"
+                :override-function-flag t
+                :arguments ("tag"))
+                nil [1486 1866])
+            ("wisent-dot-setup-parser" function nil nil [1883 2578])
+            ("add-hook" code nil nil [2595 2654])
+            ("add-hook" code nil nil [2670 2726])
+            ("cogre/wisent-dot" package nil nil [2728 2755]))          
+      :file "wisent-dot.el"
+      :pointmax 2914
+      :fsize 2913
+      :lastmodtime '(22436 31432 246422 178000)
+      :unmatched-syntax nil)
+    (semanticdb-table "wisent-dot-wy.el"
+      :major-mode 'emacs-lisp-mode
+      :tags 
+        '( ("semantic/lex" include nil nil [1083 1106])
+            ("semantic/bovine" include nil nil [1126 1152])
+            ("wisent-dot-wy--keyword-table" variable
+               (:constant-flag t
+                :default-value (semantic-lex-make-keyword-table (quote (("digraph" . DIGRAPH) ("graph" . GRAPH) ("subgraph" . SUBGRAPH) ("node" . NODE))) (quote (("node" summary "node [<attribute>...];") ("subgraph" summary "subgraph <name> { <graph elements> ... }") ("graph" summary "graph <name> { <graph elements> ... }") ("digraph" summary "digraph <name> { <graph elements> ... }")))))
+                nil [1194 1649])
+            ("wisent-dot-wy--token-table" variable
+               (:constant-flag t
+                :default-value (semantic-lex-make-type-table (quote (("number" (number)) ("string" (string)) ("symbol" (symbol)) ("close-paren" (RPAREN . ")") (RBRACKET . "]") (RBRACE . "}")) ("open-paren" (LPAREN . "(") (LBRACKET . "[") (LBRACE . "{")) ("block" (PAREN_BLOCK . "(LPAREN RPAREN)") (BRACE_BLOCK . "(LBRACE RBRACE)") (BRACKET_BLOCK . "(LBRACKET RBRACKET)")) ("punctuation" (COMMA . ",") (SEMI . ";") (EQUAL . "=") (LINK . "--") (DILINK . "->")))) (quote (("number" :declared t) ("string" :declared t) ("symbol" :declared t) ("block" :declared t) ("punctuation" syntax "\\s.+") ("punctuation" :declared t) ("keyword" :declared t)))))
+                nil [1651 2488])
+            ("wisent-dot-wy--parse-table" variable
+               (:constant-flag t
+                :default-value (progn (eval-when-compile (require (quote semantic/wisent/comp))) (wisent-compile-grammar (quote ((DIGRAPH GRAPH SUBGRAPH NODE DILINK LINK EQUAL SEMI COMMA BRACKET_BLOCK BRACE_BLOCK PAREN_BLOCK LBRACE RBRACE LBRACKET RBRACKET LPAREN RPAREN symbol string number) nil (dot_file ((digraph)) ((graph))) (digraph ((DIGRAPH symbol BRACE_BLOCK) (wisent-raw-tag (semantic-tag $2 (quote digraph) :members (semantic-parse-region (car $region3) (cdr $region3) (quote graph-contents) 1))))) (graph ((GRAPH symbol BRACE_BLOCK) (wisent-raw-tag (semantic-tag $2 (quote graph) :members (semantic-parse-region (car $region3) (cdr $region3) (quote graph-contents) 1))))) (graph-contents ((LBRACE) nil) ((RBRACE) nil) ((graph-attributes)) ((subgraph)) ((node)) ((graphgeneric)) ((named-node)) ((links))) (subgraph ((SUBGRAPH symbol BRACE_BLOCK) (wisent-raw-tag (semantic-tag $2 (quote graph) :members (semantic-parse-region (car $region3) (cdr $region3) (quote graph-contents) 1))))) (graphgeneric ((GRAPH BRACKET_BLOCK SEMI) (wisent-raw-tag (semantic-tag "GRAPH" (quote generic-graph) :attributes (semantic-parse-region (car $region2) (cdr $region2) (quote attribute-block) 1))))) (node ((NODE BRACKET_BLOCK SEMI) (wisent-raw-tag (semantic-tag "NODE" (quote generic-node) :attributes (semantic-parse-region (car $region2) (cdr $region2) (quote attribute-block) 1))))) (graph-attributes ((GRAPH BRACKET_BLOCK SEMI) (wisent-raw-tag (semantic-tag "GRAPH" (quote graph-attributes) :attributes (semantic-parse-region (car $region2) (cdr $region2) (quote attribute-block) 1))))) (named-node ((name BRACKET_BLOCK SEMI) (wisent-raw-tag (semantic-tag $1 (quote node) :attributes (semantic-parse-region (car $region2) (cdr $region2) (quote attribute-block) 1))))) (links ((name DILINK name opt-link-attributes opt-semi) (wisent-raw-tag (semantic-tag $1 (quote link) :to $3 :attributes $4))) ((name LINK name opt-link-attributes opt-semi) (wisent-raw-tag (semantic-tag $1 (quote link) :to $3 :attributes $4)))) (name ((symbol) (identity $1)) ((string) (read $1))) (attribute-block ((LBRACKET) nil) ((RBRACKET) nil) ((COMMA) nil) ((symbol EQUAL name) (wisent-raw-tag (semantic-tag $1 (quote attribute) :value $3)))) (opt-semi ((SEMI) nil) (nil)) (opt-link-attributes ((BRACKET_BLOCK) (semantic-parse-region (car $region1) (cdr $region1) (quote attribute-block) 1)) (nil)))) (quote (dot_file graph-contents attribute-block)))))
+                nil [2490 5136])
+            ("wisent-dot-wy--install-parser" function nil nil [5138 5742])
+            ("define-lex-string-type-analyzer" code nil nil [5763 6004])
+            ("define-lex-block-type-analyzer" code nil nil [6006 6283])
+            ("define-lex-regex-type-analyzer" code nil nil [6285 6437])
+            ("define-lex-regex-type-analyzer" code nil nil [6439 6601])
+            ("define-lex-sexp-type-analyzer" code nil nil [6603 6731])
+            ("define-lex-keyword-type-analyzer" code nil nil [6733 6875])
+            ("wisent-dot-lexer" function (:lexical-analyzer-flag t) nil [6895 7432])
+            ("cogre/wisent-dot-wy" package nil nil [7434 7464]))          
+      :file "wisent-dot-wy.el"
+      :pointmax 7497
+      :fsize 7496
+      :lastmodtime '(22436 31505 230423 979000)
+      :unmatched-syntax '((close-paren 1152 . 1153) (symbol 1108 . 1125) (open-paren 1107 . 1108))))
   :file "!home!lyra!.emacs.d!cedet!lisp!cedet!cogre!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

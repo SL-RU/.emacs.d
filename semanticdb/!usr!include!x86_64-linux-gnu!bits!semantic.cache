@@ -31,7 +31,7 @@
       :file "sys_errlist.h"
       :pointmax 1215
       :fsize 1214
-      :lastmodtime '(22228 32505 0 0)
+      :lastmodtime '(22477 2806 0 0)
       :unmatched-syntax '((string 891 . 960) (symbol 885 . 890) (punctuation 883 . 884)))
     (semanticdb-table "stdio_lim.h"
       :major-mode 'c-mode
@@ -39,7 +39,7 @@
       :file "stdio_lim.h"
       :pointmax 1355
       :fsize 1354
-      :lastmodtime '(22228 32504 0 0)
+      :lastmodtime '(22477 2805 0 0)
       :unmatched-syntax '((string 876 . 943) (symbol 870 . 875) (punctuation 868 . 869)))
     (semanticdb-table "types.h"
       :major-mode 'c-mode
@@ -150,7 +150,7 @@
       :file "types.h"
       :pointmax 7564
       :fsize 7563
-      :lastmodtime '(22228 32509 0 0)
+      :lastmodtime '(22477 2811 0 0)
       :unmatched-syntax '((symbol 7482 . 7492) (symbol 7404 . 7414) (symbol 7050 . 7060) (symbol 6951 . 6961) (symbol 6828 . 6838) (symbol 6788 . 6798) (symbol 6691 . 6701) (symbol 6648 . 6658) (symbol 6560 . 6570) (symbol 6517 . 6527) (symbol 6432 . 6442) (symbol 6393 . 6403) (symbol 6254 . 6264) (symbol 6179 . 6189) (symbol 6093 . 6103) (symbol 5981 . 5991) (symbol 5909 . 5919) (symbol 5826 . 5836) (symbol 5753 . 5763) (symbol 5686 . 5696) (symbol 5625 . 5635) (symbol 5542 . 5552) (symbol 5469 . 5479) (symbol 5399 . 5409) (symbol 5332 . 5342) (symbol 5259 . 5269) (symbol 5177 . 5187) (symbol 5105 . 5115) (symbol 5035 . 5045) (symbol 4960 . 4970) (symbol 4883 . 4893) (symbol 4814 . 4824) (symbol 4743 . 4753) (symbol 4673 . 4683) (symbol 4609 . 4619) (symbol 4532 . 4537) (punctuation 4530 . 4531) (LONG 1886 . 1890) (UNSIGNED 1877 . 1885) (TYPEDEF 1869 . 1876) (symbol 1855 . 1868) (LONG 1831 . 1835) (TYPEDEF 1823 . 1830) (symbol 1809 . 1822) (LONG 1652 . 1656) (UNSIGNED 1643 . 1651) (TYPEDEF 1635 . 1642) (symbol 1621 . 1634) (LONG 1596 . 1600) (SIGNED 1589 . 1595) (TYPEDEF 1581 . 1588) (symbol 1567 . 1580))
       :lexical-table 
         '(("__U32_TYPE" . ((UNSIGNED "unsigned" 3598 . 3606) (INT "int" 3607 . 3610)))
@@ -173,7 +173,7 @@
       :file "wordsize.h"
       :pointmax 328
       :fsize 327
-      :lastmodtime '(22228 32503 0 0)
+      :lastmodtime '(22477 2804 0 0)
       :unmatched-syntax nil
       :lexical-table 
         '(("__WORDSIZE_TIME64_COMPAT32" . ((number "1" 222 . 223)))
@@ -224,7 +224,7 @@
       :file "typesizes.h"
       :pointmax 3231
       :fsize 3230
-      :lastmodtime '(22228 32509 0 0)
+      :lastmodtime '(22477 2811 0 0)
       :unmatched-syntax '((string 892 . 963) (symbol 886 . 891) (punctuation 884 . 885))
       :lexical-table 
         '(("__RLIM64_T_TYPE" . ((symbol "__UQUAD_TYPE" 2050 . 2062)))
@@ -276,7 +276,7 @@
       :file "wchar.h"
       :pointmax 1906
       :fsize 1905
-      :lastmodtime '(22228 32507 0 0)
+      :lastmodtime '(22477 2809 0 0)
       :unmatched-syntax nil
       :lexical-table 
         '(("_BITS_WCHAR_H" . ((number "1" 871 . 872)))
@@ -290,7 +290,7 @@
       :file "stdlib-float.h"
       :pointmax 1157
       :fsize 1156
-      :lastmodtime '(22228 32503 0 0)
+      :lastmodtime '(22477 2804 0 0)
       :unmatched-syntax '((string 865 . 936) (symbol 859 . 864) (punctuation 857 . 858)))
     (semanticdb-table "waitstatus.h"
       :major-mode 'c-mode
@@ -368,7 +368,7 @@
       :file "waitstatus.h"
       :pointmax 3553
       :fsize 3552
-      :lastmodtime '(22228 32510 0 0)
+      :lastmodtime '(22477 2811 0 0)
       :unmatched-syntax '((punctuation 3115 . 3116) (number 3113 . 3115) (punctuation 3112 . 3113) (INT 3109 . 3112) (UNSIGNED 3100 . 3108) (punctuation 3030 . 3031) (number 3028 . 3030) (punctuation 3027 . 3028) (INT 3024 . 3027) (UNSIGNED 3015 . 3023) (punctuation 2700 . 2701) (number 2698 . 2700) (punctuation 2697 . 2698) (INT 2694 . 2697) (UNSIGNED 2685 . 2693) (punctuation 2615 . 2616) (number 2613 . 2615) (punctuation 2612 . 2613) (INT 2609 . 2612) (UNSIGNED 2600 . 2608) (string 893 . 964) (symbol 887 . 892) (punctuation 885 . 886))
       :lexical-table 
         '(("__WTERMSIG" (spp-arg-list ("status") 1226 . 1234) . ((semantic-list "((status) & 0x7f)" 1235 . 1252)))
@@ -429,7 +429,7 @@
       :file "waitflags.h"
       :pointmax 2163
       :fsize 2162
-      :lastmodtime '(22228 32510 0 0)
+      :lastmodtime '(22477 2811 0 0)
       :unmatched-syntax '((string 894 . 964) (symbol 888 . 893) (punctuation 886 . 887))
       :lexical-table 
         '(("WCONTINUED" . ((number "8" 1311 . 1312)))
@@ -450,7 +450,7 @@
       :file "errno.h"
       :pointmax 2146
       :fsize 2145
-      :lastmodtime '(22228 32503 0 0)
+      :lastmodtime '(22477 2804 0 0)
       :unmatched-syntax nil)
     (semanticdb-table "stat.h"
       :major-mode 'c-mode
@@ -550,7 +550,7 @@
       :file "stat.h"
       :pointmax 7674
       :fsize 7673
-      :lastmodtime '(22228 32510 0 0)
+      :lastmodtime '(22477 2812 0 0)
       :unmatched-syntax '((string 844 . 909) (symbol 838 . 843) (punctuation 836 . 837))
       :lexical-table 
         '(("__S_ISUID" . ((number "04000" 7239 . 7244)))
@@ -802,7 +802,7 @@
       :file "pthreadtypes.h"
       :pointmax 6368
       :fsize 6367
-      :lastmodtime '(22228 32509 0 0)
+      :lastmodtime '(22477 2811 0 0)
       :unmatched-syntax '((LONG 4161 . 4165) (symbol 4147 . 4160) (LONG 3984 . 3988) (UNSIGNED 3975 . 3983) (symbol 3961 . 3974) (LONG 3929 . 3933) (UNSIGNED 3920 . 3928) (symbol 3906 . 3919) (LONG 3875 . 3879) (UNSIGNED 3866 . 3874) (symbol 3852 . 3865))
       :lexical-table 
         '(("__SIZEOF_PTHREAD_MUTEX_T" . ((number "32" 1355 . 1357)))
@@ -828,7 +828,7 @@
       :file "endian.h"
       :pointmax 177
       :fsize 176
-      :lastmodtime '(22228 32506 0 0)
+      :lastmodtime '(22477 2808 0 0)
       :unmatched-syntax '((string 66 . 131) (symbol 60 . 65) (punctuation 58 . 59))
       :lexical-table 
         '(("__BYTE_ORDER" . ((symbol "__LITTLE_ENDIAN" 161 . 176)))
@@ -865,7 +865,7 @@
       :file "time.h"
       :pointmax 3315
       :fsize 3314
-      :lastmodtime '(22228 32508 0 0)
+      :lastmodtime '(22477 2809 0 0)
       :unmatched-syntax nil
       :lexical-table 
         '(("CLOCKS_PER_SEC" . ((number "1000000l" 1666 . 1674)))
@@ -885,7 +885,7 @@
       :file "select.h"
       :pointmax 2106
       :fsize 2105
-      :lastmodtime '(22228 32512 0 0)
+      :lastmodtime '(22477 2814 0 0)
       :unmatched-syntax '((string 820 . 889) (symbol 814 . 819) (punctuation 812 . 813))
       :lexical-table 
         '(("__FD_ZERO_STOS" . ((string "\"stosl\"" 1053 . 1060)))
@@ -927,7 +927,7 @@
       :file "sigset.h"
       :pointmax 4554
       :fsize 4553
-      :lastmodtime '(22228 32502 0 0)
+      :lastmodtime '(22477 2804 0 0)
       :unmatched-syntax nil
       :lexical-table 
         '(("_SIGSET_NWORDS" . ((semantic-list "(1024 / (8 * sizeof (unsigned long int)))" 1015 . 1056)))
@@ -949,7 +949,7 @@
       :file "byteswap.h"
       :pointmax 5665
       :fsize 5664
-      :lastmodtime '(22228 32507 0 0)
+      :lastmodtime '(22477 2808 0 0)
       :unmatched-syntax '((close-paren 5625 . 5626) (punctuation 5623 . 5624) (semantic-list #("((((x) & 0xff00000000000000ull) >> 56)				      \\
       | (((x) & 0x00ff000000000000ull) >> 40)				      \\
       | (((x) & 0x0000ff0000000000ull) >> 24)				      \\
@@ -1055,8 +1055,8 @@
       :file "timex.h"
       :pointmax 4470
       :fsize 4469
-      :lastmodtime '(22228 32508 0 0)
-      :unmatched-syntax '((punctuation 2208 . 2209) (number 2206 . 2208) (punctuation 2205 . 2206) (INT 2200 . 2203) (punctuation 2198 . 2199) (number 2196 . 2198) (punctuation 2195 . 2196) (INT 2190 . 2193) (punctuation 2188 . 2189) (number 2186 . 2188) (punctuation 2185 . 2186) (INT 2180 . 2183) (punctuation 2176 . 2177) (number 2174 . 2176) (punctuation 2173 . 2174) (INT 2168 . 2171) (punctuation 2166 . 2167) (number 2164 . 2166) (punctuation 2163 . 2164) (INT 2158 . 2161) (punctuation 2156 . 2157) (number 2154 . 2156) (punctuation 2153 . 2154) (INT 2148 . 2151) (punctuation 2146 . 2147) (number 2144 . 2146) (punctuation 2143 . 2144) (INT 2138 . 2141) (punctuation 2134 . 2135) (number 2132 . 2134) (punctuation 2131 . 2132) (INT 2126 . 2129) (punctuation 2124 . 2125) (number 2122 . 2124) (punctuation 2121 . 2122) (INT 2116 . 2119) (punctuation 2114 . 2115) (number 2112 . 2114) (punctuation 2111 . 2112) (INT 2106 . 2109) (punctuation 2104 . 2105) (number 2102 . 2104) (punctuation 2101 . 2102) (INT 2096 . 2099))
+      :lastmodtime '(22477 2809 0 0)
+      :unmatched-syntax '((thing 2208 . 2209) (thing 2206 . 2208) (thing 2205 . 2206) (thing 2200 . 2203) (thing 2198 . 2199) (thing 2196 . 2198) (thing 2195 . 2196) (thing 2190 . 2193) (thing 2188 . 2189) (thing 2186 . 2188) (thing 2185 . 2186) (thing 2180 . 2183) (thing 2176 . 2177) (thing 2174 . 2176) (thing 2173 . 2174) (thing 2168 . 2171) (thing 2166 . 2167) (thing 2164 . 2166) (thing 2163 . 2164) (thing 2158 . 2161) (thing 2156 . 2157) (thing 2154 . 2156) (thing 2153 . 2154) (thing 2148 . 2151) (thing 2146 . 2147) (thing 2144 . 2146) (thing 2143 . 2144) (thing 2138 . 2141) (thing 2134 . 2135) (thing 2132 . 2134) (thing 2131 . 2132) (thing 2126 . 2129) (thing 2124 . 2125) (thing 2122 . 2124) (thing 2121 . 2122) (thing 2116 . 2119) (thing 2114 . 2115) (thing 2112 . 2114) (thing 2111 . 2112) (thing 2106 . 2109) (thing 2104 . 2105) (thing 2102 . 2104) (thing 2101 . 2102) (thing 2096 . 2099))
       :lexical-table 
         '(("MOD_CLKB" . ((symbol "ADJ_TICK" 3138 . 3146)))
           ("STA_PPSJITTER" . ((number "0x0200" 3861 . 3867)))
@@ -1109,7 +1109,7 @@
       :file "byteswap-16.h"
       :pointmax 1732
       :fsize 1731
-      :lastmodtime '(22228 32507 0 0)
+      :lastmodtime '(22477 2808 0 0)
       :unmatched-syntax '((string 886 . 958) (symbol 880 . 885) (punctuation 878 . 879))
       :lexical-table 
         '(("__bswap_16" (spp-arg-list ("x") 1022 . 1025) . ((semantic-list "(__extension__							      \\
@@ -1628,7 +1628,7 @@
       :file "mathcalls.h"
       :pointmax 11709
       :fsize 11708
-      :lastmodtime '(22228 32500 0 0)
+      :lastmodtime '(22477 2802 0 0)
       :unmatched-syntax '((semantic-list 11669 . 11699) (semantic-list 11487 . 11506) (semantic-list 11221 . 11266) (semantic-list 11084 . 11103) (semantic-list 10964 . 10983) (semantic-list 10884 . 10895) (semantic-list 10852 . 10882) (semantic-list 10767 . 10778) (semantic-list 10735 . 10765) (semantic-list 10631 . 10661) (semantic-list 10541 . 10556) (semantic-list 10473 . 10488) (semantic-list 10340 . 10355) (semantic-list 10273 . 10288) (semantic-list 10082 . 10124) (semantic-list 9869 . 9880) (semantic-list 9852 . 9867) (semantic-list 9714 . 9725) (semantic-list 9697 . 9712) (semantic-list 9573 . 9588) (semantic-list 9385 . 9414) (semantic-list 9273 . 9288) (semantic-list 9150 . 9174) (semantic-list 9003 . 9033) (semantic-list 8878 . 8889) (semantic-list 8844 . 8876) (semantic-list 8752 . 8763) (semantic-list 8720 . 8750) (semantic-list 8618 . 8633) (semantic-list 8369 . 8397) (semantic-list 8133 . 8144) (semantic-list 7989 . 8000) (semantic-list 7856 . 7867) (semantic-list 7821 . 7832) (semantic-list 7788 . 7799) (semantic-list 7616 . 7632) (semantic-list 7585 . 7596) (semantic-list 7554 . 7565) (semantic-list 7518 . 7534) (semantic-list 7487 . 7498) (semantic-list 7456 . 7467) (semantic-list 7363 . 7382) (semantic-list 7192 . 7211) (semantic-list 7073 . 7084) (semantic-list 7051 . 7071) (semantic-list 6894 . 6905) (semantic-list 6862 . 6892) (semantic-list 6678 . 6693) (semantic-list 6546 . 6576) (semantic-list 6440 . 6459) (semantic-list 6308 . 6327) (semantic-list 6098 . 6117) (semantic-list 5964 . 5983) (semantic-list 5809 . 5839) (semantic-list 5728 . 5739) (semantic-list 5711 . 5726) (semantic-list 5632 . 5643) (semantic-list 5615 . 5630) (semantic-list 5552 . 5563) (semantic-list 5535 . 5550) (semantic-list 5329 . 5344) (semantic-list 5114 . 5144) (semantic-list 4927 . 4942) (semantic-list 4838 . 4868) (semantic-list 4691 . 4706) (semantic-list 4615 . 4630) (semantic-list 4468 . 4483) (semantic-list 4374 . 4389) (semantic-list 4309 . 4324) (semantic-list 4136 . 4151) (semantic-list 4059 . 4074) (semantic-list 3871 . 3905) (semantic-list 3778 . 3793) (semantic-list 3707 . 3722) (semantic-list 3623 . 3654) (semantic-list 3528 . 3560) (semantic-list 3415 . 3430) (semantic-list 3245 . 3260) (semantic-list 3171 . 3186) (semantic-list 3100 . 3115) (semantic-list 2880 . 2933) (semantic-list 2761 . 2776) (semantic-list 2692 . 2707) (semantic-list 2626 . 2641) (semantic-list 2527 . 2542) (semantic-list 2470 . 2485) (semantic-list 2416 . 2431) (semantic-list 2344 . 2374) (semantic-list 2279 . 2294) (semantic-list 2217 . 2232) (semantic-list 2158 . 2173) (string 1977 . 2047) (symbol 1971 . 1976) (punctuation 1969 . 1970)))
     (semanticdb-table "mathdef.h"
       :major-mode 'c-mode
@@ -1636,7 +1636,7 @@
       :file "mathdef.h"
       :pointmax 2181
       :fsize 2180
-      :lastmodtime '(22228 32500 0 0)
+      :lastmodtime '(22477 2802 0 0)
       :unmatched-syntax '((string 842 . 905) (symbol 836 . 841) (punctuation 834 . 835)))
     (semanticdb-table "nan.h"
       :major-mode 'c-mode
@@ -1645,7 +1645,7 @@
       :file "nan.h"
       :pointmax 1568
       :fsize 1567
-      :lastmodtime '(22228 32500 0 0)
+      :lastmodtime '(22477 2802 0 0)
       :unmatched-syntax '((string 855 . 915) (symbol 849 . 854) (punctuation 847 . 848))
       :lexical-table 
         '(("NAN" . ((semantic-list "(__extension__							      \\
@@ -1660,7 +1660,7 @@
       :file "inf.h"
       :pointmax 1062
       :fsize 1061
-      :lastmodtime '(22228 32500 0 0)
+      :lastmodtime '(22477 2802 0 0)
       :unmatched-syntax '((string 860 . 920) (symbol 854 . 859) (punctuation 852 . 853))
       :lexical-table 
         '(("INFINITY" . ((symbol "HUGE_VALF" 1045 . 1054)))
@@ -1675,7 +1675,7 @@
       :file "huge_vall.h"
       :pointmax 1575
       :fsize 1574
-      :lastmodtime '(22228 32500 0 0)
+      :lastmodtime '(22477 2802 0 0)
       :unmatched-syntax '((string 930 . 996) (symbol 924 . 929) (punctuation 922 . 923))
       :lexical-table 
         '(("__huge_vall_t" . ((UNION "union" 1251 . 1256) (semantic-list "{ unsigned char __c[12]; long double __ld; }" 1257 . 1301)))
@@ -1691,7 +1691,7 @@
       :file "huge_valf.h"
       :pointmax 1801
       :fsize 1800
-      :lastmodtime '(22228 32500 0 0)
+      :lastmodtime '(22477 2802 0 0)
       :unmatched-syntax '((string 943 . 1009) (symbol 937 . 942) (punctuation 935 . 936))
       :lexical-table 
         '(("HUGE_VALF" . ((semantic-list "(__extension__							      \\
@@ -1706,14 +1706,360 @@
       :file "huge_val.h"
       :pointmax 1841
       :fsize 1840
-      :lastmodtime '(22228 32500 0 0)
+      :lastmodtime '(22477 2802 0 0)
       :unmatched-syntax '((string 942 . 1007) (symbol 936 . 941) (punctuation 934 . 935))
       :lexical-table 
         '(("HUGE_VAL" . ((semantic-list "(__extension__							      \\
    ((union { unsigned __l __attribute__((__mode__(__DI__))); double __d; })   \\
     { __l: 0x7ff0000000000000ULL }).__d)" 1262 . 1411)))
           )
-))
+)
+    (semanticdb-table "sigthread.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_BITS_SIGTHREAD_H" variable (:constant-flag t) nil [902 919])
+            ("pthread_sigmask" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("__how" variable (:type "int") (reparse-symbol arg-sub-list) [1229 1239])
+                    ("__newmask" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("__sigset_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1247 1286])
+                    ("__oldmask" variable
+                       (:pointer 1
+                        :type ("__sigset_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1294 1327]))                  
+                :type "int")
+                nil [1201 1335])
+            ("pthread_kill" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("__threadid" variable (:type ("pthread_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1407 1428])
+                    ("__signo" variable (:type "int") (reparse-symbol arg-sub-list) [1429 1441]))                  
+                :type "int")
+                nil [1382 1450])
+            ("pthread_sigqueue" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("__threadid" variable (:type ("pthread_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1540 1561])
+                    ("__signo" variable (:type "int") (reparse-symbol arg-sub-list) [1562 1574])
+                    ("__value" variable
+                       (:constant-flag t
+                        :type ("sigval" type (:type "union") nil nil))
+                        (reparse-symbol arg-sub-list) [1583 1610]))                  
+                :type "int")
+                nil [1511 1619]))          
+      :file "sigthread.h"
+      :pointmax 1658
+      :fsize 1657
+      :lastmodtime '(22477 2804 0 0)
+      :unmatched-syntax '((string 977 . 1037) (symbol 971 . 976) (punctuation 969 . 970))
+      :lexical-table 
+        '(("_BITS_SIGTHREAD_H" . ((number "1" 920 . 921)))
+          )
+)
+    (semanticdb-table "sigstack.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sigstack" type
+               (:members 
+                  ( ("ss_sp" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1002 1014])
+                    ("ss_onstack" variable (:type "int") (reparse-symbol classsubparts) [1049 1064]))                  
+                :type "struct")
+                nil [978 1113])
+            ("" type
+               (:members 
+                  ( ("SS_ONSTACK" variable
+                       (:constant-flag t
+                        :default-value (1178 1179)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1165 1180])
+                    ("SS_DISABLE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1213 1242]))                  
+                :type "enum")
+                nil [1156 1256])
+            ("MINSIGSTKSZ" variable (:constant-flag t) nil [1314 1325])
+            ("SIGSTKSZ" variable (:constant-flag t) nil [1374 1382])
+            ("sigaltstack" type
+               (:members 
+                  ( ("ss_sp" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1464 1476])
+                    ("ss_flags" variable (:type "int") (reparse-symbol classsubparts) [1481 1494])
+                    ("ss_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1499 1514]))                  
+                :type "struct")
+                nil [1429 1527])
+            ("stack_t" type
+               (:typedef ("sigaltstack" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1429 1527]))          
+      :file "sigstack.h"
+      :pointmax 1528
+      :fsize 1527
+      :lastmodtime '(22477 2804 0 0)
+      :unmatched-syntax '((spp-macro-def 1232 . 1242) (spp-macro-def 1189 . 1199) (string 854 . 913) (symbol 848 . 853) (punctuation 846 . 847))
+      :lexical-table 
+        '(("SS_DISABLE" . ((symbol "SS_DISABLE" 1243 . 1253)))
+          ("SIGSTKSZ" . ((number "8192" 1383 . 1387)))
+          ("SS_ONSTACK" . ((symbol "SS_ONSTACK" 1200 . 1210)))
+          ("MINSIGSTKSZ" . ((number "2048" 1326 . 1330)))
+          )
+)
+    (semanticdb-table "sigcontext.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_BITS_SIGCONTEXT_H" variable (:constant-flag t) nil [825 843])
+            ("FP_XSTATE_MAGIC1" variable (:constant-flag t) nil [993 1009])
+            ("FP_XSTATE_MAGIC2" variable (:constant-flag t) nil [1030 1046])
+            ("FP_XSTATE_MAGIC2_SIZE" variable (:constant-flag t) nil [1067 1088])
+            ("_fpx_sw_bytes" type
+               (:members 
+                  ( ("magic1" variable (:type ("__uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1140 1158])
+                    ("extended_size" variable (:type ("__uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1161 1186])
+                    ("xstate_bv" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1189 1210])
+                    ("xstate_size" variable (:type ("__uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1213 1236])
+                    ("padding" variable
+                       (:dereference 1
+                        :type ("__uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1239 1261]))                  
+                :type "struct")
+                nil [1115 1264])
+            ("_fpreg" type
+               (:members 
+                  ( ("significand" variable
+                       (:dereference 1
+                        :type "unsigned short")
+                        (reparse-symbol classsubparts) [1284 1314])
+                    ("exponent" variable (:type "unsigned short") (reparse-symbol classsubparts) [1317 1341]))                  
+                :type "struct")
+                nil [1266 1344])
+            ("_fpxreg" type
+               (:members 
+                  ( ("significand" variable
+                       (:dereference 1
+                        :type "unsigned short")
+                        (reparse-symbol classsubparts) [1365 1395])
+                    ("exponent" variable (:type "unsigned short") (reparse-symbol classsubparts) [1398 1422])
+                    ("padding" variable
+                       (:dereference 1
+                        :type "unsigned short")
+                        (reparse-symbol classsubparts) [1425 1451]))                  
+                :type "struct")
+                nil [1346 1454])
+            ("_xmmreg" type
+               (:members 
+                  ( ("element" variable
+                       (:dereference 1
+                        :type ("__uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1475 1497]))                  
+                :type "struct")
+                nil [1456 1500])
+            ("_fpstate" type
+               (:members 
+                  ( ("cwd" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2967 2983])
+                    ("swd" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2986 3002])
+                    ("ftw" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3005 3021])
+                    ("fop" variable (:type ("__uint16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3024 3040])
+                    ("rip" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3043 3059])
+                    ("rdp" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3062 3078])
+                    ("mxcsr" variable (:type ("__uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3081 3099])
+                    ("mxcr_mask" variable (:type ("__uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3102 3124])
+                    ("_st" variable
+                       (:dereference 1
+                        :type ("_fpxreg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3127 3149])
+                    ("_xmm" variable
+                       (:dereference 1
+                        :type ("_xmmreg" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3152 3176])
+                    ("padding" variable
+                       (:dereference 1
+                        :type ("__uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3179 3203]))                  
+                :type "struct")
+                nil [2887 3206])
+            ("sigcontext" type
+               (:members 
+                  ( ("r8" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3230 3244])
+                    ("r9" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3247 3261])
+                    ("r10" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3264 3279])
+                    ("r11" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3282 3297])
+                    ("r12" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3300 3315])
+                    ("r13" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3318 3333])
+                    ("r14" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3336 3351])
+                    ("r15" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3354 3369])
+                    ("rdi" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3372 3387])
+                    ("rsi" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3390 3405])
+                    ("rbp" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3408 3423])
+                    ("rbx" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3426 3441])
+                    ("rdx" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3444 3459])
+                    ("rax" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3462 3477])
+                    ("rcx" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3480 3495])
+                    ("rsp" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3498 3513])
+                    ("rip" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3516 3531])
+                    ("eflags" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3534 3552])
+                    ("cs" variable (:type "unsigned short") (reparse-symbol classsubparts) [3555 3573])
+                    ("gs" variable (:type "unsigned short") (reparse-symbol classsubparts) [3576 3594])
+                    ("fs" variable (:type "unsigned short") (reparse-symbol classsubparts) [3597 3615])
+                    ("__pad0" variable (:type "unsigned short") (reparse-symbol classsubparts) [3618 3640])
+                    ("err" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3643 3658])
+                    ("trapno" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3661 3679])
+                    ("oldmask" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3682 3701])
+                    ("cr2" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3704 3719])
+                    ("" type
+                       (:members 
+                          ( ("fpstate" variable
+                               (:pointer 1
+                                :type ("_fpstate" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [3754 3780])
+                            ("__fpstate_word" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3787 3813]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [3736 3820])
+                    ("__reserved1" variable
+                       (:dereference 1
+                        :type ("__uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3823 3850]))                  
+                :type "struct")
+                nil [3208 3853])
+            ("_xsave_hdr" type
+               (:members 
+                  ( ("xstate_bv" variable (:type ("__uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3902 3923])
+                    ("reserved1" variable
+                       (:dereference 1
+                        :type ("__uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3926 3950])
+                    ("reserved2" variable
+                       (:dereference 1
+                        :type ("__uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3953 3977]))                  
+                :type "struct")
+                nil [3880 3980])
+            ("_ymmh_state" type
+               (:members 
+                  ( ("ymmh_space" variable
+                       (:dereference 1
+                        :type ("__uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4005 4031]))                  
+                :type "struct")
+                nil [3982 4034])
+            ("_xstate" type
+               (:members 
+                  ( ("fpstate" variable (:type ("_fpstate" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4055 4079])
+                    ("xstate_hdr" variable (:type ("_xsave_hdr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4082 4111])
+                    ("ymmh" variable (:type ("_ymmh_state" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4114 4138]))                  
+                :type "struct")
+                nil [4036 4141]))          
+      :file "sigcontext.h"
+      :pointmax 4175
+      :fsize 4174
+      :lastmodtime '(22477 2804 0 0)
+      :unmatched-syntax '((symbol 3722 . 3735) (string 907 . 976) (symbol 901 . 906) (punctuation 899 . 900))
+      :lexical-table 
+        '(("FP_XSTATE_MAGIC2_SIZE" . ((SIZEOF "sizeof" 1089 . 1095) (semantic-list "(FP_XSTATE_MAGIC2)" 1095 . 1113)))
+          ("_BITS_SIGCONTEXT_H" . ((number "1" 845 . 846)))
+          ("FP_XSTATE_MAGIC1" . ((symbol "0x46505853U" 1010 . 1021)))
+          ("FP_XSTATE_MAGIC2" . ((symbol "0x46505845U" 1047 . 1058)))
+          )
+)
+    (semanticdb-table "sigaction.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("sigaction" type
+               (:members 
+                  ( ("sa_handler" variable (:type ("__sighandler_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1408 1434])
+                    ("sa_mask" variable (:type ("__sigset_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1499 1518])
+                    ("sa_flags" variable (:type "int") (reparse-symbol classsubparts) [1550 1563])
+                    ("sa_restorer" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1618 1623]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1597 1624]))                  
+                :type "struct")
+                nil [1016 1629])
+            ("SA_NOCLDSTOP" variable (:constant-flag t) nil [1666 1678])
+            ("SA_NOCLDWAIT" variable (:constant-flag t) nil [1738 1750])
+            ("SA_SIGINFO" variable (:constant-flag t) nil [1807 1817])
+            ("SA_ONSTACK" variable (:constant-flag t) nil [1965 1975])
+            ("SA_RESTART" variable (:constant-flag t) nil [2125 2135])
+            ("SA_NODEFER" variable (:constant-flag t) nil [2199 2209])
+            ("SA_RESETHAND" variable (:constant-flag t) nil [2320 2332])
+            ("SA_INTERRUPT" variable (:constant-flag t) nil [2423 2435])
+            ("SA_NOMASK" variable (:constant-flag t) nil [2525 2534])
+            ("SA_ONESHOT" variable (:constant-flag t) nil [2558 2568])
+            ("SA_STACK" variable (:constant-flag t) nil [2593 2601])
+            ("SIG_BLOCK" variable (:constant-flag t) nil [2686 2695])
+            ("SIG_UNBLOCK" variable (:constant-flag t) nil [2734 2745])
+            ("SIG_SETMASK" variable (:constant-flag t) nil [2784 2795]))          
+      :file "sigaction.h"
+      :pointmax 2841
+      :fsize 2840
+      :lastmodtime '(22477 2804 0 0)
+      :unmatched-syntax '((string 865 . 933) (symbol 859 . 864) (punctuation 857 . 858))
+      :lexical-table 
+        '(("SA_ONSTACK" . ((number "0x08000000" 1978 . 1988)))
+          ("SA_ONESHOT" . ((symbol "SA_RESETHAND" 2571 . 2583)))
+          ("SIG_SETMASK" . ((number "2" 2798 . 2799)))
+          ("SA_NOCLDSTOP" . ((number "1" 1680 . 1681)))
+          ("SA_RESTART" . ((number "0x10000000" 2138 . 2148)))
+          ("SIG_UNBLOCK" . ((number "1" 2748 . 2749)))
+          ("SA_NOCLDWAIT" . ((number "2" 1752 . 1753)))
+          ("SA_SIGINFO" . ((number "4" 1821 . 1822)))
+          ("SA_INTERRUPT" . ((number "0x20000000" 2436 . 2446)))
+          ("SIG_BLOCK" . ((number "0" 2700 . 2701)))
+          ("SA_NODEFER" . ((number "0x40000000" 2212 . 2222)))
+          ("SA_RESETHAND" . ((number "0x80000000" 2333 . 2343)))
+          ("SA_STACK" . ((symbol "SA_ONSTACK" 2606 . 2616)))
+          ("SA_NOMASK" . ((symbol "SA_NODEFER" 2538 . 2548)))
+          )
+)
+    (semanticdb-table "siginfo.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("bits/wordsize.h" include (:system-flag t) nil [1015 1041]))          
+      :file "siginfo.h"
+      :pointmax 10383
+      :fsize 10382
+      :lastmodtime '(22477 2804 0 0)
+      :unmatched-syntax '((string 947 . 1006) (symbol 941 . 946) (punctuation 939 . 940) (symbol 921 . 938) (symbol 913 . 920) (punctuation 912 . 913) (punctuation 910 . 911) (punctuation 909 . 910)))
+    (semanticdb-table "signum.h"
+      :major-mode 'c-mode
+      :tags nil
+      :file "signum.h"
+      :pointmax 3398
+      :fsize 3397
+      :lastmodtime '(22477 2804 0 0)
+      :unmatched-syntax nil))
   :file "!usr!include!x86_64-linux-gnu!bits!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")
