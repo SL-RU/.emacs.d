@@ -30,6 +30,36 @@
   (local-set-key "\C-c\C-j" 'semantic-ia-fast-jump)
   (local-set-key "\C-c\C-s" 'semantic-ia-show-summary))
 
+(defun moo-doxygen ()
+  "Generate a doxygen yasnippet and expand it with `aya-expand'.
+The point should be on the top-level function name."
+  (interactive)
+  (move-beginning-of-line nil)
+  (let ((tag (semantic-current-tag)))
+    (unless (semantic-tag-of-class-p tag 'function)
+      (error "Expected function, got %S" tag))
+    (let* ((name (semantic-tag-name tag))
+           (attrs (semantic-tag-attributes tag))
+           (args (plist-get attrs :arguments))
+           (ord 1))
+      (setq aya-current
+            (format
+             "/**
+* $1
+*
+%s
+* @return $%d
+*/
+"
+             (mapconcat
+              (lambda (x)
+                (format "* @param %s $%d"
+                        (car x) (incf ord)))
+              args
+              "\n")
+             (incf ord)))
+      (aya-expand))))
+
 (add-hook 'c-mode-common-hook 'alexott/cedet-hook)
 (add-hook 'c-mode-hook 'alexott/cedet-hook)
 (add-hook 'c++-mode-hook 'alexott/cedet-hook)

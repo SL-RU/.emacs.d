@@ -26,7 +26,6 @@
 (global-semantic-idle-scheduler-mode 1)
 (global-semantic-stickyfunc-mode 1)
 (global-semantic-decoration-mode 1)
-(ede-enable-generic-projects)
 (global-semantic-idle-scheduler-mode)
 ;(global-semantic-idle-completions-mode)
 (global-semantic-highlight-func-mode)
@@ -36,7 +35,7 @@
 (semantic-mode 1)
 (global-ede-mode t)
 
-(ede-enable-generic-projects)
+;(ede-enable-generic-projects)
 
 (defun my:add-semantic-to-autocomplete() 
   (setq-default ac-sources '(ac-source-semantic-raw))
@@ -48,16 +47,16 @@
 
 ;;; MAKEFILE
 
-(defclass ede-generic-makefile-project (ede-generic-project)
-  ((buildfile :initform "Makefile")
-   )
-  "Generic Project for makefiles.")
+;(defclass ede-generic-makefile-project (ede-generic-project)
+;  ((buildfile :initform "Makefile")
+;   )
+;  "Generic Project for makefiles.")
 
-(defmethod ede-generic-setup-configuration ((proj ede-generic-makefile-project) config)
-  "Setup a configuration for Make."
-  (oset config build-command "make")
-  (oset config debug-command "gdb")
-  )
+;(defmethod ede-generic-setup-configuration ((proj ede-generic-makefile-project) config)
+;  "Setup a configuration for Make."
+;  (oset config build-command "make")
+;  (oset config debug-command "gdb")
+;  )
 
 ;(load-file (concat user-emacs-directory "flycheck-cedet.el"))
 ;(require 'flycheck-cedet)

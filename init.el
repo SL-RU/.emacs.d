@@ -10,6 +10,9 @@
 (load-file (concat user-emacs-directory "/cedet/cedet-devel-load.el"))
 (load-file (concat user-emacs-directory "cedet/contrib/cedet-contrib-load.el"))
 
+(add-to-list 'package-archives
+             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+
 (package-initialize) ;; You might already have this line
 
 (setq custom-file (concat user-emacs-directory "custom.el"))
@@ -99,7 +102,8 @@ buffer is not visiting a file."
 (defun my-ede-hook ()
   "hook for activating flycheck"
   (interactive)
-  (flycheck-setup-from-cedet))
+  (flycheck-setup-from-cedet)
+  )
 (add-hook 'c-mode-common-hook 'my-ede-hook)
 
 (defun my-flycheck-c-setup ()
