@@ -23,7 +23,8 @@
 (define-key minibuffer-local-map (kbd "M-p") 'helm-minibuffer-history)
 (define-key minibuffer-local-map (kbd "M-n") 'helm-minibuffer-history)
 
-
+				      ;gtags
+(global-set-key (kbd "C-x t f") 'helm-gtags-find-tag)
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t)) ;;I don't need it. But...

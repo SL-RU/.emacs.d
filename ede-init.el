@@ -43,22 +43,3 @@
 (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
 (add-hook 'c-mode-hook 'my:add-semantic-to-autocomplete)
 (add-hook 'c++-mode-hook 'my:add-semantic-to-autocomplete)
-
-
-;;; MAKEFILE
-
-;(defclass ede-generic-makefile-project (ede-generic-project)
-;  ((buildfile :initform "Makefile")
-;   )
-;  "Generic Project for makefiles.")
-
-;(defmethod ede-generic-setup-configuration ((proj ede-generic-makefile-project) config)
-;  "Setup a configuration for Make."
-;  (oset config build-command "make")
-;  (oset config debug-command "gdb")
-;  )
-
-;(load-file (concat user-emacs-directory "flycheck-cedet.el"))
-;(require 'flycheck-cedet)
-
-;(add-hook 'c-mode-common-hook 'flycheck-setup-from-cedet)

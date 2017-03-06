@@ -1,0 +1,3 @@
+[submodule "auto-complete-c-headers"]
+	path = auto-complete-c-headers
+	url = https://github.com/mooz/auto-complete-c-headers

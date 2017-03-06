@@ -95,27 +95,84 @@ buffer is not visiting a file."
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 
+(require 'ede-compdb)
+ (defun flycheck-compdb-setup ()
+   (when (and ede-object (oref ede-object compilation))
+     (let* ((comp (oref ede-object compilation))
+            (cmd (get-command-line comp)))
+       ;; Configure flycheck clang checker.
+       ;; TODO: configure gcc checker also
+       (when (string-match " -std=\\([^ ]+\\)" cmd)
+         (setq-local flycheck-clang-language-standard (match-string 1 cmd)))
+       (when (string-match " -stdlib=\\([^ ]+\\)" cmd)
+         (setq-local flycheck-clang-standard-library (match-string 1 cmd)))
+       (when (string-match " -fms-extensions " cmd)
+         (setq-local flycheck-clang-ms-extensions t))
+       (when (string-match " -fno-exceptions " cmd)
+         (setq-local flycheck-clang-no-exceptions t))
+       (when (string-match " -fno-rtti " cmd)
+         (setq-local flycheck-clang-no-rtti t))
+       (when (string-match " -fblocks " cmd)
+         (setq-local flycheck-clang-blocks t))
+       (setq-local flycheck-clang-includes (get-includes comp))
+       (setq-local flycheck-clang-definitions (get-defines comp))
+       (setq-local flycheck-clang-include-path (get-include-path comp t))
+
+       (when (string-match " -std=\\([^ ]+\\)" cmd)
+         (setq-local flycheck-gcc-language-standard (match-string 1 cmd)))
+       ;;(when (string-match " -stdlib=\\([^ ]+\\)" cmd)
+       ;;  (setq-local flycheck-gcc -standard-library (match-string 1 cmd)))
+       ;;(when (string-match " -fms-extensions " cmd)
+       ;;  (setq-local flycheck-gcc-ms-extensions t))
+       (when (string-match " -fno-exceptions " cmd)
+         (setq-local flycheck-gcc-no-exceptions t))
+       (when (string-match " -fno-rtti " cmd)
+         (setq-local flycheck-gcc-no-rtti t))
+       ;;(when (string-match " -fblocks " cmd)
+       ;;  (setq-local flycheck-gcc-blocks t))
+       (setq-local flycheck-gcc-includes (get-includes comp))
+       (setq-local flycheck-gcc-definitions (get-defines comp))
+       (setq-local flycheck-gcc-include-path (get-include-path comp t))
+       
+       )))
+
+(add-hook 'ede-compdb-project-rescan-hook #'flycheck-compdb-setup)
+(add-hook 'ede-minor-mode-hook #'flycheck-compdb-setup)
+
+(add-hook 'ede-minor-mode-hook (lambda ()
+    (setq achead:get-include-directories-function 'ede-object-system-include-path)))
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
 (load-file (concat user-emacs-directory "helm-init.el"))
 (load-file (concat user-emacs-directory "ede-init.el"))
 
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
 (load-file (concat user-emacs-directory "flycheck-cedet.el"))
 ;(require 'stm32)
-(stm32-load-all-projects)
 
-(defun my-ede-hook ()
-  "hook for activating flycheck"
-  (interactive)
-  (flycheck-setup-from-cedet)
-  )
-(add-hook 'c-mode-common-hook 'my-ede-hook)
+;;(defun my-ede-hook ()
+;;  "hook for activating flycheck"
+;;  (interactive)
+;;  (flycheck-setup-from-cedet)
+;;  )
+;;(add-hook 'c-mode-common-hook 'my-ede-hook)
 
 (defun my-flycheck-c-setup ()
-  (setq flycheck-gcc-language-standard "gnu99"))
+  "Set gcc checker"
+  (flycheck-select-checker 'c/c++-gcc))
 (add-hook 'c-mode-hook #'my-flycheck-c-setup)
 
-(load-file (concat user-emacs-directory "c.el"))
 
+(load-file (concat user-emacs-directory "c.el"))
+(add-hook 'ede-minor-mode-hook (lambda ()
+    (setq achead:get-include-directories-function 'ede-object-system-include-path)))
+
+(stm32-load-all-projects)
+;(require 'rtags) ;; optional, must have rtags installed
+;(require 'cmake-ide)
+;(cmake-ide-setup)
+;(define-key c-mode-map  [(tab)] 'company-clang)
+;(define-key c++-mode-map  [(tab)] 'company-complete)
 
 ;;you need to install rust, cargo, rust-racer
 (require 'rust-mode)
