@@ -23,8 +23,6 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (add-to-list 'default-frame-alist '(font . "Hack" ))
-(set-face-attribute 'default t :font "Hack 14" )
-(set-face-attribute 'default nil :height 110)
 
 (global-linum-mode t) ;; enable line numbers globally
 
