@@ -95,20 +95,8 @@ buffer is not visiting a file."
 (add-hook 'after-init-hook 'global-company-mode)
 
 (load-file (concat user-emacs-directory "helm-init.el"))
-(load-file (concat user-emacs-directory "stm32/stm32.el"))
-
-
-
 (load-file (concat user-emacs-directory "c.el"))
-(add-hook 'ede-minor-mode-hook (lambda ()
-    (setq achead:get-include-directories-function 'ede-object-system-include-path)))
-
-;(stm32-load-all-projects)
-;(require 'rtags) ;; optional, must have rtags installed
-;(require 'cmake-ide)
-;(cmake-ide-setup)
-;(define-key c-mode-map  [(tab)] 'company-clang)
-;(define-key c++-mode-map  [(tab)] 'company-complete)
+(load-file (concat user-emacs-directory "stm32/stm32.el"))
 
 ;;you need to install rust, cargo, rust-racer
 (require 'rust-mode)
