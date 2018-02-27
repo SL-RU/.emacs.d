@@ -1,6 +1,11 @@
+;; c.el -- initialize packages for c & c++
+
+;;; Commentary:
+;;; lol
+;;; Code:
+
 (setq c-default-style "linux"
       c-basic-offset 4)
-
 
 ; style I want to use in c++ mode
 (c-add-style "my-style"
@@ -14,8 +19,8 @@
 (defun my-c++-mode-hook ()
   "C++ hook."
   (c-set-style "my-style") ; use my-style defined above
-  (auto-fill-mode)         
-  (c-toggle-auto-hungry-state 1))
+  (auto-fill-mode))
+  ;(c-toggle-auto-hungry-state 1))
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
@@ -49,10 +54,9 @@
   '(add-to-list
     'company-backends '(company-irony-c-headers company-irony)))
 
-(setq company-idle-delay 0)
-;(define-key c-mode-map [(tab)] 'company-complete)
-;(define-key c++-mode-map [(tab)] 'company-complete)
+(define-key c-mode-map (kbd "C-c . c") 'cmake-ide-compile)
+(define-key c++-mode-map (kbd "C-c . c") 'cmake-ide-compile)
+(add-hook 'cmake-mode-hook
+	  (lambda() (local-set-key (kbd "C-c . c") 'cmake-ide-compile)))
 
-(add-hook 'c++-mode-hook 'flycheck-mode)
-(add-hook 'c-mode-hook 'flycheck-mode)
-
+;;; c.el ends here
