@@ -46,6 +46,10 @@
 (eval-after-load 'flycheck
   '(add-to-list 'flycheck-checkers 'clang-analyzer))
 
+(add-hook 'c-mode-hook
+	  (lambda ()
+	    (setq flycheck-clang-language-standard "c11")))
+
 (require 'helm-rtags)
 
 (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)

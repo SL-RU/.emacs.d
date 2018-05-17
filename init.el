@@ -66,6 +66,7 @@ buffer is not visiting a file."
 
 (global-set-key (kbd "C-x C-r ") 'sudo-edit)
 
+(put 'upcase-region 'disabled nil)
 
 (require 'elpy)
 (elpy-enable)
