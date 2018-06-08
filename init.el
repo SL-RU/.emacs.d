@@ -31,6 +31,8 @@
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
 
+(setq max-lisp-eval-depth 10000)
+
 (show-paren-mode) ;pair brackets
 
 (require 'nyan-mode)
@@ -51,6 +53,11 @@
 (drag-stuff-global-mode)
 
 (require 'tramp)
+
+(require 'beacon)
+(beacon-mode 1)
+
+(require 'iedit)
 
 (defun sudo-edit (&optional arg)
   "Edit currently visited file as root.
@@ -118,3 +125,11 @@ buffer is not visiting a file."
 
 (setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
+
+
+(progn
+  ;; make indentation commands use space only (never tab character)
+  (setq-default indent-tabs-mode nil)
+  ;; emacs 23.1, 24.2, default to t
+  ;; if indent-tabs-mode is t, it means it may use tab, resulting mixed space and tab
+  )
