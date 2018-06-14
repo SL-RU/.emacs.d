@@ -32,19 +32,15 @@
 (add-hook 'objc-mode-hook 'irony-mode)
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-;
+                                        ;
+(require 'company)
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
-;
-(require 'flycheck-clang-analyzer)
-(flycheck-clang-analyzer-setup)
-;
+
 (add-hook 'c-mode-hook #'flycheck-irony-setup)
 (require 'flycheck-irony)
 (eval-after-load 'flycheck
   '(add-to-list 'flycheck-checkers 'irony))
-(eval-after-load 'flycheck
-  '(add-to-list 'flycheck-checkers 'clang-analyzer))
 
 (add-hook 'c-mode-hook
 	  (lambda ()
@@ -52,7 +48,6 @@
 
 (require 'helm-rtags)
 
-(add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
 (setq company-backends (delete 'company-semantic company-backends))
 (eval-after-load 'company
   '(add-to-list

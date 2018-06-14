@@ -32,6 +32,7 @@
 (prefer-coding-system 'utf-8)
 
 (setq max-lisp-eval-depth 10000)
+(setq max-specpdl-size 32000)
 
 (show-paren-mode) ;pair brackets
 
