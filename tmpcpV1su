@@ -1,0 +1,19 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(package-selected-packages
+   (quote
+    (smooth-scrolling cmake-ide flycheck-rtags helm-rtags flycheck-clang-analyzer irony-eldoc flycheck-irony company-irony-c-headers cmake-mode dot-mode 2048-game zone-nyan auto-yasnippet racer flycheck-rust rust-mode xwidgete bookmark+ wsd-mode image+ image-dired+ undo-tree unbound steam sr-speedbar rainbow-delimiters pos-tip nyan-mode multiple-cursors monokai-theme mongo iedit helm-swoop helm-gtags header2 ggtags function-args free-keys flycheck flx-ido flappymacs elpy ducpel drag-stuff dired+ company-irony company-c-headers clang-format bongo auto-complete-c-headers arduino-mode ac-slime ac-c-headers)))
+ '(stm32-cubemx "~/prg/STM32CubeMX/STM32CubeMX"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(set-face-attribute 'default t :font "Hack 14" )
+(set-face-attribute 'default nil :height 110)

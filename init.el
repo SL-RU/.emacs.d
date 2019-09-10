@@ -77,10 +77,15 @@ buffer is not visiting a file."
 (put 'upcase-region 'disabled nil)
 
 (require 'elpy)
-(elpy-enable)
+(require 'py-autopep8)
 (setq elpy-rpc-python-command "python3")
 (setq python-shell-interpreter "python3")
 (add-to-list 'python-shell-completion-native-disabled-interpreters "python3")
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+(elpy-enable)
 
 ; start yasnippet with emacs
 (require 'yasnippet)
@@ -106,6 +111,9 @@ buffer is not visiting a file."
 (load-file (concat user-emacs-directory "helm-init.el"))
 (load-file (concat user-emacs-directory "c.el"))
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
+
+(load-file (concat user-emacs-directory "doxygen.el"))
+(require 'doxygen)
 
 ;;you need to install rust, cargo, rust-racer
 (require 'rust-mode)
