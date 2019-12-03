@@ -19,46 +19,45 @@
 (defun my-c++-mode-hook ()
   "C++ hook."
   (c-set-style "my-style") ; use my-style defined above
+  (c-toggle-auto-hungry-state 1)
   (auto-fill-mode))
-  ;(c-toggle-auto-hungry-state 1))
-
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
-(require 'rtags)
-(cmake-ide-setup)
-
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-;
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-;                                        ;
-(require 'company)
-(eval-after-load 'company
-'(add-to-list 'company-backends 'company-irony))
-                                        ;
 
 (require 'flycheck-irony)
-(add-hook 'c-mode-hook #'flycheck-irony-setup)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 (eval-after-load 'flycheck
 '(add-to-list 'flycheck-checkers 'irony))
-;
 (add-hook 'c-mode-hook
 	  (lambda ()
 	    (setq flycheck-clang-language-standard "c11")))
 
-(require 'helm-rtags)
-(require 'company-irony-c-headers)
+;(require 'helm-rtags)
+;(require 'company-irony-c-headers)
+;(setq company-backends (delete 'company-semantic company-backends))
+;(eval-after-load 'company
+; '(add-to-list
+;   'company-backends '(company-irony-c-headers company-irony)))
 
-(setq company-backends (delete 'company-semantic company-backends))
-(eval-after-load 'company
- '(add-to-list
-   'company-backends '(company-irony-c-headers company-irony)))
-
-
+(require 'rtags)
+(require 'cmake-ide)
+(cmake-ide-setup)
 (define-key c-mode-map (kbd "C-c . c") 'cmake-ide-compile)
 (define-key c++-mode-map (kbd "C-c . c") 'cmake-ide-compile)
 (add-hook 'cmake-mode-hook
 	  (lambda() (local-set-key (kbd "C-c . c") 'cmake-ide-compile)))
+
+
+(require 'irony)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(require 'company)
+(eval-after-load 'company
+'(add-to-list 'company-backends 'company-irony))
+
 
 ;;; c.el ends here
