@@ -42,7 +42,19 @@
 (require 'switch-window)
 (global-set-key (kbd "C-x o") 'switch-window)
 
-(diredp-toggle-find-file-reuse-dir 1) ;;dired+
+                                        ;(diredp-toggle-find-file-reuse-dir 1) ;;dired+
+(add-hook 'dired-load-hook
+          (lambda ()
+            (load "dired-x")
+            ;; Set dired-x global variables here.  For example:
+            ;; (setq dired-guess-shell-gnutar "gtar")
+            ;; (setq dired-x-hands-off-my-keys nil)
+            ))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            ;; Set dired-x buffer-local variables here.  For example:
+            (dired-omit-mode 1)
+            ))
 
 
 (require 'undo-tree)
@@ -116,22 +128,22 @@ buffer is not visiting a file."
 (require 'doxygen)
 
 ;;you need to install rust, cargo, rust-racer
-(require 'rust-mode)
-(require 'racer)
-(autoload 'rust-mode "rust-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-(setq racer-rust-src-path "~/.local/share/rust_src/src") ;DO: git clone --recursive https://github.com/rust-lang/rust.git ~/.local/share/rust_src
-(setq racer-cmd "/usr/bin/racer")
+;(require 'rust-mode)
+;(require 'racer)
+;(autoload 'rust-mode "rust-mode" nil t)
+;(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+;(setq racer-rust-src-path "~/.local/share/rust_src/src") ;DO: git clone --recursive https://github.com/rust-lang/rust.git ~/.local/share/rust_src
+;(setq racer-cmd "/usr/bin/racer")
 ;; (add-to-list 'load-path "<path-to-racer>/editors")
 ;;(add-hook 'rust-mode-hook #'racer-activate)
-(add-hook 'rust-mode-hook #'racer-mode)
-(add-hook 'racer-mode-hook #'eldoc-mode)
-(eval-after-load "rust-mode" '(require 'racer))
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-(add-hook 'racer-mode-hook #'company-mode)
-(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-(setq company-tooltip-align-annotations t)
+;(add-hook 'rust-mode-hook #'racer-mode)
+;(add-hook 'racer-mode-hook #'eldoc-mode)
+;(eval-after-load "rust-mode" '(require 'racer))
+;(eval-after-load 'flycheck
+;  '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+;(add-hook 'racer-mode-hook #'company-mode)
+;(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+;(setq company-tooltip-align-annotations t)
 
 (setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
