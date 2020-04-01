@@ -51,3 +51,6 @@ irony*
 snippets
 
 transient*
+
+auto-complete-c-headers/
+elpy/
