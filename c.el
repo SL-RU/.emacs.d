@@ -30,28 +30,31 @@
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
-
+;
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-                                        ;
+;                                        ;
 (require 'company)
 (eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
+'(add-to-list 'company-backends 'company-irony))
+                                        ;
 
-(add-hook 'c-mode-hook #'flycheck-irony-setup)
 (require 'flycheck-irony)
+(add-hook 'c-mode-hook #'flycheck-irony-setup)
 (eval-after-load 'flycheck
-  '(add-to-list 'flycheck-checkers 'irony))
-
+'(add-to-list 'flycheck-checkers 'irony))
+;
 (add-hook 'c-mode-hook
 	  (lambda ()
 	    (setq flycheck-clang-language-standard "c11")))
 
 (require 'helm-rtags)
+(require 'company-irony-c-headers)
 
 (setq company-backends (delete 'company-semantic company-backends))
 (eval-after-load 'company
-  '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
+ '(add-to-list
+   'company-backends '(company-irony-c-headers company-irony)))
+
 
 (define-key c-mode-map (kbd "C-c . c") 'cmake-ide-compile)
 (define-key c++-mode-map (kbd "C-c . c") 'cmake-ide-compile)
