@@ -41,6 +41,11 @@
 ;   'company-backends '(company-irony-c-headers company-irony)))
 
 (require 'rtags)
+;(add-hook 'c-mode-hook 'rtags-start-process-unless-running)
+;(add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
+(setq rtags-display-result-backend 'helm)
+(global-set-key (kbd "C-x t f") 'rtags-find-symbol-at-point)
+(global-set-key (kbd "C-x t r") 'rtags-find-all-references-at-point)
 (require 'cmake-ide)
 (cmake-ide-setup)
 (define-key c-mode-map (kbd "C-c . c") 'cmake-ide-compile)

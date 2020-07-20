@@ -43,18 +43,18 @@
 (global-set-key (kbd "C-x o") 'switch-window)
 
                                         ;(diredp-toggle-find-file-reuse-dir 1) ;;dired+
-(add-hook 'dired-load-hook
-          (lambda ()
-            (load "dired-x")
+;(add-hook 'dired-load-hook
+;          (lambda ()
+            ;(load "dired-x")
             ;; Set dired-x global variables here.  For example:
             ;; (setq dired-guess-shell-gnutar "gtar")
             ;; (setq dired-x-hands-off-my-keys nil)
-            ))
-(add-hook 'dired-mode-hook
-          (lambda ()
+;            ))
+;(add-hook 'dired-mode-hook
+;          (lambda ()
             ;; Set dired-x buffer-local variables here.  For example:
-            (dired-omit-mode 1)
-            ))
+            ; (dired-omit-mode 1)
+;            ))
 
 
 (require 'undo-tree)
@@ -88,16 +88,16 @@ buffer is not visiting a file."
 
 (put 'upcase-region 'disabled nil)
 
-(require 'elpy)
+(require 'company)
 (require 'py-autopep8)
-(setq elpy-rpc-python-command "python3")
 (setq python-shell-interpreter "python3")
-(add-to-list 'python-shell-completion-native-disabled-interpreters "python3")
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
-(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
-(elpy-enable)
+(defun my/python-mode-hook ()
+  "Python autocomplete."
+  (add-to-list 'company-backends 'company-jedi))
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+(add-hook 'python-mode-hook 'flycheck-mode)
+;(add-hook 'python-mode-hook 'python-black-on-save-mode)
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
 ; start yasnippet with emacs
 (require 'yasnippet)
@@ -105,8 +105,6 @@ buffer is not visiting a file."
 
 (require 'flycheck)
 (global-flycheck-mode t)
-
-(setq steam-username "sl_ru")
 
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -124,27 +122,6 @@ buffer is not visiting a file."
 (load-file (concat user-emacs-directory "c.el"))
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
 
-(load-file (concat user-emacs-directory "doxygen.el"))
-(require 'doxygen)
-
-;;you need to install rust, cargo, rust-racer
-;(require 'rust-mode)
-;(require 'racer)
-;(autoload 'rust-mode "rust-mode" nil t)
-;(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-;(setq racer-rust-src-path "~/.local/share/rust_src/src") ;DO: git clone --recursive https://github.com/rust-lang/rust.git ~/.local/share/rust_src
-;(setq racer-cmd "/usr/bin/racer")
-;; (add-to-list 'load-path "<path-to-racer>/editors")
-;;(add-hook 'rust-mode-hook #'racer-activate)
-;(add-hook 'rust-mode-hook #'racer-mode)
-;(add-hook 'racer-mode-hook #'eldoc-mode)
-;(eval-after-load "rust-mode" '(require 'racer))
-;(eval-after-load 'flycheck
-;  '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-;(add-hook 'racer-mode-hook #'company-mode)
-;(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-;(setq company-tooltip-align-annotations t)
-
 (setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
 
@@ -156,21 +133,35 @@ buffer is not visiting a file."
   ;; if indent-tabs-mode is t, it means it may use tab, resulting mixed space and tab
   )
 (put 'downcase-region 'disabled nil)
+
 (require 'dired-single)
 (defun my-dired-init ()
-  "Bunch of stuff to run for dired, either immediately or when it's
-   loaded."
-  ;; <add other stuff here>
-  (define-key dired-mode-map [remap dired-find-file]
-    'dired-single-magic-buffer)
-  (define-key dired-mode-map [remap dired-mouse-find-file-other-window]
-    'dired-single-buffer-mouse)
-  (define-key dired-mode-map [remap dired-up-directory]
-    'dired-single-up-directory))
+ "Bunch of stuff to run for dired, either immediately or when it's
+  loaded."
+ ;; <add other stuff here>
+ (define-key dired-mode-map [remap dired-find-file]
+   'dired-single-buffer)
+ (define-key dired-mode-map [remap dired-mouse-find-file-other-window]
+   'dired-single-buffer-mouse)
+ (define-key dired-mode-map [remap dired-up-directory]
+   'dired-single-up-directory))
 
-;; if dired's already loaded, then the keymap will be bound
+;if dired's already loaded, then the keymap will be bound
 (if (boundp 'dired-mode-map)
-    ;; we're good to go; just add our bindings
-    (my-dired-init)
-  ;; it's not loaded yet, so add our bindings to the load-hook
-  (add-hook 'dired-load-hook 'my-dired-init))
+   ;; we're good to go; just add our bindings
+   (my-dired-init)
+ ;; it's not loaded yet, so add our bindings to the load-hook
+ (add-hook 'dired-load-hook 'my-dired-init))
+
+(push 'rustic-clippy flycheck-checkers)
+
+
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+

@@ -23,8 +23,6 @@
 (define-key minibuffer-local-map (kbd "M-p") 'helm-minibuffer-history)
 (define-key minibuffer-local-map (kbd "M-n") 'helm-minibuffer-history)
 
-				      ;gtags
-(global-set-key (kbd "C-x t f") 'helm-gtags-find-tag)
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t)) ;;I don't need it. But...
@@ -42,26 +40,26 @@
 
 
 ;;gTags
-(require 'helm-gtags)
-(setq
- helm-gtags-ignore-case t
- helm-gtags-auto-update t
- helm-gtags-use-input-at-cursor t
- helm-gtags-pulse-at-cursor t
- helm-gtags-prefix-key "\C-c g"
- helm-gtags-suggested-key-mapping t
- )
-(add-hook 'dired-mode-hook 'helm-gtags-mode)
-(add-hook 'eshell-mode-hook 'helm-gtags-mode)
-(add-hook 'c-mode-hook 'helm-gtags-mode)
-(add-hook 'c++-mode-hook 'helm-gtags-mode)
-(add-hook 'asm-mode-hook 'helm-gtags-mode)
-(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
-(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
-(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
-(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
-(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+;(require 'helm-gtags)
+;(setq
+; helm-gtags-ignore-case t
+; helm-gtags-auto-update t
+; helm-gtags-use-input-at-cursor t
+; helm-gtags-pulse-at-cursor t
+; helm-gtags-prefix-key "\C-c g"
+; helm-gtags-suggested-key-mapping t
+; )
+;(add-hook 'dired-mode-hook 'helm-gtags-mode)
+;(add-hook 'eshell-mode-hook 'helm-gtags-mode)
+;(add-hook 'c-mode-hook 'helm-gtags-mode)
+;(add-hook 'c++-mode-hook 'helm-gtags-mode)
+;(add-hook 'asm-mode-hook 'helm-gtags-mode)
+;(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+;(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
+;(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+;(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+;(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+;(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 
 (require 'function-args)
 (fa-config-default)

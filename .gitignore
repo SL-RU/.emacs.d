@@ -54,3 +54,7 @@ transient*
 
 auto-complete-c-headers/
 elpy/
+
+.lsp-session-v1
+.python-environments/
+transient/
