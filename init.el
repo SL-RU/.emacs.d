@@ -34,6 +34,8 @@
 (setq max-lisp-eval-depth 10000)
 (setq max-specpdl-size 32000)
 
+(set 'gc-cons-threshold 100000000)
+
 (show-paren-mode) ;pair brackets
 
 (require 'nyan-mode)
