@@ -1,11 +1,8 @@
 ;; c.el -- initialize packages for c & c++
 
 ;;; Commentary:
-;;; lol
+;;; c/c++ packages
 ;;; Code:
-
-(setq c-default-style "linux"
-      c-basic-offset 4)
 
 ; style I want to use in c++ mode
 (c-add-style "my-style"
@@ -19,30 +16,23 @@
 (defun my-c++-mode-hook ()
   "C++ hook."
   (c-set-style "my-style") ; use my-style defined above
-  (c-toggle-auto-hungry-state 1)
   (auto-fill-mode))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
+(add-hook 'c-mode-hook 'my-c++-mode-hook)
 
-
-(require 'flycheck-irony)
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-(eval-after-load 'flycheck
-'(add-to-list 'flycheck-checkers 'irony))
 
 (require 'rtags)
 (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
 (add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
 (setq rtags-display-result-backend 'helm)
-(global-set-key (kbd "C-x t f") 'rtags-find-symbol-at-point)
-(global-set-key (kbd "C-x t r") 'rtags-find-all-references-at-point)
-
-(defun setup-flycheck-var ()
-  "RTags create more accurate overlays."
-  (setq flycheck-clang-language-standard "c11"))
-(add-hook 'c-mode-hook #'setup-flycheck-var)
-(add-hook 'c++-mode-hook #'setup-flycheck-var)
-
+(define-key c-mode-map (kbd "C-x t f") 'rtags-find-symbol-at-point)
+(define-key c-mode-map (kbd "C-x t r") 'rtags-find-all-references-at-point)
+(define-key c-mode-map (kbd "C-c . c") 'stm32-make-build)
+(define-key c-mode-map (kbd "C-c . f") 'stm32-flash-to-mcu)
+(define-key c++-mode-map (kbd "C-x t f") 'rtags-find-symbol-at-point)
+(define-key c++-mode-map (kbd "C-x t r") 'rtags-find-all-references-at-point)
+(define-key c++-mode-map (kbd "C-c . c") 'stm32-make-build)
+(define-key c++-mode-map (kbd "C-c . ") 'stm32-flash-to-mcu)
 
 (require 'irony)
 (add-hook 'c++-mode-hook 'irony-mode)
@@ -61,6 +51,17 @@
 (eval-after-load 'company
   '(add-to-list
     'company-backends '(company-irony-c-headers company-irony)))
+
+(require 'flycheck-irony)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+(eval-after-load 'flycheck
+  '(add-to-list 'flycheck-checkers 'irony))
+(defun setup-flycheck-var ()
+  "RTags create more accurate overlays."
+  (setq flycheck-clang-language-standard "c11"))
+(add-hook 'c-mode-hook #'setup-flycheck-var)
+(add-hook 'c++-mode-hook #'setup-flycheck-var)
 
 
 ;;; c.el ends here
