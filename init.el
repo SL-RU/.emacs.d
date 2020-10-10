@@ -18,12 +18,15 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file)
 
+(load-file (concat user-emacs-directory "packages-autoinstall.el"))
+
 ;;THEME
 (load-theme 'monokai t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (add-to-list 'default-frame-alist '(font . "Hack" ))
 
+(setq visible-bell 1)
 (global-linum-mode t) ;; enable line numbers globally
 
 (set-terminal-coding-system 'utf-8)
@@ -92,12 +95,16 @@ buffer is not visiting a file."
 
 (require 'company)
 (require 'py-autopep8)
-(setq python-shell-interpreter "python3")
-(defun my/python-mode-hook ()
-  "Python autocomplete."
-  (add-to-list 'company-backends 'company-jedi))
-(add-hook 'python-mode-hook 'my/python-mode-hook)
-(add-hook 'python-mode-hook 'flycheck-mode)
+(require 'elpy)
+(elpy-enable)
+;(require 'company-jedi)
+;(setq python-shell-interpreter "python3")
+;(defun my/python-mode-hook ()
+;  "Python autocomplete."
+;  (add-to-list 'company-backends 'company-jedi))
+;(add-hook 'python-mode-hook 'my/python-mode-hook)
+;(setq jedi:complete-on-dot t)                 ; optional
+;(add-hook 'python-mode-hook 'flycheck-mode)
 ;(add-hook 'python-mode-hook 'python-black-on-save-mode)
 (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 

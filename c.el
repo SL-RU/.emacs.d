@@ -32,7 +32,7 @@
 (define-key c++-mode-map (kbd "C-x t f") 'rtags-find-symbol-at-point)
 (define-key c++-mode-map (kbd "C-x t r") 'rtags-find-all-references-at-point)
 (define-key c++-mode-map (kbd "C-c . c") 'stm32-make-build)
-(define-key c++-mode-map (kbd "C-c . ") 'stm32-flash-to-mcu)
+(define-key c++-mode-map (kbd "C-c . f") 'stm32-flash-to-mcu)
 
 (require 'irony)
 (add-hook 'c++-mode-hook 'irony-mode)
