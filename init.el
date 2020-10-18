@@ -24,7 +24,7 @@
 (load-theme 'monokai t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack" ))
+(add-to-list 'default-frame-alist '(font . "Hack 16" ))
 
 (setq visible-bell 1)
 (global-linum-mode t) ;; enable line numbers globally
@@ -129,7 +129,6 @@ buffer is not visiting a file."
 
 (load-file (concat user-emacs-directory "helm-init.el"))
 (load-file (concat user-emacs-directory "c.el"))
-(load-file (concat user-emacs-directory "stm32/stm32.el"))
 
 (setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
@@ -162,8 +161,9 @@ buffer is not visiting a file."
  ;; it's not loaded yet, so add our bindings to the load-hook
  (add-hook 'dired-load-hook 'my-dired-init))
 
+(require 'rustic)
 (push 'rustic-clippy flycheck-checkers)
-
+(setq rustic-flycheck-clippy-params "--message-format=json")
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -174,3 +174,32 @@ buffer is not visiting a file."
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(defun my-dpi (&optional frame)
+  "Get the DPI of FRAME (or current if nil)."
+  (cl-flet ((pyth (lambda (w h)
+                    (sqrt (+ (* w w)
+                             (* h h)))))
+            (mm2in (lambda (mm)
+                     (/ mm 25.4))))
+    (let* ((atts (frame-monitor-attributes frame))
+           (pix-w (cl-fourth (assoc 'geometry atts)))
+           (pix-h (cl-fifth (assoc 'geometry atts)))
+           (pix-d (pyth pix-w pix-h))
+           (mm-w (cl-second (assoc 'mm-size atts)))
+           (mm-h (cl-third (assoc 'mm-size atts)))
+           (mm-d (pyth mm-w mm-h)))
+      (/ pix-d (mm2in mm-d)))))
+
+(defvar my-dpi-last 0)
+(defun my-zoom-frm-by-dpi (&optional frame)
+  "Zoom FRAME so the DPI is closer to `my-zoom-frm-wanted-dpi'."
+  (interactive)
+  (when (frame-size-changed-p frame)
+    (let ((dpi (truncate (my-dpi nil))))
+      (when (not (eq my-dpi-last dpi))
+        (message (format "DPI: %d" dpi))
+        (setq my-dpi-last dpi)
+        (if (< dpi 110)
+            (set-face-attribute 'default nil :height 120)
+          (set-face-attribute 'default nil :height 170))))))
+(add-hook 'window-size-change-functions #'my-zoom-frm-by-dpi)

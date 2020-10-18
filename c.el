@@ -33,6 +33,7 @@
 (define-key c++-mode-map (kbd "C-x t r") 'rtags-find-all-references-at-point)
 (define-key c++-mode-map (kbd "C-c . c") 'stm32-make-build)
 (define-key c++-mode-map (kbd "C-c . f") 'stm32-flash-to-mcu)
+(add-hook 'kill-emacs-hook 'rtags-quit-rdm)
 
 (require 'irony)
 (add-hook 'c++-mode-hook 'irony-mode)
@@ -63,5 +64,12 @@
 (add-hook 'c-mode-hook #'setup-flycheck-var)
 (add-hook 'c++-mode-hook #'setup-flycheck-var)
 
+(load-file (concat user-emacs-directory "stm32/stm32.el"))
+(defun rtags-add-project-from-irony ()
+  "Add rtags project using build directory found by irony in stm32.el."
+  (interactive)
+  (message (format "Adding build dir %s to irony" (stm32-get-project-build-dir)))
+  (with-temp-buffer
+    (rtags-call-rc "-J" (stm32-get-project-build-dir))))
 
 ;;; c.el ends here
