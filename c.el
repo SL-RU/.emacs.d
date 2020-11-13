@@ -68,8 +68,13 @@
 (defun rtags-add-project-from-irony ()
   "Add rtags project using build directory found by irony in stm32.el."
   (interactive)
-  (message (format "Adding build dir %s to irony" (stm32-get-project-build-dir)))
-  (with-temp-buffer
-    (rtags-call-rc "-J" (stm32-get-project-build-dir))))
+  (let ((dep-buffer (rtags-get-buffer "*RTags add project*"))
+        (arg (stm32-get-project-build-dir)))
+    (message (format "Adding build dir %s to rtags" arg))
+    (rtags-delete-rtags-windows)
+    (rtags-location-stack-push)
+    (rtags-switch-to-buffer dep-buffer)
+    (rtags-call-rc "-J" arg)
+    (rtags-mode)))
 
 ;;; c.el ends here
