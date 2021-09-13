@@ -65,7 +65,15 @@
 (use-package web-mode           :ensure t)
 (use-package xwidgete           :ensure t)
 (use-package yasnippet          :ensure t)
+(use-package yasnippet-snippets :ensure t)
 ;(use-package zone-nyan          :ensure t)
 (use-package async              :ensure t)
 
+;(use-package latex              :ensure t)
+(use-package reftex             :ensure t)
+;(use-package auctex             :ensure t)
+;(use-package auctex-latexmk             :ensure t)
+
+(use-package typescript-mode    :ensure t)
+(use-package tide               :ensure t)
 ;;; packages-autoinstall.el ends here

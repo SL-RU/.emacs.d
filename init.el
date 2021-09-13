@@ -1,3 +1,9 @@
+;;; init --- My init file for emacs
+;;; Commentary:
+;;; It is always WIP
+;;; Code:
+
+(server-start) ;; start server to open files in the same window
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -127,6 +133,9 @@ buffer is not visiting a file."
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
+(with-eval-after-load 'company
+  (global-set-key (kbd "<backtab>") 'company-complete))
+
 (load-file (concat user-emacs-directory "helm-init.el"))
 (load-file (concat user-emacs-directory "c.el"))
 
@@ -196,6 +205,7 @@ buffer is not visiting a file."
   (interactive)
   (when (frame-size-changed-p frame)
     (let ((dpi (truncate (my-dpi nil))))
+      ;;(message (format "DPI: %d" dpi))
       (when (not (eq my-dpi-last dpi))
         (message (format "DPI: %d" dpi))
         (setq my-dpi-last dpi)
@@ -203,3 +213,70 @@ buffer is not visiting a file."
             (set-face-attribute 'default nil :height 120)
           (set-face-attribute 'default nil :height 170))))))
 (add-hook 'window-size-change-functions #'my-zoom-frm-by-dpi)
+
+(load-file (concat user-emacs-directory "tex.el"))
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+(projectile-mode +1)
+;(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;; formats the buffer before saving
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(with-eval-after-load 'tide
+  (flycheck-add-mode 'typescript-tslint 'ng2-ts-mode)
+  (flycheck-add-mode 'typescript-tide 'ng2-ts-mode)
+)
+
+(require 'dap-node)
+(dap-mode 1)
+
+;; The modes below are optional
+(dap-ui-mode 1)
+;; enables mouse hover support
+(dap-tooltip-mode 1)
+;; use tooltips for mouse hover
+;; if it is not enabled `dap-mode' will use the minibuffer.
+(tooltip-mode 1)
+;; displays floating panel with debug buttons
+;; requies emacs 26+
+(dap-ui-controls-mode 1)
+
+(dap-register-debug-template
+  "Nodmon::Run"
+  (list :type "node"
+        :request "attach"
+        :restart t
+        :port 9229
+        :name "Nodmon::Run"))
+
+
+;(setq lsp-clients-angular-language-server-command
+;  '("node"
+;    "/usr/lib/node_modules/@angular/language-server"
+;    "--ngProbeLocations"
+;    "/usr/lib/node_modules"
+;    "--tsProbeLocations"
+;    "/usr/lib/node_modules"
+;    "--stdio"))
+
+;(with-eval-after-load 'typescript-mode (add-hook 'typescript-mode-hook #'lsp))
+
+;;; init.el ends here
