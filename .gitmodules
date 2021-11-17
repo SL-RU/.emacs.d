@@ -1,3 +1,6 @@
 [submodule "stm32"]
 	path = stm32
 	url = https://github.com/SL-RU/stm32-emacs
+[submodule "rtags"]
+	path = rtags
+	url = git@github.com:Andersbakken/rtags.git

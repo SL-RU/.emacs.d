@@ -4,6 +4,10 @@
 ;;; c/c++ packages
 ;;; Code:
 
+(load-file (concat user-emacs-directory "rtags/src/rtags.el"))
+(load-file (concat user-emacs-directory "rtags/src/helm-rtags.el"))
+(load-file (concat user-emacs-directory "rtags/src/flycheck-rtags.el"))
+
 ; style I want to use in c++ mode
 (c-add-style "my-style"
 	     '("stroustrup"
@@ -33,7 +37,7 @@
 (define-key c++-mode-map (kbd "C-x t r") 'rtags-find-all-references-at-point)
 (define-key c++-mode-map (kbd "C-c . c") 'stm32-make-build)
 (define-key c++-mode-map (kbd "C-c . f") 'stm32-flash-to-mcu)
-(add-hook 'kill-emacs-hook 'rtags-quit-rdm)
+;(add-hook 'kill-emacs-hook 'rtags-quit-rdm)
 
 (require 'irony)
 (add-hook 'c++-mode-hook 'irony-mode)
@@ -48,7 +52,7 @@
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
 (require 'company-irony-c-headers)
-;; Load with `irony-mode` as a grouped backend
+; Load with `irony-mode` as a grouped backend
 (eval-after-load 'company
   '(add-to-list
     'company-backends '(company-irony-c-headers company-irony)))
@@ -60,7 +64,7 @@
   '(add-to-list 'flycheck-checkers 'irony))
 (defun setup-flycheck-var ()
   "RTags create more accurate overlays."
-  (setq flycheck-clang-language-standard "c11"))
+  (setq flycheck-clang-language-standard "gnu17"))
 (add-hook 'c-mode-hook #'setup-flycheck-var)
 (add-hook 'c++-mode-hook #'setup-flycheck-var)
 

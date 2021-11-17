@@ -133,11 +133,13 @@ buffer is not visiting a file."
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
-(with-eval-after-load 'company
-  (global-set-key (kbd "<backtab>") 'company-complete))
+;(with-eval-after-load 'company
+;  (global-set-key (kbd "<backtab>") 'company-complete))
 
 (load-file (concat user-emacs-directory "helm-init.el"))
+;(load-file (concat user-emacs-directory "c_lsp.el"))
 (load-file (concat user-emacs-directory "c.el"))
+(load-file (concat user-emacs-directory "rust.el"))
 
 (setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
@@ -170,9 +172,7 @@ buffer is not visiting a file."
  ;; it's not loaded yet, so add our bindings to the load-hook
  (add-hook 'dired-load-hook 'my-dired-init))
 
-(require 'rustic)
-(push 'rustic-clippy flycheck-checkers)
-(setq rustic-flycheck-clippy-params "--message-format=json")
+
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -216,6 +216,7 @@ buffer is not visiting a file."
 
 (load-file (concat user-emacs-directory "tex.el"))
 
+
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
@@ -223,10 +224,33 @@ buffer is not visiting a file."
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
-  ;; company is an optional dependency. You have to
-  ;; install it separately via package-install
-  ;; `M-x package-install [ret] company`
-  (company-mode +1))
+  (company-mode +1)
+  (setq create-lockfiles nil))
+
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+;; enable typescript-tslint checker
+(flycheck-add-mode 'typescript-tslint 'web-mode)
+
+(require 'tide)
+(add-hook 'js2-mode-hook #'setup-tide-mode)
+;; configure javascript-tide checker to run after your default javascript checker
+(flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "jsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+;; configure jsx-tide checker to run after your default jsx checker
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -245,29 +269,28 @@ buffer is not visiting a file."
   (flycheck-add-mode 'typescript-tide 'ng2-ts-mode)
 )
 
-(require 'dap-node)
-(dap-mode 1)
+;(require 'dap-node)
+;(dap-mode 1)
 
 ;; The modes below are optional
-(dap-ui-mode 1)
+;(dap-ui-mode 1)
 ;; enables mouse hover support
-(dap-tooltip-mode 1)
+;(dap-tooltip-mode 1)
 ;; use tooltips for mouse hover
 ;; if it is not enabled `dap-mode' will use the minibuffer.
-(tooltip-mode 1)
+;(tooltip-mode 1)
 ;; displays floating panel with debug buttons
 ;; requies emacs 26+
-(dap-ui-controls-mode 1)
+;(dap-ui-controls-mode 1)
 
-(dap-register-debug-template
-  "Nodmon::Run"
-  (list :type "node"
-        :request "attach"
-        :restart t
-        :port 9229
-        :name "Nodmon::Run"))
-
-
+;(dap-register-debug-template
+;  "Nodmon::Run"
+;  (list :type "node"
+;        :request "attach"
+;        :restart t
+;        :port 9229
+;        :name "Nodmon::Run"))
+;
 ;(setq lsp-clients-angular-language-server-command
 ;  '("node"
 ;    "/usr/lib/node_modules/@angular/language-server"
