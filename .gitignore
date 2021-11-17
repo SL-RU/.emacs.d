@@ -58,3 +58,9 @@ elpy/
 .lsp-session-v1
 .python-environments/
 transient/
+
+.cache
+.dap-breakpoints
+.extension
+request
+projects
