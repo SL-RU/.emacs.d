@@ -4,3 +4,6 @@
 [submodule "rtags"]
 	path = rtags
 	url = git@github.com:Andersbakken/rtags.git
+[submodule "gendoxy"]
+	path = gendoxy
+	url = https://github.com/mp81ss/gendoxy

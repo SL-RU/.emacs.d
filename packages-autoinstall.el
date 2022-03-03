@@ -151,5 +151,8 @@
 (use-package company-lsp
   :commands company-lsp
   :config (setq company-lsp-cache-candidates 'auto))
-
+(use-package lammps-mode
+  :ensure t
+  :mode (;;("in\\." . lammps-mode)
+         ("\\.lmp\\'" . lammps-mode)))
 ;;; packages-autoinstall.el ends here

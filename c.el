@@ -4,6 +4,8 @@
 ;;; c/c++ packages
 ;;; Code:
 
+(load (concat user-emacs-directory "gendoxy/gendoxy.el"))
+
 (load-file (concat user-emacs-directory "rtags/src/rtags.el"))
 (load-file (concat user-emacs-directory "rtags/src/helm-rtags.el"))
 (load-file (concat user-emacs-directory "rtags/src/flycheck-rtags.el"))
