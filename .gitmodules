@@ -1,9 +1,9 @@
 [submodule "stm32"]
 	path = stm32
 	url = https://github.com/SL-RU/stm32-emacs
-[submodule "rtags"]
-	path = rtags
-	url = git@github.com:Andersbakken/rtags.git
 [submodule "gendoxy"]
 	path = gendoxy
 	url = https://github.com/mp81ss/gendoxy
+[submodule "rtags"]
+	path = rtags
+	url = https://github.com/Andersbakken/rtags

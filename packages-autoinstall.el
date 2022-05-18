@@ -12,13 +12,114 @@
 
 (require 'use-package)
 
+(use-package helm
+  :ensure t
+  :bind (("M-x"     . helm-M-x)
+         ("C-x r b" . helm-filtered-bookmarks)
+         ("C-x b"   . helm-buffers-list)
+         ("C-x C-f" . helm-find-files)
+         ("M-y"     . helm-show-kill-ring)
+         ("C-c i d" . helm-complete-file-name-at-point)
+         ("C-s"     . helm-swoop)
+         :map helm-map
+         ("C-d"       . helm-c-bookmark-run-delete)
+         ("<tab>"     . helm-execute-persistent-action)
+         ("<backtab>" . helm-find-files-up-one-level)
+         ("C-i"       . helm-execute-persistent-action)
+         ("C-z"       . helm-select-action)
+         :map minibuffer-local-map
+         ("M-p" . helm-minibuffer-history)
+         ("M-n" . helm-minibuffer-history))
+  :config
+  (require 'helm-config)
+  (require 'helm-swoop)
+  (setq history-delete-duplicates t)
+  (helm-mode 1))
+(use-package function-args
+  :ensure t
+  :config
+  (fa-config-default))
+(use-package nyan-mode
+  :ensure t
+  :config
+  (nyan-mode 1))
+(use-package switch-window
+  :ensure t
+  :bind (("C-x o" . switch-window)))
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode))
+(use-package drag-stuff
+  :ensure t
+  :config
+  (drag-stuff-define-keys)
+  (drag-stuff-global-mode))
+;; higlight cursors when scroll
+(use-package beacon
+  :ensure t
+  :config
+  (beacon-mode 1))
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+(use-package py-autopep8
+  :ensure t
+  :hook (python-mode-hook . py-autopep8-enable-on-use))
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+(use-package flycheck
+  :ensure t
+  :config
+  (global-flycheck-mode 1))
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->"         . mc/mark-next-like-this)
+         ("C-<"         . mc/mark-previous-like-this)
+         ("C-c C-<"     . mc/mark-all-like-this)
+         ("C-C C-v"     . uncomment-region)))
+(use-package company
+  :ensure t
+  :config
+  ;; aligns annotation to the right hand side
+  (setq company-tooltip-align-annotations t))
+(use-package py-autopep8        :ensure t)
+(use-package iedit              :ensure t)
+(use-package tramp              :ensure t)
 (use-package 2048-game          :ensure t)
 (use-package ac-c-headers       :ensure t)
 (use-package ac-slime           :ensure t)
-(use-package arduino-mode       :ensure t)
 (use-package beacon             :ensure t)
-                                        ;(use-package bookmark+          :ensure t)
-                                        ;(use-package c-eldoc            :ensure t)
+(use-package sudo-edit          :ensure t)
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+(use-package dired-single
+  :ensure t
+  :config
+  (require 'dired-single)
+  (defun my-dired-init ()
+    "Bunch of stuff to run for dired, either immediately or when it's loaded."
+    (define-key dired-mode-map [remap dired-find-file]
+      'dired-single-buffer)
+    (define-key dired-mode-map [remap dired-mouse-find-file-other-window]
+      'dired-single-buffer-mouse)
+    (define-key dired-mode-map [remap dired-up-directory]
+      'dired-single-up-directory))
+  ;; if dired's already loaded, then the keymap will be bound
+  (if (boundp 'dired-mode-map)
+      ;; we're good to go; just add our bindings
+      (my-dired-init)
+    ;; it's not loaded yet, so add our bindings to the load-hook
+    (add-hook 'dired-load-hook 'my-dired-init)))
+
+;;(use-package bookmark+          :ensure t)
+;;(use-package c-eldoc            :ensure t)
 (use-package company
   :ensure t
   :config
@@ -122,8 +223,7 @@
   :ensure t
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
+         (typescript-mode . tide-hl-identifier-mode)))
 
 
 (use-package lsp-mode
