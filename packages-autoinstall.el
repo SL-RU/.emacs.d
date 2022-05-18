@@ -12,6 +12,7 @@
 
 (require 'use-package)
 
+(use-package helm-swoop         :ensure t)
 (use-package helm
   :ensure t
   :bind (("M-x"     . helm-M-x)
@@ -35,6 +36,32 @@
   (require 'helm-swoop)
   (setq history-delete-duplicates t)
   (helm-mode 1))
+
+(use-package drag-stuff
+  :ensure t
+  :config
+  (drag-stuff-define-keys)
+  (drag-stuff-global-mode))
+;; higlight cursors when scroll
+(use-package beacon
+  :ensure t
+  :config
+  (beacon-mode 1))
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+(use-package yasnippet-snippets
+  :ensure t)
+
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->"         . mc/mark-next-like-this)
+         ("C-<"         . mc/mark-previous-like-this)
+         ("C-c C-<"     . mc/mark-all-like-this)
+         ("C-C C-v"     . uncomment-region)))
 (use-package function-args
   :ensure t
   :config
@@ -50,55 +77,14 @@
   :ensure t
   :config
   (global-undo-tree-mode))
-(use-package drag-stuff
-  :ensure t
-  :config
-  (drag-stuff-define-keys)
-  (drag-stuff-global-mode))
-;; higlight cursors when scroll
-(use-package beacon
-  :ensure t
-  :config
-  (beacon-mode 1))
-(use-package elpy
-  :ensure t
-  :init
-  (elpy-enable))
-(use-package py-autopep8
-  :ensure t
-  :hook (python-mode-hook . py-autopep8-enable-on-use))
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode 1))
-(use-package flycheck
-  :ensure t
-  :config
-  (global-flycheck-mode 1))
-(use-package multiple-cursors
-  :ensure t
-  :bind (("C-S-c C-S-c" . mc/edit-lines)
-         ("C->"         . mc/mark-next-like-this)
-         ("C-<"         . mc/mark-previous-like-this)
-         ("C-c C-<"     . mc/mark-all-like-this)
-         ("C-C C-v"     . uncomment-region)))
-(use-package company
-  :ensure t
-  :config
-  ;; aligns annotation to the right hand side
-  (setq company-tooltip-align-annotations t))
-(use-package py-autopep8        :ensure t)
-(use-package iedit              :ensure t)
 (use-package tramp              :ensure t)
 (use-package 2048-game          :ensure t)
 (use-package ac-c-headers       :ensure t)
 (use-package ac-slime           :ensure t)
 (use-package beacon             :ensure t)
 (use-package sudo-edit          :ensure t)
-(use-package elpy
-  :ensure t
-  :init
-  (elpy-enable))
+
+(use-package dired-quick-sort   :ensure t)
 (use-package dired-single
   :ensure t
   :config
@@ -118,8 +104,6 @@
     ;; it's not loaded yet, so add our bindings to the load-hook
     (add-hook 'dired-load-hook 'my-dired-init)))
 
-;;(use-package bookmark+          :ensure t)
-;;(use-package c-eldoc            :ensure t)
 (use-package company
   :ensure t
   :config
@@ -127,68 +111,51 @@
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
   (global-company-mode))
-(use-package cmake-mode         :ensure t)
 (use-package company-irony      :ensure t)
 (use-package company-irony-c-headers :ensure t)
-;(use-package dired+             :ensure t)
-(use-package dired-quick-sort   :ensure t)
-(use-package dired-single       :ensure t)
-(use-package dot-mode           :ensure t)
-(use-package drag-stuff         :ensure t)
-(use-package ducpel             :ensure t)
-(use-package elpy               :ensure t)
-;(use-package flappymacs         :ensure t)
-(use-package flx-ido            :ensure t)
-(use-package flycheck
-  :ensure t
-  :config
-  (add-hook 'typescript-mode-hook 'flycheck-mode))
-(use-package flycheck-irony     :ensure t)
-;(use-package flycheck-rtags     :ensure t)
-(use-package free-keys          :ensure t)
-(use-package function-args      :ensure t)
-;(use-package header2            :ensure t)
-;(use-package helm-rtags         :ensure t)
-(use-package helm-swoop         :ensure t)
-(use-package iedit              :ensure t)
-(use-package image+             :ensure t)
-(use-package image-dired+       :ensure t)
-(use-package intel-hex-mode     :ensure t)
-(use-package irony-eldoc        :ensure t)
-(use-package magit              :ensure t)
-;(use-package mongo              :ensure t)
-(use-package monokai-theme      :ensure t)
-(use-package multiple-cursors   :ensure t)
-(use-package nyan-mode          :ensure t)
-(use-package py-autopep8        :ensure t)
-(use-package python-black       :ensure t)
-(use-package rainbow-identifiers :ensure t)
-(use-package rustic             :ensure t)
-(use-package smooth-scrolling   :ensure t)
-(use-package sr-speedbar        :ensure t)
-(use-package switch-window      :ensure t)
-;(use-package unbound            :ensure t)
-(use-package undo-tree          :ensure t)
-(use-package visual-fill-column :ensure t)
-(use-package vlf                :ensure t)
-(use-package web-mode           :ensure t)
-(use-package xwidgete           :ensure t)
-(use-package yasnippet          :ensure t)
-(use-package yasnippet-snippets :ensure t)
-;(use-package zone-nyan          :ensure t)
-(use-package async              :ensure t)
-
-;(use-package latex              :ensure t)
-(use-package reftex             :ensure t)
-;(use-package auctex             :ensure t)
-;(use-package auctex-latexmk             :ensure t)
-
 (use-package company-quickhelp
   :ensure t
   :init
   (company-quickhelp-mode 1)
   (use-package pos-tip
     :ensure t))
+(use-package company-lsp
+  :commands company-lsp
+  :config (setq company-lsp-cache-candidates 'auto))
+
+(use-package cmake-mode         :ensure t)
+(use-package dot-mode           :ensure t)
+(use-package ducpel             :ensure t)
+(use-package flx-ido            :ensure t)
+(use-package free-keys          :ensure t)
+(use-package iedit              :ensure t)
+(use-package image+             :ensure t)
+(use-package image-dired+       :ensure t)
+(use-package intel-hex-mode     :ensure t)
+(use-package irony-eldoc        :ensure t)
+(use-package magit              :ensure t)
+(use-package monokai-theme      :ensure t)
+
+(use-package rainbow-identifiers :ensure t)
+(use-package rustic             :ensure t)
+(use-package smooth-scrolling   :ensure t)
+(use-package sr-speedbar        :ensure t)
+(use-package visual-fill-column :ensure t)
+(use-package vlf                :ensure t)
+(use-package xwidgete           :ensure t)
+(use-package async              :ensure t)
+
+;(use-package latex              :ensure t)
+;(use-package reftex             :ensure t)
+;(use-package auctex             :ensure t)
+;(use-package auctex-latexmk             :ensure t)
+
+(use-package flycheck
+  :ensure t
+  :config
+  (global-flycheck-mode 1)
+  (add-hook 'typescript-mode-hook 'flycheck-mode))
+(use-package flycheck-irony     :ensure t)
 
 (use-package web-mode
   :ensure t
@@ -212,19 +179,25 @@
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
 		(setup-tide-mode))))
   (flycheck-add-mode 'typescript-tslint 'web-mode))
-
 (use-package typescript-mode
   :ensure t
   :config
   (setq typescript-indent-level 2)
   (add-hook 'typescript-mode #'subword-mode))
-
 (use-package tide
   :ensure t
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)))
 
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+(use-package py-autopep8
+  :ensure t
+  :hook (python-mode-hook . py-autopep8-enable-on-use))
+(use-package python-black       :ensure t)
 
 (use-package lsp-mode
   :ensure
@@ -238,7 +211,6 @@
   (lsp-eldoc-enable-hover nil)
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
-
 (use-package lsp-ui
   :ensure
   :commands lsp-ui-mode
@@ -248,11 +220,9 @@
   (lsp-ui-peek-a nil)
   )
 
-(use-package company-lsp
-  :commands company-lsp
-  :config (setq company-lsp-cache-candidates 'auto))
 (use-package lammps-mode
   :ensure t
   :mode (;;("in\\." . lammps-mode)
          ("\\.lmp\\'" . lammps-mode)))
+
 ;;; packages-autoinstall.el ends here
