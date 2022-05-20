@@ -16,7 +16,10 @@
 	       (indent-tabs-mode . nil)        ; use spaces rather than tabs
 	       (c-basic-offset . 4)            ; indent by four spaces
 	       (c-offsets-alist . ((inline-open . 0)  ; custom indentation rules
+                                   (innamespace . [0])
 				   (brace-list-open . 0)
+                                   (brace-list-intro . ++)
+                                   (member-init-intro . ++)
 				   (statement-case-open . +)))))
 
 (defun my-c++-mode-hook ()
@@ -41,34 +44,39 @@
 (define-key c++-mode-map (kbd "C-c . f") 'stm32-flash-to-mcu)
 ;(add-hook 'kill-emacs-hook 'rtags-quit-rdm)
 
-(require 'irony)
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-(add-hook 'irony-mode-hook #'irony-eldoc)
-
-(require 'company)
-(require 'company-irony)
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
-(require 'company-irony-c-headers)
-; Load with `irony-mode` as a grouped backend
-(eval-after-load 'company
+(use-package irony
+  :ensure t
+  :hook ((c++-mode . irony-mode)
+         (c-mode . irony-mode)
+         (objc-mode . irony-mode)
+         (irony-mode . irony-cdb-autosetup-compile-options)))
+(use-package irony-eldoc
+  :ensure t
+  :hook ((irony-mode . irony-eldoc)))
+(use-package company-irony
+  :ensure t
+  :after (company)
+  :config
+  (add-to-list 'company-backends 'company-irony))
+;; Load with `irony-mode` as a grouped backend
+(use-package company-irony-c-headers
+  :ensure t
+  :after (company)
+  :config
   '(add-to-list
     'company-backends '(company-irony-c-headers company-irony)))
 
-(require 'flycheck-irony)
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-(eval-after-load 'flycheck
-  '(add-to-list 'flycheck-checkers 'irony))
-(defun setup-flycheck-var ()
-  "RTags create more accurate overlays."
-  (setq flycheck-clang-language-standard "gnu17"))
-(add-hook 'c-mode-hook #'setup-flycheck-var)
-(add-hook 'c++-mode-hook #'setup-flycheck-var)
+(use-package flycheck-irony
+  :ensure t
+  :after (flycheck)
+  :hook ((flycheck-mode . flycheck-irony-setup))
+  :config
+  (add-to-list 'flycheck-checkers 'irony)
+  (defun setup-flycheck-var ()
+    "RTags create more accurate overlays."
+    (setq flycheck-clang-language-standard "gnu17"))
+  (add-hook 'c-mode-hook #'setup-flycheck-var)
+  (add-hook 'c++-mode-hook #'setup-flycheck-var))
 
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
 (defun rtags-add-project-from-irony ()

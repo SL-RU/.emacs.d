@@ -12,7 +12,6 @@
 
 (require 'use-package)
 
-(use-package helm-swoop         :ensure t)
 (use-package helm
   :ensure t
   :bind (("M-x"     . helm-M-x)
@@ -32,10 +31,22 @@
          ("M-p" . helm-minibuffer-history)
          ("M-n" . helm-minibuffer-history))
   :config
-  (require 'helm-config)
-  (require 'helm-swoop)
   (setq history-delete-duplicates t)
+  ;; open helm buffer inside current window, not occupy whole other window
+  (setq helm-split-window-in-side-p           t
+        ;; move to end or beginning of source when reaching top or bottom of source.
+        helm-move-to-line-cycle-in-source     t
+        ;; search for library in `require' and `declare-function' sexp.
+        helm-ff-search-library-in-sexp        t
+        ;; ; scroll 8 lines other window using M-<next>/M-<prior>
+        helm-scroll-amount                    8
+        helm-ff-file-name-history-use-recentf t
+        helm-echo-input-in-header-line t)
   (helm-mode 1))
+
+(use-package helm-swoop
+  :ensure t
+  :after (helm))
 
 (use-package drag-stuff
   :ensure t
@@ -111,8 +122,6 @@
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
   (global-company-mode))
-(use-package company-irony      :ensure t)
-(use-package company-irony-c-headers :ensure t)
 (use-package company-quickhelp
   :ensure t
   :init
@@ -132,7 +141,6 @@
 (use-package image+             :ensure t)
 (use-package image-dired+       :ensure t)
 (use-package intel-hex-mode     :ensure t)
-(use-package irony-eldoc        :ensure t)
 (use-package magit              :ensure t)
 (use-package monokai-theme      :ensure t)
 
@@ -155,7 +163,6 @@
   :config
   (global-flycheck-mode 1)
   (add-hook 'typescript-mode-hook 'flycheck-mode))
-(use-package flycheck-irony     :ensure t)
 
 (use-package web-mode
   :ensure t
