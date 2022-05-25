@@ -48,6 +48,16 @@
   :ensure t
   :after (helm))
 
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  (setq projectile-enable-caching t)
+  (setq projectile-enable-cmake-presets t)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
+
 (use-package drag-stuff
   :ensure t
   :config
@@ -152,6 +162,7 @@
 (use-package vlf                :ensure t)
 (use-package xwidgete           :ensure t)
 (use-package async              :ensure t)
+(use-package yaml-mode          :ensure t)
 
 ;(use-package latex              :ensure t)
 ;(use-package reftex             :ensure t)
@@ -226,6 +237,18 @@
   (lsp-ui-doc-enable t)
   (lsp-ui-peek-a nil)
   )
+
+(use-package go-mode
+  :ensure t
+  :bind (
+         ;; If you want to switch existing go-mode bindings to use lsp-mode/gopls instead
+         ;; uncomment the following lines
+         ;; ("C-c C-j" . lsp-find-definition)
+         ;; ("C-c C-d" . lsp-describe-thing-at-point)
+         )
+  :hook ((go-mode . lsp-deferred)
+         (before-save . lsp-format-buffer)
+         (before-save . lsp-organize-imports)))
 
 (use-package lammps-mode
   :ensure t
