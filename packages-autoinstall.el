@@ -220,9 +220,60 @@
   :hook (python-mode-hook . py-autopep8-enable-on-use))
 (use-package python-black       :ensure t)
 
+
+(use-package which-key
+  :ensure t
+  :defer 10
+  :config
+  (setq which-key-popup-type 'side-window) ;Default
+  ;; (setq which-key-popup-type 'minibuffer)
+  (setq which-key-compute-remaps t) ;Show correct descriptions for remapped keys
+
+  (setq which-key-allow-multiple-replacements t) ;Default = nil
+  ;; Use cool unicode characters if available
+  (with-eval-after-load 'setup-font-check
+    (when font-symbola-p
+      (add-to-list 'which-key-replacement-alist '((nil . "\\`calc-") . (nil . "🖩")))
+      (add-to-list 'which-key-replacement-alist '((nil . "\\`engine/search-") . (nil . "🔎 "))))) ;engine-mode
+
+  ;; Change what string to display for a given *complete* key binding
+  ;; Eg: After "C-x", display "8 → +unicode" instead of "8 → +prefix"
+  (which-key-add-key-based-replacements
+   "C-x 8"   "unicode"
+   "C-x a"   "abbrev/expand"
+   "C-x r"   "rectangle/register/bookmark"
+   "C-x v"   "version control"
+   "C-c /"   "engine-mode-map"
+   "C-c C-v" "org-babel"
+   "C-x 8 0" "ZWS")
+
+  ;; Highlight certain commands
+  (defface modi/which-key-highlight-2-face
+    '((t . (:inherit which-key-command-description-face :foreground "indian red")))
+    "Another face for highlighting commands in `which-key'.")
+
+  (defface modi/which-key-highlight-3-face
+    '((t . (:inherit which-key-command-description-face :foreground "DarkOrange3")))
+    "Another face for highlighting commands in `which-key'.")
+  (setq which-key-highlighted-command-list
+        '(("\\`hydra-" . which-key-group-description-face)
+          ;; Highlight using the `modi/which-key-highlight-2-face'
+          ("\\`modi/" . modi/which-key-highlight-2-face)
+          ;; Highlight using the `modi/which-key-highlight-3-face'
+          ("\\`bookmark-" . modi/which-key-highlight-3-face)
+          ("\\`counsel-" . modi/which-key-highlight-3-face)
+          ;; Highlight using the default `which-key-highlighted-command-face'
+          "\\`describe-"
+          "\\(rectangle-\\)\\|\\(-rectangle\\)"
+          "\\`org-"))
+  (which-key-mode 1))
+
 (use-package lsp-mode
-  :ensure
+  :ensure t
   :commands lsp
+  :hook ((c-mode . lsp)
+         (c++-mode . lsp)
+         (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
   (lsp-rust-analyzer-cargo-watch-command "clippy")
@@ -232,14 +283,19 @@
   (lsp-eldoc-enable-hover nil)
   (lsp-enable-indentation nil)
   :config
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  (setq lsp-idle-delay 0.1))
 (use-package lsp-ui
-  :ensure
+  :ensure t
   :commands lsp-ui-mode
   :custom
   (lsp-ui-sideline-show-hover nil)
   (lsp-ui-doc-enable t)
   (lsp-ui-peek-a nil)
+  )
+
+(use-package dap-mode
+  :ensure t
   )
 
 (use-package go-mode
@@ -251,9 +307,11 @@
          ;; ("C-c C-d" . lsp-describe-thing-at-point)
          )
   :hook ((go-mode . lsp-deferred)
-         (go-mode . (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-         (before-save . lsp-format-buffer)
-         (before-save . lsp-organize-imports)))
+         (go-mode . (lambda ()
+                      (add-to-list 'write-file-functions 'delete-trailing-whitespace)
+                      (before-save . lsp-format-buffer)
+                      (before-save . lsp-organize-imports)
+                      ))))
 
 (use-package lammps-mode
   :ensure t
