@@ -194,6 +194,7 @@
         )
   (add-hook 'web-mode-hook
             (lambda ()
+              (add-to-list 'write-file-functions 'delete-trailing-whitespace)
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
 		(setup-tide-mode))))
   (flycheck-add-mode 'typescript-tslint 'web-mode))
@@ -201,6 +202,8 @@
   :ensure t
   :config
   (setq typescript-indent-level 2)
+  (add-hook 'typescript-mode-hook
+            (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
   (add-hook 'typescript-mode #'subword-mode))
 (use-package tide
   :ensure t
@@ -227,6 +230,7 @@
   (lsp-rust-analyzer-server-display-inlay-hints t)
   (lsp-signature-auto-activate nil)
   (lsp-eldoc-enable-hover nil)
+  (lsp-enable-indentation nil)
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 (use-package lsp-ui
@@ -247,6 +251,7 @@
          ;; ("C-c C-d" . lsp-describe-thing-at-point)
          )
   :hook ((go-mode . lsp-deferred)
+         (go-mode . (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
          (before-save . lsp-format-buffer)
          (before-save . lsp-organize-imports)))
 

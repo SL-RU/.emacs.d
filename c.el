@@ -10,6 +10,9 @@
 (load-file (concat user-emacs-directory "rtags/src/helm-rtags.el"))
 (load-file (concat user-emacs-directory "rtags/src/flycheck-rtags.el"))
 
+(add-hook 'c-mode-hook
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+
 ; style I want to use in c++ mode
 (c-add-style "my-style"
 	     '("stroustrup"
