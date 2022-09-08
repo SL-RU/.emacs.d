@@ -36,9 +36,10 @@
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
 
+(setq read-process-output-max (* 1024 1024)) ; for lsp
 (setq max-lisp-eval-depth 10000)
 (setq max-specpdl-size 32000)
-(set 'gc-cons-threshold 100000000)
+(setq gc-cons-threshold 100000000)
 (setq create-lockfiles nil)
 ;; pair brackets
 (show-paren-mode)
@@ -93,4 +94,13 @@
           (set-face-attribute 'default nil :height 170))))))
 (add-hook 'window-size-change-functions #'my-zoom-frm-by-dpi)
 
+(defun stm32-flash-to-mcu ()
+  "Upload compiled binary to stm32 through gdb if gdb has been started."
+  (interactive)
+  (progn (gdb-io-interrupt)
+         (gud-basic-call "load")
+         (gud-basic-call "cont")))
+
 ;;; init.el ends here
+(put 'erase-buffer 'disabled nil)
+(put 'set-goal-column 'disabled nil)

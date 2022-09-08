@@ -10,6 +10,20 @@
       (package-refresh-contents)
       (package-install 'use-package)))
 
+;; Install straight.el
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
 (require 'use-package)
 
 (use-package helm
@@ -128,7 +142,7 @@
 (use-package company
   :ensure t
   :config
-  (setq company-show-numbers t)
+  (setq company-backends '(company-capf company-dabbrev-code))
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
   (global-company-mode))
@@ -138,9 +152,6 @@
   (company-quickhelp-mode 1)
   (use-package pos-tip
     :ensure t))
-(use-package company-lsp
-  :commands company-lsp
-  :config (setq company-lsp-cache-candidates 'auto))
 
 (use-package cmake-mode         :ensure t)
 (use-package dot-mode           :ensure t)
@@ -295,7 +306,28 @@
   )
 
 (use-package dap-mode
+  :straight '(dap-mode
+              :type git
+              :host github
+              :branch "feat/cortex-debug"
+              :repo "mrsch/dap-mode")
+  :config
+  (defun counsel-fzf-rg:org ()
+    (interactive)
+    (counsel-fzf-rg "" org-directory))
+  :bind (("C-c n f". counsel-fzf-rg:org)))
+
+(use-package dap-mode
   :ensure t
+  :config
+  (require 'dap-cpptools)
+  (require 'dap-gdb-lldb)
+  (setq dap-auto-configure-features '(sessions locals controls tooltip))
+  (dap-mode 1)
+  (dap-ui-mode 1)
+  (dap-tooltip-mode 1)
+  (tooltip-mode 1)
+  (dap-ui-controls-mode 1)
   )
 
 (use-package go-mode
@@ -317,5 +349,9 @@
   :ensure t
   :mode (;;("in\\." . lammps-mode)
          ("\\.lmp\\'" . lammps-mode)))
+
+(use-package ess
+  :ensure t
+  :init (require 'ess-site))
 
 ;;; packages-autoinstall.el ends here

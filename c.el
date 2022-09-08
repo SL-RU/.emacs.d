@@ -6,9 +6,9 @@
 
 (load (concat user-emacs-directory "gendoxy/gendoxy.el"))
 
-(load-file (concat user-emacs-directory "rtags/src/rtags.el"))
-(load-file (concat user-emacs-directory "rtags/src/helm-rtags.el"))
-(load-file (concat user-emacs-directory "rtags/src/flycheck-rtags.el"))
+;(load-file (concat user-emacs-directory "rtags/src/rtags.el"))
+;(load-file (concat user-emacs-directory "rtags/src/helm-rtags.el"))
+;(load-file (concat user-emacs-directory "rtags/src/flycheck-rtags.el"))
 
 (add-hook 'c-mode-hook
           (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
