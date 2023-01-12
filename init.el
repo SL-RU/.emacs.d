@@ -49,6 +49,7 @@
 ;; emacs 23.1, 24.2, default to t
 ;; if indent-tabs-mode is t, it means it may use tab, resulting mixed space and tab
 (setq-default indent-tabs-mode nil)
+(turn-off-auto-fill)
 
 (load-file (concat user-emacs-directory "c.el"))
 ;(load-file (concat user-emacs-directory "tex.el"))

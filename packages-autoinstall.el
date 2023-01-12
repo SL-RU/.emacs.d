@@ -26,6 +26,10 @@
 
 (require 'use-package)
 
+;; Add extensions
+(use-package cape
+  :ensure t
+)
 (use-package helm
   :ensure t
   :bind (("M-x"     . helm-M-x)
@@ -47,20 +51,20 @@
   :config
   (setq history-delete-duplicates t)
   ;; open helm buffer inside current window, not occupy whole other window
-  (setq helm-split-window-in-side-p           t
+  (setq helm-split-window-inside-p           t
         ;; move to end or beginning of source when reaching top or bottom of source.
         helm-move-to-line-cycle-in-source     t
-        ;; search for library in `require' and `declare-function' sexp.
-        helm-ff-search-library-in-sexp        t
         ;; ; scroll 8 lines other window using M-<next>/M-<prior>
         helm-scroll-amount                    8
-        helm-ff-file-name-history-use-recentf t
         helm-echo-input-in-header-line t)
   (helm-mode 1))
 
 (use-package helm-swoop
   :ensure t
   :after (helm))
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p))
 
 (use-package projectile
   :ensure t
@@ -97,10 +101,10 @@
          ("C-<"         . mc/mark-previous-like-this)
          ("C-c C-<"     . mc/mark-all-like-this)
          ("C-C C-v"     . uncomment-region)))
-(use-package function-args
-  :ensure t
-  :config
-  (fa-config-default))
+;(use-package function-args
+;  :ensure t
+;  :config
+;  (fa-config-default))
 (use-package nyan-mode
   :ensure t
   :config
@@ -153,7 +157,17 @@
   (use-package pos-tip
     :ensure t))
 
-(use-package cmake-mode         :ensure t)
+(use-package cmake-mode
+  :ensure t
+  :mode ("CMakeLists\\.txt\\'" "\\.cmake\\'")
+  :hook (cmake-mode . lsp-deferred))
+(use-package cmake-font-lock
+  :ensure t
+  :after cmake-mode
+  :config (cmake-font-lock-activate))
+(use-package dockerfile-mode
+  :ensure t
+  :hook (dockerfile-mode . lsp))
 (use-package dot-mode           :ensure t)
 (use-package ducpel             :ensure t)
 (use-package flx-ido            :ensure t)
@@ -200,15 +214,14 @@
 
         web-mode-enable-css-colorization t
         web-mode-enable-auto-pairing t
-        web-mode-enable-comment-keywords t
         web-mode-enable-current-element-highlight t
-        )
-  (add-hook 'web-mode-hook
-            (lambda ()
-              (add-to-list 'write-file-functions 'delete-trailing-whitespace)
-              (when (string-equal "tsx" (file-name-extension buffer-file-name))
-		(setup-tide-mode))))
-  (flycheck-add-mode 'typescript-tslint 'web-mode))
+        ))
+  ;(add-hook 'web-mode-hook
+            ;(lambda ()
+             ; (add-to-list 'write-file-functions 'delete-trailing-whitespace)
+              ;(when (string-equal "tsx" (file-name-extension buffer-file-name))
+                                        ;(setup-tide-mode))
+            ;(flycheck-add-mode 'typescript-tslint 'web-mode))
 (use-package typescript-mode
   :ensure t
   :config
@@ -216,11 +229,11 @@
   (add-hook 'typescript-mode-hook
             (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
   (add-hook 'typescript-mode #'subword-mode))
-(use-package tide
-  :ensure t
-  :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)))
+;(use-package tide
+;  :ensure t
+;  :after (typescript-mode company flycheck)
+;  :hook ((typescript-mode . tide-setup)
+;         (typescript-mode . tide-hl-identifier-mode)))
 
 (use-package elpy
   :ensure t
@@ -282,8 +295,13 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :hook ((c-mode . lsp)
+  :bind-keymap ("C-c l" . lsp-command-map)
+  :hook ((go-mode . lsp)
+         (c-mode . lsp)
          (c++-mode . lsp)
+         (typescript-mode . lsp)
+         (javascript-mode . lsp)
+         (web-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
@@ -293,6 +311,7 @@
   (lsp-signature-auto-activate nil)
   (lsp-eldoc-enable-hover nil)
   (lsp-enable-indentation nil)
+  (push 'company-lsp company-backends)
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   (setq lsp-idle-delay 0.1))
@@ -353,5 +372,8 @@
 (use-package ess
   :ensure t
   :init (require 'ess-site))
+(use-package coterm
+  :ensure t
+  :init (coterm-mode))
 
 ;;; packages-autoinstall.el ends here

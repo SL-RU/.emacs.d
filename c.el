@@ -27,8 +27,9 @@
 
 (defun my-c++-mode-hook ()
   "C++ hook."
-  (c-set-style "my-style") ; use my-style defined above
-  (auto-fill-mode))
+;  (semantic-mode -1)
+  (c-set-style "my-style") ; use my-style defined above)
+  )
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 (add-hook 'c-mode-hook 'my-c++-mode-hook)
 
