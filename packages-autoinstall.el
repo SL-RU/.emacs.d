@@ -235,14 +235,14 @@
 ;  :hook ((typescript-mode . tide-setup)
 ;         (typescript-mode . tide-hl-identifier-mode)))
 
-(use-package elpy
-  :ensure t
-  :init
-  (elpy-enable))
-(use-package py-autopep8
-  :ensure t
-  :hook (python-mode-hook . py-autopep8-enable-on-use))
-(use-package python-black       :ensure t)
+;(use-package elpy
+;  :ensure t
+;  :init
+;  (elpy-enable))
+;(use-package py-autopep8
+;  :ensure t
+;  :hook (python-mode-hook . py-autopep8-enable-on-use))
+;(use-package python-black       :ensure t)
 
 
 (use-package which-key
@@ -301,7 +301,9 @@
          (c++-mode . lsp)
          (typescript-mode . lsp)
          (javascript-mode . lsp)
+         (js-mode . lsp)
          (web-mode . lsp)
+         (python-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
