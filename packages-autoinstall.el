@@ -304,6 +304,7 @@
          (js-mode . lsp)
          (web-mode . lsp)
          (python-mode . lsp)
+         (markdown-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
@@ -377,5 +378,36 @@
 (use-package coterm
   :ensure t
   :init (coterm-mode))
+
+(straight-use-package
+ '(lsp-tailwindcss :type git :host github :repo "merrickluo/lsp-tailwindcss"))
+
+(use-package lsp-tailwindcss
+  :init
+  (setq lsp-tailwindcss-add-on-mode t))
+
+(use-package tree-sitter
+  :ensure t
+  :config
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+(use-package tree-sitter-langs
+  :ensure t
+  :after tree-sitter)
+
+(use-package ts-fold
+  :straight (ts-fold :type git :host github :repo "emacs-tree-sitter/ts-fold")
+  :after tree-sitter-langs
+  :bind (("C-c f o"   . ts-fold-open)
+         ("C-c f c"   . ts-fold-close)
+         ("C-c f r"   . ts-fold-open-recursively)
+         ("C-c f a c" . ts-fold-open-all)
+         ("C-c f a o" . ts-fold-close-all)
+         ("C-c f t"   . ts-fold-toggle)))
+
+(use-package helm-tree-sitter
+  :ensure t
+  :after tree-sitter
+  :bind (("C-c C-f" . helm-tree-sitter)))
 
 ;;; packages-autoinstall.el ends here

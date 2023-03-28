@@ -102,6 +102,12 @@
          (gud-basic-call "load")
          (gud-basic-call "cont")))
 
+(require 'tree-sitter)
+(global-tree-sitter-mode)
+(require 'ts-fold)
+(global-ts-fold-mode)
+(global-ts-fold-indicators-mode)
+
 ;;; init.el ends here
 (put 'erase-buffer 'disabled nil)
 (put 'set-goal-column 'disabled nil)
