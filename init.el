@@ -4,6 +4,10 @@
 ;;; Code:
 
 (server-start) ;; start server to open files in the same window
+(setq native-comp-deferred-compilation-deny-list nil) ;; https://github.com/radian-software/straight.el/issues/767
+(setq native-comp-deferred-compilation t)
+(setq native-compile-prune-cache t)
+;(setq global-linum-mode nil) ;; https://github.com/emacsorphanage/git-gutter/issues/221
 
 (require 'package)
 (add-to-list 'package-archives
@@ -28,8 +32,7 @@
 (setq bidi-paragraph-direction t)
 (setq bidi-inhibit-bpa t)
 (setq visible-bell 1)
-;; enable line numbers globally
-(global-linum-mode t)
+
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -102,12 +105,20 @@
          (gud-basic-call "load")
          (gud-basic-call "cont")))
 
+(add-hook 'sh-mode-hook #'display-line-numbers-mode)
+(add-hook 'c-mode-hook #'display-line-numbers-mode)
+(add-hook 'c++-mode-hook #'display-line-numbers-mode)
+(add-hook 'web-mode-hook #'display-line-numbers-mode)
+(add-hook 'text-mode-hook #'display-line-numbers-mode)
+
 (require 'tree-sitter)
 (global-tree-sitter-mode)
 (require 'ts-fold)
 (global-ts-fold-mode)
 (global-ts-fold-indicators-mode)
 
-;;; init.el ends here
+(setq lsp-tex-server 'digestif)
+
 (put 'erase-buffer 'disabled nil)
 (put 'set-goal-column 'disabled nil)
+;;; init.el ends here

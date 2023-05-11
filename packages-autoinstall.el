@@ -410,4 +410,24 @@
   :after tree-sitter
   :bind (("C-c C-f" . helm-tree-sitter)))
 
+(use-package xenops
+  :ensure t
+  ;; :hook
+  ;; (org-mode . xenops-mode)
+  :bind
+  ;; FIX: xenops overrides the default paste behavior with xenops-handle-paste through xenops-util-define-key-with-fallback in xenops-define-key which breaks the delete-selection-mode
+  ;(:map xenops-mode-map
+  ;        ("s-v" . yank))
+  :custom
+  (setq xenops-reveal-on-entry t)
+  :config
+  ;; Suppress xenops startup messages.
+  (advice-add 'xenops-mode :around #'suppress-messages)
+  (setq xenops-math-image-scale-factor 1.8))
+
+(use-package avy
+  :ensure t
+  :bind
+  (("C-:" . avy-goto-char-2)))
+
 ;;; packages-autoinstall.el ends here
