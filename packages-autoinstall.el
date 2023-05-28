@@ -149,6 +149,7 @@
   (setq company-backends '(company-capf company-dabbrev-code))
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
+  (setq company-global-modes '(not erc-mode message-mode eshell-mode gud-mode))
   (global-company-mode))
 (use-package company-quickhelp
   :ensure t
@@ -224,11 +225,22 @@
             ;(flycheck-add-mode 'typescript-tslint 'web-mode))
 (use-package typescript-mode
   :ensure t
+  :after tree-sitter
   :config
   (setq typescript-indent-level 2)
+  (setq typescript-ts-mode-indent-offset 2)
   (add-hook 'typescript-mode-hook
             (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-  (add-hook 'typescript-mode #'subword-mode))
+  (add-hook 'typescript-mode #'subword-mode)
+  (define-derived-mode typescriptreact-mode typescript-mode
+    "TypeScript TSX")
+
+  ;; use our derived mode for tsx files
+  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptreact-mode))
+  ;; by default, typescript-mode is mapped to the treesitter typescript parser
+  ;; use our derived mode to map both .tsx AND .ts -> typescriptreact-mode -> treesitter tsx
+  (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptreact-mode . tsx)))
+
 ;(use-package tide
 ;  :ensure t
 ;  :after (typescript-mode company flycheck)
@@ -328,38 +340,25 @@
   )
 
 (use-package dap-mode
-  :straight '(dap-mode
-              :type git
-              :host github
-              :branch "feat/cortex-debug"
-              :repo "mrsch/dap-mode")
+  :ensure t
   :config
   (defun counsel-fzf-rg:org ()
     (interactive)
     (counsel-fzf-rg "" org-directory))
-  :bind (("C-c n f". counsel-fzf-rg:org)))
-
-(use-package dap-mode
-  :ensure t
-  :config
   (require 'dap-cpptools)
   (require 'dap-gdb-lldb)
   (setq dap-auto-configure-features '(sessions locals controls tooltip))
-  (dap-mode 1)
-  (dap-ui-mode 1)
-  (dap-tooltip-mode 1)
-  (tooltip-mode 1)
-  (dap-ui-controls-mode 1)
+  (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+  ;(dap-mode 1)
+  ;(dap-ui-mode 1)
+  ;(dap-tooltip-mode 1)
+  ;(tooltip-mode 1)
+  ;(dap-auto-configure-mode +1)
+  ;(dap-ui-controls-mode 1)
   )
 
 (use-package go-mode
   :ensure t
-  :bind (
-         ;; If you want to switch existing go-mode bindings to use lsp-mode/gopls instead
-         ;; uncomment the following lines
-         ;; ("C-c C-j" . lsp-find-definition)
-         ;; ("C-c C-d" . lsp-describe-thing-at-point)
-         )
   :hook ((go-mode . lsp-deferred)
          (go-mode . (lambda ()
                       (add-to-list 'write-file-functions 'delete-trailing-whitespace)
@@ -389,6 +388,7 @@
 (use-package tree-sitter
   :ensure t
   :config
+  (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 (use-package tree-sitter-langs
