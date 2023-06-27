@@ -34,4 +34,30 @@
 (add-hook 'c-mode-hook 'my-c++-mode-hook)
 
 
+(use-package friendly-shell-command
+  :ensure t
+  )
+(use-package s
+  :ensure t
+  )
+
+(require 'helm)
+(require 's)
+(defun projectile-run-gdb-elf ()
+  "Run arm-none-eabi-gdb and select elf"
+  (interactive)
+  (setq root (projectile-project-root))
+  (when 'root
+    (setq file (helm :sources (helm-build-sync-source "test"
+                                :candidates (s-split
+                                             "\n"
+                                             (friendly-shell-command-to-string
+                                              "find . -type f -name '*.elf'"
+                                              :path root))
+                                :fuzzy-match t)
+                     :buffer "*helm find*"
+                     :case-fold-search helm-file-name-case-fold-search))
+    (when file
+      (gud-gdb (s-concat "arm-none-eabi-gdb -ex \"tar ext:3333\" " (concat root file))))))
+
 ;;; c.el ends here
