@@ -340,22 +340,22 @@
   )
 
 (use-package dap-mode
-  :ensure t
-  :config
-  (defun counsel-fzf-rg:org ()
-    (interactive)
-    (counsel-fzf-rg "" org-directory))
-  (require 'dap-cpptools)
-  (require 'dap-gdb-lldb)
-  (setq dap-auto-configure-features '(sessions locals controls tooltip))
-  (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
-  ;(dap-mode 1)
-  ;(dap-ui-mode 1)
-  ;(dap-tooltip-mode 1)
-  ;(tooltip-mode 1)
-  ;(dap-auto-configure-mode +1)
-  ;(dap-ui-controls-mode 1)
-  )
+ :ensure t
+ :config
+ (defun counsel-fzf-rg:org ()
+   (interactive)
+   (counsel-fzf-rg "" org-directory))
+ (require 'dap-cpptools)
+ (require 'dap-gdb-lldb)
+ (setq dap-auto-configure-features '(sessions locals controls tooltip))
+ (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+ ;(dap-mode 1)
+ ;(dap-ui-mode 1)
+ ;(dap-tooltip-mode 1)
+ ;(tooltip-mode 1)
+ ;(dap-auto-configure-mode +1)
+ ;(dap-ui-controls-mode 1)
+ )
 
 (use-package go-mode
   :ensure t
@@ -374,9 +374,25 @@
 (use-package ess
   :ensure t
   :init (require 'ess-site))
+
 (use-package coterm
   :ensure t
-  :init (coterm-mode))
+;  :init (coterm-mode)
+  )
+
+(use-package detached
+  :ensure t
+  :init (detached-init)
+  :bind (
+         ;; Replace `async-shell-command' with `detached-shell-command'
+         ([remap async-shell-command] . detached-shell-command)
+         ;; Replace `compile' with `detached-compile'
+         ([remap compile] . detached-compile)
+         ([remap recompile] . detached-compile-recompile)
+         ;; Replace built in completion of sessions with `consult'
+         ([remap detached-open-session] . detached-consult-session))
+  :custom ((detached-show-output-on-attach t)
+           (detached-terminal-data-command system-type)))
 
 (straight-use-package
  '(lsp-tailwindcss :type git :host github :repo "merrickluo/lsp-tailwindcss"))
@@ -429,5 +445,12 @@
   :ensure t
   :bind
   (("C-:" . avy-goto-char-2)))
+
+(use-package friendly-shell-command
+  :ensure t
+  )
+(use-package s
+  :ensure t
+  )
 
 ;;; packages-autoinstall.el ends here

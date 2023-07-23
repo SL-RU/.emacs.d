@@ -4,10 +4,6 @@
 ;;; Code:
 
 (server-start) ;; start server to open files in the same window
-(setq native-comp-deferred-compilation-deny-list nil) ;; https://github.com/radian-software/straight.el/issues/767
-(setq native-comp-deferred-compilation t)
-(setq native-compile-prune-cache t)
-;(setq global-linum-mode nil) ;; https://github.com/emacsorphanage/git-gutter/issues/221
 
 (require 'package)
 (add-to-list 'package-archives
@@ -55,6 +51,7 @@
 (turn-off-auto-fill)
 
 (load-file (concat user-emacs-directory "c.el"))
+(load-file (concat user-emacs-directory "stm32/stm32.el"))
 (load-file (concat user-emacs-directory "colorpick.el"))
 ;(load-file (concat user-emacs-directory "tex.el"))
 ;;(load-file (concat user-emacs-directory "rust.el"))
@@ -67,13 +64,6 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-(defun stm32-flash-to-mcu ()
-  "Upload compiled binary to stm32 through gdb if gdb has been started."
-  (interactive)
-  (progn (gdb-io-interrupt)
-         (gud-basic-call "load")
-         (gud-basic-call "cont")))
 
 (add-hook 'sh-mode-hook #'display-line-numbers-mode)
 (add-hook 'c-mode-hook #'display-line-numbers-mode)
