@@ -55,6 +55,7 @@
 (turn-off-auto-fill)
 
 (load-file (concat user-emacs-directory "c.el"))
+(load-file (concat user-emacs-directory "colorpick.el"))
 ;(load-file (concat user-emacs-directory "tex.el"))
 ;;(load-file (concat user-emacs-directory "rust.el"))
 
