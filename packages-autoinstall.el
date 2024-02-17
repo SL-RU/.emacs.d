@@ -339,23 +339,23 @@
   (lsp-ui-peek-a nil)
   )
 
-(use-package dap-mode
- :ensure t
- :config
- (defun counsel-fzf-rg:org ()
-   (interactive)
-   (counsel-fzf-rg "" org-directory))
- (require 'dap-cpptools)
- (require 'dap-gdb-lldb)
- (setq dap-auto-configure-features '(sessions locals controls tooltip))
- (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
- ;(dap-mode 1)
- ;(dap-ui-mode 1)
- ;(dap-tooltip-mode 1)
- ;(tooltip-mode 1)
- ;(dap-auto-configure-mode +1)
- ;(dap-ui-controls-mode 1)
- )
+;(use-package dap-mode
+; :ensure t
+; :config
+; (defun counsel-fzf-rg:org ()
+;   (interactive)
+;   (counsel-fzf-rg "" org-directory))
+; (require 'dap-cpptools)
+; (require 'dap-gdb-lldb)
+; (setq dap-auto-configure-features '(sessions locals controls tooltip))
+; (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+; ;(dap-mode 1)
+; ;(dap-ui-mode 1)
+; ;(dap-tooltip-mode 1)
+; ;(tooltip-mode 1)
+; ;(dap-auto-configure-mode +1)
+; ;(dap-ui-controls-mode 1)
+; )
 
 (use-package go-mode
   :ensure t
@@ -375,10 +375,10 @@
   :ensure t
   :init (require 'ess-site))
 
-(use-package coterm
-  :ensure t
+;(use-package coterm
+;  :ensure t
 ;  :init (coterm-mode)
-  )
+;  )
 
 (use-package detached
   :ensure t
@@ -388,11 +388,21 @@
          ([remap async-shell-command] . detached-shell-command)
          ;; Replace `compile' with `detached-compile'
          ([remap compile] . detached-compile)
-         ([remap recompile] . detached-compile-recompile)
-         ;; Replace built in completion of sessions with `consult'
-         ([remap detached-open-session] . detached-consult-session))
+         ([remap recompile] . detached-compile-recompile))
+  ;; Replace built in completion of sessions with `consult'
+  ([remap detached-open-session] . detached-consult-session)
   :custom ((detached-show-output-on-attach t)
            (detached-terminal-data-command system-type)))
+
+;(use-package fancy-compilation
+;  :ensure t
+;  :commands (fancy-compilation-mode)
+;  :init
+;  (with-eval-after-load 'compile
+                                        ;    (fancy-compilation-mode)))
+
+(use-package vterm
+    :ensure t)
 
 (straight-use-package
  '(lsp-tailwindcss :type git :host github :repo "merrickluo/lsp-tailwindcss"))
@@ -452,5 +462,22 @@
 (use-package s
   :ensure t
   )
+
+(use-package fzf
+  :ensure t
+  :bind
+  (("C-c p c" . fzf-find-file))
+    ;; Don't forget to set keybinds!
+  :config
+  (setq fzf/args "-x --print-query --margin=1,0 --no-hscroll"
+        fzf/executable "fzf"
+        fzf/git-grep-args "-i --line-number %s"
+        ;; command used for `fzf-grep-*` functions
+        ;; example usage for ripgrep:
+        ;; fzf/grep-command "rg --no-heading -nH"
+        fzf/grep-command "grep -nrH"
+        ;; If nil, the fzf buffer will appear at the top of the window
+        fzf/position-bottom t
+        fzf/window-height 15))
 
 ;;; packages-autoinstall.el ends here

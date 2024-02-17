@@ -3,6 +3,8 @@
 ;;; It is always WIP
 ;;; Code:
 
+(setq comp-deferred-compilation t)
+(defvar native-comp-deferred-compilation-deny-list nil)
 (server-start) ;; start server to open files in the same window
 
 (require 'package)
@@ -24,11 +26,10 @@
 (load-theme 'monokai t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack 11" ))
+(add-to-list 'default-frame-alist '(font . "Hack 12" ))
 (setq bidi-paragraph-direction t)
 (setq bidi-inhibit-bpa t)
 (setq visible-bell 1)
-
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -70,9 +71,12 @@
 (add-hook 'c++-mode-hook #'display-line-numbers-mode)
 (add-hook 'web-mode-hook #'display-line-numbers-mode)
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
+(add-hook 'js-mode-hook #'display-line-numbers-mode)
 
 (require 'tree-sitter)
 (global-tree-sitter-mode)
+(setq treesit-font-lock-level 2)
+
 (require 'ts-fold)
 (global-ts-fold-mode)
 (global-ts-fold-indicators-mode)
@@ -81,4 +85,11 @@
 
 (put 'erase-buffer 'disabled nil)
 (put 'set-goal-column 'disabled nil)
+
+(defun my-gdbmi-bnf-target-stream-output (c-string)
+  "Change behavior for GDB/MI targe the target-stream-output C-STRING so that it is displayed to the console."
+  (gdb-console c-string))
+
+(advice-add 'gdbmi-bnf-target-stream-output :override 'my-gdbmi-bnf-target-stream-output)
+
 ;;; init.el ends here
