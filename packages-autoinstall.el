@@ -73,7 +73,6 @@
   (setq projectile-enable-caching t)
   (setq projectile-enable-cmake-presets t)
   :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)))
 
 (use-package drag-stuff
@@ -182,7 +181,6 @@
 
 (use-package rainbow-identifiers :ensure t)
 (use-package rustic             :ensure t)
-(use-package smooth-scrolling   :ensure t)
 (use-package sr-speedbar        :ensure t)
 (use-package visual-fill-column :ensure t)
 (use-package vlf                :ensure t)
@@ -328,15 +326,16 @@
   (lsp-enable-indentation nil)
   (push 'company-lsp company-backends)
   :config
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   (setq lsp-idle-delay 0.1))
 (use-package lsp-ui
   :ensure t
+  :after lsp-mode
   :commands lsp-ui-mode
   :custom
-  (lsp-ui-sideline-show-hover nil)
+;  (lsp-ui-sideline-show-hover nil)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   (lsp-ui-doc-enable t)
-  (lsp-ui-peek-a nil)
+;  (lsp-ui-peek-a nil)
   )
 
 ;(use-package dap-mode
@@ -411,11 +410,17 @@
   :init
   (setq lsp-tailwindcss-add-on-mode t))
 
+(use-package helm-lsp
+  :ensure t
+  :init
+  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
+
 (use-package tree-sitter
   :ensure t
   :config
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+  (setq treesit-font-lock-level 2)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+  (global-tree-sitter-mode))
 
 (use-package tree-sitter-langs
   :ensure t
@@ -429,7 +434,12 @@
          ("C-c f r"   . ts-fold-open-recursively)
          ("C-c f a c" . ts-fold-open-all)
          ("C-c f a o" . ts-fold-close-all)
-         ("C-c f t"   . ts-fold-toggle)))
+         ("C-c f t"   . ts-fold-toggle))
+  :config
+  ;(setq ts-fold-indicators-priority 10)
+  :init
+  ;(global-ts-fold-indicators-mode)
+  (global-ts-fold-mode))
 
 (use-package helm-tree-sitter
   :ensure t
@@ -451,6 +461,7 @@
   (advice-add 'xenops-mode :around #'suppress-messages)
   (setq xenops-math-image-scale-factor 1.8))
 
+; простая навигация по символам.
 (use-package avy
   :ensure t
   :bind

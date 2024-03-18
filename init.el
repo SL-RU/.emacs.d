@@ -72,14 +72,7 @@
 (add-hook 'web-mode-hook #'display-line-numbers-mode)
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
 (add-hook 'js-mode-hook #'display-line-numbers-mode)
-
-(require 'tree-sitter)
-(global-tree-sitter-mode)
-(setq treesit-font-lock-level 2)
-
-(require 'ts-fold)
-(global-ts-fold-mode)
-(global-ts-fold-indicators-mode)
+(add-hook 'rust-mode-hook #'display-line-numbers-mode)
 
 (setq lsp-tex-server 'digestif)
 
