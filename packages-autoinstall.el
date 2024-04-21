@@ -59,12 +59,38 @@
         helm-echo-input-in-header-line t)
   (helm-mode 1))
 
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
 (use-package helm-swoop
   :ensure t
   :after (helm))
 (use-package all-the-icons
   :ensure t
   :if (display-graphic-p))
+
+(use-package zoom
+  :ensure t
+  :init
+  (zoom-mode 't))
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode)
+  :init
+  (column-number-mode))
+
+(use-package nerd-icons
+  ;; :custom
+  ;; The Nerd Font you want to use in GUI
+  ;; "Symbols Nerd Font Mono" is the default and is recommended
+  ;; but you can use any other Nerd Font if you want
+  ;; (nerd-icons-font-family "Symbols Nerd Font Mono")
+  )
+
+
 
 (use-package projectile
   :ensure t
@@ -104,10 +130,10 @@
 ;  :ensure t
 ;  :config
 ;  (fa-config-default))
-(use-package nyan-mode
-  :ensure t
-  :config
-  (nyan-mode 1))
+;(use-package nyan-mode
+;  :ensure t
+;  :config
+;  (nyan-mode 1))
 (use-package switch-window
   :ensure t
   :bind (("C-x o" . switch-window)))
@@ -178,9 +204,28 @@
 (use-package intel-hex-mode     :ensure t)
 (use-package magit              :ensure t)
 (use-package monokai-theme      :ensure t)
+(use-package doom-themes
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-monokai-classic t)
 
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  (doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+
+(use-package solaire-mode :ensure t
+  :init
+  (solaire-global-mode +1))
 (use-package rainbow-identifiers :ensure t)
-(use-package rustic             :ensure t)
 (use-package sr-speedbar        :ensure t)
 (use-package visual-fill-column :ensure t)
 (use-package vlf                :ensure t)
@@ -315,6 +360,7 @@
          (web-mode . lsp)
          (python-mode . lsp)
          (markdown-mode . lsp)
+         (rust-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
@@ -338,23 +384,19 @@
 ;  (lsp-ui-peek-a nil)
   )
 
-;(use-package dap-mode
-; :ensure t
-; :config
-; (defun counsel-fzf-rg:org ()
-;   (interactive)
-;   (counsel-fzf-rg "" org-directory))
-; (require 'dap-cpptools)
-; (require 'dap-gdb-lldb)
-; (setq dap-auto-configure-features '(sessions locals controls tooltip))
-; (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
-; ;(dap-mode 1)
-; ;(dap-ui-mode 1)
-; ;(dap-tooltip-mode 1)
-; ;(tooltip-mode 1)
-; ;(dap-auto-configure-mode +1)
-; ;(dap-ui-controls-mode 1)
-; )
+;; (use-package dap-mode
+;;   :ensure t
+;;   :config
+;;   (require 'dap-cpptools)
+;;   (require 'dap-gdb-lldb)
+;;   (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+;;                                         ;(dap-mode 1)
+;;                                         (dap-ui-mode 1)
+;;                                         (dap-tooltip-mode 1)
+;;                                         (tooltip-mode 1)
+;;                                         (dap-auto-configure-mode +1)
+;;                                         (dap-ui-controls-mode 1)
+;;   )
 
 (use-package go-mode
   :ensure t
@@ -490,5 +532,10 @@
         ;; If nil, the fzf buffer will appear at the top of the window
         fzf/position-bottom t
         fzf/window-height 15))
+
+(use-package highlight-indent-guides
+  :ensure t
+  :hook (display-line-numbers-mode . highlight-indent-guides-mode)
+  )
 
 ;;; packages-autoinstall.el ends here

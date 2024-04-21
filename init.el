@@ -22,8 +22,6 @@
 
 (load-file (concat user-emacs-directory "packages-autoinstall.el"))
 
-;;THEME
-(load-theme 'monokai t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (add-to-list 'default-frame-alist '(font . "Hack 12" ))
@@ -73,6 +71,11 @@
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
 (add-hook 'js-mode-hook #'display-line-numbers-mode)
 (add-hook 'rust-mode-hook #'display-line-numbers-mode)
+(add-hook 'cmake-mode-hook #'display-line-numbers-mode)
+(add-hook 'toml-mode-hook #'display-line-numbers-mode)
+(add-hook 'lisp-mode-hook #'display-line-numbers-mode)
+(add-hook 'elisp-mode-hook #'display-line-numbers-mode)
+(add-hook 'emacs-lisp-mode-hook #'display-line-numbers-mode)
 
 (setq lsp-tex-server 'digestif)
 
@@ -84,5 +87,7 @@
   (gdb-console c-string))
 
 (advice-add 'gdbmi-bnf-target-stream-output :override 'my-gdbmi-bnf-target-stream-output)
+
+(require 'dap-cpptools)
 
 ;;; init.el ends here
