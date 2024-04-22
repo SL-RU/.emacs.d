@@ -535,7 +535,10 @@
 
 (use-package highlight-indent-guides
   :ensure t
-  :hook (display-line-numbers-mode . highlight-indent-guides-mode)
+  :hook ((prog-mode text-mode conf-mode) . highlight-indent-guides-mode)
+  :init
+  (setq highlight-indent-guides-method (if (display-graphic-p) 'bitmap 'character)
+        highlight-indent-guides-bitmap-function #'highlight-indent-guides--bitmap-line)
   )
 
 ;;; packages-autoinstall.el ends here
