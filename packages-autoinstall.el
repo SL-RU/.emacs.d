@@ -175,6 +175,7 @@
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
   (setq company-global-modes '(not erc-mode message-mode eshell-mode gud-mode))
+  (setq company-transformers nil)
   (global-company-mode))
 (use-package company-quickhelp
   :ensure t
@@ -370,19 +371,24 @@
   (lsp-signature-auto-activate nil)
   (lsp-eldoc-enable-hover nil)
   (lsp-enable-indentation nil)
-  (push 'company-lsp company-backends)
-  :config
-  (setq lsp-idle-delay 0.1))
+  (push 'company-lsp company-backends))
+
 (use-package lsp-ui
-  :ensure t
-  :after lsp-mode
-  :commands lsp-ui-mode
-  :custom
-;  (lsp-ui-sideline-show-hover nil)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-  (lsp-ui-doc-enable t)
-;  (lsp-ui-peek-a nil)
-  )
+  :requires lsp-mode flycheck
+  :config
+  (setq lsp-ui-doc-enable t
+        lsp-ui-sideline-enable nil
+        lsp-ui-flycheck-list-position 'right
+        lsp-ui-peek-enable t
+        lsp-ui-doc-show-with-mouse t
+        lsp-ui-doc-show-with-cursor nil
+        lsp-ui-sideline-show-diagnostics t
+        lsp-ui-sideline-show-hover t
+        lsp-ui-sideline-show-code-actions t)
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
 
 ;; (use-package dap-mode
 ;;   :ensure t
