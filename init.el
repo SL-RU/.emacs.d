@@ -4,6 +4,8 @@
 ;;; Code:
 
 (setq comp-deferred-compilation t)
+(setq pgtk-wait-for-event-timeout nil)
+(setq native-comp-async-jobs-number 1)
 (defvar native-comp-deferred-compilation-deny-list nil)
 (server-start) ;; start server to open files in the same window
 
@@ -24,7 +26,7 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack 14" ))
+(add-to-list 'default-frame-alist '(font . "Hack 12" ))
 (setq bidi-paragraph-direction t)
 (setq bidi-inhibit-bpa t)
 (setq visible-bell 1)

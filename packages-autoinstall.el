@@ -64,6 +64,12 @@
   :config
   (dashboard-setup-startup-hook))
 
+(use-package helm-icons
+  :ensure t
+  :config
+  (setq helm-icons-provider 'nerd-icons)
+  (helm-icons-enable))
+
 (use-package helm-swoop
   :ensure t
   :after (helm))
@@ -362,6 +368,7 @@
          (python-mode . lsp)
          (markdown-mode . lsp)
          (rust-mode . lsp)
+         (conf-toml-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
