@@ -554,4 +554,10 @@
         highlight-indent-guides-bitmap-function #'highlight-indent-guides--bitmap-line)
   )
 
+(use-package kkp
+  :ensure t
+  :config
+  ;; (setq kkp-alt-modifier 'alt) ;; use this if you want to map the Alt keyboard modifier to Alt in Emacs (and not to Meta)
+  (global-kkp-mode +1))
+
 ;;; packages-autoinstall.el ends here
