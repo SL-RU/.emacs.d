@@ -1,3 +1,10 @@
+;; wl-clipboard.el -- use wl-copy for copy-paste
+
+;;; Commentary:
+;;; c/c++ packages
+;;; Code:
+
+
 (setq wl-copy-process nil)
 (defun wl-copy (text)
   (setq wl-copy-process (make-process :name "wl-copy"
@@ -13,3 +20,5 @@
     (shell-command-to-string "wl-paste -n | tr -d \r")))
 (setq interprogram-cut-function 'wl-copy)
 (setq interprogram-paste-function 'wl-paste)
+
+;; wl-clipboard.el ends here

@@ -53,7 +53,6 @@
 
 (load-file (concat user-emacs-directory "c.el"))
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
-(load-file (concat user-emacs-directory "wl-clipboard.el"))
 ;(load-file (concat user-emacs-directory "colorpick.el"))
 ;(load-file (concat user-emacs-directory "tex.el"))
 ;;(load-file (concat user-emacs-directory "rust.el"))
@@ -90,6 +89,11 @@
   (gdb-console c-string))
 
 (advice-add 'gdbmi-bnf-target-stream-output :override 'my-gdbmi-bnf-target-stream-output)
+
+(unless (display-graphic-p)
+  (load-file (concat user-emacs-directory "wl-clipboard.el"))
+  (xterm-mouse-mode t)
+  )
 
 (require 'dap-cpptools)
 
