@@ -384,7 +384,7 @@
   :requires lsp-mode flycheck
   :config
   (setq lsp-ui-doc-enable t
-        lsp-ui-sideline-enable nil
+        lsp-ui-sideline-enable t
         lsp-ui-flycheck-list-position 'right
         lsp-ui-peek-enable t
         lsp-ui-doc-show-with-mouse t
