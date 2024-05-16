@@ -26,7 +26,7 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack 12" ))
+(add-to-list 'default-frame-alist '(font . "Hack 14" ))
 (setq bidi-paragraph-direction t)
 (setq bidi-inhibit-bpa t)
 (setq visible-bell 1)
@@ -51,11 +51,9 @@
 (setq-default indent-tabs-mode nil)
 (turn-off-auto-fill)
 
-(load-file (concat user-emacs-directory "c.el"))
+(load-file (concat user-emacs-directory "cpp-init.el"))
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
-;(load-file (concat user-emacs-directory "colorpick.el"))
-;(load-file (concat user-emacs-directory "tex.el"))
-;;(load-file (concat user-emacs-directory "rust.el"))
+(load-file (concat user-emacs-directory "colorpick.el"))
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -95,6 +93,5 @@
   (xterm-mouse-mode t)
   )
 
-(require 'dap-cpptools)
 
 ;;; init.el ends here

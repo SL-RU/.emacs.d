@@ -358,17 +358,17 @@
   :ensure t
   :commands lsp
   :bind-keymap ("C-c l" . lsp-command-map)
-  :hook ((go-mode . lsp)
-         (c-mode . lsp)
-         (c++-mode . lsp)
-         (typescript-mode . lsp)
-         (javascript-mode . lsp)
-         (js-mode . lsp)
+  :hook ((go-ts-mode . lsp)
+         (c-ts-mode . lsp)
+         (c-ts++-mode . lsp)
+         (typescript-ts-mode . lsp)
+         (js-ts-mode . lsp)
          (web-mode . lsp)
-         (python-mode . lsp)
+         (python-ts-mode . lsp)
          (markdown-mode . lsp)
-         (rust-mode . lsp)
-         (conf-toml-mode . lsp)
+         (rust-ts-mode . lsp)
+         (toml-ts-mode . lsp)
+         (yaml-ts-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
@@ -470,16 +470,24 @@
   :init
   (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 
-(use-package tree-sitter
-  :ensure t
-  :config
-  (setq treesit-font-lock-level 2)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-  (global-tree-sitter-mode))
+;(use-package tree-sitter
+;  :ensure t
+;  :config
+;
+;  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+;  (global-tree-sitter-mode))
+;
+;(use-package tree-sitter-langs
+;  :ensure t
+;  :after tree-sitter)
 
-(use-package tree-sitter-langs
+(use-package treesit-auto
   :ensure t
-  :after tree-sitter)
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
 
 (use-package ts-fold
   :straight (ts-fold :type git :host github :repo "emacs-tree-sitter/ts-fold")
@@ -554,10 +562,17 @@
         highlight-indent-guides-bitmap-function #'highlight-indent-guides--bitmap-line)
   )
 
+; сложные сочетания клавишь, когда емакс работает в терминале
 (use-package kkp
   :ensure t
   :config
   ;; (setq kkp-alt-modifier 'alt) ;; use this if you want to map the Alt keyboard modifier to Alt in Emacs (and not to Meta)
   (global-kkp-mode +1))
+
+(use-package rust-mode
+  :ensure t
+  :init
+  ; You can try the new native treesitter mode rust-ts-mode with:
+  (setq rust-mode-treesitter-derive t))
 
 ;;; packages-autoinstall.el ends here
