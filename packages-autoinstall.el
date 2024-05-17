@@ -4,7 +4,6 @@
 ;;; autoinstall all packages
 ;;; Code:
 
-
 (if (not (package-installed-p 'use-package))
     (progn
       (package-refresh-contents)
@@ -360,7 +359,8 @@
   :bind-keymap ("C-c l" . lsp-command-map)
   :hook ((go-ts-mode . lsp)
          (c-ts-mode . lsp)
-         (c-ts++-mode . lsp)
+         (c++-ts-mode . lsp)
+         (c-or-c++-mode . lsp)
          (typescript-ts-mode . lsp)
          (js-ts-mode . lsp)
          (web-mode . lsp)
@@ -381,6 +381,7 @@
   (push 'company-lsp company-backends))
 
 (use-package lsp-ui
+  :ensure t
   :requires lsp-mode flycheck
   :config
   (setq lsp-ui-doc-enable t
