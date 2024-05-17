@@ -277,7 +277,6 @@
   :after tree-sitter
   :config
   (setq typescript-indent-level 2)
-  (setq typescript-ts-mode-indent-offset 2)
   (add-hook 'typescript-mode-hook
             (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
   (add-hook 'typescript-mode #'subword-mode)
@@ -357,18 +356,18 @@
   :ensure t
   :commands lsp
   :bind-keymap ("C-c l" . lsp-command-map)
-  :hook ((go-ts-mode . lsp)
-         (c-ts-mode . lsp)
-         (c++-ts-mode . lsp)
+  :hook ((go-mode . lsp)
+         (c-mode . lsp)
+         (c++-mode . lsp)
          (c-or-c++-mode . lsp)
-         (typescript-ts-mode . lsp)
-         (js-ts-mode . lsp)
+         (typescript-mode . lsp)
+         (js-mode . lsp)
          (web-mode . lsp)
-         (python-ts-mode . lsp)
+         (python-mode . lsp)
          (markdown-mode . lsp)
-         (rust-ts-mode . lsp)
-         (toml-ts-mode . lsp)
-         (yaml-ts-mode . lsp)
+         (rust-mode . lsp)
+         (toml-mode . lsp)
+         (yaml-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
@@ -471,24 +470,24 @@
   :init
   (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 
-;(use-package tree-sitter
-;  :ensure t
-;  :config
-;
-;  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-;  (global-tree-sitter-mode))
-;
-;(use-package tree-sitter-langs
-;  :ensure t
-;  :after tree-sitter)
-
-(use-package treesit-auto
+(use-package tree-sitter
   :ensure t
-  :custom
-  (treesit-auto-install 'prompt)
   :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
+
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+  (global-tree-sitter-mode))
+
+(use-package tree-sitter-langs
+  :ensure t
+  :after tree-sitter)
+
+;; (use-package treesit-auto
+;;   :ensure t
+;;   :custom
+;;   (treesit-auto-install 'prompt)
+;;   :config
+;;   (treesit-auto-add-to-auto-mode-alist 'all)
+;;   (global-treesit-auto-mode))
 
 (use-package ts-fold
   :straight (ts-fold :type git :host github :repo "emacs-tree-sitter/ts-fold")
@@ -575,5 +574,10 @@
   :init
   ; You can try the new native treesitter mode rust-ts-mode with:
   (setq rust-mode-treesitter-derive t))
+
+;; (use-package google-c-style
+;;   ;; provides the Google C/C++ coding style
+;;   :hook ((c-or-c++-mode . google-make-newline-indent)
+;;          (c-or-c++-mode . google-set-c-style)))
 
 ;;; packages-autoinstall.el ends here

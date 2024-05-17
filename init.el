@@ -51,9 +51,13 @@
 (setq-default indent-tabs-mode nil)
 (turn-off-auto-fill)
 
-(load-file (concat user-emacs-directory "cpp-init.el"))
+;; (load-file (concat user-emacs-directory "cpp-init.el"))
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
 (load-file (concat user-emacs-directory "colorpick.el"))
+(load-file (concat user-emacs-directory "google-c-style.el"))
+(load-file (concat user-emacs-directory "gendoxy/gendoxy.el"))
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
