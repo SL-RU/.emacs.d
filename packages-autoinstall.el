@@ -85,7 +85,13 @@
   :ensure t
   :hook (after-init . doom-modeline-mode)
   :init
-  (column-number-mode))
+  (column-number-mode)
+  (require 'doom-modeline-segments)
+  (defun doom-modeline-lsp-icon (text face)
+    "Display LSP icon (or TEXT in terminal) with FACE."
+    (if doom-modeline-lsp-icon
+        (doom-modeline-icon 'faicon "nf-fa-cat" "" text :face face)
+      (propertize text 'face face))))
 
 (use-package nerd-icons
   ;; :custom

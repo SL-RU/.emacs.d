@@ -26,7 +26,7 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack 14" ))
+(add-to-list 'default-frame-alist '(font . "Hack 12" ))
 (setq bidi-paragraph-direction t)
 (setq bidi-inhibit-bpa t)
 (setq visible-bell 1)
@@ -96,6 +96,5 @@
   (load-file (concat user-emacs-directory "wl-clipboard.el"))
   (xterm-mouse-mode t)
   )
-
 
 ;;; init.el ends here
