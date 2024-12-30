@@ -50,6 +50,7 @@
 ;; if indent-tabs-mode is t, it means it may use tab, resulting mixed space and tab
 (setq-default indent-tabs-mode nil)
 (turn-off-auto-fill)
+(setq-default tab-width 2)
 
 ;; (load-file (concat user-emacs-directory "cpp-init.el"))
 (load-file (concat user-emacs-directory "stm32/stm32.el"))
@@ -59,29 +60,30 @@
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(dolist (pattern '("\\.phtml\\'"
+                   "\\.tpl\\.php\\'"
+                   "\\.[agj]sp\\'"
+                   "\\.as[cp]x\\'"
+                   "\\.erb\\'"
+                   "\\.mustache\\'"
+                   "\\.djhtml\\'"
+                   "\\.html?\\'"))
+  (add-to-list 'auto-mode-alist (cons pattern 'web-mode)))
 
-(add-hook 'sh-mode-hook #'display-line-numbers-mode)
-(add-hook 'c-mode-hook #'display-line-numbers-mode)
-(add-hook 'c++-mode-hook #'display-line-numbers-mode)
-(add-hook 'web-mode-hook #'display-line-numbers-mode)
-(add-hook 'text-mode-hook #'display-line-numbers-mode)
-(add-hook 'js-mode-hook #'display-line-numbers-mode)
-(add-hook 'rust-mode-hook #'display-line-numbers-mode)
-(add-hook 'cmake-mode-hook #'display-line-numbers-mode)
-(add-hook 'toml-mode-hook #'display-line-numbers-mode)
-(add-hook 'lisp-mode-hook #'display-line-numbers-mode)
-(add-hook 'elisp-mode-hook #'display-line-numbers-mode)
-(add-hook 'emacs-lisp-mode-hook #'display-line-numbers-mode)
-
-(setq lsp-tex-server 'digestif)
+(dolist (mode-hook '(sh-mode-hook
+                     c-mode-hook
+                     c++-mode-hook
+                     web-mode-hook
+                     text-mode-hook
+                     js-mode-hook
+                     rust-mode-hook
+                     cmake-mode-hook
+                     toml-mode-hook
+                     lisp-mode-hook
+                     elisp-mode-hook
+                     emacs-lisp-mode-hook
+                     typescript-mode-hook))
+  (add-hook mode-hook #'display-line-numbers-mode))
 
 (put 'erase-buffer 'disabled nil)
 (put 'set-goal-column 'disabled nil)
@@ -96,5 +98,7 @@
   (load-file (concat user-emacs-directory "wl-clipboard.el"))
   (xterm-mouse-mode t)
   )
+
+(require 'dap-cpptools)
 
 ;;; init.el ends here

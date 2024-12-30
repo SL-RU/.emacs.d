@@ -383,6 +383,11 @@
   (lsp-signature-auto-activate nil)
   (lsp-eldoc-enable-hover nil)
   (lsp-enable-indentation nil)
+  (setq lsp-pylsp-plugins-isort-enabled t)
+  (setq lsp-pylsp-plugins-black-enabled t)
+  (setq lsp-pylsp-plugins-pylint-enabled t)
+  (setq lsp-pylsp-plugins-autopep8-enabled t)
+  (setq lsp-pylsp-plugins-pycodestyle-enabled t)
   (push 'company-lsp company-backends))
 
 (use-package lsp-ui
@@ -475,6 +480,14 @@
   :ensure t
   :init
   (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
+
+(use-package lsp-treemacs
+  :ensure t
+  :init
+  (lsp-treemacs-sync-mode 1)
+  (treemacs-follow-mode t)
+  (treemacs-tag-follow-mode t)
+  (treemacs-project-follow-mode t))
 
 (use-package tree-sitter
   :ensure t
@@ -575,11 +588,19 @@
   ;; (setq kkp-alt-modifier 'alt) ;; use this if you want to map the Alt keyboard modifier to Alt in Emacs (and not to Meta)
   (global-kkp-mode +1))
 
+(use-package lua-mode
+  :ensure t
+  :config
+  (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+  (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+  (add-to-list 'interpreter-mode-alist '("lua" . lua-mode)))
+
+
 (use-package rust-mode
   :ensure t
   :init
   ; You can try the new native treesitter mode rust-ts-mode with:
-  (setq rust-mode-treesitter-derive t))
+  (setq rust-mode-treesitter-derive nil))
 
 ;; (use-package google-c-style
 ;;   ;; provides the Google C/C++ coding style
