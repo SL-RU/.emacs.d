@@ -26,7 +26,7 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack 12" ))
+(add-to-list 'default-frame-alist '(font . "Hack 11" ))
 (setq bidi-paragraph-direction t)
 (setq bidi-inhibit-bpa t)
 (setq visible-bell 1)
@@ -57,6 +57,7 @@
 (load-file (concat user-emacs-directory "colorpick.el"))
 (load-file (concat user-emacs-directory "google-c-style.el"))
 (load-file (concat user-emacs-directory "gendoxy/gendoxy.el"))
+(load-file (concat user-emacs-directory "my.el"))
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
@@ -99,6 +100,5 @@
   (xterm-mouse-mode t)
   )
 
-(require 'dap-cpptools)
-
 ;;; init.el ends here
+

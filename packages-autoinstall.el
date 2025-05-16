@@ -359,6 +359,9 @@
   (which-key-mode 1))
 
 (use-package lsp-mode
+  :straight '(lsp-mode
+              :type git :host github :repo "emacs-lsp/lsp-mode"
+              )
   :ensure t
   :commands lsp
   :bind-keymap ("C-c l" . lsp-command-map)
@@ -378,7 +381,7 @@
   :custom
   ;; what to use when checking on-save. "check" is default, I prefer clippy
   (lsp-rust-analyzer-cargo-watch-command "clippy")
-  (lsp-idle-delay 0.3)
+  (lsp-idle-delay 1)
   (lsp-rust-analyzer-server-display-inlay-hints t)
   (lsp-signature-auto-activate nil)
   (lsp-eldoc-enable-hover nil)
