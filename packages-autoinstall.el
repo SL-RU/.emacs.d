@@ -26,9 +26,6 @@
 (require 'use-package)
 
 ;; Add extensions
-(use-package cape
-  :ensure t
-)
 (use-package helm
   :ensure t
   :bind (("M-x"     . helm-M-x)
@@ -94,14 +91,17 @@
       (propertize text 'face face))))
 
 (use-package nerd-icons
-  ;; :custom
+  :straight (nerd-icons
+             :type git
+             :host github
+             :repo "rainstormstudio/nerd-icons.el"
+             :files (:defaults "data"))
+  :custom
   ;; The Nerd Font you want to use in GUI
   ;; "Symbols Nerd Font Mono" is the default and is recommended
   ;; but you can use any other Nerd Font if you want
-  ;; (nerd-icons-font-family "Symbols Nerd Font Mono")
+  (nerd-icons-font-family "Symbols Nerd Font Mono")
   )
-
-
 
 (use-package projectile
   :ensure t
@@ -118,10 +118,10 @@
   (drag-stuff-define-keys)
   (drag-stuff-global-mode))
 ;; higlight cursors when scroll
-(use-package beacon
-  :ensure t
-  :config
-  (beacon-mode 1))
+;; (use-package beacon
+;;   :ensure t
+;;   :config
+;;   (beacon-mode 1))
 
 (use-package yasnippet
   :ensure t
@@ -135,49 +135,23 @@
   :bind (("C-S-c C-S-c" . mc/edit-lines)
          ("C->"         . mc/mark-next-like-this)
          ("C-<"         . mc/mark-previous-like-this)
-         ("C-c C-<"     . mc/mark-all-like-this)
-         ("C-C C-v"     . uncomment-region)))
-;(use-package function-args
-;  :ensure t
-;  :config
-;  (fa-config-default))
-;(use-package nyan-mode
-;  :ensure t
-;  :config
-;  (nyan-mode 1))
+         ("C-c C-<"     . mc/mark-all-like-this)))
+
+;; ;; ;(use-package function-args
+;; ;; ;  :ensure t
+;; ;; ;  :config
+;; ;; ;  (fa-config-default))
+
 (use-package switch-window
   :ensure t
   :bind (("C-x o" . switch-window)))
+
 (use-package undo-tree
   :ensure t
   :config
   (global-undo-tree-mode))
-(use-package tramp              :ensure t)
-(use-package 2048-game          :ensure t)
-(use-package ac-c-headers       :ensure t)
-(use-package ac-slime           :ensure t)
-(use-package beacon             :ensure t)
-(use-package sudo-edit          :ensure t)
 
 (use-package dired-quick-sort   :ensure t)
-(use-package dired-single
-  :ensure t
-  :config
-  (require 'dired-single)
-  (defun my-dired-init ()
-    "Bunch of stuff to run for dired, either immediately or when it's loaded."
-    (define-key dired-mode-map [remap dired-find-file]
-      'dired-single-buffer)
-    (define-key dired-mode-map [remap dired-mouse-find-file-other-window]
-      'dired-single-buffer-mouse)
-    (define-key dired-mode-map [remap dired-up-directory]
-      'dired-single-up-directory))
-  ;; if dired's already loaded, then the keymap will be bound
-  (if (boundp 'dired-mode-map)
-      ;; we're good to go; just add our bindings
-      (my-dired-init)
-    ;; it's not loaded yet, so add our bindings to the load-hook
-    (add-hook 'dired-load-hook 'my-dired-init)))
 
 (use-package company
   :ensure t
@@ -188,6 +162,7 @@
   (setq company-global-modes '(not erc-mode message-mode eshell-mode gud-mode))
   (setq company-transformers nil)
   (global-company-mode))
+
 (use-package company-quickhelp
   :ensure t
   :init
@@ -206,16 +181,14 @@
 (use-package dockerfile-mode
   :ensure t
   :hook (dockerfile-mode . lsp))
-(use-package dot-mode           :ensure t)
 (use-package ducpel             :ensure t)
-(use-package flx-ido            :ensure t)
 (use-package free-keys          :ensure t)
 (use-package iedit              :ensure t)
 (use-package image+             :ensure t)
 (use-package image-dired+       :ensure t)
 (use-package intel-hex-mode     :ensure t)
 (use-package magit              :ensure t)
-(use-package monokai-theme      :ensure t)
+;; (use-package monokai-theme      :ensure t)
 (use-package doom-themes
   :ensure t
   :config
@@ -227,9 +200,8 @@
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
+  ; (doom-themes-neotree-config)
   ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
@@ -245,10 +217,9 @@
 (use-package async              :ensure t)
 (use-package yaml-mode          :ensure t)
 
-;(use-package latex              :ensure t)
-;(use-package reftex             :ensure t)
-;(use-package auctex             :ensure t)
-;(use-package auctex-latexmk             :ensure t)
+(use-package reftex             :ensure t)
+(use-package auctex             :ensure t)
+(use-package auctex-latexmk             :ensure t)
 
 (use-package flycheck
   :ensure t
@@ -272,15 +243,9 @@
         web-mode-enable-auto-pairing t
         web-mode-enable-current-element-highlight t
         ))
-  ;(add-hook 'web-mode-hook
-            ;(lambda ()
-             ; (add-to-list 'write-file-functions 'delete-trailing-whitespace)
-              ;(when (string-equal "tsx" (file-name-extension buffer-file-name))
-                                        ;(setup-tide-mode))
-            ;(flycheck-add-mode 'typescript-tslint 'web-mode))
 (use-package typescript-mode
   :ensure t
-  :after tree-sitter
+  ;:after tree-sitter
   :config
   (setq typescript-indent-level 2)
   (add-hook 'typescript-mode-hook
@@ -293,23 +258,7 @@
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptreact-mode))
   ;; by default, typescript-mode is mapped to the treesitter typescript parser
   ;; use our derived mode to map both .tsx AND .ts -> typescriptreact-mode -> treesitter tsx
-  (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptreact-mode . tsx)))
-
-;(use-package tide
-;  :ensure t
-;  :after (typescript-mode company flycheck)
-;  :hook ((typescript-mode . tide-setup)
-;         (typescript-mode . tide-hl-identifier-mode)))
-
-;(use-package elpy
-;  :ensure t
-;  :init
-;  (elpy-enable))
-;(use-package py-autopep8
-;  :ensure t
-;  :hook (python-mode-hook . py-autopep8-enable-on-use))
-;(use-package python-black       :ensure t)
-
+  ;; (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptreact-mode . tsx)))
 
 (use-package which-key
   :ensure t
@@ -329,13 +278,13 @@
   ;; Change what string to display for a given *complete* key binding
   ;; Eg: After "C-x", display "8 → +unicode" instead of "8 → +prefix"
   (which-key-add-key-based-replacements
-   "C-x 8"   "unicode"
-   "C-x a"   "abbrev/expand"
-   "C-x r"   "rectangle/register/bookmark"
-   "C-x v"   "version control"
-   "C-c /"   "engine-mode-map"
-   "C-c C-v" "org-babel"
-   "C-x 8 0" "ZWS")
+    "C-x 8"   "unicode"
+    "C-x a"   "abbrev/expand"
+    "C-x r"   "rectangle/register/bookmark"
+    "C-x v"   "version control"
+    "C-c /"   "engine-mode-map"
+    "C-c C-v" "org-babel"
+    "C-x 8 0" "ZWS")
 
   ;; Highlight certain commands
   (defface modi/which-key-highlight-2-face
@@ -371,17 +320,32 @@
          (c-or-c++-mode . lsp)
          (typescript-mode . lsp)
          (js-mode . lsp)
-         (web-mode . lsp)
          (python-mode . lsp)
-         (markdown-mode . lsp)
          (rust-mode . lsp)
          (toml-mode . lsp)
          (yaml-mode . lsp)
+
+         (markdown-mode . lsp)
+         (web-mode . lsp)
+
+         (go-ts-mode . lsp)
+         (c-ts-mode . lsp)
+         (c++-ts-mode . lsp)
+         (c-or-c++-ts-mode . lsp)
+         (typescript-ts-mode . lsp)
+         (js-ts-mode . lsp)
+         (python-ts-mode . lsp)
+         (rust-ts-mode . lsp)
+         (toml-ts-mode . lsp)
+         (yaml-ts-mode . lsp)
+
          (lsp-mode . lsp-enable-which-key-integration))
   :custom
+  (require 'lsp-icons)
   ;; what to use when checking on-save. "check" is default, I prefer clippy
   (lsp-rust-analyzer-cargo-watch-command "clippy")
-  (lsp-idle-delay 1)
+  (setq lsp-prefer-flymake nil)
+  (lsp-idle-delay 0.5)
   (lsp-rust-analyzer-server-display-inlay-hints t)
   (lsp-signature-auto-activate nil)
   (lsp-eldoc-enable-hover nil)
@@ -391,39 +355,24 @@
   (setq lsp-pylsp-plugins-pylint-enabled t)
   (setq lsp-pylsp-plugins-autopep8-enabled t)
   (setq lsp-pylsp-plugins-pycodestyle-enabled t)
-  (push 'company-lsp company-backends))
+  (push 'company-lsp company-backends)
+  (setq lsp-ui-doc-enable nil)
+  (setq lsp-log-io nil) ; if set to true can cause a performance hit
+  )
 
-(use-package lsp-ui
+(use-package dap-mode
   :ensure t
-  :requires lsp-mode flycheck
   :config
-  (setq lsp-ui-doc-enable t
-        lsp-ui-sideline-enable t
-        lsp-ui-flycheck-list-position 'right
-        lsp-ui-peek-enable t
-        lsp-ui-doc-show-with-mouse t
-        lsp-ui-doc-show-with-cursor nil
-        lsp-ui-sideline-show-diagnostics t
-        lsp-ui-sideline-show-hover t
-        lsp-ui-sideline-show-code-actions t)
-  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
-
-
-;; (use-package dap-mode
-;;   :ensure t
-;;   :config
-;;   (require 'dap-cpptools)
-;;   (require 'dap-gdb-lldb)
-;;   (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
-;;                                         ;(dap-mode 1)
-;;                                         (dap-ui-mode 1)
-;;                                         (dap-tooltip-mode 1)
-;;                                         (tooltip-mode 1)
-;;                                         (dap-auto-configure-mode +1)
-;;                                         (dap-ui-controls-mode 1)
-;;   )
+  (require 'dap-cpptools)
+  (require 'dap-gdb-lldb)
+  (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+                                        ;(dap-mode 1)
+  (dap-ui-mode 1)
+  (dap-tooltip-mode 1)
+  (tooltip-mode 1)
+  (dap-auto-configure-mode +1)
+  (dap-ui-controls-mode 1)
+  )
 
 (use-package go-mode
   :ensure t
@@ -439,15 +388,6 @@
   :mode (;;("in\\." . lammps-mode)
          ("\\.lmp\\'" . lammps-mode)))
 
-(use-package ess
-  :ensure t
-  :init (require 'ess-site))
-
-;(use-package coterm
-;  :ensure t
-;  :init (coterm-mode)
-;  )
-
 (use-package detached
   :ensure t
   :init (detached-init)
@@ -462,15 +402,8 @@
   :custom ((detached-show-output-on-attach t)
            (detached-terminal-data-command system-type)))
 
-;(use-package fancy-compilation
-;  :ensure t
-;  :commands (fancy-compilation-mode)
-;  :init
-;  (with-eval-after-load 'compile
-                                        ;    (fancy-compilation-mode)))
-
 (use-package vterm
-    :ensure t)
+  :ensure t)
 
 (straight-use-package
  '(lsp-tailwindcss :type git :host github :repo "merrickluo/lsp-tailwindcss"))
@@ -482,7 +415,8 @@
 (use-package helm-lsp
   :ensure t
   :init
-  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
+  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol)
+  )
 
 (use-package lsp-treemacs
   :ensure t
@@ -490,61 +424,16 @@
   (lsp-treemacs-sync-mode 1)
   (treemacs-follow-mode t)
   (treemacs-tag-follow-mode t)
-  (treemacs-project-follow-mode t))
+  (treemacs-project-follow-mode t)
+  )
 
-(use-package tree-sitter
+(use-package treesit-auto
   :ensure t
-  :config
-
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-  (global-tree-sitter-mode))
-
-(use-package tree-sitter-langs
-  :ensure t
-  :after tree-sitter)
-
-;; (use-package treesit-auto
-;;   :ensure t
-;;   :custom
-;;   (treesit-auto-install 'prompt)
-;;   :config
-;;   (treesit-auto-add-to-auto-mode-alist 'all)
-;;   (global-treesit-auto-mode))
-
-(use-package ts-fold
-  :straight (ts-fold :type git :host github :repo "emacs-tree-sitter/ts-fold")
-  :after tree-sitter-langs
-  :bind (("C-c f o"   . ts-fold-open)
-         ("C-c f c"   . ts-fold-close)
-         ("C-c f r"   . ts-fold-open-recursively)
-         ("C-c f a c" . ts-fold-open-all)
-         ("C-c f a o" . ts-fold-close-all)
-         ("C-c f t"   . ts-fold-toggle))
-  :config
-  ;(setq ts-fold-indicators-priority 10)
-  :init
-  ;(global-ts-fold-indicators-mode)
-  (global-ts-fold-mode))
-
-(use-package helm-tree-sitter
-  :ensure t
-  :after tree-sitter
-  :bind (("C-c C-f" . helm-tree-sitter)))
-
-(use-package xenops
-  :ensure t
-  ;; :hook
-  ;; (org-mode . xenops-mode)
-  :bind
-  ;; FIX: xenops overrides the default paste behavior with xenops-handle-paste through xenops-util-define-key-with-fallback in xenops-define-key which breaks the delete-selection-mode
-  ;(:map xenops-mode-map
-  ;        ("s-v" . yank))
   :custom
-  (setq xenops-reveal-on-entry t)
+  (treesit-auto-install 'prompt)
   :config
-  ;; Suppress xenops startup messages.
-  (advice-add 'xenops-mode :around #'suppress-messages)
-  (setq xenops-math-image-scale-factor 1.8))
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
 
 ; простая навигация по символам.
 (use-package avy
@@ -552,6 +441,7 @@
   :bind
   (("C-:" . avy-goto-char-2)))
 
+;; для работы самописных комманд
 (use-package friendly-shell-command
   :ensure t
   )
@@ -563,7 +453,7 @@
   :ensure t
   :bind
   (("C-c p c" . fzf-find-file))
-    ;; Don't forget to set keybinds!
+  ;; Don't forget to set keybinds!
   :config
   (setq fzf/args "-x --print-query --margin=1,0 --no-hscroll"
         fzf/executable "fzf"
@@ -584,7 +474,7 @@
         highlight-indent-guides-bitmap-function #'highlight-indent-guides--bitmap-line)
   )
 
-; сложные сочетания клавишь, когда емакс работает в терминале
+; сложные сочетания клавиш, когда емакс работает в терминале
 (use-package kkp
   :ensure t
   :config
@@ -602,12 +492,8 @@
 (use-package rust-mode
   :ensure t
   :init
-  ; You can try the new native treesitter mode rust-ts-mode with:
-  (setq rust-mode-treesitter-derive nil))
-
-;; (use-package google-c-style
-;;   ;; provides the Google C/C++ coding style
-;;   :hook ((c-or-c++-mode . google-make-newline-indent)
-;;          (c-or-c++-mode . google-set-c-style)))
+                                        ; You can try the new native treesitter mode rust-ts-mode with:
+  (setq rust-mode-treesitter-derive nil)
+  )
 
 ;;; packages-autoinstall.el ends here

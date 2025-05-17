@@ -26,3 +26,5 @@
 
 ;; Prevent early display of modeline.
 (setq-default mode-line-format nil)
+
+(setenv "LSP_USE_PLISTS" "true")

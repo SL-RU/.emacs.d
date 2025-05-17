@@ -3,9 +3,7 @@
 ;;; It is always WIP
 ;;; Code:
 
-(setq comp-deferred-compilation t)
 (setq pgtk-wait-for-event-timeout nil)
-(setq native-comp-async-jobs-number 1)
 (defvar native-comp-deferred-compilation-deny-list nil)
 (server-start) ;; start server to open files in the same window
 
@@ -36,11 +34,13 @@
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
 
-(setq read-process-output-max (* 1024 1024)) ; for lsp
+;; LSP performance
+(setq read-process-output-max (* 10 1024 1024)) ; for lsp
 (setq max-lisp-eval-depth 10000)
-(setq max-specpdl-size 32000)
-(setq gc-cons-threshold 100000000)
+(setq gc-cons-threshold 400000000)
 (setq create-lockfiles nil)
+
+
 ;; pair brackets
 (show-paren-mode)
 (put 'upcase-region 'disabled nil)
@@ -74,7 +74,6 @@
 (dolist (mode-hook '(sh-mode-hook
                      c-mode-hook
                      c++-mode-hook
-                     web-mode-hook
                      text-mode-hook
                      js-mode-hook
                      rust-mode-hook
@@ -83,17 +82,26 @@
                      lisp-mode-hook
                      elisp-mode-hook
                      emacs-lisp-mode-hook
-                     typescript-mode-hook))
+                     typescript-mode-hook
+
+                     web-mode-hook
+
+                     c-ts-mode-hook
+                     c++-ts-mode-hook
+                     text-mode-hook
+                     js-ts-mode-hook
+                     rust-ts-mode-hook
+                     cmake-ts-mode-hook
+                     toml-ts-mode-hook
+                     lisp-ts-mode-hook
+                     elisp-ts-mode-hook
+                     emacs-lisp-ts-mode-hook
+                     typescript-ts-mode-hook
+                     ))
   (add-hook mode-hook #'display-line-numbers-mode))
 
 (put 'erase-buffer 'disabled nil)
 (put 'set-goal-column 'disabled nil)
-
-(defun my-gdbmi-bnf-target-stream-output (c-string)
-  "Change behavior for GDB/MI targe the target-stream-output C-STRING so that it is displayed to the console."
-  (gdb-console c-string))
-
-(advice-add 'gdbmi-bnf-target-stream-output :override 'my-gdbmi-bnf-target-stream-output)
 
 (unless (display-graphic-p)
   (load-file (concat user-emacs-directory "wl-clipboard.el"))
