@@ -146,10 +146,27 @@
   :ensure t
   :bind (("C-x o" . switch-window)))
 
-(use-package undo-tree
+(use-package vundo
   :ensure t
+  :bind (("C-x u" . vundo)
+         :map vundo-mode-map
+         ("l" . vundo-forward)
+         ("h" . vundo-backward)
+         ("j" . vundo-next)
+         ("k" . vundo-previous)
+         ("<home>" . vundo-stem-root)
+         ("<end>" . vundo-stem-end)
+         ("C-e" . vundo-stem-end)
+         ("C-a" . vundo-stem-root))
+  :commands (vundo)
   :config
-  (global-undo-tree-mode))
+  (setq vundo-compact-display t)
+
+  (custom-set-faces
+   '(vundo-node ((t (:foreground "#808080"))))
+   '(vundo-stem ((t (:foreground "#808080"))))
+   '(vundo-highlight ((t (:foreground "#FFFF00")))))
+  )
 
 (use-package dired-quick-sort   :ensure t)
 
@@ -200,7 +217,7 @@
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   ;; Enable custom neotree theme (all-the-icons must be installed!)
-  ; (doom-themes-neotree-config)
+                                        ; (doom-themes-neotree-config)
   ;; or for treemacs users
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
@@ -245,7 +262,7 @@
         ))
 (use-package typescript-mode
   :ensure t
-  ;:after tree-sitter
+                                        ;:after tree-sitter
   :config
   (setq typescript-indent-level 2)
   (add-hook 'typescript-mode-hook
@@ -349,16 +366,23 @@
   (lsp-idle-delay 0.5)
   (lsp-rust-analyzer-server-display-inlay-hints t)
   (lsp-signature-auto-activate nil)
-  (lsp-eldoc-enable-hover nil)
-  (lsp-enable-indentation nil)
+  (lsp-eldoc-enable-hover t)
+  (lsp-enable-indentation t)
   (setq lsp-pylsp-plugins-isort-enabled t)
   (setq lsp-pylsp-plugins-black-enabled t)
   (setq lsp-pylsp-plugins-pylint-enabled t)
   (setq lsp-pylsp-plugins-autopep8-enabled t)
   (setq lsp-pylsp-plugins-pycodestyle-enabled t)
   (push 'company-lsp company-backends)
-  (setq lsp-ui-doc-enable nil)
+  (setq lsp-ui-doc-enable t)
   (setq lsp-log-io nil) ; if set to true can cause a performance hit
+  )
+
+(use-package lsp-mode
+  :ensure t
+  :config
+  (setq lsp-ui-peek-enable t)
+  (setq lsp-ui-doc-enable t)
   )
 
 (use-package dap-mode
@@ -436,7 +460,7 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-; простая навигация по символам.
+                                        ; простая навигация по символам.
 (use-package avy
   :ensure t
   :bind
@@ -475,7 +499,7 @@
         highlight-indent-guides-bitmap-function #'highlight-indent-guides--bitmap-line)
   )
 
-; сложные сочетания клавиш, когда емакс работает в терминале
+                                        ; сложные сочетания клавиш, когда емакс работает в терминале
 (use-package kkp
   :ensure t
   :config

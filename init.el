@@ -24,7 +24,7 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack 11" ))
+(add-to-list 'default-frame-alist '(font . "Hack 13" ))
 (setq bidi-paragraph-direction t)
 (setq bidi-inhibit-bpa t)
 (setq visible-bell 1)
@@ -97,6 +97,9 @@
                      elisp-ts-mode-hook
                      emacs-lisp-ts-mode-hook
                      typescript-ts-mode-hook
+                     python-mode-hook
+                     python-ts-mode-hook
+                     sh-mode
                      ))
   (add-hook mode-hook #'display-line-numbers-mode))
 
@@ -108,5 +111,29 @@
   (xterm-mouse-mode t)
   )
 
+(defun projectile--cmake-version ()
+  "Compute CMake version."
+  (let* ((string (shell-command-to-string "cmake --version"))
+         (match (string-match "^cmake version \\([0-9.]+\\).*$" string)))
+    (when match
+      (version-to-list (match-string 1 string)))))
+
+(defun insert-file-name (file &optional relativep)
+  "Read RELATIVEP FILE name and insert it at point.
+With a prefix argument, insert only the non-directory part."
+  (interactive "fFile: \nP")
+  (when relativep (setq file  (file-name-nondirectory file)))
+  (insert file))
+
+
+(defun insert-file-name-relative (file &optional relativep)
+  "Read RELATIVEP FILE name and insert relative it at point.
+With a prefix argument, insert only the non-directory part."
+  (interactive "fFile: \nP")
+  (when relativep (setq file  (file-name-nondirectory file)))
+  (let ((fname (file-name-directory  (directory-file-name (buffer-file-name)))))
+    (insert (file-relative-name file fname))))
+
+;(select-frame frame)
 ;;; init.el ends here
 
